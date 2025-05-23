@@ -1,85 +1,36 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "@/components/footer";
-import Head from "next/head";
-import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-    title: "VAGA - By MAAK CORP",
-    description: "CRM pour gérer votre entreprise et vos clients en toute simplicité et efficacité.",
-    metadataBase: new URL('https://vaga.tn'),
-    authors: [{ name: 'MAAK CORP' }],
+    title: "VAGA - Premier CRM SaaS 100% Tunisien",
+    description: "Solution complète de gestion client conçue par des Tunisiens, pour les entrepreneurs tunisiens. CRM, facturation, RH et traites - tout en un.",
     keywords: [
-        'organize',
-        'maak',
-        'corp',
-        'tn',
-        'crm',
-        'customer',
-        'relationship',
-        'management',
-        'software',
-        'business',
+        'CRM Tunisie',
+        'logiciel gestion client Tunisie',
+        'facturation Tunisie',
+        'SaaS Tunisien',
+        'gestion entreprise Tunisie',
+        'traites lettres de change',
+        'RH Tunisie',
+        'données locales Tunisie',
+        'VAGA CRM'
     ],
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
-    },
     openGraph: {
-        type: 'website',
-        locale: 'en_US',
+        title: 'VAGA - Premier CRM SaaS 100% Tunisien',
+        description: 'Solution complète de gestion client conçue par des Tunisiens, pour les entrepreneurs tunisiens.',
         url: 'https://vaga.tn',
-        siteName: 'VAGA - By MAAK CORP',
-        title: 'VAGA - By MAAK CORP',
-        description: 'CRM pour gérer votre entreprise et vos clients en toute simplicité et efficacité.',
-        images: [
-            {
-                url: 'https://vaga.tn/og-image.svg',
-                width: 1200,
-                height: 630,
-                alt: 'VAGA - By MAAK CORP',
-            },
-        ],
+        siteName: 'VAGA',
+        locale: 'fr_TN',
+        type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'VAGA - By MAAK CORP',
-        description: 'CRM pour gérer votre entreprise et vos clients en toute simplicité et efficacité.',
-        images: ['https://vaga.tn/twitter-image.svg'],
-    },
-    icons: {
-        icon: [
-            {
-                media: '(prefers-color-scheme: dark)',
-                url: '/logo_white.png',
-                type: 'image/png',
-            },
-            {
-                media: '(prefers-color-scheme: light)',
-                url: '/logo_dark.png',
-                type: 'image/png',
-            },
-        ],
-        apple: [
-            { url: '/icon-192x192.svg' },
-        ],
-        shortcut: ['/icon-512x512.svg'],
-    },
-    manifest: '/manifest.json',
-    alternates: {
-        canonical: 'https://vaga.tn'
+        title: 'VAGA - Premier CRM SaaS 100% Tunisien',
+        description: 'Solution complète de gestion client conçue par des Tunisiens, pour les entrepreneurs tunisiens.',
     },
     viewport: {
         width: 'device-width',
         initialScale: 1,
-        maximumScale: 5,
     }
 };
 
@@ -89,20 +40,85 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <Head>
-                <title>IG60 - Créez votre boutique en ligne</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta charSet="UTF-8" />
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-            </Head>
-            <body className="antialiased text-black font-poppins">
-                <Navbar />
-                <main>
-                    {children}
-                </main>
-                <Footer />
+        <html lang="fr" className="scroll-smooth">
+            <head>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+                    rel="stylesheet"
+                />
+            </head>
+            <body className="font-poppins antialiased bg-black text-white overflow-x-hidden">
+                {/* Background Elements - Fixed positioning for consistent backdrop */}
+                <div className="fixed inset-0 -z-10">
+                    {/* Primary gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+
+                    {/* Animated gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-800 to-black opacity-50 animate-pulse-slower"></div>
+
+                    {/* Grid pattern overlay */}
+                    <div
+                        className="absolute inset-0 opacity-10"
+                        style={{
+                            backgroundImage: `
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+              `,
+                            backgroundSize: '50px 50px'
+                        }}
+                    />
+                </div>
+
+                {/* Main content wrapper */}
+                <div className="relative z-10 min-h-screen flex flex-col">
+                    {/* Navigation will be inserted here */}
+                    <nav id="navigation-placeholder" className="relative z-50">
+                        {/* Navigation component will replace this */}
+                    </nav>
+
+                    {/* Main content area */}
+                    <main className="flex-1">
+                        {children}
+                    </main>
+
+                    {/* Footer will be inserted here */}
+                    <footer id="footer-placeholder" className="relative z-20">
+                        {/* Footer component will replace this */}
+                    </footer>
+                </div>
+
+                {/* Floating background shapes - absolute positioned */}
+                <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+                    {/* Shape 1 - Top left */}
+                    <div
+                        className="absolute w-20 h-20 bg-white/5 rounded-full blur-xl animate-float"
+                        style={{ left: '10%', top: '20%' }}
+                    />
+
+                    {/* Shape 2 - Top right */}
+                    <div
+                        className="absolute w-32 h-32 bg-white/10 rounded-full blur-2xl animate-float-slow"
+                        style={{ right: '15%', top: '10%' }}
+                    />
+
+                    {/* Shape 3 - Center right */}
+                    <div
+                        className="absolute w-16 h-16 bg-white/5 rounded-full blur-lg animate-float-delayed"
+                        style={{ left: '70%', top: '60%' }}
+                    />
+
+                    {/* Shape 4 - Bottom left */}
+                    <div
+                        className="absolute w-24 h-24 bg-white/10 rounded-full blur-xl animate-float"
+                        style={{ left: '20%', bottom: '20%' }}
+                    />
+
+                    {/* Shape 5 - Bottom center */}
+                    <div
+                        className="absolute w-28 h-28 bg-white/5 rounded-full blur-2xl animate-float-slow"
+                        style={{ left: '50%', bottom: '30%' }}
+                    />
+                </div>
             </body>
         </html>
     );
