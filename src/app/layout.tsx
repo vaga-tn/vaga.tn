@@ -47,22 +47,19 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
             </head>
-            <body className="font-poppins antialiased bg-black text-white overflow-x-hidden">
+            <body className="font-poppins antialiased bg-white text-black overflow-x-hidden">
                 {/* Background Elements - Fixed positioning for consistent backdrop */}
                 <div className="fixed inset-0 -z-10">
                     {/* Primary gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
-
-                    {/* Animated gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-800 to-black opacity-50 animate-pulse-slower"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white"></div>
 
                     {/* Grid pattern overlay */}
                     <div
-                        className="absolute inset-0 opacity-10"
+                        className="absolute inset-0 opacity-20"
                         style={{
                             backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+                linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px)
               `,
                             backgroundSize: '50px 50px'
                         }}
@@ -87,35 +84,35 @@ export default function RootLayout({
                     </footer>
                 </div>
 
-                {/* Floating background shapes - absolute positioned */}
+                {/* Static background shapes - no animation */}
                 <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
                     {/* Shape 1 - Top left */}
                     <div
-                        className="absolute w-20 h-20 bg-white/5 rounded-full blur-xl animate-float"
+                        className="absolute w-20 h-20 bg-black/5 rounded-full blur-xl"
                         style={{ left: '10%', top: '20%' }}
                     />
 
                     {/* Shape 2 - Top right */}
                     <div
-                        className="absolute w-32 h-32 bg-white/10 rounded-full blur-2xl animate-float-slow"
+                        className="absolute w-32 h-32 bg-black/10 rounded-full blur-2xl"
                         style={{ right: '15%', top: '10%' }}
                     />
 
                     {/* Shape 3 - Center right */}
                     <div
-                        className="absolute w-16 h-16 bg-white/5 rounded-full blur-lg animate-float-delayed"
+                        className="absolute w-16 h-16 bg-black/5 rounded-full blur-lg"
                         style={{ left: '70%', top: '60%' }}
                     />
 
                     {/* Shape 4 - Bottom left */}
                     <div
-                        className="absolute w-24 h-24 bg-white/10 rounded-full blur-xl animate-float"
+                        className="absolute w-24 h-24 bg-black/10 rounded-full blur-xl"
                         style={{ left: '20%', bottom: '20%' }}
                     />
 
                     {/* Shape 5 - Bottom center */}
                     <div
-                        className="absolute w-28 h-28 bg-white/5 rounded-full blur-2xl animate-float-slow"
+                        className="absolute w-28 h-28 bg-black/5 rounded-full blur-2xl"
                         style={{ left: '50%', bottom: '30%' }}
                     />
                 </div>

@@ -35,13 +35,13 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-20 relative bg-gradient-to-b from-black to-gray-900">
+    <section id="features" className="py-20 relative bg-gradient-to-b from-white to-gray-50">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             Une Solution Complète
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Fini les multiples outils et abonnements. VAGA centralise tout ce dont votre entreprise a besoin
             pour gérer vos clients, vos factures et vos ressources humaines.
           </p>
@@ -53,13 +53,13 @@ export default function FeaturesSection() {
             return (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-white/20 hover:-translate-y-2 transition-all duration-300"
+                className="bg-white/95 backdrop-blur-lg border border-black/10 p-8 rounded-2xl hover:bg-white hover:border-black/20 hover:-translate-y-2 transition-all duration-300 shadow-sm"
               >
-                <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6">
-                  <IconComponent className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center mb-6">
+                  <IconComponent className="w-6 h-6 text-black" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-white">{feature.title}</h3>
-                <p className="text-gray-400">
+                <h3 className="text-xl font-bold mb-4 text-black">{feature.title}</h3>
+                <p className="text-gray-600">
                   {feature.description}
                 </p>
               </div>

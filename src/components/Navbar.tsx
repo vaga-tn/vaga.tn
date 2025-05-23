@@ -20,33 +20,33 @@ export default function VagaNavbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/50 border-b border-white/10">
+    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/90 border-b border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">V</span>
+            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">V</span>
             </div>
-            <span className="text-2xl font-bold text-white">VAGA</span>
+            <span className="text-2xl font-bold text-black">VAGA</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection('features')}
-              className="text-white hover:text-gray-300 transition-colors"
+              className="text-black hover:text-gray-600 transition-colors"
             >
               Fonctionnalités
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-white hover:text-gray-300 transition-colors"
+              className="text-black hover:text-gray-600 transition-colors"
             >
               Tarifs
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-gray-300 transition-colors"
+              className="text-black hover:text-gray-600 transition-colors"
             >
               Contact
             </button>
@@ -55,14 +55,14 @@ export default function VagaNavbar() {
           {/* CTA Button */}
           <button
             onClick={handleTrialClick}
-            className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+            className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
             Essai Gratuit
           </button>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-black p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,19 +82,19 @@ export default function VagaNavbar() {
             <div className="flex flex-col space-y-2">
               <button
                 onClick={() => scrollToSection('features')}
-                className="text-white hover:text-gray-300 transition-colors py-2 text-left"
+                className="text-black hover:text-gray-600 transition-colors py-2 text-left"
               >
                 Fonctionnalités
               </button>
               <button
                 onClick={() => scrollToSection('pricing')}
-                className="text-white hover:text-gray-300 transition-colors py-2 text-left"
+                className="text-black hover:text-gray-600 transition-colors py-2 text-left"
               >
                 Tarifs
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-white hover:text-gray-300 transition-colors py-2 text-left"
+                className="text-black hover:text-gray-600 transition-colors py-2 text-left"
               >
                 Contact
               </button>

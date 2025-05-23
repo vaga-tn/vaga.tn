@@ -99,7 +99,7 @@ export default function HomePage() {
                     __html: JSON.stringify(structuredData),
                 }}
             />
-            <div className="min-h-screen bg-black text-white overflow-x-hidden">
+            <div className="min-h-screen bg-white text-black overflow-x-hidden">
                 <HeroSection />
                 <FeaturesSection />
                 <WhyTunisiaSection />
