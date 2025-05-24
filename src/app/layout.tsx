@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/footer";
+import VagaNavbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     title: "VAGA - Premier CRM SaaS 100% Tunisien",
@@ -69,9 +71,7 @@ export default function RootLayout({
                 {/* Main content wrapper */}
                 <div className="relative z-10 min-h-screen flex flex-col">
                     {/* Navigation will be inserted here */}
-                    <nav id="navigation-placeholder" className="relative z-50">
-                        {/* Navigation component will replace this */}
-                    </nav>
+                    <VagaNavbar />
 
                     {/* Main content area */}
                     <main className="flex-1">
@@ -79,9 +79,7 @@ export default function RootLayout({
                     </main>
 
                     {/* Footer will be inserted here */}
-                    <footer id="footer-placeholder" className="relative z-20">
-                        {/* Footer component will replace this */}
-                    </footer>
+                    <Footer></Footer>
                 </div>
 
                 {/* Static background shapes - no animation */}
