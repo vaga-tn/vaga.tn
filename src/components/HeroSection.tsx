@@ -1,15 +1,7 @@
 'use client';
+import Link from 'next/link';
 
 export default function HeroSection() {
-  const handleStartTrial = () => {
-    // Add your trial start logic here
-    console.log('Starting trial...');
-  };
-
-  const handleViewDemo = () => {
-    // Add your demo logic here
-    console.log('Viewing demo...');
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-white overflow-hidden">
@@ -48,20 +40,13 @@ export default function HeroSection() {
             Solution complète de gestion client conçue par des Tunisiens, pour les entrepreneurs tunisiens.
             Vos données restent en Tunisie, votre croissance aussi.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
-              onClick={handleStartTrial}
-              className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 shadow-lg"
-            >
-              Commencer Gratuitement
-            </button>
-            <button
-              onClick={handleViewDemo}
-              className="border border-black/30 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-black/10 transition-all text-black backdrop-blur-sm"
-            >
-              Voir la Démo
-            </button>
-          </div>
+
+          <Link
+            href="https://cloud.vaga.tn"
+            className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 shadow-lg"
+          >
+            Commencer Gratuitement
+          </Link>
         </div>
 
         {/* Stats */}

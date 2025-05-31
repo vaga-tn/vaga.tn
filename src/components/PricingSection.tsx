@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Check } from 'lucide-react';
+import { PopupButton } from '@typeform/embed-react';
 
 interface PricingPlan {
   name: string;
@@ -105,11 +106,6 @@ const resellerPlans: PricingPlan[] = [
 export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<'saas' | 'selfhosted' | 'reseller'>('saas');
-
-  const handlePlanSelection = (plan: PricingPlan) => {
-    console.log(`Selected plan: ${plan.name}`);
-    // Add your plan selection logic here
-  };
 
   const getCurrentPlans = () => {
     switch (selectedCategory) {
@@ -222,16 +218,13 @@ export default function PricingSection() {
                   </li>
                 ))}
               </ul>
-
-              <button
-                onClick={() => handlePlanSelection(plan)}
+              <PopupButton id="St89g9gz"
                 className={`w-full py-3 rounded-lg transition-all font-semibold ${plan.buttonStyle === 'primary'
                   ? 'bg-black text-white hover:bg-gray-800 shadow-lg'
                   : 'border border-black/30 text-black hover:bg-black/10 backdrop-blur-sm'
-                  }`}
-              >
+                  }`}>
                 {plan.buttonText}
-              </button>
+              </PopupButton>
             </div>
           ))}
         </div>

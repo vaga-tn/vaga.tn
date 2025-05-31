@@ -102,9 +102,9 @@ export default function HomePage() {
             <div className="min-h-screen bg-white text-black overflow-x-hidden">
                 <HeroSection />
                 <FeaturesSection />
+                <CTASection />
                 <WhyTunisiaSection />
                 <PricingSection />
-                <CTASection />
             </div>
         </>
     );

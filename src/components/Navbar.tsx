@@ -7,11 +7,6 @@ import Image from 'next/image';
 export default function VagaNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleTrialClick = () => {
-    console.log('Trial started');
-    // Add your trial logic here
-  };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -52,12 +47,12 @@ export default function VagaNavbar() {
           </div>
 
           {/* CTA Button */}
-          <button
-            onClick={handleTrialClick}
+          <Link
+            href="https://cloud.vaga.tn"
             className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
             Essai Gratuit
-          </button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
