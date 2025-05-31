@@ -1,10 +1,8 @@
 'use client';
 
 import Link from "next/link";
-import { PopupWidget } from "react-calendly";
 
 export default function CTASection() {
-
   return (
     <section className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white"></div>
@@ -15,20 +13,21 @@ export default function CTASection() {
         <p className="text-xl text-gray-700 mb-8">
           Rejoignez les entreprises tunisiennes qui ont déjà fait le choix de VAGA pour leur croissance.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" id="cta-buttons">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href={"https://cloud.vaga.tn"}
             className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-all transform hover:scale-105"
           >
             Commencer Maintenant
           </Link>
-          <PopupWidget
-            url="https://calendly.com/maak-corp/30min"
-            rootElement={document.getElementById("cta-buttons") as HTMLElement}
-            text="Planifier une Démo"
-            textColor="#ffffff"
-            color="#000"
-          />
+          <Link
+            href="https://calendly.com/maak-corp/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-transparent border-2 border-black text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-black hover:text-white transition-all transform hover:scale-105"
+          >
+            Planifier une Démo
+          </Link>
         </div>
         <p className="text-sm text-gray-600 mt-6">
           ✓ Essai gratuit de 3 jours • ✓ Pas de carte de crédit requise • ✓ Support en français
