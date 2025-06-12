@@ -4,6 +4,7 @@ import FeaturesSection from '@/components/FeatureSection';
 import WhyTunisiaSection from '@/components/WhyTunisiaSection';
 import PricingSection from '@/components/PricingSection';
 import CTASection from '@/components/CTASection';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 export const metadata: Metadata = {
     title: 'VAGA - Premier CRM SaaS 100% Tunisien',
@@ -105,6 +106,7 @@ export default function HomePage() {
                 <CTASection />
                 <WhyTunisiaSection />
                 <PricingSection />
+                <GoogleAnalytics />
             </div>
         </>
     );
