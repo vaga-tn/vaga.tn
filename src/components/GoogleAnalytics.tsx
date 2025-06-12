@@ -1,7 +1,5 @@
 import Script from 'next/script'
 
-const GA_TRACKING_ID: string | undefined = process.env.NEXT_PUBLIC_GA_ID
-
 const GoogleAnalytics: React.FC = () => {
   return (
     <>
@@ -14,7 +12,7 @@ const GoogleAnalytics: React.FC = () => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}');
+          gtag('config', 'G-0VT8S62R8K');
         `}
       </Script>
     </>
