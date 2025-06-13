@@ -38,12 +38,12 @@ export default function VagaNavbar() {
             >
               Tarifs
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
+            <Link
+              href="/contact"
               className="text-black hover:text-gray-600 transition-colors"
             >
               Contact
-            </button>
+            </Link>
           </div>
 
           {/* CTA Button */}
@@ -86,12 +86,12 @@ export default function VagaNavbar() {
               >
                 Tarifs
               </button>
-              <button
-                onClick={() => scrollToSection('contact')}
+              <Link
+                href="/contact"
                 className="text-black hover:text-gray-600 transition-colors py-2 text-left"
               >
                 Contact
-              </button>
+              </Link>
             </div>
           </div>
         )}
