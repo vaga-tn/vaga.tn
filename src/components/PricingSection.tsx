@@ -129,7 +129,7 @@ export default function PricingSection() {
 
   return (
     <section id="pricing" className="py-20 relative bg-gradient-to-b from-white to-gray-50">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             Tarifs Transparents
@@ -186,7 +186,7 @@ export default function PricingSection() {
           </div>
         </div>
 
-        <div className={`grid gap-8 max-w-5xl mx-auto ${getCurrentPlans().length === 1 ? 'md:grid-cols-1 max-w-md' : getCurrentPlans().length === 2 ? 'md:grid-cols-2 max-w-3xl' : 'md:grid-cols-3'}`}>
+        <div className={`grid gap-8 mx-auto ${getCurrentPlans().length === 1 ? 'md:grid-cols-1 max-w-md' : getCurrentPlans().length === 2 ? 'md:grid-cols-2 max-w-3xl' : 'md:grid-cols-3'}`}>
           {getCurrentPlans().map((plan, index) => (
             <div
               key={index}
