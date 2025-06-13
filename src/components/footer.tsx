@@ -30,33 +30,60 @@ function Footer() {
                     <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                 </svg>
             )
-        },
-        {
-            name: 'Email',
-            href: 'mailto:contact@maak-corp.tn',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-envelope" viewBox="0 0 16 16">
-                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                </svg>
-            )
-        },
+        }
     ];
 
     return (
-        <footer className='flex flex-col items-center gap-4 py-8 text-white bg-black'>
-            <div className="flex justify-center mt-8 space-x-6">
-                {
-                    SOCIALS.map((item, index: number) => (
-                        <a key={index} target="_blank" href={item.href} className="hover:text-gray-500">
-                            {item.icon}
-                        </a>
-                    ))
-                }
+        <footer className='py-12 text-white bg-black'>
+            <div className="mx-auto max-w-7xl space-y-8">
+                <div className="grid grid-cols-3">
+                    {/* Company Info */}
+                    <div className="flex flex-col items-center md:items-start">
+                        <h3 className="text-lg font-semibold mb-4">MAAK CORP</h3>
+                        <div className="flex flex-col gap-2 text-sm text-gray-300">
+                            <p>Avenue Yasser Arafet, Sahloul 1</p>
+                            <p>Sousse 4054</p>
+                            <p>Immeuble N17 au 6eme etage, bureau 2</p>
+                        </div>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div className="flex flex-col items-center md:items-start">
+                        <h3 className="text-lg font-semibold mb-4">Contact</h3>
+                        <div className="flex flex-col gap-2 text-sm text-gray-300">
+                            <p>Email: contact@maak-corp.tn | vaga@maak-corp.tn | aymekh@maak-corp.tn</p>
+                            <p>Téléphone: +216 93 864 380 | +216 95 593 387</p>
+                            <p>Matricule: 1847208/C/A/M/000</p>
+                        </div>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="flex flex-col items-center md:items-start">
+                        <h3 className="text-lg font-semibold mb-4">Suivez-nous</h3>
+                        <div className="flex space-x-4">
+                            {SOCIALS.map((item, index: number) => (
+                                <a
+                                    key={index}
+                                    target="_blank"
+                                    href={item.href}
+                                    className="text-gray-300 hover:text-white transition-colors"
+                                    aria-label={item.name}
+                                >
+                                    {item.icon}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Copyright */}
+                <div className="border-t border-gray-800 pt-8">
+                    <p className="text-center text-sm text-gray-400">
+                        © {new Date().getFullYear()} <Link href={'https://maak-corp.tn'} className="hover:text-white transition-colors"><strong>MAAK CORP</strong></Link>, All rights reserved.
+                    </p>
+                </div>
             </div>
-            <p className="py-8 text-base leading-6 text-center text-white">
-                © {new Date().getFullYear()} <Link href={'https://maak-corp.tn'}><strong>MAAK CORP</strong></Link>, All rights reserved.
-            </p>
-        </footer >
+        </footer>
     )
 }
 
