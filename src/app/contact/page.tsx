@@ -18,6 +18,17 @@ export default function ContactPage() {
     }));
   };
 
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    await fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(Array.from(formData.entries()) as [string, string][]).toString(),
+    });
+
+  };
+
   return (
     <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
@@ -30,7 +41,7 @@ export default function ContactPage() {
           </p>
         </div>
         <div className="bg-white/95 backdrop-blur-lg border border-black/10 p-8 rounded-2xl shadow-sm">
-          <form className="space-y-6" data-netlify="true">
+          <form className="space-y-6" data-netlify="true" onSubmit={handleFormSubmit}>
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 Nom complet
