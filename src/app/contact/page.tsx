@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -26,6 +27,15 @@ export default function ContactPage() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(Array.from(formData.entries()) as [string, string][]).toString(),
     });
+    // Import and initialize toast from react-hot-toast
+    // display toaster and reset form
+    toast.success("Message envoyé avec succès");
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
 
   };
 
@@ -41,7 +51,8 @@ export default function ContactPage() {
           </p>
         </div>
         <div className="bg-white/95 backdrop-blur-lg border border-black/10 p-8 rounded-2xl shadow-sm">
-          <form className="space-y-6" data-netlify="true" onSubmit={handleFormSubmit}>
+          <form className="space-y-6" onSubmit={handleFormSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 Nom complet
