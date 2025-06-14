@@ -36,11 +36,12 @@ function Footer() {
     return (
         <footer className='py-12 text-white bg-black'>
             <div className="mx-auto max-w-7xl space-y-8">
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-4">
                     {/* Company Info */}
                     <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-lg font-semibold mb-4">MAAK CORP</h3>
+                        <h3 className="text-lg font-semibold mb-4">MAAK CORP SUARL</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-300">
+                            <strong>1847208/C/A/M/000</strong>
                             <p>Avenue Yasser Arafet, Sahloul 1</p>
                             <p>Sousse 4054</p>
                             <p>Immeuble N17 au 6eme etage, bureau 2</p>
@@ -51,9 +52,19 @@ function Footer() {
                     <div className="flex flex-col items-center md:items-start">
                         <h3 className="text-lg font-semibold mb-4">Contact</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-300">
-                            <p>Email: contact@maak-corp.tn | vaga@maak-corp.tn | aymekh@maak-corp.tn</p>
-                            <p>Téléphone: +216 93 864 380 | +216 95 593 387</p>
-                            <p>Matricule: 1847208/C/A/M/000</p>
+                            <p>contact@maak-corp.tn</p>
+                            <p>vaga@maak-corp.tn</p>
+                            <p>aymekh@maak-corp.tn</p>
+                            <p>+216 93 864 380</p>
+                        </div>
+                    </div>
+
+                    {/* Legal Links */}
+                    <div className="flex flex-col items-center md:items-start">
+                        <h3 className="text-lg font-semibold mb-4">Légal</h3>
+                        <div className="flex flex-col gap-1">
+                            <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Politique de confidentialité</Link>
+                            <Link href="/terms-of-service" className="text-gray-300 hover:text-white transition-colors">Conditions d'utilisation</Link>
                         </div>
                     </div>
 
@@ -79,7 +90,7 @@ function Footer() {
                 {/* Copyright */}
                 <div className="border-t border-gray-800 pt-8">
                     <p className="text-center text-sm text-gray-400">
-                        © {new Date().getFullYear()} <Link href={'https://maak-corp.tn'} className="hover:text-white transition-colors"><strong>MAAK CORP</strong></Link>, All rights reserved.
+                        &copy; {new Date().getFullYear()} <Link href={'https://maak-corp.tn'} className="hover:text-white transition-colors"><strong>MAAK CORP</strong></Link> Tous droits réservés.
                     </p>
                 </div>
             </div>
