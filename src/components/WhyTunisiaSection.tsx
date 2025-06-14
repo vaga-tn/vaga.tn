@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import Image from "next/image";
 
 const benefits = [
   {
@@ -47,10 +48,13 @@ export default function WhyTunisiaSection() {
 
           <div className="relative">
             <div className="w-full h-96 bg-gradient-to-br from-white/90 to-gray-50/95 rounded-3xl flex items-center justify-center border border-black/10">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-red-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl">🇹🇳</span>
-                </div>
+              <div className="flex flex-col items-center text-center">
+                <Image
+                  height={100}
+                  width={100}
+                  src="/tn.svg"
+                  alt="Tunisia Flag"
+                />
                 <h3 className="text-2xl font-bold mb-2 text-black">Made in Tunisia</h3>
                 <p className="text-gray-600">Avec fierté et expertise</p>
               </div>

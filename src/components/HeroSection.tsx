@@ -28,7 +28,7 @@ export default function HeroSection() {
         }}>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="py-24 md:py-24 lg:py-0">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-black">
             Le Premier CRM<br />
