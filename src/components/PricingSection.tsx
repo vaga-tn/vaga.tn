@@ -33,15 +33,17 @@ const saasPlans: PricingPlan[] = [
   {
     name: "Basic",
     description: "Pour les petites entreprises",
-    price: 69,
-    period: "par mois",
+    price: 50,
+    period: "(les limites sont mensuelles)",
     features: [
       "Max 30 clients / fournisseurs",
       "3 comptes personnels max",
       "Max 150 traites",
+      "Max 5 compte bancaires",
       "KPI sur 365 jours",
       "Module RH inclus",
-      "Facturation automatisée"
+      "Facturation automatisée",
+      "Support par email",
     ],
     buttonText: "Choisir Basic",
     buttonStyle: "primary",
@@ -50,15 +52,22 @@ const saasPlans: PricingPlan[] = [
   {
     name: "Enterprise",
     description: "Pour les grandes entreprises",
-    price: 139,
-    period: "par mois",
+    price: 120,
+    period: "(les limites sont mensuelles)",
     features: [
       "Clients / fournisseurs illimités",
       "Personnel illimité",
       "Traites illimitées",
+      "Comptes bancaires illimités",
+      "Module IA avancé",
       "Déploiement cloud privé",
       "Support dédié",
-      "Formation personnalisée"
+      "Formation personnalisée",
+      "Module CRM",
+      "Devis et factures personnalisés",
+      "Développement de fonctionnalités sur mesure",
+      "Intégration avec vos outils existants",
+      "Application mobile pour clients",
     ],
     buttonText: "Nous Contacter",
     buttonStyle: "secondary"
@@ -69,7 +78,7 @@ const selfHostedPlans: PricingPlan[] = [
   {
     name: "Self-Hosted",
     description: "Installation sur vos serveurs",
-    price: 3900,
+    price: 12900,
     period: "paiement unique",
     features: [
       "Installation complète sur vos serveurs",
@@ -77,7 +86,13 @@ const selfHostedPlans: PricingPlan[] = [
       "Contrôle total de vos données",
       "Maintenance mensuelle en option",
       "Pas de mises à jour incluses",
-      "Support technique initial"
+      "Support technique initial",
+      "Formation de base incluse",
+      "Développement de fonctionnalités sur mesure en option",
+      "Intégration avec vos outils existants",
+      "Application mobile pour clients",
+      "Module CRM",
+      "Devis et factures personnalisés",
     ],
     buttonText: "Nous Contacter",
     buttonStyle: "secondary"
@@ -88,7 +103,7 @@ const resellerPlans: PricingPlan[] = [
   {
     name: "Reseller",
     description: "Devenez revendeur VAGA",
-    price: 12900,
+    price: 42900,
     period: "licence complète",
     features: [
       "Code source complet",
@@ -104,7 +119,7 @@ const resellerPlans: PricingPlan[] = [
 ];
 
 export default function PricingSection() {
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [isAnnual] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<'saas' | 'selfhosted' | 'reseller'>('saas');
 
   const getCurrentPlans = () => {
@@ -163,26 +178,6 @@ export default function PricingSection() {
                 Reseller
               </button>
             </div>
-
-            {/* Monthly/Annual Toggle - Only show for SaaS */}
-            {selectedCategory === 'saas' && (
-              <div className="mt-4 inline-flex items-center bg-gray-100 rounded-full p-1">
-                <button
-                  className={`px-4 py-2 rounded-full font-medium transition-all text-sm ${!isAnnual ? 'bg-white text-black shadow-sm' : 'text-gray-600 hover:text-black'
-                    }`}
-                  onClick={() => setIsAnnual(false)}
-                >
-                  Mensuel
-                </button>
-                <button
-                  className={`px-4 py-2 rounded-full font-medium transition-all text-sm ${isAnnual ? 'bg-white text-black shadow-sm' : 'text-gray-600 hover:text-black'
-                    }`}
-                  onClick={() => setIsAnnual(true)}
-                >
-                  Annuel (-20%)
-                </button>
-              </div>
-            )}
           </div>
         </div>
 
@@ -207,7 +202,7 @@ export default function PricingSection() {
                 <div className="text-4xl font-bold mb-2 text-black">
                   {plan.price === 0 ? '0 TND' : `${formatPrice(plan.price).toLocaleString()} TND`}
                 </div>
-                <div className="text-gray-600">{plan.period}</div>
+                <small className="text-gray-600">{plan.period}</small>
               </div>
 
               <ul className="space-y-4 mb-8">
