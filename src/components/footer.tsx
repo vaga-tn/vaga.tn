@@ -35,11 +35,11 @@ function Footer() {
 
     return (
         <footer className='py-12 text-white bg-black'>
-            <div className="mx-auto max-w-7xl space-y-8">
-                <div className="grid grid-cols-4">
+            <div className="mx-auto lg:max-w-7xl w-full lg:px-0 px-4 space-y-8">
+                <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-8">
                     {/* Company Info */}
                     <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-lg font-semibold mb-4">MAAK CORP SUARL</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-left w-full">MAAK CORP SUARL</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-300">
                             <strong>1847208/C/A/M/000</strong>
                             <p>Avenue Yasser Arafet, Sahloul 1</p>
@@ -50,7 +50,7 @@ function Footer() {
 
                     {/* Contact Info */}
                     <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-lg font-semibold mb-4">Contact</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-left w-full">Contact</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-300">
                             <p>contact@maak-corp.tn</p>
                             <p>vaga@maak-corp.tn</p>
@@ -61,7 +61,7 @@ function Footer() {
 
                     {/* Legal Links */}
                     <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-lg font-semibold mb-4">Légal</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-left w-full">Légal</h3>
                         <div className="flex flex-col gap-1">
                             <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Politique de confidentialité</Link>
                             <Link href="/terms-of-service" className="text-gray-300 hover:text-white transition-colors">Conditions d'utilisation</Link>
@@ -70,7 +70,7 @@ function Footer() {
 
                     {/* Social Links */}
                     <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-lg font-semibold mb-4">Suivez-nous</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-left w-full">Suivez-nous</h3>
                         <div className="flex space-x-4">
                             {SOCIALS.map((item, index: number) => (
                                 <a
