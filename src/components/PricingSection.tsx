@@ -20,82 +20,67 @@ const saasPlans: PricingPlan[] = [
     name: "Essai",
     description: "Découvrez VAGA gratuitement",
     price: 0,
-    period: "3 jours gratuits",
+    period: "5 jours gratuits",
     features: [
-      "Max 5 clients / fournisseurs",
-      "1 compte personnel max",
-      "Max 10 traites",
-      "KPI sur 30 jours"
+      "Accès complet à toutes les fonctionnalités",
+      "Support par email",
+      "Aucune limitation pendant l'essai",
+      "Configuration d'entreprise incluse"
     ],
     buttonText: "Commencer l'Essai",
     buttonStyle: "secondary"
   },
   {
-    name: "Basic",
-    description: "Pour les petites entreprises",
+    name: "Standard",
+    description: "Solution complète sans limites",
     price: 50,
-    period: "(les limites sont mensuelles)",
-    features: [
-      "Max 30 clients / fournisseurs",
-      "3 comptes personnels max",
-      "Max 150 traites",
-      "Max 5 compte bancaires",
-      "KPI sur 365 jours",
-      "Module RH inclus",
-      "Facturation automatisée",
-      "Support par email",
-    ],
-    buttonText: "Choisir Basic",
-    buttonStyle: "primary",
-    featured: true
-  },
-  {
-    name: "Enterprise",
-    description: "Pour les grandes entreprises",
-    price: 120,
-    period: "(les limites sont mensuelles)",
+    period: "par mois",
     features: [
       "Clients / fournisseurs illimités",
       "Personnel illimité",
       "Traites illimitées",
       "Comptes bancaires illimités",
-      "Module IA avancé",
-      "Déploiement cloud privé",
-      "Support dédié",
-      "Formation personnalisée",
-      "Module CRM",
+      "KPI avancés",
+      "Gestion personnel inclus",
+      "Facturation automatisée",
       "Devis et factures personnalisés",
-      "Développement de fonctionnalités sur mesure",
-      "Intégration avec vos outils existants",
-      "Application mobile pour clients",
+      "Support par email ou téléphone",
+      "Mises à jour incluses",
+      "Application mobile pour clients (+20 TND/mois)",
+      "Intégration avec vos outils existants (sure devis)",
     ],
-    buttonText: "Nous Contacter",
-    buttonStyle: "secondary"
+    buttonText: "Choisir Standard",
+    buttonStyle: "primary",
+    featured: true
   }
 ];
 
-const selfHostedPlans: PricingPlan[] = [
+const enterprisePlans: PricingPlan[] = [
   {
-    name: "Self-Hosted",
-    description: "Installation sur vos serveurs",
-    price: 12900,
-    period: "paiement unique",
+    name: "Enterprise Edition",
+    description: "Hébergement privé sous votre domaine",
+    price: 0,
+    period: "sur devis",
     features: [
-      "Installation complète sur vos serveurs",
-      "Pas de limites d'utilisation",
+      "Hébergement sur infrastructure privée",
+      "Domaine personnalisé",
+      "Aucune limite d'utilisation",
       "Contrôle total de vos données",
-      "Maintenance mensuelle en option",
-      "Pas de mises à jour incluses",
-      "Support technique initial",
-      "Formation de base incluse",
-      "Développement de fonctionnalités sur mesure en option",
+      "Module IA avancé",
+      "Mosule ERP complet",
+      "Module CRM complet",
+      "Module de gestion des ressources humaines",
+      "Support dédié prioritaire",
+      "Formation personnalisée",
+      "Développement de fonctionnalités sur mesure",
       "Intégration avec vos outils existants",
-      "Application mobile pour clients",
-      "Module CRM",
-      "Devis et factures personnalisés",
+      "Application mobile personnalisée",
+      "SLA garanti 99.9%",
+      "Sauvegarde et sécurité renforcée"
     ],
     buttonText: "Nous Contacter",
-    buttonStyle: "secondary"
+    buttonStyle: "primary",
+    featured: true
   }
 ];
 
@@ -119,27 +104,19 @@ const resellerPlans: PricingPlan[] = [
 ];
 
 export default function PricingSection() {
-  const [isAnnual] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<'saas' | 'selfhosted' | 'reseller'>('saas');
+  const [selectedCategory, setSelectedCategory] = useState<'saas' | 'enterprise' | 'reseller'>('saas');
 
   const getCurrentPlans = () => {
     switch (selectedCategory) {
       case 'saas':
         return saasPlans;
-      case 'selfhosted':
-        return selfHostedPlans;
+      case 'enterprise':
+        return enterprisePlans;
       case 'reseller':
         return resellerPlans;
       default:
         return saasPlans;
     }
-  };
-
-  const formatPrice = (price: number) => {
-    if (selectedCategory === 'saas' && isAnnual && price > 0) {
-      return Math.round(price * 0.8);
-    }
-    return price;
   };
 
   return (
@@ -164,11 +141,11 @@ export default function PricingSection() {
                 SaaS
               </button>
               <button
-                className={`px-6 py-2 rounded-full font-medium transition-all ${selectedCategory === 'selfhosted' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'
+                className={`px-6 py-2 rounded-full font-medium transition-all ${selectedCategory === 'enterprise' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'
                   }`}
-                onClick={() => setSelectedCategory('selfhosted')}
+                onClick={() => setSelectedCategory('enterprise')}
               >
-                Self-Hosted
+                Enterprise
               </button>
               <button
                 className={`px-6 py-2 rounded-full font-medium transition-all ${selectedCategory === 'reseller' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'
@@ -181,7 +158,7 @@ export default function PricingSection() {
           </div>
         </div>
 
-        <div className={`grid gap-8 mx-auto ${getCurrentPlans().length === 1 ? 'md:grid-cols-1 max-w-md' : getCurrentPlans().length === 2 ? 'md:grid-cols-2 max-w-3xl' : 'md:grid-cols-3'}`}>
+        <div className={`grid gap-8 mx-auto ${getCurrentPlans().length === 1 ? 'md:grid-cols-1 max-w-md' : getCurrentPlans().length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3'}`}>
           {getCurrentPlans().map((plan, index) => (
             <div
               key={index}
@@ -191,7 +168,7 @@ export default function PricingSection() {
               {plan.featured && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <span className="bg-black text-white px-4 py-1 rounded-full text-sm font-bold">
-                    {selectedCategory === 'reseller' ? 'RECOMMANDÉ' : 'POPULAIRE'}
+                    {selectedCategory === 'reseller' ? 'RECOMMANDÉ' : selectedCategory === 'enterprise' ? 'PREMIUM' : 'POPULAIRE'}
                   </span>
                 </div>
               )}
@@ -200,7 +177,9 @@ export default function PricingSection() {
                 <h3 className="text-2xl font-bold mb-2 text-black">{plan.name}</h3>
                 <p className="text-gray-600 mb-6">{plan.description}</p>
                 <div className="text-4xl font-bold mb-2 text-black">
-                  {plan.price === 0 ? '0 TND' : `${formatPrice(plan.price).toLocaleString()} TND`}
+                  {plan.price === 0 && selectedCategory !== 'enterprise' ? '0 TND' :
+                    selectedCategory === 'enterprise' ? 'Sur Devis' :
+                      `${plan.price.toLocaleString()} TND`}
                 </div>
                 <small className="text-gray-600">{plan.period}</small>
               </div>
@@ -235,13 +214,13 @@ export default function PricingSection() {
               </p>
             </>
           )}
-          {selectedCategory === 'selfhosted' && (
+          {selectedCategory === 'enterprise' && (
             <>
               <p className="text-gray-600 mb-4">
-                Installation et configuration incluses • Maintenance mensuelle optionnelle
+                Infrastructure dédiée • Sécurité renforcée • Support prioritaire
               </p>
               <p className="text-sm text-gray-500">
-                Contactez-nous pour un devis personnalisé et planifier l'installation
+                Contactez-nous pour un devis personnalisé adapté à vos besoins
               </p>
             </>
           )}
