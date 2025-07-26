@@ -11,6 +11,9 @@ export default {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },
+      maxWidth: {
+        'customWidth': '1200px',
+      },
       animation: {
         // Floating animation for shapes and elements
         'float': 'float 6s ease-in-out infinite',
