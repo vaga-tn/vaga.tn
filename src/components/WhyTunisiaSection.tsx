@@ -17,7 +17,7 @@ const saasSteps = [
 
 export default function WhyTunisiaSection() {
   return (
-    <section id="features" className="py-20 px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12">
+    <section className="py-20 px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12">
 
       <div className="space-y-4">
         <header>
