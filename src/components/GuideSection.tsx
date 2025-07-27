@@ -11,7 +11,7 @@ export default function GuideSection() {
         </header>
 
         <div className=" border border-white w-full h-[500px] bg-black p-4">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EkCrP1rv4ag?si=sjHYaIgMnfLz2ymn" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe className="w-full h-full" src="https://www.loom.com/embed/2756350e547e4edab5eec8561de92a1c?sid=bf166667-a8c4-4d74-b881-782de94932d9" frameBorder="0" allowFullScreen></iframe>
         </div>
 
       </div>
