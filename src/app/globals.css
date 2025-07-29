@@ -174,3 +174,27 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Masonry layout styles */
+.masonry-container {
+  column-gap: 1.5rem;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Ensure proper spacing in masonry */
+@media (min-width: 768px) {
+  .masonry-container {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-container {
+    column-count: 3;
+  }
+}

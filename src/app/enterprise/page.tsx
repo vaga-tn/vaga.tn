@@ -92,7 +92,7 @@ const testimonials = [
   {
     company: "Client A",
     logo: "TT",
-    quote: "VAGA Enterprise nous a permis de centraliser toute notre gestion client sur une plateforme unique. L'infrastructure privée nous donne la tranquillité d'esprit nécessaire.",
+    quote: "VAGA Enterprise nous a permis de centraliser toute notre gestion client sur une plateforme unique. L'infrastructure privée nous donne la tranquillité d'esprit nécessaire. VAGA Enterprise nous a permis de centraliser toute notre gestion client sur une plateforme unique. L'infrastructure privée nous donne la tranquillité d'esprit nécessaire.",
     author: "— Mohamed Ben Salem, Directeur IT",
     metrics: [
       { value: "40%", label: "réduction des coûts opérationnels" },
@@ -107,6 +107,36 @@ const testimonials = [
     metrics: [
       { value: "99.9%", label: "disponibilité garantie" },
       { value: "100%", label: "conformité RGPD" }
+    ]
+  },
+  {
+    company: "Client C",
+    logo: "GP",
+    quote: "L'intégration avec nos systèmes existants et le développement de fonctionnalités sur mesure ont transformé notre façon de travailler.",
+    author: "— Sami Trabelsi, Directeur Général",
+    metrics: [
+      { value: "50%", label: "accélération des processus" },
+      { value: "30%", label: "réduction des erreurs" }
+    ]
+  },
+  {
+    company: "Client C",
+    logo: "GP",
+    quote: "L'intégration avec nos systèmes existants et le développement de fonctionnalités sur mesure ont transformé notre façon de travailler.",
+    author: "— Sami Trabelsi, Directeur Général",
+    metrics: [
+      { value: "50%", label: "accélération des processus" },
+      { value: "30%", label: "réduction des erreurs" }
+    ]
+  },
+  {
+    company: "Client C",
+    logo: "GP",
+    quote: "L'intégration avec nos systèmes existants et le développement de fonctionnalités sur mesure ont transformé notre façon de travailler.",
+    author: "— Sami Trabelsi, Directeur Général",
+    metrics: [
+      { value: "50%", label: "accélération des processus" },
+      { value: "30%", label: "réduction des erreurs" }
     ]
   },
   {
@@ -239,24 +269,27 @@ export default function EnterprisePage() {
           </p>
         </div>
 
-        <div className="gap-2 columns-1 lg:columns-3 w-full px-4 lg:px-12">
+        <div className="masonry-container w-full px-4 lg:px-12">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-black/10 border border-black/10 p-4 transition-all duration-300 inline-block break-inside-avoid w-full space-y-8">
+            <div
+              key={index}
+              className="masonry-item bg-black/10 border border-black/10 p-6 transition-all duration-300 hover:shadow-lg"
+            >
               {/* Company Logo */}
-              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-700">
+              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-700 mb-4">
                 {testimonial.logo}
               </div>
 
               {/* Quote */}
-              <div>
-                <div className="text-4xl text-black">"</div>
+              <div className="mb-4">
+                <div className="text-4xl text-black mb-2">"</div>
                 <p className="text-sm text-gray-700 italic leading-relaxed">
                   {testimonial.quote}
                 </p>
               </div>
 
               {/* Author */}
-              <div className="border-t border-gray-200">
+              <div className="border-t border-gray-200 pt-4 mb-4">
                 <p className="text-sm text-gray-600">{testimonial.author}</p>
               </div>
 
