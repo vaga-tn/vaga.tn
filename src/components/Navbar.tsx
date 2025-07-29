@@ -79,7 +79,7 @@ export default function VagaNavbar() {
           {!isEnterprisePage && (
             <Link
               href="/enterprise"
-              className="bg-white text-black px-6 py-2 hover:bg-black hover:text-white transition-colors font-medium border border-black"
+              className="bg-white text-black lg:px-6 lg:py-2 p-2 lg:text-base text-sm hover:bg-black hover:text-white transition-colors font-medium border border-black"
             >
               Enterprise
             </Link>
@@ -89,7 +89,7 @@ export default function VagaNavbar() {
           {isEnterprisePage && (
             <Link
               href="/"
-              className="bg-white text-black px-6 py-2 hover:bg-black hover:text-white transition-colors font-medium border border-black"
+              className="bg-white text-black lg:px-6 lg:py-2 p-2 lg:text-base text-sm hover:bg-black hover:text-white transition-colors font-medium border border-black"
             >
               Community
             </Link>
@@ -98,7 +98,7 @@ export default function VagaNavbar() {
           {/* CTA Button */}
           <Link
             href="https://cloud.vaga.tn"
-            className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition-colors font-medium border border-black"
+            className="bg-black text-white lg:px-6 lg:py-2 p-2 lg:text-base text-sm hover:bg-gray-800 transition-colors font-medium border border-black"
           >
             se connecter
           </Link>

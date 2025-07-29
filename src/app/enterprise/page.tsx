@@ -205,7 +205,7 @@ export default function EnterprisePage() {
 
       {/* Features Section with Tabs */}
       <section id="features" className="py-8 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12">
-        <div className="space-y-4  px-12">
+        <div className="space-y-4  px-4 lg:px-12">
           <header>
             <span>FONCTIONNALITÉS ENTERPRISE</span>
             <h2 className="text-4xl font-thin antialiased uppercase">Solutions Avancées</h2>
@@ -222,7 +222,7 @@ export default function EnterprisePage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-3 font-medium transition-all  ${activeTab === tab
+              className={`lg:px-6 px-3 py-3 lg:font-medium transition-all lg:text-base text-sm  ${activeTab === tab
                 ? 'bg-black text-white'
                 : 'text-gray-600 hover:text-black hover:bg-gray-100'
                 }`}
@@ -235,7 +235,7 @@ export default function EnterprisePage() {
         </div>
 
         {/* Tab Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 px-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4 px-4 lg:px-12">
           {enterpriseFeatures[activeTab as keyof typeof enterpriseFeatures].map((feature, index) => {
             const IconComponent = feature.icon;
             return (
@@ -314,7 +314,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Comparison Section */}
-      <section id="comparison" className="py-8 px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12" >
+      <section id="comparison" className="py-8 px-4 lg:px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12" >
         <div className="space-y-4">
           <header>
             <span>COMPARAISON</span>
@@ -388,7 +388,7 @@ export default function EnterprisePage() {
       </section >
 
       {/* CTA Section */}
-      <section id="contact" className="py-8 px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12" >
+      <section id="contact" className="py-8 px-4 lg:px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12" >
         <div className="text-center space-y-6">
           <h2 className="text-4xl font-bold text-black">
             Prêt à Transformer Votre Entreprise ?
