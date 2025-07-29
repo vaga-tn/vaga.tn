@@ -187,7 +187,8 @@ export default function EnterprisePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="#contact"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSctRSx2-0q1m9L7srdXy_ngh0A1UHfIyMuSuYSthxKDGs8Guw/viewform?usp=header"
+              target="_blank"
               className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-all shadow-lg"
             >
               Demander un Devis
@@ -398,7 +399,7 @@ export default function EnterprisePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://cloud.vaga.tn"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSctRSx2-0q1m9L7srdXy_ngh0A1UHfIyMuSuYSthxKDGs8Guw/viewform?usp=header"
               className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-all shadow-lg"
             >
               Demander un Devis
