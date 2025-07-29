@@ -1,11 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function VagaNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isEnterprisePage = pathname === '/enterprise';
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,6 +17,30 @@ export default function VagaNavbar() {
     }
     setMobileMenuOpen(false);
   };
+
+  // Close mobile menu when pathname changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  const getNavItems = () => {
+    if (isEnterprisePage) {
+      return [
+        { label: 'Fonctionnalités', action: () => scrollToSection('features') },
+        { label: 'Témoignages', action: () => scrollToSection('testimonials') },
+        { label: 'Comparaison', action: () => scrollToSection('comparison') },
+        { label: 'Contact', href: '#contact', action: () => scrollToSection('contact') }
+      ];
+    } else {
+      return [
+        { label: 'Fonctionnalités', action: () => scrollToSection('features') },
+        { label: 'Tarifs', action: () => scrollToSection('pricing') },
+        { label: 'Contact', href: '/contact' }
+      ];
+    }
+  };
+
+  const navItems = getNavItems();
 
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/90 border-b border-black py-2 px-4">
@@ -26,34 +53,56 @@ export default function VagaNavbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-4">
-            <button
-              onClick={() => scrollToSection('features')}
-              className="text-black hover:text-gray-600 transition-colors text-sm"
-            >
-              Fonctionnalités
-            </button>
-            <button
-              onClick={() => scrollToSection('pricing')}
-              className="text-black hover:text-gray-600 transition-colors text-sm"
-            >
-              Tarifs
-            </button>
-            <Link
-              href="/contact"
-              className="text-black hover:text-gray-600 transition-colors text-sm"
-            >
-              Contact
-            </Link>
+            {navItems.map((item, index) => (
+              item.href ? (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="text-black hover:text-gray-600 transition-colors text-sm"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={index}
+                  onClick={item.action}
+                  className="text-black hover:text-gray-600 transition-colors text-sm"
+                >
+                  {item.label}
+                </button>
+              )
+            ))}
           </div>
         </div>
+        <div className="flex items-center space-x-2">
+          {/* Enterprise Link for main page */}
+          {!isEnterprisePage && (
+            <Link
+              href="/enterprise"
+              className="bg-white text-black px-6 py-2 hover:bg-black hover:text-white transition-colors font-medium border border-black"
+            >
+              Enterprise
+            </Link>
+          )}
 
-        {/* CTA Button */}
-        <Link
-          href="https://cloud.vaga.tn"
-          className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors font-medium"
-        >
-          se connecter
-        </Link>
+          {/* Back to main page for enterprise page */}
+          {isEnterprisePage && (
+            <Link
+              href="/"
+              className="bg-white text-black px-6 py-2 hover:bg-black hover:text-white transition-colors font-medium border border-black"
+            >
+              Community
+            </Link>
+          )}
+
+          {/* CTA Button */}
+          <Link
+            href="https://cloud.vaga.tn"
+            className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition-colors font-medium border border-black"
+          >
+            se connecter
+          </Link>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -75,24 +124,48 @@ export default function VagaNavbar() {
       {mobileMenuOpen && (
         <div className="md:hidden pb-4">
           <div className="flex flex-col space-y-2">
-            <button
-              onClick={() => scrollToSection('features')}
-              className="text-black hover:text-gray-600 transition-colors py-2 text-left"
-            >
-              Fonctionnalités
-            </button>
-            <button
-              onClick={() => scrollToSection('pricing')}
-              className="text-black hover:text-gray-600 transition-colors py-2 text-left"
-            >
-              Tarifs
-            </button>
-            <Link
-              href="/contact"
-              className="text-black hover:text-gray-600 transition-colors py-2 text-left"
-            >
-              Contact
-            </Link>
+            {navItems.map((item, index) => (
+              item.href ? (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="text-black hover:text-gray-600 transition-colors py-2 text-left"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={index}
+                  onClick={item.action}
+                  className="text-black hover:text-gray-600 transition-colors py-2 text-left"
+                >
+                  {item.label}
+                </button>
+              )
+            ))}
+
+            {/* Enterprise Link for main page */}
+            {!isEnterprisePage && (
+              <Link
+                href="/enterprise"
+                className="text-black hover:text-gray-600 transition-colors py-2 text-left"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Enterprise
+              </Link>
+            )}
+
+            {/* Back to main page for enterprise page */}
+            {isEnterprisePage && (
+              <Link
+                href="/"
+                className="text-black hover:text-gray-600 transition-colors py-2 text-left"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Community
+              </Link>
+            )}
           </div>
         </div>
       )}
