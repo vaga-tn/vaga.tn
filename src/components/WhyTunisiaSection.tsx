@@ -47,7 +47,7 @@ export default function WhyTunisiaSection() {
         </div>
         {/* Right: Our Solution */}
         <div className="p-6 bg-white border-l border-black">
-          <h3 className="text-xl font-semibold mb-4 text-black">Ou utilisez <span className="text-red-500">VAGA</span></h3>
+          <h3 className="text-xl font-semibold mb-4 text-black">Ou utiliser <span className="text-red-500">VAGA</span></h3>
           <ol className="space-y-3">
             {saasSteps.map((step, idx) => (
               <li key={idx} className="flex items-center">
