@@ -6,6 +6,7 @@ import PricingSection from '@/components/PricingSection';
 import GoogleAnalytics from '@/utils/GoogleAnalytics';
 import TawkScript from '@/utils/TawkTo';
 import GuideSection from '@/components/GuideSection';
+import NicheSection from '@/components/Niche';
 
 export const metadata: Metadata = {
     title: 'VAGA - Premier SaaS 100% Tunisien',
@@ -103,6 +104,7 @@ export default function HomePage() {
             />
             <div className="min-h-screen bg-white text-black overflow-x-hidden">
                 <HeroSection />
+                <NicheSection />
                 <GuideSection />
                 <FeaturesSection />
                 <WhyTunisiaSection />

@@ -54,7 +54,7 @@ export default function FeaturesSection() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
           return (
