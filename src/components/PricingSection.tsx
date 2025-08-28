@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Check } from 'lucide-react';
-import { PopupButton } from '@typeform/embed-react';
 
 interface PricingPlan {
   name: string;
@@ -33,7 +32,7 @@ const saasPlans: PricingPlan[] = [
   {
     name: "Standard",
     description: "Solution complète sans limites",
-    price: 50,
+    price: 42,
     period: "par mois",
     features: [
       "Clients / fournisseurs illimités",
@@ -120,7 +119,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="py-20 px-4 lg:px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12">
+    <section id="pricing" className="py-20 theSharedSectionClasses space-y-12">
 
       <div className="space-y-4">
         <header>
@@ -194,13 +193,6 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-            <PopupButton id="St89g9gz"
-              className={`w-full py-3 rounded-lg transition-all font-semibold ${plan.buttonStyle === 'primary'
-                ? 'bg-black text-white hover:bg-gray-800 shadow-lg'
-                : 'border border-black/30 text-black hover:bg-black/10 backdrop-blur-sm'
-                }`}>
-              {plan.buttonText}
-            </PopupButton>
           </div>
         ))}
       </div>

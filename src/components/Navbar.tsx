@@ -43,7 +43,7 @@ export default function VagaNavbar() {
   const navItems = getNavItems();
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/90 border-b border-black py-2 px-4">
+    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/90 border-b border-black/10 py-2 px-4">
       <div className="flex justify-between items-center ">
         <div className='flex items-center space-x-8'>
           <Link href="/" className="flex items-center space-x-1">
@@ -91,7 +91,7 @@ export default function VagaNavbar() {
               href="/"
               className="bg-white text-black lg:px-6 lg:py-2 p-2 lg:text-base text-sm hover:bg-black hover:text-white transition-colors font-medium border border-black"
             >
-              Community
+              Cloud
             </Link>
           )}
 
@@ -100,7 +100,7 @@ export default function VagaNavbar() {
             href="https://cloud.vaga.tn"
             className="bg-black text-white lg:px-6 lg:py-2 p-2 lg:text-base text-sm hover:bg-gray-800 transition-colors font-medium border border-black"
           >
-            se connecter
+            Commencer Gratuitement
           </Link>
         </div>
 

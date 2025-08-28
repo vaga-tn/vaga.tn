@@ -10,7 +10,7 @@ function PrivacyPolicyPage() {
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             Politique de Confidentialité
           </h1>
-          <div className="text-lg text-gray-300 mb-2">VAGA CRM</div>
+          <div className="text-lg text-gray-300 mb-2">VAGA ERP</div>
           <div className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-sm">
             <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
@@ -26,10 +26,10 @@ function PrivacyPolicyPage() {
         {/* Introduction */}
         <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg mb-8">
           <p className="text-gray-800 leading-relaxed mb-4">
-            Cette politique de confidentialité décrit nos politiques et procédures sur la collecte, l'utilisation et la divulgation de vos informations lorsque vous utilisez VAGA CRM et vous informe sur vos droits à la vie privée et comment la loi vous protège.
+            Cette politique de confidentialité décrit nos politiques et procédures sur la collecte, l'utilisation et la divulgation de vos informations lorsque vous utilisez VAGA ERP et vous informe sur vos droits à la vie privée et comment la loi vous protège.
           </p>
           <p className="text-gray-800 leading-relaxed">
-            Nous utilisons vos données personnelles pour fournir et améliorer notre service CRM. En utilisant VAGA CRM, vous acceptez la collecte et l'utilisation d'informations conformément à la présente Politique de confidentialité.
+            Nous utilisons vos données personnelles pour fournir et améliorer notre service CRM. En utilisant VAGA ERP, vous acceptez la collecte et l'utilisation d'informations conformément à la présente Politique de confidentialité.
           </p>
         </div>
 
@@ -52,17 +52,17 @@ function PrivacyPolicyPage() {
 
             <div className="bg-gray-50 p-6 rounded-lg">
               <ul className="space-y-3">
-                <li><strong className="text-gray-900">Compte</strong> désigne un compte unique créé pour vous permettre d'accéder à VAGA CRM ou à des parties de notre Service.</li>
+                <li><strong className="text-gray-900">Compte</strong> désigne un compte unique créé pour vous permettre d'accéder à VAGA ERP ou à des parties de notre Service.</li>
                 <li><strong className="text-gray-900">Société</strong> (appelée soit "la Société", "Nous", "Notre" ou "Nos" dans le présent document) fait référence à MAAK CORP SUARL (1847208/C/A/M/000
                   ).</li>
                 <li><strong className="text-gray-900">Cookies</strong> sont de petits fichiers qui sont placés sur votre ordinateur, appareil mobile ou tout autre appareil par un site Web, contenant les détails de votre historique de navigation sur ce site Web parmi ses nombreuses utilisations.</li>
                 <li><strong className="text-gray-900">Pays</strong> fait référence à la Tunisie.</li>
                 <li><strong className="text-gray-900">Appareil</strong> désigne tout appareil pouvant accéder au Service, tel qu'un ordinateur, un téléphone portable ou une tablette numérique.</li>
                 <li><strong className="text-gray-900">Données Personnelles</strong> désigne toute information relative à une personne identifiée ou une personne identifiable.</li>
-                <li><strong className="text-gray-900">Service</strong> fait référence à VAGA CRM, la plateforme de gestion client accessible via https://vaga.tn.</li>
+                <li><strong className="text-gray-900">Service</strong> fait référence à VAGA ERP, la plateforme de gestion client accessible via https://vaga.tn.</li>
                 <li><strong className="text-gray-900">Prestataire de Services</strong> désigne toute personne physique ou morale qui traite les données pour le compte de la Société.</li>
                 <li><strong className="text-gray-900">Données d'Utilisation</strong> font référence aux données collectées automatiquement, soit générées par l'utilisation du Service, soit à partir de l'infrastructure du Service elle-même.</li>
-                <li><strong className="text-gray-900">Site Web</strong> désigne VAGA CRM, accessible depuis https://vaga.tn.</li>
+                <li><strong className="text-gray-900">Site Web</strong> désigne VAGA ERP, accessible depuis https://vaga.tn.</li>
                 <li><strong className="text-gray-900">Vous</strong> désigne la personne accédant ou utilisant le Service, ou la société ou toute autre entité juridique au nom de laquelle cette personne accède ou utilise le Service.</li>
               </ul>
             </div>
@@ -81,7 +81,7 @@ function PrivacyPolicyPage() {
             <div className="mb-6">
               <h4 className="text-lg font-semibold text-gray-800 mb-4">Données Personnelles</h4>
               <p className="text-gray-700 mb-4">
-                Lors de l'utilisation de VAGA CRM, nous pouvons vous demander de nous fournir certaines informations personnellement identifiables qui peuvent être utilisées pour vous contacter ou vous identifier. Les informations personnellement identifiables peuvent inclure, mais sans s'y limiter :
+                Lors de l'utilisation de VAGA ERP, nous pouvons vous demander de nous fournir certaines informations personnellement identifiables qui peuvent être utilisées pour vous contacter ou vous identifier. Les informations personnellement identifiables peuvent inclure, mais sans s'y limiter :
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -122,7 +122,7 @@ function PrivacyPolicyPage() {
               <h4 className="text-lg font-semibold text-gray-800 mb-4">Données d'Utilisation</h4>
               <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
                 <p className="text-gray-700 mb-3">
-                  Les données d'utilisation sont collectées automatiquement lors de l'utilisation de VAGA CRM.
+                  Les données d'utilisation sont collectées automatiquement lors de l'utilisation de VAGA ERP.
                 </p>
                 <p className="text-gray-700 mb-3">
                   Les données d'utilisation peuvent inclure des informations telles que l'adresse de protocole Internet de votre appareil (adresse IP), le type de navigateur, la version du navigateur, les pages de notre service que vous visitez, l'heure et la date de votre visite, le temps passé sur ces pages, les identifiants uniques de l'appareil et d'autres données de diagnostic.
@@ -137,7 +137,7 @@ function PrivacyPolicyPage() {
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Technologies de Suivi et Cookies</h3>
             <p className="text-gray-700 mb-4">
-              Nous utilisons des cookies et des technologies de suivi similaires pour suivre l'activité sur VAGA CRM et stocker certaines informations. Les technologies de suivi utilisées sont des balises, des étiquettes et des scripts pour collecter et suivre les informations et pour améliorer et analyser notre service.
+              Nous utilisons des cookies et des technologies de suivi similaires pour suivre l'activité sur VAGA ERP et stocker certaines informations. Les technologies de suivi utilisées sont des balises, des étiquettes et des scripts pour collecter et suivre les informations et pour améliorer et analyser notre service.
             </p>
 
             <h4 className="text-lg font-semibold text-gray-800 mb-4">Types de Cookies Utilisés :</h4>
@@ -148,7 +148,7 @@ function PrivacyPolicyPage() {
                 <ul className="text-sm text-gray-700 space-y-1">
                   <li><strong>Type :</strong> Cookies de session</li>
                   <li><strong>Gérés par :</strong> Nous</li>
-                  <li><strong>Objectif :</strong> Ces cookies sont essentiels pour vous fournir les services disponibles via VAGA CRM et pour vous permettre d'utiliser certaines de ses fonctionnalités, notamment l'authentification et la sécurité des sessions.</li>
+                  <li><strong>Objectif :</strong> Ces cookies sont essentiels pour vous fournir les services disponibles via VAGA ERP et pour vous permettre d'utiliser certaines de ses fonctionnalités, notamment l'authentification et la sécurité des sessions.</li>
                 </ul>
               </div>
 
@@ -157,7 +157,7 @@ function PrivacyPolicyPage() {
                 <ul className="text-sm text-gray-700 space-y-1">
                   <li><strong>Type :</strong> Cookies persistants</li>
                   <li><strong>Gérés par :</strong> Nous</li>
-                  <li><strong>Objectif :</strong> Ces cookies nous permettent de nous souvenir des choix que vous faites lorsque vous utilisez VAGA CRM, tels que vos préférences d'interface et paramètres personnalisés.</li>
+                  <li><strong>Objectif :</strong> Ces cookies nous permettent de nous souvenir des choix que vous faites lorsque vous utilisez VAGA ERP, tels que vos préférences d'interface et paramètres personnalisés.</li>
                 </ul>
               </div>
 
@@ -166,7 +166,7 @@ function PrivacyPolicyPage() {
                 <ul className="text-sm text-gray-700 space-y-1">
                   <li><strong>Type :</strong> Cookies persistants</li>
                   <li><strong>Gérés par :</strong> Nous</li>
-                  <li><strong>Objectif :</strong> Ces cookies nous aident à comprendre comment vous utilisez VAGA CRM afin d'améliorer les performances et l'expérience utilisateur.</li>
+                  <li><strong>Objectif :</strong> Ces cookies nous aident à comprendre comment vous utilisez VAGA ERP afin d'améliorer les performances et l'expérience utilisateur.</li>
                 </ul>
               </div>
             </div>
@@ -183,11 +183,11 @@ function PrivacyPolicyPage() {
 
           <div className="bg-gray-50 p-6 rounded-lg">
             <ul className="space-y-3">
-              <li><strong className="text-gray-900">Fournir et maintenir VAGA CRM</strong>, y compris pour surveiller l'utilisation de notre Service CRM.</li>
-              <li><strong className="text-gray-900">Gérer votre Compte :</strong> pour gérer votre inscription en tant qu'utilisateur de VAGA CRM et gérer vos données clients, fournisseurs, factures et ressources humaines.</li>
-              <li><strong className="text-gray-900">Exécution des contrats :</strong> traitement de vos factures, gestion des traites, et toute autre fonction commerciale liée à votre utilisation de VAGA CRM.</li>
+              <li><strong className="text-gray-900">Fournir et maintenir VAGA ERP</strong>, y compris pour surveiller l'utilisation de notre Service CRM.</li>
+              <li><strong className="text-gray-900">Gérer votre Compte :</strong> pour gérer votre inscription en tant qu'utilisateur de VAGA ERP et gérer vos données clients, fournisseurs, factures et ressources humaines.</li>
+              <li><strong className="text-gray-900">Exécution des contrats :</strong> traitement de vos factures, gestion des traites, et toute autre fonction commerciale liée à votre utilisation de VAGA ERP.</li>
               <li><strong className="text-gray-900">Communication :</strong> vous contacter par e-mail, appels téléphoniques, SMS concernant les mises à jour, notifications de facturation, rappels d'échéances, et autres communications liées au service.</li>
-              <li><strong className="text-gray-900">Support client :</strong> vous fournir un support technique et répondre à vos demandes concernant VAGA CRM.</li>
+              <li><strong className="text-gray-900">Support client :</strong> vous fournir un support technique et répondre à vos demandes concernant VAGA ERP.</li>
               <li><strong className="text-gray-900">Amélioration du service :</strong> analyser l'utilisation pour améliorer les fonctionnalités CRM, développer de nouvelles fonctionnalités, et optimiser l'expérience utilisateur.</li>
               <li><strong className="text-gray-900">Conformité légale :</strong> respecter nos obligations légales en Tunisie, notamment en matière de comptabilité et de fiscalité.</li>
             </ul>
@@ -204,7 +204,7 @@ function PrivacyPolicyPage() {
 
           <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
             <ul className="space-y-3">
-              <li><strong className="text-red-900">Avec des Prestataires de Services :</strong> Nous pouvons partager vos informations avec des fournisseurs de services pour l'hébergement, la maintenance, l'analyse et le support technique de VAGA CRM.</li>
+              <li><strong className="text-red-900">Avec des Prestataires de Services :</strong> Nous pouvons partager vos informations avec des fournisseurs de services pour l'hébergement, la maintenance, l'analyse et le support technique de VAGA ERP.</li>
               <li><strong className="text-red-900">Pour des Transferts d'Entreprise :</strong> Dans le cadre de toute fusion, vente d'actifs, financement ou acquisition de tout ou partie de nos activités.</li>
               <li><strong className="text-red-900">Conformité Légale :</strong> Lorsque requis par la loi tunisienne ou en réponse à des demandes légales des autorités compétentes.</li>
               <li><strong className="text-red-900">Protection des Droits :</strong> Pour protéger et défendre nos droits ou notre propriété, prévenir les actes répréhensibles, ou protéger la sécurité des utilisateurs.</li>
@@ -224,7 +224,7 @@ function PrivacyPolicyPage() {
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Hébergement Local</h3>
               <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
                 <p className="text-green-800">
-                  Conformément à notre engagement envers la souveraineté des données, toutes les données de VAGA CRM sont hébergées en Tunisie sur des serveurs sécurisés. Vos données ne quittent pas le territoire tunisien, garantissant le respect de la réglementation locale.
+                  Conformément à notre engagement envers la souveraineté des données, toutes les données de VAGA ERP sont hébergées en Tunisie sur des serveurs sécurisés. Vos données ne quittent pas le territoire tunisien, garantissant le respect de la réglementation locale.
                 </p>
               </div>
             </div>
@@ -258,7 +258,7 @@ function PrivacyPolicyPage() {
           <div className="bg-yellow-50 border border-yellow-200 p-6 rounded-lg">
             <ul className="space-y-2">
               <li>• Nous conformer à nos obligations légales tunisiennes</li>
-              <li>• Maintenir les fonctionnalités de VAGA CRM</li>
+              <li>• Maintenir les fonctionnalités de VAGA ERP</li>
               <li>• Résoudre les litiges</li>
               <li>• Appliquer nos accords juridiques</li>
             </ul>
@@ -281,7 +281,7 @@ function PrivacyPolicyPage() {
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Droit d'Accès</h3>
                 <p className="text-gray-700 text-sm">
-                  Vous avez le droit de demander des copies de vos données personnelles stockées dans VAGA CRM.
+                  Vous avez le droit de demander des copies de vos données personnelles stockées dans VAGA ERP.
                 </p>
               </div>
 
@@ -336,7 +336,7 @@ function PrivacyPolicyPage() {
               <div>
                 <p className="font-semibold text-orange-800 mb-2">Important :</p>
                 <p className="text-orange-700">
-                  La suppression de vos données entraînera la fermeture définitive de votre compte VAGA CRM et la perte de toutes vos données clients, factures, et autres informations commerciales.
+                  La suppression de vos données entraînera la fermeture définitive de votre compte VAGA ERP et la perte de toutes vos données clients, factures, et autres informations commerciales.
                 </p>
               </div>
             </div>
@@ -350,7 +350,7 @@ function PrivacyPolicyPage() {
           </h2>
           <div className="bg-gray-50 p-6 rounded-lg">
             <p className="text-gray-700 mb-3">
-              VAGA CRM peut contenir des liens vers d'autres sites Web qui ne sont pas exploités par nous. Si vous cliquez sur un lien tiers, vous serez dirigé vers le site de ce tiers. Nous vous conseillons fortement de consulter la politique de confidentialité de chaque site que vous visitez.
+              VAGA ERP peut contenir des liens vers d'autres sites Web qui ne sont pas exploités par nous. Si vous cliquez sur un lien tiers, vous serez dirigé vers le site de ce tiers. Nous vous conseillons fortement de consulter la politique de confidentialité de chaque site que vous visitez.
             </p>
             <p className="text-gray-700">
               Nous n'avons aucun contrôle sur et n'assumons aucune responsabilité quant au contenu, aux politiques de confidentialité ou aux pratiques des sites ou services tiers.
@@ -367,64 +367,11 @@ function PrivacyPolicyPage() {
             <ul className="text-blue-800 space-y-1">
               <li>• Publiant la nouvelle politique de confidentialité sur cette page</li>
               <li>• Vous informant par e-mail</li>
-              <li>• Affichant un avis visible sur VAGA CRM</li>
+              <li>• Affichant un avis visible sur VAGA ERP</li>
             </ul>
             <p className="text-blue-800 mt-4">
               Nous mettrons à jour la date de "dernière mise à jour" en haut de cette politique de confidentialité. Il vous est conseillé de consulter régulièrement cette politique pour tout changement.
             </p>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-gray-200">
-            Contact
-          </h2>
-
-          <div className="bg-black text-white p-8 rounded-lg">
-            <p className="text-gray-300 mb-6">
-              Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter :
-            </p>
-
-            <div className="bg-white/10 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">MAAK CORP SUARL</h3>
-              <p className="text-gray-300 text-sm mb-4">Numéro d'entreprise: 1847208/C/A/M/000</p>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                    <span><strong>Email:</strong> vaga@maak-corp.tn</span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    <span><strong>Téléphone:</strong> +216 95 593 387</span>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                    </svg>
-                    <span><strong>Adresse:</strong> Tunis, Tunisie</span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.559-.499-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.559.499.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.497-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clipRule="evenodd" />
-                    </svg>
-                    <span><strong>Site web:</strong> https://vaga.tn</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </div>
@@ -432,7 +379,7 @@ function PrivacyPolicyPage() {
       {/* Footer */}
       <div className="bg-gray-50 px-8 py-6 border-t border-gray-200">
         <p className="text-center text-gray-600 text-sm">
-          Cette politique de confidentialité est effective à partir du 14 juin 2025 et s'applique à tous les utilisateurs de VAGA CRM.
+          Cette politique de confidentialité est effective à partir du 14 juin 2025 et s'applique à tous les utilisateurs de VAGA ERP.
         </p>
       </div>
     </div>

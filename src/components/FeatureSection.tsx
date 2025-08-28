@@ -40,7 +40,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-20 px-4 lg:px-12 relative bg-white border-r border-l border-black max-w-customWidth mx-auto space-y-12">
+    <section id="features" className="py-20 theSharedSectionClasses space-y-12">
 
       <div className="space-y-4">
         <header>
@@ -54,7 +54,7 @@ export default function FeaturesSection() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
           return (

@@ -3,13 +3,14 @@ import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeatureSection';
 import WhyTunisiaSection from '@/components/WhyTunisiaSection';
 import PricingSection from '@/components/PricingSection';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
-import TawkScript from '@/components/TawkTo';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
+import TawkScript from '@/utils/TawkTo';
 import GuideSection from '@/components/GuideSection';
+import NicheSection from '@/components/Niche';
 
 export const metadata: Metadata = {
-    title: 'VAGA - Premier CRM SaaS 100% Tunisien',
-    description: 'Solution complète de gestion client conçue par des Tunisiens, pour les entrepreneurs tunisiens. CRM, facturation, RH et traites - tout en un.',
+    title: 'VAGA - Premier SaaS 100% Tunisien',
+    description: 'Solution complète de gestion clients, inventaire, finance, conçue par des Tunisiens, pour les entrepreneurs tunisiens.',
     keywords: [
         'CRM Tunisie',
         'logiciel gestion client Tunisie',
@@ -21,26 +22,26 @@ export const metadata: Metadata = {
         'données locales Tunisie'
     ],
     openGraph: {
-        title: 'VAGA - Premier CRM SaaS 100% Tunisien',
-        description: 'Solution complète de gestion client conçue par des Tunisiens, pour les entrepreneurs tunisiens.',
+        title: 'VAGA - Premier SaaS 100% Tunisien',
+        description: 'Solution complète de gestion clients, inventaire, finance, conçue par des Tunisiens, pour les entrepreneurs tunisiens.',
         url: 'https://vaga.tn',
         siteName: 'VAGA',
         locale: 'fr_TN',
         type: 'website',
         images: [
             {
-                url: '/og-image.jpg',
+                url: '/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'VAGA - CRM 100% Tunisien'
+                alt: 'VAGA - ERP 100% Tunisien'
             }
         ]
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'VAGA - Premier CRM SaaS 100% Tunisien',
-        description: 'Solution complète de gestion client conçue par des Tunisiens, pour les entrepreneurs tunisiens.',
-        images: ['/twitter-image.jpg']
+        title: 'VAGA - Premier SaaS 100% Tunisien',
+        description: 'Solution complète de gestion clients, inventaire, finance, conçue par des Tunisiens, pour les entrepreneurs tunisiens.',
+        images: ['/twitter-image.png']
     },
     alternates: {
         canonical: 'https://vaga.tn'
@@ -52,7 +53,7 @@ const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "VAGA",
-    "description": "Premier CRM SaaS 100% Tunisien pour la gestion client, facturation et RH",
+    "description": "Solution complète de gestion clients, inventaire, finance, conçue par des Tunisiens, pour les entrepreneurs tunisiens.",
     "url": "https://vaga.tn",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
@@ -60,22 +61,22 @@ const structuredData = {
         {
             "@type": "Offer",
             "name": "Plan Basic",
-            "price": "69",
+            "price": "42",
             "priceCurrency": "TND",
             "billingIncrement": "P1M"
         },
         {
             "@type": "Offer",
             "name": "Plan Enterprise",
-            "price": "139",
+            "price": "sure devis",
             "priceCurrency": "TND",
             "billingIncrement": "P1M"
         }
     ],
     "provider": {
         "@type": "Organization",
-        "name": "VAGA",
-        "url": "https://vaga.tn",
+        "name": "MAAK CORP",
+        "url": "https://maak-corp.tn",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "TN",
@@ -103,6 +104,7 @@ export default function HomePage() {
             />
             <div className="min-h-screen bg-white text-black overflow-x-hidden">
                 <HeroSection />
+                <NicheSection />
                 <GuideSection />
                 <FeaturesSection />
                 <WhyTunisiaSection />
