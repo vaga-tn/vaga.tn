@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function HeroSection() {
 
   return (
-    <section className="bg-white overflow-hidden relative max-w-customWidth h-screen z-10  mx-auto px-4 lg:px-0 text-center border-r border-l border-black flex items-center justify-center">
+    <section className="theSharedSectionClasses h-screen flex items-center justify-center text-center">
 
       <div className="py-24 md:py-24 lg:py-0">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-black">

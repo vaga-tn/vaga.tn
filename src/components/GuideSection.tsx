@@ -3,7 +3,7 @@ import React from 'react'
 export default function GuideSection() {
   return (
     <section className="bg-black text-white">
-      <div className="border-l border-r border-white max-w-customWidth mx-auto h-[700px] py-32 lg:px-12 px-4 flex flex-col gap-12">
+      <div className="border-l border-r border-white/20 max-w-customWidth mx-auto h-[700px] py-32 lg:px-12 px-4 flex flex-col gap-12">
 
         <header>
           <span>Apprenez</span>

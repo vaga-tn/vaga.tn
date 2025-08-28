@@ -35,7 +35,7 @@ function Footer() {
 
     return (
         <footer className='py-12 text-white bg-black'>
-            <div className="mx-auto lg:max-w-7xl w-full lg:px-0 px-4 space-y-8">
+            <div className="mx-auto lg:max-w-customWidth  w-full lg:px-0 px-4 space-y-8">
                 <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-8">
                     {/* Company Info */}
                     <div className="flex flex-col items-center md:items-start">

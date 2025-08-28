@@ -3,8 +3,8 @@ import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeatureSection';
 import WhyTunisiaSection from '@/components/WhyTunisiaSection';
 import PricingSection from '@/components/PricingSection';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
-import TawkScript from '@/components/TawkTo';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
+import TawkScript from '@/utils/TawkTo';
 import GuideSection from '@/components/GuideSection';
 
 export const metadata: Metadata = {
