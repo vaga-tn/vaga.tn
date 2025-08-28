@@ -32,5 +32,6 @@ html {
 
 /* SHARED SECTION CLASS */
 .theSharedSectionClasses {
-  @apply border-r border-l border-black/10 bg-white relative max-w-customWidth mx-auto px-4;
+  @apply bg-white relative max-w-customWidth mx-auto px-4;
+  /* @apply border-r border-l border-black/10 bg-white relative max-w-customWidth mx-auto px-4; */
 }

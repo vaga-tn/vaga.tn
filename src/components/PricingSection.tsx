@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Check } from 'lucide-react';
-import { PopupButton } from '@typeform/embed-react';
 
 interface PricingPlan {
   name: string;
@@ -194,13 +193,6 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-            <PopupButton id="St89g9gz"
-              className={`w-full py-3 rounded-lg transition-all font-semibold ${plan.buttonStyle === 'primary'
-                ? 'bg-black text-white hover:bg-gray-800 shadow-lg'
-                : 'border border-black/30 text-black hover:bg-black/10 backdrop-blur-sm'
-                }`}>
-              {plan.buttonText}
-            </PopupButton>
           </div>
         ))}
       </div>
