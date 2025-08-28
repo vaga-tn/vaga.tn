@@ -91,7 +91,7 @@ export default function VagaNavbar() {
               href="/"
               className="bg-white text-black lg:px-6 lg:py-2 p-2 lg:text-base text-sm hover:bg-black hover:text-white transition-colors font-medium border border-black"
             >
-              Community
+              Cloud
             </Link>
           )}
 
