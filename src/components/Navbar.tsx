@@ -100,7 +100,7 @@ export default function VagaNavbar() {
             href="https://cloud.vaga.tn"
             className="bg-black text-white lg:px-6 lg:py-2 p-2 lg:text-base text-sm hover:bg-gray-800 transition-colors font-medium border border-black"
           >
-            Commencer Gratuitement
+            Commencer
           </Link>
         </div>
 

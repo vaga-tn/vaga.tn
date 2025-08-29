@@ -32,7 +32,7 @@ export default function HeroSection() {
 
       </div>
 
-      <div>
+      <div className='hidden lg:block'>
         <Image src={"/preview.png"} alt='vaga preview' width={550} height={1} className='pointer-events-none' />
       </div>
 

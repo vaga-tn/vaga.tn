@@ -3,7 +3,7 @@ import React from 'react'
 export default function GuideSection() {
   return (
     <section className="bg-black text-white">
-      <div className="border-l border-r border-white/20 max-w-customWidth mx-auto h-[900px] py-32 lg:px-12 px-4 flex flex-col gap-12">
+      <div className="border-l border-r border-white/20 max-w-customWidth mx-auto min-h-[900px] py-32 lg:px-12 px-4 flex flex-col gap-12">
 
         <header>
           <span>Apprenez</span>
@@ -15,7 +15,7 @@ export default function GuideSection() {
             <iframe className="w-full h-full" src="https://www.loom.com/embed/2756350e547e4edab5eec8561de92a1c?sid=bf166667-a8c4-4d74-b881-782de94932d9" frameBorder="0" allowFullScreen></iframe>
           </div>
 
-          <div className='flex items-center justify-center gap-1'>
+          <div className='flex items-center justify-center gap-1 lg:flex-row flex-col'>
             <div className='bg-white w-full text-black p-4 flex border-collapse items-center gap-2 group cursor-pointer'>
               <span className='group-hover:underline'>VAGA / PME</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
