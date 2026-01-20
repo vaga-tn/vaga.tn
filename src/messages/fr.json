@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Solutions d'Affaires VAGA",
+      "subtitle": "Solutions logicielles professionnelles pour les entreprises tunisiennes",
+      "description": "MAAK CORP propose des systèmes ERP et de gestion de pointe adaptés à votre secteur",
+      "cta": "Découvrez Nos Solutions"
+    },
+    "products": {
+      "title": "Nos Produits",
+      "learnMore": "En savoir plus",
+      "erp": {
+        "name": "VAGA ERP",
+        "tagline": "Gestion Complète d'Entreprise",
+        "description": "Solution ERP complète pour les entreprises commerciales avec inventaire, ventes, comptabilité et plus"
+      },
+      "sm": {
+        "name": "VAGA SM",
+        "tagline": "Excellence en Gestion du Support",
+        "description": "Système puissant de gestion de centre d'appels et d'agents de support avec ticketing et analyses"
+      },
+      "auto": {
+        "name": "VAGA AUTO",
+        "tagline": "Suite pour Concessionnaires Automobiles",
+        "description": "Solution spécialisée pour concessionnaires automobiles gérant inventaire, ventes et service"
+      },
+      "immo": {
+        "name": "VAGA IMMO",
+        "tagline": "Gestion Immobilière",
+        "description": "Plateforme complète de location, vente et gestion immobilière pour professionnels de l'immobilier"
+      },
+      "invoice": {
+        "name": "VAGA Invoice",
+        "tagline": "Créateur de Facture Électronique Gratuit",
+        "description": "Créez des factures électroniques conformes instantanément. Gratuit, sécurisé et crypté - hébergé en Tunisie"
+      }
+    },
+    "cta": {
+      "title": "Prêt à transformer votre entreprise?",
+      "description": "Contactez-nous aujourd'hui pour en savoir plus sur nos solutions et comment elles peuvent aider votre entreprise à croître.",
+      "button": "Contactez-nous"
+    }
+  },
+  "products": {
+    "erp": {
+      "title": "VAGA ERP",
+      "subtitle": "Solution Complète de Gestion d'Entreprise",
+      "description": "VAGA ERP est un système de planification des ressources d'entreprise conçu spécifiquement pour les entreprises commerciales en Tunisie. Rationalisez vos opérations avec des modules intégrés pour l'inventaire, les ventes, les achats, la comptabilité et la gestion de la relation client.",
+      "features": {
+        "title": "Fonctionnalités Clés",
+        "inventory": {
+          "title": "Gestion des Stocks",
+          "description": "Suivi des stocks en temps réel, gestion d'entrepôt et réapprovisionnement automatisé"
+        },
+        "sales": {
+          "title": "Ventes et Facturation",
+          "description": "Gestion complète du cycle de vente des devis aux factures avec suivi des paiements"
+        },
+        "accounting": {
+          "title": "Comptabilité Financière",
+          "description": "Comptabilité intégrée avec grand livre, comptes fournisseurs/clients et reporting"
+        },
+        "crm": {
+          "title": "Relations Clients",
+          "description": "Gérez efficacement les données clients, interactions et pipeline de ventes"
+        },
+        "reporting": {
+          "title": "Analyses et Rapports",
+          "description": "Business intelligence complète avec tableaux de bord et rapports personnalisables"
+        },
+        "multi": {
+          "title": "Support Multi-Agences",
+          "description": "Gérez plusieurs emplacements avec contrôle centralisé et autonomie locale"
+        }
+      },
+      "cta": "Demander une Démo"
+    },
+    "sm": {
+      "title": "VAGA SM",
+      "subtitle": "Plateforme de Gestion du Support",
+      "description": "VAGA SM est un système avancé de gestion du support conçu pour les centres d'appels et les équipes de service client. Améliorez vos opérations de support client avec routage intelligent des tickets, analyses de performance et outils de productivité pour agents.",
+      "features": {
+        "title": "Fonctionnalités Clés",
+        "ticketing": {
+          "title": "Système de Ticketing Intelligent",
+          "description": "Création, routage et escalade automatiques de tickets avec gestion des priorités"
+        },
+        "multichannel": {
+          "title": "Support Multi-Canal",
+          "description": "Gérez les demandes par téléphone, email, chat et réseaux sociaux sur une seule plateforme"
+        },
+        "knowledge": {
+          "title": "Base de Connaissances",
+          "description": "Gestion complète des connaissances pour résolution rapide et libre-service"
+        },
+        "analytics": {
+          "title": "Analyses de Performance",
+          "description": "Suivez la performance des agents, temps de réponse et métriques de satisfaction client"
+        },
+        "automation": {
+          "title": "Automatisation des Workflows",
+          "description": "Automatisez les tâches répétitives et standardisez les processus de support"
+        },
+        "integration": {
+          "title": "Intégration CRM",
+          "description": "Intégrez-vous facilement avec votre CRM et outils métier existants"
+        }
+      },
+      "cta": "Demander une Démo"
+    },
+    "auto": {
+      "title": "VAGA AUTO",
+      "subtitle": "Gestion de Concession Automobile",
+      "description": "VAGA AUTO est un système de gestion spécialisé pour les concessionnaires automobiles. Gérez votre inventaire de véhicules, processus de vente, département de service et relations clients avec une solution conçue pour l'industrie automobile.",
+      "features": {
+        "title": "Fonctionnalités Clés",
+        "inventory": {
+          "title": "Inventaire de Véhicules",
+          "description": "Suivi complet des véhicules avec photos, spécifications, tarification et statut de disponibilité"
+        },
+        "sales": {
+          "title": "Gestion des Ventes",
+          "description": "Suivez les prospects, gérez les essais routiers, traitez les ventes et gérez le financement"
+        },
+        "service": {
+          "title": "Département de Service",
+          "description": "Planifiez les rendez-vous, gérez les ordres de travail et suivez l'historique de service"
+        },
+        "parts": {
+          "title": "Gestion des Pièces",
+          "description": "Contrôle d'inventaire des pièces détachées avec gestion des fournisseurs"
+        },
+        "finance": {
+          "title": "Finance et Assurance",
+          "description": "Gérez les demandes de financement, assurance et plans de paiement"
+        },
+        "reporting": {
+          "title": "Rapports de Concession",
+          "description": "Performance des ventes, rotation des stocks et analyse de rentabilité"
+        }
+      },
+      "cta": "Demander une Démo"
+    },
+    "immo": {
+      "title": "VAGA IMMO",
+      "subtitle": "Plateforme de Gestion Immobilière",
+      "description": "VAGA IMMO est une solution complète de gestion immobilière pour les professionnels de l'immobilier. Gérez les annonces immobilières, contrats de location, transactions de vente et relations avec les locataires en toute simplicité.",
+      "features": {
+        "title": "Fonctionnalités Clés",
+        "listings": {
+          "title": "Annonces Immobilières",
+          "description": "Gérez les propriétés à vendre et à louer avec photos, descriptions et tarification"
+        },
+        "rental": {
+          "title": "Gestion Locative",
+          "description": "Gérez les contrats de location, perception des loyers et communications avec locataires"
+        },
+        "sales": {
+          "title": "Transactions de Vente",
+          "description": "Suivez les ventes immobilières de l'annonce à la clôture avec gestion documentaire"
+        },
+        "maintenance": {
+          "title": "Suivi de Maintenance",
+          "description": "Planifiez et suivez la maintenance et les demandes de réparation des propriétés"
+        },
+        "financial": {
+          "title": "Gestion Financière",
+          "description": "Suivez les revenus, dépenses et générez des rapports financiers pour les propriétés"
+        },
+        "portal": {
+          "title": "Portail Locataire",
+          "description": "Portail en libre-service pour que les locataires paient le loyer et soumettent des demandes"
+        }
+      },
+      "cta": "Demander une Démo"
+    },
+    "invoice": {
+      "badge": "Conforme à la loi Tunisienne E-facture",
+      "title": "Gérez vos factures avec simplicité",
+      "description": "VAGA est une solution légère et puissante pour gérer vos clients, fournisseurs et facturation. 100% compatible avec la réglementation de facturation électronique en Tunisie.",
+      "cta": {
+        "primary": "Démarrer gratuitement",
+        "secondary": "Voir le démo"
+      },
+      "allYouNeed": {
+        "title": "Tout ce dont vous avez besoin",
+        "subtitle": "Une solution complète pour votre gestion commerciale",
+        "client": {
+          "title": "Gestion clients",
+          "description": "Centralisez vos informations clients et suivez vos relations commerciales efficacement."
+        },
+        "intelligent": {
+          "title": "Facturation intelligente",
+          "description": "Créez devis, factures et bons de livraison conformes aux normes tunisiennes."
+        },
+        "compliant": {
+          "title": "100% conforme",
+          "description": "Respectez automatiquement toutes les exigences légales de la facturation électronique."
+        }
+      },
+      "law": {
+        "title": "La facturation électronique en Tunisie",
+        "subtitle": "Comprendre la nouvelle réglementation",
+        "what": {
+          "title": "Qu'est-ce que la facturation électronique ?",
+          "description": "La facturation électronique est un système obligatoire qui remplace les factures papier par des documents numériques structurés au format XML, validée par l'administration fiscale tunisienne (TTN)."
+        },
+        "who": {
+          "title": "Qui est concerné ?",
+          "description": "Obligatoire pour les entreprises et commerces assujettis à la TVA : sociétés de services, fournisseurs, restaurants, commerces de détail, et tout prestataire de services."
+        },
+        "penalties": {
+          "title": "Sanctions en cas de non-conformité",
+          "fine1": {
+            "amount": "100 TND",
+            "description": "Par facture non conforme"
+          },
+          "fine2": {
+            "amount": "100-500 TND",
+            "description": "Retard de transmission"
+          },
+          "fine3": {
+            "amount": "20%",
+            "description": "Majoration sur montants réservés"
+          }
+        }
+      },
+      "process": {
+        "title": "Processus de facturation avec VAGA",
+        "subtitle": "5 étapes simples pour être conforme",
+        "step1": {
+          "title": "Inscription",
+          "description": "Créez votre compte et complétez votre dossier administratif"
+        },
+        "step2": {
+          "title": "Validation TTN",
+          "description": "Votre dossier est validé automatiquement"
+        },
+        "step3": {
+          "title": "Configuration",
+          "description": "Intégration technique et certificat électronique"
+        },
+        "step4": {
+          "title": "Phase de test",
+          "description": "Testez votre système avant la mise en production"
+        },
+        "step5": {
+          "title": "Production",
+          "description": "Émettez vos factures conformes en toute légalité"
+        }
+      },
+      "why": {
+        "title": "Pourquoi VAGA ?",
+        "free": "100% Gratuit - Aucun frais caché",
+        "encrypted": "Données cryptées - Même nous ne pouvons pas y accéder",
+        "hosted": "Hébergé en Tunisie - Vos données restent locales",
+        "ready": "Prêt à commencer ?"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Vous avez des questions sur nos produits? Nous serions ravis de vous entendre.",
+    "nameLabel": "Nom *",
+    "emailLabel": "Email *",
+    "phoneLabel": "Téléphone",
+    "messageLabel": "Message *",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "votre.email@example.com",
+    "phonePlaceholder": "+216 XX XXX XXX",
+    "productLabel": "Intéressé par",
+    "messagePlaceholder": "Parlez-nous de vos besoins...",
+    "submitText": "Envoyer le message",
+    "successMessage": "Merci de nous avoir contactés!",
+    "products": {
+      "erp": "VAGA ERP",
+      "sm": "VAGA SM",
+      "auto": "VAGA AUTO",
+      "immo": "VAGA IMMO",
+      "invoice": "VAGA Invoice",
+      "general": "Demande générale"
+    }
+  },
+  "footer": {
+    "company": "MAAK CORP",
+    "description": "Entreprise de logiciels tunisienne proposant des solutions métier innovantes",
+    "products": "Produits",
+    "contact": "Contact",
+    "rights": "Tous droits réservés"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "VAGA Business Solutions",
+      "subtitle": "Professional software solutions for Tunisian businesses",
+      "description": "MAAK CORP delivers cutting-edge ERP and management systems tailored to your industry",
+      "cta": "Explore Our Solutions"
+    },
+    "products": {
+      "title": "Our Products",
+      "learnMore": "Learn More",
+      "erp": {
+        "name": "VAGA ERP",
+        "tagline": "Complete Business Management",
+        "description": "Comprehensive ERP solution for commercial businesses with inventory, sales, accounting, and more"
+      },
+      "sm": {
+        "name": "VAGA SM",
+        "tagline": "Support Management Excellence",
+        "description": "Powerful call center and support agent management system with ticketing and analytics"
+      },
+      "auto": {
+        "name": "VAGA AUTO",
+        "tagline": "Automotive Dealership Suite",
+        "description": "Specialized solution for automotive dealerships managing inventory, sales, and service"
+      },
+      "immo": {
+        "name": "VAGA IMMO",
+        "tagline": "Real Estate Management",
+        "description": "Complete property rental, sale, and management platform for real estate professionals"
+      },
+      "invoice": {
+        "name": "VAGA Invoice",
+        "tagline": "Free E-Invoice Creator",
+        "description": "Create compliant Tunisian e-invoices instantly. Free, secure, and encrypted - hosted in Tunisia"
+      }
+    },
+    "cta": {
+      "title": "Ready to transform your business?",
+      "description": "Contact us today to learn more about our solutions and how they can help your business grow.",
+      "button": "Contact Us"
+    }
+  },
+  "products": {
+    "erp": {
+      "title": "VAGA ERP",
+      "subtitle": "Complete Business Management Solution",
+      "description": "VAGA ERP is a comprehensive enterprise resource planning system designed specifically for commercial businesses in Tunisia. Streamline your operations with integrated modules for inventory, sales, purchasing, accounting, and customer relationship management.",
+      "features": {
+        "title": "Key Features",
+        "inventory": {
+          "title": "Inventory Management",
+          "description": "Real-time stock tracking, warehouse management, and automated reordering"
+        },
+        "sales": {
+          "title": "Sales & Invoicing",
+          "description": "Complete sales cycle management from quotes to invoices with payment tracking"
+        },
+        "accounting": {
+          "title": "Financial Accounting",
+          "description": "Integrated accounting with general ledger, accounts payable/receivable, and reporting"
+        },
+        "crm": {
+          "title": "Customer Relations",
+          "description": "Manage customer data, interactions, and sales pipeline effectively"
+        },
+        "reporting": {
+          "title": "Analytics & Reports",
+          "description": "Comprehensive business intelligence with customizable dashboards and reports"
+        },
+        "multi": {
+          "title": "Multi-Branch Support",
+          "description": "Manage multiple locations with centralized control and local autonomy"
+        }
+      },
+      "cta": "Request a Demo"
+    },
+    "sm": {
+      "title": "VAGA SM",
+      "subtitle": "Support Management Platform",
+      "description": "VAGA SM is an advanced support management system built for call centers and customer service teams. Enhance your customer support operations with intelligent ticket routing, performance analytics, and agent productivity tools.",
+      "features": {
+        "title": "Key Features",
+        "ticketing": {
+          "title": "Smart Ticketing System",
+          "description": "Automated ticket creation, routing, and escalation with priority management"
+        },
+        "multichannel": {
+          "title": "Multi-Channel Support",
+          "description": "Handle inquiries from phone, email, chat, and social media in one platform"
+        },
+        "knowledge": {
+          "title": "Knowledge Base",
+          "description": "Comprehensive knowledge management for faster resolution and self-service"
+        },
+        "analytics": {
+          "title": "Performance Analytics",
+          "description": "Track agent performance, response times, and customer satisfaction metrics"
+        },
+        "automation": {
+          "title": "Workflow Automation",
+          "description": "Automate repetitive tasks and standardize support processes"
+        },
+        "integration": {
+          "title": "CRM Integration",
+          "description": "Seamlessly integrate with your existing CRM and business tools"
+        }
+      },
+      "cta": "Request a Demo"
+    },
+    "auto": {
+      "title": "VAGA AUTO",
+      "subtitle": "Automotive Dealership Management",
+      "description": "VAGA AUTO is a specialized management system for automotive dealerships. Manage your vehicle inventory, sales processes, service department, and customer relationships with a solution designed for the automotive industry.",
+      "features": {
+        "title": "Key Features",
+        "inventory": {
+          "title": "Vehicle Inventory",
+          "description": "Complete vehicle tracking with photos, specs, pricing, and availability status"
+        },
+        "sales": {
+          "title": "Sales Management",
+          "description": "Track leads, manage test drives, process sales, and handle financing"
+        },
+        "service": {
+          "title": "Service Department",
+          "description": "Schedule appointments, manage work orders, and track service history"
+        },
+        "parts": {
+          "title": "Parts Management",
+          "description": "Inventory control for spare parts with supplier management"
+        },
+        "finance": {
+          "title": "Finance & Insurance",
+          "description": "Handle financing applications, insurance, and payment plans"
+        },
+        "reporting": {
+          "title": "Dealership Reports",
+          "description": "Sales performance, inventory turnover, and profitability analysis"
+        }
+      },
+      "cta": "Request a Demo"
+    },
+    "immo": {
+      "title": "VAGA IMMO",
+      "subtitle": "Real Estate Management Platform",
+      "description": "VAGA IMMO is a comprehensive property management solution for real estate professionals. Manage property listings, rental agreements, sales transactions, and tenant relationships with ease.",
+      "features": {
+        "title": "Key Features",
+        "listings": {
+          "title": "Property Listings",
+          "description": "Manage properties for sale and rent with photos, descriptions, and pricing"
+        },
+        "rental": {
+          "title": "Rental Management",
+          "description": "Handle lease agreements, rent collection, and tenant communications"
+        },
+        "sales": {
+          "title": "Sales Transactions",
+          "description": "Track property sales from listing to closing with document management"
+        },
+        "maintenance": {
+          "title": "Maintenance Tracking",
+          "description": "Schedule and track property maintenance and repair requests"
+        },
+        "financial": {
+          "title": "Financial Management",
+          "description": "Track income, expenses, and generate financial reports for properties"
+        },
+        "portal": {
+          "title": "Tenant Portal",
+          "description": "Self-service portal for tenants to pay rent and submit requests"
+        }
+      },
+      "cta": "Request a Demo"
+    },
+    "invoice": {
+      "badge": "Compliant with Tunisian E-Invoice Law",
+      "title": "Manage your invoices with simplicity",
+      "description": "VAGA is a lightweight and powerful solution to manage your clients, suppliers and invoicing. 100% compatible with Tunisian electronic invoicing regulations.",
+      "cta": {
+        "primary": "Start for Free",
+        "secondary": "View Demo"
+      },
+      "allYouNeed": {
+        "title": "Everything you need",
+        "subtitle": "A complete solution for your business management",
+        "client": {
+          "title": "Client Management",
+          "description": "Centralize your client information and track your business relationships effectively."
+        },
+        "intelligent": {
+          "title": "Intelligent Invoicing",
+          "description": "Create quotes, invoices and delivery notes compliant with Tunisian standards."
+        },
+        "compliant": {
+          "title": "100% Compliant",
+          "description": "Automatically meet all legal requirements for electronic invoicing."
+        }
+      },
+      "law": {
+        "title": "Electronic Invoicing in Tunisia",
+        "subtitle": "Understanding the new regulations",
+        "what": {
+          "title": "What is electronic invoicing?",
+          "description": "Electronic invoicing is a mandatory system that replaces paper invoices with structured digital documents in XML format, validated by the Tunisian tax administration (TTN)."
+        },
+        "who": {
+          "title": "Who is concerned?",
+          "description": "Mandatory for businesses subject to VAT: service companies, suppliers, restaurants, retail stores, and all service providers."
+        },
+        "penalties": {
+          "title": "Penalties for non-compliance",
+          "fine1": {
+            "amount": "100 TND",
+            "description": "Per non-compliant invoice"
+          },
+          "fine2": {
+            "amount": "100-500 TND",
+            "description": "Late transmission"
+          },
+          "fine3": {
+            "amount": "20%",
+            "description": "Surcharge on reserved amounts"
+          }
+        }
+      },
+      "process": {
+        "title": "Invoicing process with VAGA",
+        "subtitle": "5 simple steps to be compliant",
+        "step1": {
+          "title": "Registration",
+          "description": "Create your account and complete your administrative file"
+        },
+        "step2": {
+          "title": "TTN Validation",
+          "description": "Your file is validated automatically"
+        },
+        "step3": {
+          "title": "Configuration",
+          "description": "Technical integration and electronic certificate"
+        },
+        "step4": {
+          "title": "Test Phase",
+          "description": "Test your system before going live"
+        },
+        "step5": {
+          "title": "Production",
+          "description": "Issue your compliant invoices legally"
+        }
+      },
+      "why": {
+        "title": "Why VAGA?",
+        "free": "100% Free - No hidden fees",
+        "encrypted": "Encrypted Data - Not even we can access it",
+        "hosted": "Hosted in Tunisia - Your data stays local",
+        "ready": "Ready to start?"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions about our products? We'd love to hear from you.",
+    "nameLabel": "Name *",
+    "emailLabel": "Email *",
+    "phoneLabel": "Phone",
+    "messageLabel": "Message *",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your.email@example.com",
+    "phonePlaceholder": "+216 XX XXX XXX",
+    "productLabel": "Interested in",
+    "messagePlaceholder": "Tell us about your needs...",
+    "submitText": "Send Message",
+    "successMessage": "Thank you for contacting us!",
+    "products": {
+      "erp": "VAGA ERP",
+      "sm": "VAGA SM",
+      "auto": "VAGA AUTO",
+      "immo": "VAGA IMMO",
+      "invoice": "VAGA Invoice",
+      "general": "General Inquiry"
+    }
+  },
+  "footer": {
+    "company": "MAAK CORP",
+    "description": "Tunisian software company delivering innovative business solutions",
+    "products": "Products",
+    "contact": "Contact",
+    "rights": "All rights reserved"
+  }
+}
