@@ -1,8 +1,14 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ContactForm from '@/components/ContactForm';
 
-export default function ContactPage() {
-  const t = useTranslations('contact');
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('contact');
 
   const products = [
     { value: 'erp', label: t('products.erp') },

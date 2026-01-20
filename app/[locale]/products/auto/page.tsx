@@ -1,9 +1,15 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Car, ShoppingCart, Wrench, Box, CreditCard, FileText } from 'lucide-react';
 import ProductDetailPage from '@/components/ProductDetailPage';
 
-export default function AutoPage() {
-  const t = useTranslations('products.auto');
+export default async function AutoPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('products.auto');
 
   const features = [
     {

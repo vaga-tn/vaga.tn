@@ -1,9 +1,15 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Home, FileKey, HandshakeIcon, Wrench, Wallet, UserCircle } from 'lucide-react';
 import ProductDetailPage from '@/components/ProductDetailPage';
 
-export default function ImmoPage() {
-  const t = useTranslations('products.immo');
+export default async function ImmoPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('products.immo');
 
   const features = [
     {

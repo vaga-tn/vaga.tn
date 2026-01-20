@@ -1,17 +1,18 @@
-import { useTranslations } from 'next-intl';
-import { Building2, Headphones, Car, Home, ArrowRight, Laptop, FileCheck } from 'lucide-react';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Building2, Headphones, Car, Home, FileCheck } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '@/components/ProductCard';
-import ProductMockup from '@/components/ProductMockup';
 import { Button } from '@/components/ui/button';
 
-export default function HomePage({
+export default async function HomePage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = useTranslations('home');
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('home');
 
   return (
     <div className="flex flex-col">
@@ -60,7 +61,7 @@ export default function HomePage({
             tagline={t('products.erp.tagline')}
             description={t('products.erp.description')}
             href="products/erp"
-            locale={params.locale}
+            locale={locale}
             learnMore={t('products.learnMore')}
             className="lg:col-span-2"
           />
@@ -70,7 +71,7 @@ export default function HomePage({
             tagline={t('products.sm.tagline')}
             description={t('products.sm.description')}
             href="products/sm"
-            locale={params.locale}
+            locale={locale}
             learnMore={t('products.learnMore')}
           />
           <ProductCard
@@ -79,7 +80,7 @@ export default function HomePage({
             tagline={t('products.auto.tagline')}
             description={t('products.auto.description')}
             href="products/auto"
-            locale={params.locale}
+            locale={locale}
             learnMore={t('products.learnMore')}
           />
           <ProductCard
@@ -88,7 +89,7 @@ export default function HomePage({
             tagline={t('products.immo.tagline')}
             description={t('products.immo.description')}
             href="products/immo"
-            locale={params.locale}
+            locale={locale}
             learnMore={t('products.learnMore')}
           />
           <ProductCard
@@ -97,7 +98,7 @@ export default function HomePage({
             tagline={t('products.invoice.tagline')}
             description={t('products.invoice.description')}
             href="products/invoice"
-            locale={params.locale}
+            locale={locale}
             learnMore={t('products.learnMore')}
           />
         </div>
@@ -112,7 +113,7 @@ export default function HomePage({
           <p className="max-w-[600px] text-muted-foreground">
             {t('cta.description')}
           </p>
-          <Link href={`/${params.locale}/contact`}>
+          <Link href={`/${locale}/contact`}>
             <Button size="lg" className="mt-4">
               {t('cta.button')}
             </Button>

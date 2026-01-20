@@ -55,7 +55,7 @@ export default function ContactForm({
           <CheckCircle className="mb-4 h-16 w-16 text-primary" />
           <h3 className="mb-2 text-2xl font-bold">{successMessage}</h3>
           <p className="text-muted-foreground">
-            We'll get back to you as soon as possible.
+            We&apos;ll get back to you as soon as possible.
           </p>
         </CardContent>
       </Card>
@@ -103,7 +103,7 @@ export default function ContactForm({
         <CardHeader>
           <CardTitle>Send us a message</CardTitle>
           <CardDescription>
-            Fill out the form below and we'll get back to you shortly.
+            Fill out the form below and we&apos;ll get back to you shortly.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -121,7 +121,7 @@ export default function ContactForm({
             {/* Honeypot field for spam protection */}
             <p className="hidden">
               <label>
-                Don't fill this out if you're human: <input name="bot-field" />
+                Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
               </label>
             </p>
 

@@ -1,9 +1,15 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Ticket, Radio, BookText, TrendingUp, Workflow, Plug, Headphones } from 'lucide-react';
 import ProductDetailPage from '@/components/ProductDetailPage';
 
-export default function SMPage() {
-  const t = useTranslations('products.sm');
+export default async function SMPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('products.sm');
 
   const features = [
     {

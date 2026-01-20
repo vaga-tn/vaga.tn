@@ -1,15 +1,17 @@
-import { useTranslations } from 'next-intl';
-import { Users, FileText, Shield, HelpCircle, Building2, AlertCircle } from 'lucide-react';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Users, FileText, Shield, HelpCircle, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 
-export default function InvoicePage({
+export default async function InvoicePage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = useTranslations('products.invoice');
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('products.invoice');
 
   return (
     <div className="flex flex-col">
@@ -27,7 +29,7 @@ export default function InvoicePage({
               {t('description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Link href={`/${params.locale}/contact`}>
+              <Link href={`/${locale}/contact`}>
                 <Button size="lg" className="w-full sm:w-auto">
                   {t('cta.primary')}
                 </Button>
@@ -223,7 +225,7 @@ export default function InvoicePage({
 
             <div className="pt-8">
               <p className="text-2xl font-bold mb-6">{t('why.ready')}</p>
-              <Link href={`/${params.locale}/contact`}>
+              <Link href={`/${locale}/contact`}>
                 <Button size="lg" className="text-lg px-8">
                   {t('cta.primary')}
                 </Button>
