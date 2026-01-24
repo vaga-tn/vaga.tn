@@ -3,6 +3,7 @@ import { Users, FileText, Shield, HelpCircle, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function InvoicePage({
   params,
@@ -25,19 +26,9 @@ export default async function InvoicePage({
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
               {t('title')}
             </h1>
-            <p className="mx-auto max-w-[700px] text-lg text-muted-foreground md:text-xl">
+            <p className="mx-auto max-w-[700px] text-xl text-muted-foreground md:text-xl">
               {t('description')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Link href={`/${locale}/contact`}>
-                <Button size="lg" className="w-full sm:w-auto">
-                  {t('cta.primary')}
-                </Button>
-              </Link>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                {t('cta.secondary')}
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -45,53 +36,93 @@ export default async function InvoicePage({
       {/* All You Need Section */}
       <section className="container py-16 md:py-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-            {t('allYouNeed.title')}
-          </h2>
+          <Image src={'/vaga-invoice/what_is_vaga.png'} width={478} height={95} className='mx-auto' alt='section title' />
           <p className="text-muted-foreground text-lg">
             {t('allYouNeed.subtitle')}
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3 text-right">
           <Card>
-            <CardHeader>
+            <CardHeader className='flex items-end'>
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <Users className="h-6 w-6" />
               </div>
               <CardTitle>{t('allYouNeed.client.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xl text-muted-foreground">
                 {t('allYouNeed.client.description')}
               </p>
             </CardContent>
           </Card>
 
           <Card>
-            <CardHeader>
+            <CardHeader className='flex items-end'>
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <FileText className="h-6 w-6" />
               </div>
               <CardTitle>{t('allYouNeed.intelligent.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xl text-muted-foreground">
                 {t('allYouNeed.intelligent.description')}
               </p>
             </CardContent>
           </Card>
 
           <Card>
-            <CardHeader>
+            <CardHeader className='flex items-end'>
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <Shield className="h-6 w-6" />
               </div>
               <CardTitle>{t('allYouNeed.compliant.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xl text-muted-foreground">
                 {t('allYouNeed.compliant.description')}
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className='flex items-end'>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <Shield className="h-6 w-6" />
+              </div>
+              <CardTitle>مجاني %100</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xl text-muted-foreground">
+                ما فماش مصاريف مخفية
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className='flex items-end'>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <Shield className="h-6 w-6" />
+              </div>
+              <CardTitle>البيانات مشفّرة</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xl text-muted-foreground">
+                حتى احنا ما نجموش نوصلولها
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className='flex items-end'>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <Shield className="h-6 w-6" />
+              </div>
+              <CardTitle>مستضاف في تونس</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xl text-muted-foreground">
+                بياناتك تبقى محلية
               </p>
             </CardContent>
           </Card>
@@ -102,39 +133,37 @@ export default async function InvoicePage({
       <section className="border-t bg-secondary/30">
         <div className="container py-16 md:py-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-              {t('law.title')}
-            </h2>
+            <Image src={'/vaga-invoice/what_is_e_invoice.png'} width={478} height={95} className='mx-auto' alt='section title' />
             <p className="text-muted-foreground text-lg">
               {t('law.subtitle')}
             </p>
           </div>
 
           {/* Q&A Cards */}
-          <div className="grid gap-8 md:grid-cols-2 mb-16 max-w-5xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 mb-16 max-w-5xl mx-auto text-right">
             <Card>
-              <CardHeader>
+              <CardHeader className='flex items-end'>
                 <div className="flex items-center gap-3 mb-2">
-                  <HelpCircle className="h-5 w-5 text-primary" />
                   <CardTitle className="text-xl">{t('law.what.title')}</CardTitle>
+                  <HelpCircle className="h-5 w-5 text-primary" />
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   {t('law.what.description')}
                 </p>
               </CardContent>
             </Card>
 
             <Card>
-              <CardHeader>
+              <CardHeader className='flex items-end'>
                 <div className="flex items-center gap-3 mb-2">
-                  <Building2 className="h-5 w-5 text-primary" />
                   <CardTitle className="text-xl">{t('law.who.title')}</CardTitle>
+                  <Building2 className="h-5 w-5 text-primary" />
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   {t('law.who.description')}
                 </p>
               </CardContent>
@@ -184,9 +213,7 @@ export default async function InvoicePage({
       {/* Process Section */}
       <section className="container py-16 md:py-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-            {t('process.title')}
-          </h2>
+          <Image src={'/vaga-invoice/how.png'} width={290} height={95} className='mx-auto' alt='section title' />
           <p className="text-muted-foreground text-lg">
             {t('process.subtitle')}
           </p>
@@ -199,39 +226,11 @@ export default async function InvoicePage({
                 {step}
               </div>
               <h3 className="font-bold mb-2">{t(`process.step${step}.title`)}</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xl text-muted-foreground">
                 {t(`process.step${step}.description`)}
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Why VAGA Section */}
-      <section className="border-t bg-gradient-to-b from-secondary/20 to-background">
-        <div className="container py-16 md:py-24">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-black text-white px-6 py-3 text-lg font-bold transform -rotate-1">
-                {t('why.title')}
-              </div>
-            </div>
-
-            <div className="space-y-4 text-lg">
-              <p className="font-medium">✓ {t('why.free')}</p>
-              <p className="font-medium">✓ {t('why.encrypted')}</p>
-              <p className="font-medium">✓ {t('why.hosted')}</p>
-            </div>
-
-            <div className="pt-8">
-              <p className="text-2xl font-bold mb-6">{t('why.ready')}</p>
-              <Link href={`/${locale}/contact`}>
-                <Button size="lg" className="text-lg px-8">
-                  {t('cta.primary')}
-                </Button>
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
     </div>

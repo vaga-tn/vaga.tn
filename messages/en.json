@@ -180,86 +180,86 @@
       "cta": "Request a Demo"
     },
     "invoice": {
-      "badge": "Compliant with Tunisian E-Invoice Law",
-      "title": "Manage your invoices with simplicity",
-      "description": "VAGA is a lightweight and powerful solution to manage your clients, suppliers and invoicing. 100% compatible with Tunisian electronic invoicing regulations.",
+      "badge": "متوافق مع قانون الفاتورة الإلكترونية التونسية",
+      "title": "سيّر فواتيرك بكل بساطة",
+      "description": "حل خفيف و قوي باش تسيّر فواتيرك. متوافق 100% مع قانون الفاتورة الإلكترونية التونسية",
       "cta": {
-        "primary": "Start for Free",
-        "secondary": "View Demo"
+        "primary": "ابدا مجاناً",
+        "secondary": "شوف الديمو"
       },
       "allYouNeed": {
-        "title": "Everything you need",
-        "subtitle": "A complete solution for your business management",
+        "title": "كل شي تحتاجو",
+        "subtitle": "حل كامل لتسيير تجارتك",
         "client": {
-          "title": "Client Management",
-          "description": "Centralize your client information and track your business relationships effectively."
+          "title": "تسيير الحرفاء",
+          "description": "جمّع معلومات الحرفاء متاعك الكل في بلاصة وحدة و تابع علاقاتك التجارية بكل سهولة"
         },
         "intelligent": {
-          "title": "Intelligent Invoicing",
-          "description": "Create quotes, invoices and delivery notes compliant with Tunisian standards."
+          "title": "فوترة ذكية",
+          "description": "اعمل ديفي، فواتير و بونات ليفريزون متوافقين مع المعايير التونسية"
         },
         "compliant": {
-          "title": "100% Compliant",
-          "description": "Automatically meet all legal requirements for electronic invoicing."
+          "title": "متوافق 100%",
+          "description": "احترم تلقائياً كل المتطلبات القانونية للفاتورة الإلكترونية"
         }
       },
       "law": {
-        "title": "Electronic Invoicing in Tunisia",
-        "subtitle": "Understanding the new regulations",
+        "title": "الفاتورة الإلكترونية في تونس",
+        "subtitle": "افهم القانون الجديد",
         "what": {
-          "title": "What is electronic invoicing?",
-          "description": "Electronic invoicing is a mandatory system that replaces paper invoices with structured digital documents in XML format, validated by the Tunisian tax administration (TTN)."
+          "title": "شنوّا هي الفاتورة الإلكترونية؟",
+          "description": "الفاتورة الإلكترونية نظام إجباري يبدّل الفواتير الورقية بملفات رقمية منظمة بصيغة XML، متحققة من قبل الإدارة الضريبية التونسية (TTN)."
         },
         "who": {
-          "title": "Who is concerned?",
-          "description": "Mandatory for businesses subject to VAT: service companies, suppliers, restaurants, retail stores, and all service providers."
+          "title": "شكون المعنيين؟",
+          "description": "إجباري على الشركات و المحلات التجارية إلي تخلص TVA: شركات الخدمات، الفورنيسورات، المطاعم، المحلات التجارية، و كل مقدّمي الخدمات."
         },
         "penalties": {
-          "title": "Penalties for non-compliance",
+          "title": "العقوبات في حالة عدم الامتثال",
           "fine1": {
-            "amount": "100 TND",
-            "description": "Per non-compliant invoice"
+            "amount": "100 دينار",
+            "description": "لكل فاتورة غير متوافقة"
           },
           "fine2": {
-            "amount": "100-500 TND",
-            "description": "Late transmission"
+            "amount": "100-500 دينار",
+            "description": "تأخير في الإرسال"
           },
           "fine3": {
             "amount": "20%",
-            "description": "Surcharge on reserved amounts"
+            "description": "زيادة على المبالغ المحجوزة"
           }
         }
       },
       "process": {
-        "title": "Invoicing process with VAGA",
-        "subtitle": "5 simple steps to be compliant",
+        "title": "كيفاش تعمل الفوترة مع VAGA",
+        "subtitle": "5 خطوات بسيطة باش تكون متوافق",
         "step1": {
-          "title": "Registration",
-          "description": "Create your account and complete your administrative file"
+          "title": "التسجيل",
+          "description": "اعمل حسابك و كمّل الملف الإداري متاعك"
         },
         "step2": {
-          "title": "TTN Validation",
-          "description": "Your file is validated automatically"
+          "title": "المصادقة من TTN",
+          "description": "الملف متاعك يتصادق عليه تلقائياً"
         },
         "step3": {
-          "title": "Configuration",
-          "description": "Technical integration and electronic certificate"
+          "title": "الإعداد",
+          "description": "التكامل التقني و الشهادة الإلكترونية"
         },
         "step4": {
-          "title": "Test Phase",
-          "description": "Test your system before going live"
+          "title": "مرحلة التجربة",
+          "description": "جرّب النظام متاعك قبل ما تبدا"
         },
         "step5": {
-          "title": "Production",
-          "description": "Issue your compliant invoices legally"
+          "title": "الإنتاج",
+          "description": "اصدر فواتيرك المتوافقة بكل قانونية"
         }
       },
       "why": {
-        "title": "Why VAGA?",
-        "free": "100% Free - No hidden fees",
-        "encrypted": "Encrypted Data - Not even we can access it",
-        "hosted": "Hosted in Tunisia - Your data stays local",
-        "ready": "Ready to start?"
+        "title": "علاش VAGA؟",
+        "free": "مجاني 100% - ما فماش مصاريف مخفية",
+        "encrypted": "البيانات مشفّرة - حتى احنا ما نجموش نوصلولها",
+        "hosted": "مستضاف في تونس - بياناتك تبقى محلية",
+        "ready": "مستعد باش تبدا؟"
       }
     }
   },
