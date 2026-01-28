@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "business": "Business",
     "products": "Products",
     "contact": "Contact"
   },

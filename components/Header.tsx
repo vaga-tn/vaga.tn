@@ -33,6 +33,12 @@ export default function Header({ locale }: { locale: string }) {
             {t('home')}
           </Link>
           <Link
+            href={`/${locale}/business`}
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            {t('business')}
+          </Link>
+          <Link
             href={`/${locale}/contact`}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
