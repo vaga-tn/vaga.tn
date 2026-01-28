@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Globe } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Header({ locale }: { locale: string }) {
   const t = useTranslations('nav');
@@ -19,9 +20,12 @@ export default function Header({ locale }: { locale: string }) {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center space-x-2">
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold">VAGA</span>
-            <span className="text-xs text-muted-foreground">by MAAK CORP</span>
+          <div className='flex items-center gap-1'>
+            <Image src={'/logo.png'} width={25} height={409} alt='logo' style={{ height: 'auto' }} />
+            <div className='flex flex-col'>
+              <span className='font-bold text-2xl'>VAGA</span>
+              <small className='text-xs text-gray-500'>MAAK CORP</small>
+            </div>
           </div>
         </Link>
 
