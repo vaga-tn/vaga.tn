@@ -22,7 +22,7 @@ export default function Header({ locale }: { locale: string }) {
         <Link href={`/${locale}`} className="flex items-center space-x-2">
           <div className='flex items-center gap-1'>
             <Image src={'/logo.png'} width={25} height={409} alt='logo' style={{ height: 'auto' }} />
-            <div className='flex flex-col'>
+            <div className='flex-col hidden lg:flex'>
               <span className='font-bold text-2xl'>VAGA</span>
               <small className='text-xs text-gray-500'>MAAK CORP</small>
             </div>
