@@ -18,8 +18,8 @@ export default async function InvoicePage({
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="border-b bg-gradient-to-b from-background to-secondary/20">
-        <div className="container flex flex-col items-center justify-center gap-8 py-24 text-center md:py-32">
-          <div className="space-y-6 max-w-4xl">
+        <div className="container flex flex-col items-center justify-center text-center pt-12 overflow-y-hidden">
+          <div className="space-y-4 max-w-4xl">
             <div className="inline-block rounded-full border bg-secondary/50 px-4 py-1.5 text-sm">
               {t('badge')}
             </div>
@@ -29,12 +29,122 @@ export default async function InvoicePage({
             <p className="mx-auto max-w-[700px] text-xl text-muted-foreground md:text-xl">
               {t('description')}
             </p>
+            <Image src={'/vaga-invoice/hero.png'} width={2010} height={976} alt='logo' style={{ height: 'auto' }} className='relative lg:-bottom-12 -bottom-4' />
           </div>
         </div>
       </section>
 
+      {/* E-Invoice Law Section */}
+      <section className="border-t bg-secondary/30">
+        <div className="container py-16 md:py-24">
+          <div className="text-center mb-12">
+            <Image src={'/vaga-invoice/what_is_e_invoice.png'} width={478} height={95} className='mx-auto' alt='section title' />
+            <p className="text-muted-foreground text-lg">
+              {t('law.subtitle')}
+            </p>
+          </div>
+
+          {/* Q&A Cards */}
+          <div className="grid gap-8 md:grid-cols-2 mb-16 max-w-5xl mx-auto text-right">
+            <Card>
+              <CardHeader className='flex items-end'>
+                <div className="flex items-center gap-3 mb-2">
+                  <CardTitle className="text-xl">{t('law.what.title')}</CardTitle>
+                  <HelpCircle className="h-5 w-5 text-primary" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xl text-muted-foreground">
+                  {t('law.what.description')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className='flex items-end'>
+                <div className="flex items-center gap-3 mb-2">
+                  <CardTitle className="text-xl">{t('law.who.title')}</CardTitle>
+                  <Building2 className="h-5 w-5 text-primary" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xl text-muted-foreground">
+                  {t('law.who.description')}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Penalties Section */}
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold tracking-tighter mb-2">
+                {t('law.penalties.title')}
+              </h3>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              <Card className="text-center">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold">{t('law.penalties.fine1.amount')}</CardTitle>
+                  <CardDescription className="text-base">
+                    {t('law.penalties.fine1.description')}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="text-center">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold">{t('law.penalties.fine2.amount')}</CardTitle>
+                  <CardDescription className="text-base">
+                    {t('law.penalties.fine2.description')}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="text-center">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold">{t('law.penalties.fine3.amount')}</CardTitle>
+                  <CardDescription className="text-base">
+                    {t('law.penalties.fine3.description')}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="container py-16">
+        <div className="text-center mb-12">
+          <Image src={'/vaga-invoice/how.png'} width={290} height={95} className='mx-auto' alt='section title' />
+          <p className="text-muted-foreground text-lg">
+            {t('process.subtitle')}
+          </p>
+        </div>
+
+        <div className="flex gap-8 flex-wrap max-w-6xl mx-auto flex-row-reverse justify-center">
+          {[1, 2, 3, 4, 5].map((step) => (
+            <Card className="text-center" key={step}>
+              <CardHeader>
+                <CardTitle className="text-lg font-bold text-right flex items-center flex-row-reverse gap-4">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                    {step}
+                  </div>
+                  {t(`process.step${step}.title`)}
+                </CardTitle>
+                <CardDescription className="text-base">
+                  {t(`process.step${step}.description`)}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* All You Need Section */}
-      <section className="container py-16 md:py-24">
+      <section className="container py-16">
         <div className="text-center mb-12">
           <Image src={'/vaga-invoice/what_is_vaga.png'} width={478} height={95} className='mx-auto' alt='section title' />
           <p className="text-muted-foreground text-lg">
@@ -126,111 +236,6 @@ export default async function InvoicePage({
               </p>
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      {/* E-Invoice Law Section */}
-      <section className="border-t bg-secondary/30">
-        <div className="container py-16 md:py-24">
-          <div className="text-center mb-12">
-            <Image src={'/vaga-invoice/what_is_e_invoice.png'} width={478} height={95} className='mx-auto' alt='section title' />
-            <p className="text-muted-foreground text-lg">
-              {t('law.subtitle')}
-            </p>
-          </div>
-
-          {/* Q&A Cards */}
-          <div className="grid gap-8 md:grid-cols-2 mb-16 max-w-5xl mx-auto text-right">
-            <Card>
-              <CardHeader className='flex items-end'>
-                <div className="flex items-center gap-3 mb-2">
-                  <CardTitle className="text-xl">{t('law.what.title')}</CardTitle>
-                  <HelpCircle className="h-5 w-5 text-primary" />
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-xl text-muted-foreground">
-                  {t('law.what.description')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className='flex items-end'>
-                <div className="flex items-center gap-3 mb-2">
-                  <CardTitle className="text-xl">{t('law.who.title')}</CardTitle>
-                  <Building2 className="h-5 w-5 text-primary" />
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-xl text-muted-foreground">
-                  {t('law.who.description')}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Penalties Section */}
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold tracking-tighter mb-2">
-                {t('law.penalties.title')}
-              </h3>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card className="text-center">
-                <CardHeader>
-                  <CardTitle className="text-4xl font-bold">{t('law.penalties.fine1.amount')}</CardTitle>
-                  <CardDescription className="text-base">
-                    {t('law.penalties.fine1.description')}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="text-center">
-                <CardHeader>
-                  <CardTitle className="text-4xl font-bold">{t('law.penalties.fine2.amount')}</CardTitle>
-                  <CardDescription className="text-base">
-                    {t('law.penalties.fine2.description')}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="text-center">
-                <CardHeader>
-                  <CardTitle className="text-4xl font-bold">{t('law.penalties.fine3.amount')}</CardTitle>
-                  <CardDescription className="text-base">
-                    {t('law.penalties.fine3.description')}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="container py-16 md:py-24">
-        <div className="text-center mb-12">
-          <Image src={'/vaga-invoice/how.png'} width={290} height={95} className='mx-auto' alt='section title' />
-          <p className="text-muted-foreground text-lg">
-            {t('process.subtitle')}
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-5 max-w-6xl mx-auto">
-          {[1, 2, 3, 4, 5].map((step) => (
-            <div key={step} className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold">
-                {step}
-              </div>
-              <h3 className="font-bold mb-2">{t(`process.step${step}.title`)}</h3>
-              <p className="text-xl text-muted-foreground">
-                {t(`process.step${step}.description`)}
-              </p>
-            </div>
-          ))}
         </div>
       </section>
     </div>
