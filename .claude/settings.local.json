@@ -3,7 +3,14 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(npm run build:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npx create-nx-workspace@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:analogjs.org)",
+      "Bash(npx nx build:*)",
+      "Bash(pkill:*)",
+      "Bash(realpath:*)"
     ]
   }
 }

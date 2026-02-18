@@ -1,0 +1,53 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { injectContentFiles } from '@analogjs/content';
+import { DocPageAttributes } from '@app/models/content.models';
+
+@Component({
+  selector: 'app-docs-index-page',
+  standalone: true,
+  imports: [RouterLink],
+  template: `
+    <div class="p-8 max-w-3xl mx-auto">
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold text-gray-900">Documentation</h1>
+        <p class="mt-2 text-gray-500">
+          Everything you need to get started and go further.
+        </p>
+      </header>
+
+      @if (docs.length === 0) {
+        <p class="text-gray-400">No documentation pages yet.</p>
+      }
+
+      <nav aria-label="Documentation pages">
+        <ul class="space-y-3">
+          @for (doc of docs; track doc.slug) {
+            <li>
+              <a
+                [routerLink]="['/docs', doc.slug]"
+                class="flex items-center gap-3 rounded-lg border border-gray-200 bg-white px-5 py-4 hover:border-blue-400 hover:shadow-sm transition-all"
+              >
+                <div class="flex-1">
+                  <p class="font-medium text-gray-900">
+                    {{ doc.attributes.title }}
+                  </p>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ doc.attributes.description }}
+                  </p>
+                </div>
+                <span class="text-gray-400 text-sm">&rarr;</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+  `,
+})
+export default class DocsIndexPageComponent {
+  readonly docs = injectContentFiles<DocPageAttributes>(
+    (file) =>
+      file.filename.includes('/content/docs/') && !file.attributes['draft'],
+  ).sort((a, b) => (a.attributes.order ?? 99) - (b.attributes.order ?? 99));
+}
