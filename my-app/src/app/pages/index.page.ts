@@ -3,26 +3,26 @@ import { RouterLink } from '@angular/router';
 import { RouteMeta } from '@analogjs/router';
 
 export const routeMeta: RouteMeta = {
-  title: 'VAGA — Your headline goes here',
+  title: 'VAGA - Logiciel Gestion Commerciale | ERP Tunisie Sousse',
   meta: [
     {
       name: 'description',
       content:
-        'A short description of what your product does and why people should care. Replace this with your real value proposition.',
+        'Solutions ERP professionnelles pour entreprises à Sousse, Tunisie. Logiciel de gestion commerciale, facturation électronique, immobilier et automobile par MAAK CORP.',
     },
-    { property: 'og:title', content: 'VAGA — Your headline goes here' },
+    { property: 'og:title', content: 'VAGA - Logiciel Gestion Commerciale | ERP Tunisie Sousse' },
     {
       property: 'og:description',
       content:
-        'A short description of what your product does and why people should care.',
+        'Solutions ERP professionnelles pour entreprises à Sousse, Tunisie. Logiciel de gestion commerciale, facturation électronique, immobilier et automobile par MAAK CORP.',
     },
     { property: 'og:url', content: 'https://vaga.tn/' },
     { property: 'og:type', content: 'website' },
-    { name: 'twitter:title', content: 'VAGA — Your headline goes here' },
+    { name: 'twitter:title', content: 'VAGA - Logiciel Gestion Commerciale | ERP Tunisie Sousse' },
     {
       name: 'twitter:description',
       content:
-        'A short description of what your product does and why people should care.',
+        'Solutions ERP professionnelles pour entreprises à Sousse, Tunisie. Logiciel de gestion commerciale, facturation électronique, immobilier et automobile par MAAK CORP.',
     },
     { name: 'robots', content: 'index, follow' },
   ],
