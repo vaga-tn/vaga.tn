@@ -7,7 +7,17 @@ module.exports = {
     join(__dirname, 'src/content/**/*.md'),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customBackgrond: "#111111",
+        customBackground2: "#FFFEFE",
+        customBackground3: "#FBFAFB",
+        customBackground4: "#F1F0F0",
+        customText: "#707170",
+        customText2: "#EBEBEA",
+        customBorder: "#DEDEDF"
+      },
+    },
   },
   plugins: [],
 };
