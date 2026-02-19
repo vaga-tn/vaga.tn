@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 import { injectContent, injectContentFiles, MarkdownComponent } from '@analogjs/content';
 import { DocPageAttributes } from '@app/models/content.models';
 
@@ -48,7 +49,10 @@ import { DocPageAttributes } from '@app/models/content.models';
     </div>
   `,
 })
-export default class DocDetailPageComponent {
+export default class DocDetailPageComponent implements OnInit {
+  private readonly metaService = inject(Meta);
+  private readonly titleService = inject(Title);
+
   readonly docs = injectContentFiles<DocPageAttributes>(
     (file) =>
       file.filename.includes('/content/docs/') && !file.attributes['draft'],
@@ -58,4 +62,23 @@ export default class DocDetailPageComponent {
     param: 'slug',
     subdirectory: 'docs',
   });
+
+  ngOnInit(): void {
+    this.doc$.subscribe((doc) => {
+      const { title, description, slug } = doc.attributes;
+      const pageTitle = `${title} — VAGA Docs`;
+      const pageUrl = `https://vaga.tn/docs/${slug}`;
+
+      this.titleService.setTitle(pageTitle);
+
+      this.metaService.updateTag({ name: 'description', content: description });
+      this.metaService.updateTag({ property: 'og:title', content: pageTitle });
+      this.metaService.updateTag({ property: 'og:description', content: description });
+      this.metaService.updateTag({ property: 'og:url', content: pageUrl });
+      this.metaService.updateTag({ property: 'og:type', content: 'article' });
+      this.metaService.updateTag({ name: 'twitter:title', content: pageTitle });
+      this.metaService.updateTag({ name: 'twitter:description', content: description });
+      this.metaService.updateTag({ name: 'robots', content: 'index, follow' });
+    });
+  }
 }

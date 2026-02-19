@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { BlogPostAttributes } from '@app/models/content.models';
 
@@ -42,9 +43,31 @@ import { BlogPostAttributes } from '@app/models/content.models';
     }
   `,
 })
-export default class BlogPostPageComponent {
+export default class BlogPostPageComponent implements OnInit {
+  private readonly metaService = inject(Meta);
+  private readonly titleService = inject(Title);
+
   readonly post$ = injectContent<BlogPostAttributes>({
     param: 'slug',
     subdirectory: 'blog',
   });
+
+  ngOnInit(): void {
+    this.post$.subscribe((post) => {
+      const { title, description, slug } = post.attributes;
+      const pageTitle = `${title} — VAGA`;
+      const pageUrl = `https://vaga.tn/blog/${slug}`;
+
+      this.titleService.setTitle(pageTitle);
+
+      this.metaService.updateTag({ name: 'description', content: description });
+      this.metaService.updateTag({ property: 'og:title', content: pageTitle });
+      this.metaService.updateTag({ property: 'og:description', content: description });
+      this.metaService.updateTag({ property: 'og:url', content: pageUrl });
+      this.metaService.updateTag({ property: 'og:type', content: 'article' });
+      this.metaService.updateTag({ name: 'twitter:title', content: pageTitle });
+      this.metaService.updateTag({ name: 'twitter:description', content: description });
+      this.metaService.updateTag({ name: 'robots', content: 'index, follow' });
+    });
+  }
 }

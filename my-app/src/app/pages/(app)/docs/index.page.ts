@@ -1,7 +1,32 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { injectContentFiles } from '@analogjs/content';
+import { RouteMeta } from '@analogjs/router';
 import { DocPageAttributes } from '@app/models/content.models';
+
+export const routeMeta: RouteMeta = {
+  title: 'Documentation — VAGA',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Everything you need to get started with VAGA and go further.',
+    },
+    { property: 'og:title', content: 'Documentation — VAGA' },
+    {
+      property: 'og:description',
+      content: 'Everything you need to get started with VAGA and go further.',
+    },
+    { property: 'og:url', content: 'https://vaga.tn/docs' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: 'Documentation — VAGA' },
+    {
+      name: 'twitter:description',
+      content: 'Everything you need to get started with VAGA and go further.',
+    },
+    { name: 'robots', content: 'index, follow' },
+  ],
+};
 
 @Component({
   selector: 'app-docs-index-page',

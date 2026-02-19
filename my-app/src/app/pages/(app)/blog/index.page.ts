@@ -2,7 +2,31 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { injectContentFiles } from '@analogjs/content';
+import { RouteMeta } from '@analogjs/router';
 import { BlogPostAttributes } from '@app/models/content.models';
+
+export const routeMeta: RouteMeta = {
+  title: 'Blog — VAGA',
+  meta: [
+    {
+      name: 'description',
+      content: 'Thoughts, updates, and announcements from the VAGA team.',
+    },
+    { property: 'og:title', content: 'Blog — VAGA' },
+    {
+      property: 'og:description',
+      content: 'Thoughts, updates, and announcements from the VAGA team.',
+    },
+    { property: 'og:url', content: 'https://vaga.tn/blog' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: 'Blog — VAGA' },
+    {
+      name: 'twitter:description',
+      content: 'Thoughts, updates, and announcements from the VAGA team.',
+    },
+    { name: 'robots', content: 'index, follow' },
+  ],
+};
 
 @Component({
   selector: 'app-blog-index-page',

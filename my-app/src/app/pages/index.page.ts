@@ -1,5 +1,32 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { RouteMeta } from '@analogjs/router';
+
+export const routeMeta: RouteMeta = {
+  title: 'VAGA — Your headline goes here',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'A short description of what your product does and why people should care. Replace this with your real value proposition.',
+    },
+    { property: 'og:title', content: 'VAGA — Your headline goes here' },
+    {
+      property: 'og:description',
+      content:
+        'A short description of what your product does and why people should care.',
+    },
+    { property: 'og:url', content: 'https://vaga.tn/' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: 'VAGA — Your headline goes here' },
+    {
+      name: 'twitter:description',
+      content:
+        'A short description of what your product does and why people should care.',
+    },
+    { name: 'robots', content: 'index, follow' },
+  ],
+};
 
 @Component({
   selector: 'app-home-page',
