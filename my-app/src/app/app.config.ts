@@ -8,14 +8,14 @@ import {
   withInterceptors,
 } from '@angular/common/http';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideFileRouter, requestContextInterceptor, withDebugRoutes } from '@analogjs/router';
+import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
 import { provideContent, withMarkdownRenderer } from '@analogjs/content';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
 
-    provideFileRouter(withDebugRoutes()),
+    provideFileRouter(),
     provideClientHydration(),
     provideHttpClient(
       withFetch(),

@@ -150,6 +150,7 @@ import { BlogPostAttributes } from '@app/models/content.models';
    ```markdown
    ---
    title: Configuration
+   slug: configuration
    order: 2
    description: How to configure the application for your environment.
    ---
@@ -169,12 +170,14 @@ import { BlogPostAttributes } from '@app/models/content.models';
 | Field | Type | Required | Description |
 |---|---|---|---|
 | `title` | string | ✅ | Displayed as the page heading and sidebar link |
+| `slug` | string | ✅ | Must match the filename exactly (without `.md`). E.g. `configuration.md` → `slug: configuration` |
 | `order` | number | ✅ | Controls sidebar sort order — lower numbers appear first |
 | `description` | string | ✅ | Shown on the `/docs` index card |
 | `draft` | boolean | optional | Set to `true` to hide the page without deleting it |
 
-> **Note:** Doc filenames do not need a `slug` field — the filename itself (without `.md`) becomes the URL slug.
-> E.g. `configuration.md` → `/docs/configuration`.
+> **Why is `slug` required for docs?** Due to how AnalogJS registers content files in an Nx monorepo,
+> the automatic filename-to-slug derivation does not work reliably. Always set `slug` explicitly
+> to match the filename (without `.md`) to ensure routing and content loading work correctly.
 
 ---
 

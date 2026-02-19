@@ -10,6 +10,7 @@ export interface BlogPostAttributes {
 
 export interface DocPageAttributes {
   title: string;
+  slug: string;
   order: number; // sidebar sort order
   description: string;
   draft?: boolean;

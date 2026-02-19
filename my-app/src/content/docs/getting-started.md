@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+slug: getting-started
 order: 1
 description: How to set up and run this application for the first time.
 ---
