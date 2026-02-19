@@ -6,9 +6,9 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
   template: `
-    <div class="grid grid-cols-[100px,1fr] h-screen relative">
+    <div class="grid grid-cols-[100px,1fr] h-full">
       <!-- Left sidebar -->
-      <aside class="w-full h-screen border-r border-gray-200 bg-white p-4 space-y-4 sticky top-0 left-0">
+      <aside class="sticky top-0 h-screen border-r border-gray-200 bg-white p-4 space-y-4 overflow-y-auto">
         <img [src]="'vaga_logo.png'" [alt]="'image'" [width]="30" class="mx-auto" />
         <nav class="flex flex-col gap-2">
           @for (item of routes; track $index) {
@@ -26,7 +26,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
       </aside>
 
       <!-- Main content -->
-      <main class="h-screen overscroll-y-scroll bg-gray-50">
+      <main class="h-screen overflow-y-auto bg-gray-50">
         <router-outlet />
       </main>
     </div>

@@ -6,7 +6,13 @@
 
 html,
 body {
-  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
