@@ -31,7 +31,7 @@ import { DocPageAttributes } from '@app/models/content.models';
       <!-- Doc content -->
       <main class="flex-1 overflow-auto">
         @if (doc$ | async; as doc) {
-          <article class="p-8 max-w-3xl">
+          <article class="contentLayout">
             <header class="mb-8">
               <h1 class="text-4xl font-bold text-gray-900">
                 {{ doc.attributes.title }}

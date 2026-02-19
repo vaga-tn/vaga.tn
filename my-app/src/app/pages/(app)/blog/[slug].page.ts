@@ -10,7 +10,7 @@ import { BlogPostAttributes } from '@app/models/content.models';
   imports: [AsyncPipe, DatePipe, RouterLink, MarkdownComponent],
   template: `
     @if (post$ | async; as post) {
-      <article class="p-8 max-w-3xl mx-auto">
+      <article class="contentLayout">
         <a
           routerLink="/blog"
           class="inline-flex items-center gap-1 text-sm text-blue-600 hover:underline mb-8"

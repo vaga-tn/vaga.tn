@@ -8,7 +8,7 @@ import { DocPageAttributes } from '@app/models/content.models';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <div class="p-8 max-w-3xl mx-auto">
+    <div class="contentLayout">
       <header class="mb-10">
         <h1 class="text-4xl font-bold text-gray-900">Documentation</h1>
         <p class="mt-2 text-gray-500">

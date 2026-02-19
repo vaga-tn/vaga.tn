@@ -9,7 +9,7 @@ import { BlogPostAttributes } from '@app/models/content.models';
   standalone: true,
   imports: [RouterLink, DatePipe],
   template: `
-    <div class="p-8 max-w-4xl mx-auto">
+    <div class="contentLayout">
       <header class="mb-10">
         <h1 class="text-4xl font-bold text-gray-900">Blog</h1>
         <p class="mt-2 text-gray-500">Thoughts, updates, and announcements.</p>
