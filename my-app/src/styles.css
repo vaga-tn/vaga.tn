@@ -78,5 +78,5 @@ app-root {
 }
 
 .landingPageCard {
-  @apply flex flex-col gap-2 p-4 bg-white border border-solid rounded-md border-customBorder;
+  @apply flex flex-col gap-2 p-4 bg-white border border-solid rounded-md shadow-sm border-customBorder;
 }

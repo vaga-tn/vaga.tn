@@ -13,6 +13,7 @@ module.exports = {
         customBackground2: "#FFFEFE",
         customBackground3: "#FBFAFB",
         customBackground4: "#F1F0F0",
+        customBackground5: "#F9FAFB",
         customText: "#707170",
         customText2: "#EBEBEA",
         customBorder: "#DEDEDF"
