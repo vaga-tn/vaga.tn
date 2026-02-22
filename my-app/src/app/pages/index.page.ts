@@ -58,5 +58,33 @@ export default class HomePageComponent {
       route: '/',
       icons: 'icons/keyboard.svg',
     },
+  ];
+
+  protected vagaModulesPreview = [
+    {
+      title: 'home/preview/titles/settings.png',
+      description: 'سجل معلومات شريكتك مرة وحدة و استعملهم في أي بلاصة',
+      preview: 'home/preview/settingsPreview.png',
+    },
+    {
+      title: 'home/preview/titles/clients.png',
+      description: 'دخل معلومات حرفائك و المزودين بنظام',
+      preview: 'home/preview/clientModulePreview.gif',
+    },
+    {
+      title: 'home/preview/titles/dossier.png',
+      description: 'نظم خدمتك وحساباتك بالعام و إلى بالشهر',
+      preview: 'home/preview/dossierPreview.png',
+    },
+    {
+      title: 'home/preview/titles/invoice.png',
+      description: 'فاتورة في دقيقة، معليك كان تختار النوع والحريف، الباقي يتعمر وحدو',
+      preview: 'home/preview/invoiceModulePreview.png',
+    },
+    {
+      title: 'home/preview/titles/finance.png',
+      description: 'نظم حساباتك كينك كونتبلي',
+      preview: 'home/preview/financeModulePreview.gif',
+    },
   ]
 }

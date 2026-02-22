@@ -124,6 +124,31 @@
     </section>
 
     <!-- ************ -->
+    <!-- ** WHAT IS VAGA ** -->
+    <!-- ************ -->
+    <section class="space-y-8 landingPageSection">
+      <div>
+        <img src="home/what-is-vaga.png" alt="image" class="mx-auto">
+      </div>
+
+      <div dir="rtl" class="mx-auto">
+        <p>حل خفيف و قوي باش تسيّر فواتيرك. متوافق 100% مع قانون الفاتورة الإلكترونية التونسية</p>
+      </div>
+
+      <div class="flex flex-col gap-12" dir="rtl">
+        @for (item of vagaModulesPreview; track $index) {
+        <div class="flex items-start justify-between w-full gap-4" [class.flex-row-reverse]="$index % 2 === 0">
+          <div class="space-y-4">
+            <img [src]="item.title" alt="image" width="250">
+            <p>{{item.description}}</p>
+          </div>
+          <img [src]="item.preview" alt="preview image" width="450">
+        </div>
+        }
+      </div>
+    </section>
+
+    <!-- ************ -->
     <!-- ** FOOTER ** -->
     <!-- ************ -->
     <footer class="py-12 text-white bg-black">
