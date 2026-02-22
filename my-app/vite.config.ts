@@ -34,6 +34,15 @@ export default defineConfig(({ mode }) => {
         content: {
           highlighter: 'prism',
         },
+        prerender: {
+          routes: async () => [
+            '/',
+            '/blog',
+            '/docs',
+            '/blog/hello-world',
+            '/docs/getting-started',
+          ],
+        },
       }),
       nxViteTsPaths(),
     ],
