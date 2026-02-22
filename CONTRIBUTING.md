@@ -268,3 +268,15 @@ npx nx show project my-app
 - `injectContent()` returns an `Observable` — always use the `async` pipe in templates. Angular's `TransferState` serialises the result from SSR to the client so content is never fetched twice.
 - `injectContentFiles()` is synchronous and SSR-safe — it reads from a build-time registry.
 - The landing page (`pages/index.page.ts`) is deliberately placed **outside** the `(app)` layout group so it renders full-width with no sidebar.
+
+## Ongoing Maintenance
+
+Keeping the sitemap and prerender routes in sync
+Every time you add a new blog post or doc page, update two things:
+
+vite.config.ts — add to the routes array:
+
+'/blog/my-new-post',
+'/docs/my-new-doc',
+
+public/sitemap.xml — add a matching <url> block.
