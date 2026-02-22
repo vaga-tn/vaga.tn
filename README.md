@@ -1,138 +1,76 @@
-# VAGA Landing Page
+# AnalogApp
 
-A modern, bilingual landing page for VAGA business solutions by MAAK CORP. Built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui components.
+<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-## Features
+✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
 
-- **Modern Design**: Clean black and white theme with smooth animations and transitions
-- **Bilingual Support**: Full internationalization support for English and French
-- **Responsive**: Mobile-first design that works beautifully on all devices
-- **Product Mockups**: Professional placeholder mockups for all products
-- **Contact Form**: Netlify Forms integration for easy contact submissions
-- **Product Showcase**: Dedicated pages for each VAGA product:
-  - VAGA ERP - Complete Business Management
-  - VAGA SM - Support Management Platform
-  - VAGA AUTO - Automotive Dealership Suite
-  - VAGA IMMO - Real Estate Management
+Run `npx nx graph` to visually explore what got created. Now, let's get you up to speed!
 
-## Tech Stack
+## Finish your remote caching setup
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
-- **Icons**: Lucide React
-- **Internationalization**: next-intl
-- **Forms**: Netlify Forms (no backend required)
+[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/28o8YxswSh)
 
-## Getting Started
 
-### Prerequisites
+## Run tasks
 
-- Node.js 18+ and npm
+To run tasks with Nx use:
 
-### Installation
-
-```bash
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
+```sh
+npx nx <target> <project-name>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the application.
+For example:
 
-The app will redirect to either `/en` or `/fr` based on your locale preference.
-
-## Project Structure
-
-```
-├── app/
-│   ├── [locale]/          # Internationalized routes
-│   │   ├── page.tsx       # Home page
-│   │   └── products/      # Product detail pages
-│   │       ├── erp/
-│   │       ├── sm/
-│   │       ├── auto/
-│   │       └── immo/
-│   └── globals.css        # Global styles
-├── components/
-│   ├── ui/                # shadcn/ui components
-│   ├── Header.tsx         # Navigation header
-│   ├── Footer.tsx         # Footer component
-│   ├── ProductCard.tsx    # Product card component
-│   └── ProductDetailPage.tsx  # Product detail template
-├── messages/
-│   ├── en.json            # English translations
-│   └── fr.json            # French translations
-├── lib/
-│   └── utils.ts           # Utility functions
-├── i18n.ts                # i18n configuration
-└── middleware.ts          # Next.js middleware for i18n routing
+```sh
+npx nx build myproject
 ```
 
-## Internationalization
+These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
 
-The site supports English and French. To switch languages, click the globe icon in the header.
+[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-### Adding Translations
+## Add new projects
 
-Edit the JSON files in the `messages/` directory:
-- `messages/en.json` - English translations
-- `messages/fr.json` - French translations
+While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
 
-## Customization
-
-### Colors
-
-The theme uses a black and white color scheme defined in `app/globals.css` using CSS variables. Customize the colors by modifying the `:root` and `.dark` selectors.
-
-### Products
-
-To add or modify products:
-1. Update translations in `messages/en.json` and `messages/fr.json`
-2. Create a new page in `app/[locale]/products/`
-3. Add the product card to the home page
-
-## Documentation
-
-- **[CONTACT_FORM_SETUP.md](./CONTACT_FORM_SETUP.md)** - Complete guide to Netlify Forms setup
-- **[MOCKUPS_INFO.md](./MOCKUPS_INFO.md)** - Information about product mockups
-- **[PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)** - Project overview and features
-
-## Deployment
-
-### Deploy to Netlify (Recommended)
-
-1. Push your code to GitHub/GitLab/Bitbucket
-2. Connect your repository to [Netlify](https://app.netlify.com)
-3. Build settings are pre-configured in `netlify.toml`
-4. Configure form notifications (see CONTACT_FORM_SETUP.md)
-
-### Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel
+To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
+```sh
+npx nx add @nx/react
 ```
 
-Note: If deploying to Vercel, you'll need an alternative form handling solution.
+Use the plugin's generator to create new projects. For example, to create a new React app or library:
 
-## Next Steps
+```sh
+# Generate an app
+npx nx g @nx/react:app demo
 
-1. **Analytics**: Add Google Analytics or similar
-2. **Real Images**: Replace mockups with actual product screenshots
-3. **Animations**: Enhance with framer-motion or similar
-4. **CMS**: Integrate with a headless CMS for easy content management
-5. **SEO**: Add meta tags and sitemap generation
+# Generate a library
+npx nx g @nx/react:lib some-lib
+```
 
-## License
+You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
 
-Copyright © 2026 MAAK CORP. All rights reserved.
+[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+
+[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Install Nx Console
+
+Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+
+[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Useful links
+
+Learn more:
+
+- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+And join the Nx community:
+- [Discord](https://go.nx.dev/community)
+- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
+- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
+- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
