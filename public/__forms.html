@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Netlify Forms</title>
+  </head>
+  <body>
+    <!-- A hidden form to let Netlify's build bots parse our form fields -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="subject">
+        <option value="demo">Demande de Démonstration</option>
+        <option value="custom_dev">Développement Sur Mesure</option>
+        <option value="support">Support Client / Technique</option>
+        <option value="other">Autre demande</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>
