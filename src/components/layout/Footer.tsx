@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-2 space-y-6">
             <div className="flex items-center gap-2 mb-4">
-              <Image src="/vaga.svg" alt="VAGA" width={35} height={35} />
+              <Image src="/vaga.svg" alt="VAGA" width={35} height={35} className="w-[35px] h-[35px] object-contain" />
               <span className="text-xl font-bold tracking-tight text-zinc-900">VAGA</span>
             </div>
             <p className="text-sm text-zinc-500 max-w-sm">

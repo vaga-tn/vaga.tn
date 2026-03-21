@@ -41,7 +41,7 @@ export function Modules() {
               key={module.name}
               className="bg-white hover:bg-zinc-50 transition-colors py-10 flex flex-col items-center justify-center text-center gap-4 group"
             >
-              <Image src={module.icon} alt={`Module ${module.name} - VAGA ERP Tunisie`} width={64} height={64} className="grayscale group-hover:grayscale-0" />
+              <Image src={module.icon} alt={`Module ${module.name} - VAGA ERP Tunisie`} width={64} height={64} className="w-16 h-16 object-contain grayscale group-hover:grayscale-0" />
               <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase">
                 {module.name}
               </span>
