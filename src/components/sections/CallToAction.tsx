@@ -12,12 +12,6 @@ export default function CallToAction() {
             href="/#contact"
             className="inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-brand/90 transition-colors"
           >
-            Démarrer le projet
-          </Link>
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center rounded-md bg-white border border-zinc-200 px-6 py-3 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-50 transition-colors"
-          >
             Demander une démo
           </Link>
         </div>
