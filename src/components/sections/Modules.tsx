@@ -24,7 +24,7 @@ const modules = [
 export function Modules() {
   return (
     <section className="py-24 bg-white" id="modules">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 lg:px-0">
         <div className="mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl mb-4">
             Une suite logicielle, des possibilités infinies

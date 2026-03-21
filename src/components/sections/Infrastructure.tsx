@@ -3,7 +3,7 @@ import { Server, Cloud } from "lucide-react"
 export function Infrastructure() {
   return (
     <section id="deploiement" className="py-24">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 lg:px-0">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-8 items-center">
 
           {/* Left Content */}

@@ -4,7 +4,7 @@ import Image from "next/image"
 export function Footer() {
   return (
     <footer className="border-t border-border bg-white pt-16 pb-8">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
           {/* Brand Column */}
@@ -65,11 +65,7 @@ export function Footer() {
           <p className="text-xs text-zinc-400 font-medium">
             © {new Date().getFullYear()} VAGA SUITE. L'ARCHITECTE MODERNE.
           </p>
-          <div className="flex items-center gap-4 text-zinc-400">
-            {/* Social flags or language links could go here */}
-            <div className="h-4 w-4 bg-zinc-200 rounded-full" />
-            <div className="h-4 w-4 bg-zinc-200 rounded-full" />
-          </div>
+          <div></div>
         </div>
       </div>
     </footer >

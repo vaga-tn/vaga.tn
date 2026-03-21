@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 export function Contact() {
   return (
     <section id="contact" className="py-24 bg-zinc-50 border-t border-zinc-200">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 lg:px-0">
         <div className="text-left mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl mb-4">
             Contactez-nous

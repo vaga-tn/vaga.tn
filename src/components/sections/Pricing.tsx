@@ -3,7 +3,7 @@ import { Check } from "lucide-react"
 export function Pricing() {
   return (
     <section id="tarification" className="relative py-24 bg-white bg-[radial-gradient(#3ecf8e_1px,transparent_1px)] [background-size:16px_16px]">
-      <div className="container mx-auto text-left relative z-10">
+      <div className="container mx-auto text-left relative z-10 px-4 lg:px-0">
 
         <div className="mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl mb-4">

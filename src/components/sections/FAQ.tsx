@@ -8,7 +8,7 @@ import {
 export function FAQ() {
   return (
     <section className="py-24 bg-white">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 lg:px-0">
 
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12 text-zinc-900">
           Questions Fréquentes
