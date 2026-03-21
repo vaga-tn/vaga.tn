@@ -1,5 +1,3 @@
-import React from "react"
-import { ShoppingCart, Package, Users, Landmark, ShoppingBag, IdCard } from "lucide-react"
 import Image from "next/image"
 
 const modules = [

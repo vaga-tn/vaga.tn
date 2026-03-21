@@ -1,4 +1,3 @@
-import React from "react"
 import { Server, Cloud } from "lucide-react"
 
 export function Infrastructure() {

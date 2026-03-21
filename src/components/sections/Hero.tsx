@@ -1,5 +1,4 @@
-import React from "react"
-import { ArrowRight, BarChart3, Users, FileText, Database, Shield, Zap } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
