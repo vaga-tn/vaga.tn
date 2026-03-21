@@ -12,19 +12,19 @@ export function Header() {
         </div>
 
         <nav className="hidden md:flex items-center gap-5 text-sm font-normal text-zinc-600 transition-colors">
-          <Link href="#solutions" className="hover:text-brand transition-colors">
+          <Link href="/#solutions" className="hover:text-brand transition-colors">
             Solutions
           </Link>
-          <Link href="#modules" className="hover:text-brand transition-colors">
+          <Link href="/#modules" className="hover:text-brand transition-colors">
             Applications
           </Link>
-          <Link href="#tarification" className="hover:text-brand transition-colors">
+          <Link href="/#tarification" className="hover:text-brand transition-colors">
             Tarification
           </Link>
-          <Link href="#deploiement" className="hover:text-brand transition-colors">
+          <Link href="/#deploiement" className="hover:text-brand transition-colors">
             Déploiement
           </Link>
-          <Link href="#contact" className="hover:text-brand transition-colors">
+          <Link href="/#contact" className="hover:text-brand transition-colors">
             Contact
           </Link>
           <Link href="/blog" className="hover:text-brand transition-colors">
