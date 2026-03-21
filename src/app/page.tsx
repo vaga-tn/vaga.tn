@@ -5,6 +5,7 @@ import { Modules } from "@/components/sections/Modules"
 import { Infrastructure } from "@/components/sections/Infrastructure"
 import { Pricing } from "@/components/sections/Pricing"
 import { FAQ } from "@/components/sections/FAQ"
+import { Contact } from "@/components/sections/Contact"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Infrastructure />
       <Pricing />
       <FAQ />
+      <Contact />
       <Footer />
     </main>
   )
