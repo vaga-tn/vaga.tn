@@ -27,10 +27,10 @@ export function Modules() {
       <div className="container mx-auto px-4 lg:px-0">
         <div className="mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl mb-4">
-            Une suite logicielle, des possibilités infinies
+            Un Logiciel de Gestion d'Entreprise Complet et Modulaire
           </h2>
           <p className="text-lg text-zinc-600 max-w-2xl">
-            Activez uniquement les modules dont vous avez besoin. Une flexibilité totale pour votre structure.
+            De la <strong>facturation</strong> à la gestion de stock, activez uniquement les modules d'<strong>ERP</strong> dont vous avez besoin. Une flexibilité totale pour votre PME à <strong>Sousse</strong> et partout en Tunisie.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export function Modules() {
               key={module.name}
               className="bg-white hover:bg-zinc-50 transition-colors py-10 flex flex-col items-center justify-center text-center gap-4 group"
             >
-              <Image src={module.icon} alt={module.name} width={64} height={64} className="grayscale group-hover:grayscale-0" />
+              <Image src={module.icon} alt={`Module ${module.name} - VAGA ERP Tunisie`} width={64} height={64} className="grayscale group-hover:grayscale-0" />
               <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase">
                 {module.name}
               </span>

@@ -7,13 +7,14 @@ export function Hero() {
       <div className="flex flex-col items-center gap-8">
 
         <h1 className="text-5xl font-thin text-center tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl leading-[1.1]">
-          Fini le chaos
+          L'ERP & Logiciel de Gestion en Tunisie
           <br />
-          <span className="text-brand font-normal">Pilotez votre réussite</span>
+          <span className="text-brand font-normal">Moderne, Fiable et Pas Cher</span>
         </h1>
 
         <p className="text-lg text-black text-center max-w-3xl font-thin">
-          VAGA est une suite logicielle complète conçue pour répondre aux besoins spécifiques des entreprises tunisiennes. De la gestion des ventes à la comptabilité, en passant par le stock et les clients, VAGA vous accompagne dans la digitalisation de votre activité.
+          L'alternative de confiance pour la <strong>gestion commerciale</strong> et <strong>facturation</strong> de votre entreprise.
+          VAGA numérise votre activité avec des outils modernes, robustes et à un prix abordable pour les PME tunisiennes.
         </p>
 
         <div className="flex flex-wrap items-center">

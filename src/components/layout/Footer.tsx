@@ -14,7 +14,7 @@ export function Footer() {
               <span className="text-xl font-bold tracking-tight text-zinc-900">VAGA</span>
             </div>
             <p className="text-sm text-zinc-500 max-w-sm">
-              L'architecte moderne de votre infrastructure d'entreprise en Tunisie. Expertise locale, technologie mondiale.
+              L'alternative de confiance : votre <strong>ERP</strong> et <strong>logiciel de gestion commerciale</strong> moderne et abordable, basé à Sousse, Tunisie.
             </p>
             <div>
               <p className="text-xs text-zinc-400 font-thin">VAGA est un service fourni par MAAK CORP SUARL représenté par AYMEN KHEDHRIYA; société domiciliée à Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1, Sousse 4054, numéro de TVA: 1847208/C/A/M/000</p>

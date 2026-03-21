@@ -13,8 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VAGA - L'architecte moderne de votre infrastructure d'entreprise en Tunisie",
-  description: "VAGA est un service fourni par MAAK CORP SUARL représenté par AYMEN KHEDHRIYA; société domiciliée à Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1, Sousse 4054, numéro de TVA: 1847208/C/A/M/000",
+  title: "VAGA | ERP & Logiciel de Gestion Commerciale Moderne à Sousse",
+  description: "VAGA est l'alternative fiable, moderne et moins chère pour les PME à Sousse, Tunisie. Logiciel ERP, gestion commerciale, de facturation et gestion d'entreprise.",
+  keywords: "ERP, logiciel gestion commercial, logiciel gestion entreprise, logiciel facturation, Sousse, Tunisie, abordable, pas cher, PME, moderne, alternative de confiance",
+  openGraph: {
+    title: "VAGA | ERP & Logiciel de Gestion Commerciale Moderne",
+    description: "L'alternative de confiance, moderne et pas chère pour la gestion d'entreprise à Sousse. Facturation, stock et clients.",
+    url: "https://vaga.tn",
+    siteName: "VAGA",
+    locale: "fr_TN",
+    type: "website",
+  },
   icons: [
     {
       media: "(prefers-color-scheme: light)",
@@ -35,8 +44,39 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "VAGA",
+              "operatingSystem": "Web",
+              "applicationCategory": "BusinessApplication",
+              "offers": {
+                "@type": "Offer",
+                "price": "3500.00",
+                "priceCurrency": "TND"
+              },
+              "description": "Logiciel de gestion commerciale, facturation et ERP moderne à prix abordable pour les entreprises en Tunisie.",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "MAAK CORP",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Sousse",
+                  "postalCode": "4054",
+                  "addressCountry": "TN",
+                  "streetAddress": "Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1"
+                }
+              }
+            })
+          }}
+        />
+      </body>
     </html>
   );
 }
