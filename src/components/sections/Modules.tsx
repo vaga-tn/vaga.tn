@@ -1,14 +1,26 @@
 import React from "react"
-import { ShoppingCart, Package, Users, Calculator, ShoppingBag, Briefcase } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { ShoppingCart, Package, Users, Landmark, ShoppingBag, IdCard } from "lucide-react"
+import Image from "next/image"
 
 const modules = [
-  { name: "VENTE", icon: ShoppingCart },
-  { name: "STOCK", icon: Package },
-  { name: "CLIENT", icon: Users },
-  { name: "COMPTA", icon: Calculator },
-  { name: "ACHAT", icon: ShoppingBag },
-  { name: "RH", icon: Briefcase },
+  { name: "STOCK", icon: '/apps/inventory.webp' },
+  { name: "CLIENT", icon: '/apps/clients.webp' },
+  { name: "FOURNISSEURS", icon: '/apps/suppliers.webp' },
+  { name: "ACHAT", icon: '/apps/sales.webp' },
+  { name: "VENTE", icon: '/apps/purchase.webp' },
+  { name: "COMPTABILITE", icon: '/apps/bank.webp' },
+  { name: "CALENDRIER", icon: '/apps/calendar.webp' },
+  { name: "ENTREPRISE", icon: '/apps/company.webp' },
+  { name: "DRIVE", icon: '/apps/drive.webp' },
+  { name: "POS", icon: '/apps/pos.webp' },
+  { name: "PARAMETRES", icon: '/apps/settings.webp' },
+  { name: "STAFF", icon: '/apps/staff.webp' },
+  { name: "TRESORERIE", icon: '/apps/treasury.webp' },
+  { name: "VÉHICULES", icon: '/apps/vehicles.webp' },
+  { name: "ÉQUIPEMENTS", icon: '/apps/equipment.webp' },
+  { name: "ANALYSE", icon: '/apps/analytics.webp' },
+  { name: "DOSSIERS", icon: '/apps/dossier.webp' },
+  { name: "CRM", icon: '/apps/crm.webp' },
 ]
 
 export function Modules() {
@@ -24,14 +36,18 @@ export function Modules() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {/* Seamless Grid Container */}
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 bg-zinc-200 border border-zinc-200 gap-[1px] rounded-sm overflow-hidden">
           {modules.map((module) => (
-            <Card key={module.name} className="hover:shadow-md transition-shadow border-zinc-200">
-              <CardContent className="p-8 flex flex-col items-center justify-center text-center gap-4">
-                <module.icon className="h-8 w-8 text-brand" />
-                <span className="text-xs font-semibold tracking-wider text-zinc-900">{module.name}</span>
-              </CardContent>
-            </Card>
+            <div
+              key={module.name}
+              className="bg-white hover:bg-zinc-50 transition-colors py-10 flex flex-col items-center justify-center text-center gap-4 group"
+            >
+              <Image src={module.icon} alt={module.name} width={64} height={64} className="grayscale group-hover:grayscale-0" />
+              <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase">
+                {module.name}
+              </span>
+            </div>
           ))}
         </div>
       </div>
