@@ -4,8 +4,8 @@ import { Check } from "lucide-react"
 export function Pricing() {
   return (
     <section id="tarification" className="py-24 bg-black text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-        
+      <div className="container mx-auto text-center">
+
         <div className="mb-16">
           <h2 className="text-3xl font-black tracking-tight sm:text-5xl mb-6">
             Tarif Unique. Précision Totale.
@@ -21,18 +21,18 @@ export function Pricing() {
             <div className="absolute top-0 right-8 -translate-y-1/2 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-semibold tracking-wide text-zinc-300">
               OFFRE UNIQUE
             </div>
-            
+
             <div className="flex flex-col items-center gap-4 mb-8">
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-7xl font-black tracking-tighter">3500</span>
+                <span className="text-7xl font-black tracking-tighter">3,500.00</span>
                 <span className="text-2xl font-bold tracking-tight text-zinc-400">TND</span>
               </div>
               <p className="text-sm font-medium text-zinc-500 tracking-widest uppercase">
-                PAIEMENT UNIQUE / AN
+                PAIEMENT UNIQUE
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-left mb-10">
+            <div className="grid grid-cols-1 gap-y-4 gap-x-8 text-left mb-10">
               <div className="flex items-center gap-3">
                 <Check className="h-5 w-5 text-zinc-500 shrink-0" />
                 <span className="text-sm font-semibold text-zinc-300">UTILISATEURS ILLIMITÉS</span>
@@ -50,10 +50,6 @@ export function Pricing() {
                 <span className="text-sm font-semibold text-zinc-300">FORMATION INCLUSE</span>
               </div>
             </div>
-
-            <button className="w-full rounded-md bg-white px-8 py-4 text-sm font-bold tracking-widest text-black transition-colors hover:bg-zinc-200">
-              COMMENCER L'INSTALLATION
-            </button>
           </div>
         </div>
 

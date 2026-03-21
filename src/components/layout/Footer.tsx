@@ -1,23 +1,25 @@
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-white pt-16 pb-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          
+
           {/* Brand Column */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 space-y-6">
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-6 w-6 items-center justify-center bg-zinc-900 rounded-sm">
-                <div className="h-3 w-3 bg-white" style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }} />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-zinc-900">VAGA SUITE</span>
+              <Image src="/vaga.svg" alt="VAGA" width={35} height={35} />
+              <span className="text-xl font-bold tracking-tight text-zinc-900">VAGA</span>
             </div>
             <p className="text-sm text-zinc-500 max-w-sm">
               L'architecte moderne de votre infrastructure d'entreprise en Tunisie. Expertise locale, technologie mondiale.
             </p>
+            <div>
+              <p className="text-xs text-zinc-400 font-thin">VAGA est un service fourni par MAAK CORP SUARL représenté par AYMEN KHEDHRIYA; société domiciliée à Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1, Sousse 4054, numéro de TVA: 1847208/C/A/M/000</p>
+            </div>
           </div>
 
           {/* Ressources */}
@@ -68,6 +70,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }
