@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
         {children}
+        <GoogleTagManager gtmId="GTM-KNPPVR4L" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
