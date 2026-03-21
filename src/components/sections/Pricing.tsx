@@ -1,4 +1,5 @@
 import { Check } from "lucide-react"
+import Image from "next/image"
 
 export function Pricing() {
   return (
@@ -48,6 +49,10 @@ export function Pricing() {
                 <Check className="h-5 w-5 text-zinc-400 shrink-0" />
                 <span className="text-sm font-semibold text-zinc-700">FORMATION INCLUSE</span>
               </div>
+            </div>
+
+            <div className="absolute bottom-0 right-0">
+              <Image src="/fennec_pricing.webp" alt="Fennec VAGA" loading="eager" width={120} height={120} className="w-[120px] h-[120px] object-contain" />
             </div>
           </div>
         </div>
