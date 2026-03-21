@@ -28,6 +28,9 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-zinc-500">
               <li>
+                <Link href="/changelog" className="hover:text-zinc-900 transition-colors">Changelog</Link>
+              </li>
+              <li>
                 <Link href="#" className="hover:text-zinc-900 transition-colors">Support</Link>
               </li>
               <li>
