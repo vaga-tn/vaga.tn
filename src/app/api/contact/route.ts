@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     const subjectLabel = SUBJECT_LABELS[subject] ?? subject
 
     await resend.emails.send({
-      from: "VAGA Contact <contact@vaga.tn>",
+      from: "VAGA Contact <contact@mail.vaga.tn>",
       to: "vaga@maak-corp.tn",
       replyTo: email,
       subject: `[VAGA] ${subjectLabel} — ${name}`,
