@@ -14,7 +14,7 @@ export type BlogPostSkeleton = {
     body: EntryFieldTypes.RichText
     coverImage: EntryFieldTypes.AssetLink
     publishedDate: EntryFieldTypes.Date
-    tags: EntryFieldTypes.Array<EntryFieldTypes.Text>
+    tags: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
   }
 }
 
