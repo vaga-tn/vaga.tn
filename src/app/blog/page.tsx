@@ -26,22 +26,23 @@ export default async function BlogPage() {
       <Header />
 
       {/* Page header */}
-      <div className="border-b border-zinc-200 py-16">
-        <div className="container mx-auto px-4 lg:px-0">
+      <div className="relative border-b border-zinc-400 sectionWrapper">
+        <div className="container px-4 mx-auto lg:px-0">
           <p className="mb-2 text-xs font-semibold tracking-widest uppercase text-zinc-400">
             Ressources
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
             Blog VAGA
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-zinc-500">
+          <p className="max-w-xl mt-4 text-lg text-zinc-500">
             Conseils pratiques sur la gestion d&apos;entreprise, l&apos;ERP et la digitalisation pour les PME tunisiennes.
           </p>
         </div>
+        <Image src="/fennec_reading.webp" alt="VAGA" width={154} height={154} className="absolute bottom-0 right-0 z-10 object-contain opacity-50 lg:opacity-100" />
       </div>
 
       {/* Posts grid */}
-      <div className="container mx-auto px-4 lg:px-0 py-16">
+      <div className="container px-4 py-16 mx-auto lg:px-0">
         {posts.length === 0 ? (
           <div className="py-24 text-center text-zinc-400">
             <p className="text-lg font-medium">Aucun article pour l&apos;instant.</p>
@@ -73,7 +74,7 @@ export default async function BlogPage() {
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                       />
                     ) : (
-                      <div className="h-full w-full flex items-center justify-center">
+                      <div className="flex items-center justify-center w-full h-full">
                         <span className="text-3xl font-black tracking-tighter text-zinc-200">
                           VAGA
                         </span>
@@ -82,7 +83,7 @@ export default async function BlogPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-1 flex-col gap-3 p-5">
+                  <div className="flex flex-col flex-1 gap-3 p-5">
                     {/* Tags */}
                     {Array.isArray(tags) && tags.length > 0 && (
                       <div className="flex flex-wrap gap-1.5">
@@ -110,10 +111,10 @@ export default async function BlogPage() {
                     <time className="mt-auto text-xs text-zinc-400">
                       {publishedDate
                         ? new Date(publishedDate as string).toLocaleDateString("fr-TN", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
                         : null}
                     </time>
                   </div>
