@@ -1,48 +1,50 @@
 import Image from "next/image"
 
 const modules = [
-  { name: "STOCK", icon: '/apps/inventory.webp' },
-  { name: "CLIENT", icon: '/apps/clients.webp' },
-  { name: "FOURNISSEURS", icon: '/apps/suppliers.webp' },
-  { name: "ACHAT", icon: '/apps/sales.webp' },
-  { name: "VENTE", icon: '/apps/purchase.webp' },
-  { name: "COMPTABILITE", icon: '/apps/bank.webp' },
-  { name: "CALENDRIER", icon: '/apps/calendar.webp' },
-  { name: "ENTREPRISE", icon: '/apps/company.webp' },
-  { name: "DRIVE", icon: '/apps/drive.webp' },
+  { name: "Stock", icon: '/apps/inventory.webp' },
+  { name: "Clients", icon: '/apps/clients.webp' },
+  { name: "Fournisseurs", icon: '/apps/suppliers.webp' },
+  { name: "Achats", icon: '/apps/sales.webp' },
+  { name: "Ventes", icon: '/apps/purchase.webp' },
+  { name: "Comptabilite", icon: '/apps/bank.webp' },
+  { name: "Calendrier", icon: '/apps/calendar.webp' },
+  { name: "Entreprise", icon: '/apps/company.webp' },
+  { name: "Drive", icon: '/apps/drive.webp' },
   { name: "POS", icon: '/apps/pos.webp' },
-  { name: "PARAMETRES", icon: '/apps/settings.webp' },
-  { name: "STAFF", icon: '/apps/staff.webp' },
-  { name: "TRESORERIE", icon: '/apps/treasury.webp' },
-  { name: "VÉHICULES", icon: '/apps/vehicles.webp' },
-  { name: "ÉQUIPEMENTS", icon: '/apps/equipment.webp' },
-  { name: "ANALYSE", icon: '/apps/analytics.webp' },
-  { name: "DOSSIERS", icon: '/apps/dossier.webp' },
+  { name: "Paraemetres", icon: '/apps/settings.webp' },
+  { name: "Contacts", icon: '/apps/contacts.webp' },
+  { name: "Equipe", icon: '/apps/staff.webp' },
+  { name: "Tresorerie", icon: '/apps/treasury.webp' },
+  { name: "Banques", icon: '/apps/bank.webp' },
+  { name: "Véhicules", icon: '/apps/vehicles.webp' },
+  { name: "Équipements", icon: '/apps/equipment.webp' },
+  { name: "Analyse", icon: '/apps/analytics.webp' },
+  { name: "Dossier", icon: '/apps/dossier.webp' },
   { name: "CRM", icon: '/apps/crm.webp' },
 ]
 
 export function Modules() {
   return (
     <section className="py-24 bg-white" id="modules">
-      <div className="container mx-auto px-4 lg:px-0">
+      <div className="container px-4 mx-auto lg:px-0">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl mb-4">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
             Un Logiciel de Gestion d'Entreprise Complet et Modulaire
           </h2>
-          <p className="text-lg text-zinc-600 max-w-2xl">
+          <p className="max-w-2xl text-lg text-zinc-600">
             De la <strong>facturation</strong> à la gestion de stock, activez uniquement les modules d'<strong>ERP</strong> dont vous avez besoin. Une flexibilité totale pour votre PME à <strong>Sousse</strong> et partout en Tunisie.
           </p>
         </div>
 
         {/* Seamless Grid Container */}
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 bg-zinc-200 border border-zinc-200 gap-[1px] rounded-sm overflow-hidden">
+        <div className="max-w-2xl mx-auto grid grid-cols-2 lg:grid-cols-4 bg-zinc-200 border border-zinc-200 gap-[1px] rounded-sm overflow-hidden">
           {modules.map((module) => (
             <div
               key={module.name}
-              className="bg-white hover:bg-zinc-50 transition-colors py-10 flex flex-col items-center justify-center text-center gap-4 group"
+              className="flex flex-col items-center justify-center gap-4 py-10 text-center transition-colors bg-white"
             >
-              <Image src={module.icon} alt={`Module ${module.name} - VAGA ERP Tunisie`} width={64} height={64} className="w-16 h-16 object-contain grayscale group-hover:grayscale-0" />
-              <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase">
+              <Image src={module.icon} alt={`Module ${module.name} - VAGA ERP Tunisie`} width={64} height={64} className="object-contain w-16 h-16" />
+              <span className="text-sm font-bold text-black capitalize">
                 {module.name}
               </span>
             </div>
