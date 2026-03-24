@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vaga.tn"),
   title: "VAGA | ERP & Logiciel de Gestion Commerciale Moderne à Sousse",
   description: "VAGA est l'alternative fiable, moderne et moins chère pour les PME à Sousse, Tunisie. Logiciel ERP, gestion commerciale, de facturation et gestion d'entreprise.",
   keywords: "ERP, logiciel gestion commercial, logiciel gestion entreprise, logiciel facturation, Sousse, Tunisie, abordable, pas cher, PME, moderne, alternative de confiance",

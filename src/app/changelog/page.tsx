@@ -1,4 +1,16 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/Header"
+
+export const metadata: Metadata = {
+  title: "Changelog | VAGA ERP",
+  description: "Suivez les dernières améliorations, correctifs et nouvelles fonctionnalités de VAGA SUITE.",
+  alternates: {
+    canonical: "https://vaga.tn/changelog",
+    languages: {
+      "fr-TN": "https://vaga.tn/changelog",
+    },
+  },
+}
 import { Footer } from "@/components/layout/Footer"
 import { changelogData } from "@/data/changelog"
 import CallToAction from "@/components/sections/CallToAction"

@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/Header"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://vaga.tn",
+    languages: {
+      "fr-TN": "https://vaga.tn",
+    },
+  },
+}
 import { Footer } from "@/components/layout/Footer"
 import { Hero } from "@/components/sections/Hero"
 import { Modules } from "@/components/sections/Modules"
