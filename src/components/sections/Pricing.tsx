@@ -1,5 +1,4 @@
-import { Check } from "lucide-react"
-import Image from "next/image"
+import { PricingCalculator } from "./PricingCalculator"
 
 export function Pricing() {
   return (
@@ -11,51 +10,11 @@ export function Pricing() {
             Un ERP Moins Cher. Sans Abonnement Caché.
           </h2>
           <p className="text-lg text-zinc-600 max-w-2xl">
-            L'alternative moderne et abordable pour les entreprises tunisiennes (Sousse et au-delà). Pas de frais par utilisateur, une puissance totale pour votre équipe.
+            L&apos;alternative moderne et abordable pour les entreprises tunisiennes (Sousse et au-delà). Pas de frais par utilisateur, une puissance totale pour votre équipe.
           </p>
         </div>
 
-        <div className="mx-auto max-w-lg">
-          <div className="relative border border-zinc-200 bg-white/80 backdrop-blur-sm p-8">
-            {/* Tag */}
-            <div className="absolute top-0 right-8 -translate-y-1/2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-600 shadow-sm">
-              OFFRE UNIQUE
-            </div>
-
-            <div className="flex flex-col items-center gap-4 mb-8 mt-4">
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-7xl font-black tracking-tighter text-zinc-900">3,500.00</span>
-                <span className="text-2xl font-bold tracking-tight text-zinc-500">TND</span>
-              </div>
-              <p className="text-sm font-medium text-zinc-500 tracking-widest uppercase">
-                PAIEMENT UNIQUE
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-y-4 gap-x-8 text-left mb-4">
-              <div className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-zinc-400 shrink-0" />
-                <span className="text-sm font-semibold text-zinc-700">UTILISATEURS ILLIMITÉS</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-zinc-400 shrink-0" />
-                <span className="text-sm font-semibold text-zinc-700">MISES À JOUR INCLUSES</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-zinc-400 shrink-0" />
-                <span className="text-sm font-semibold text-zinc-700">SUPPORT LOCAL TUNISIEN</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-zinc-400 shrink-0" />
-                <span className="text-sm font-semibold text-zinc-700">FORMATION INCLUSE</span>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 right-0">
-              <Image src="/fennec_pricing.webp" alt="Fennec VAGA" loading="eager" width={120} height={120} className="w-[120px] h-[120px] object-contain" />
-            </div>
-          </div>
-        </div>
+        <PricingCalculator />
 
       </div>
     </section>
