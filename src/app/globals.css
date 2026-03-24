@@ -35,3 +35,32 @@
     --radius: 0.5rem;
   }
 }
+
+.sectionWrapper {
+  @apply container relative py-24 mx-auto overflow-hidden;
+}
+
+.paint-highlight {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.paint-highlight::after {
+  content: "";
+  position: absolute;
+  /* Adjust these to change how much "paint" shows */
+  left: -5px;
+  right: -5px;
+  bottom: 5px;
+  height: 60%;
+
+  @apply bg-brand-400;
+  /* The yellow from your image */
+  z-index: -1;
+
+  /* This creates the organic, "blobby" paint look */
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(-1deg);
+  /* Adds a slight hand-drawn tilt */
+}

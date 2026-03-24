@@ -45,39 +45,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
+    // suppressHydrationWarning is key here to ignore extension-injected attributes
+    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Move GTM here for better performance and hydration stability */}
+        <GoogleTagManager gtmId="GTM-KNPPVR4L" />
+      </head>
       <body>
         {children}
-        <GoogleTagManager gtmId="GTM-KNPPVR4L" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "VAGA",
-              "operatingSystem": "Web",
-              "applicationCategory": "BusinessApplication",
-              "offers": {
-                "@type": "Offer",
-                "price": "3500.00",
-                "priceCurrency": "TND"
-              },
-              "description": "Logiciel de gestion commerciale, facturation et ERP moderne à prix abordable pour les entreprises en Tunisie.",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "MAAK CORP",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Sousse",
-                  "postalCode": "4054",
-                  "addressCountry": "TN",
-                  "streetAddress": "Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1"
-                }
-              }
-            })
-          }}
-        />
+
+        {/* Schema.org JSON-LD */}
+
       </body>
     </html>
   );
