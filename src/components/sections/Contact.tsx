@@ -1,26 +1,32 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback } from "react"
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 
 type Status = "idle" | "loading" | "success" | "error"
 
-export function Contact() {
+function ContactForm() {
   const [status, setStatus] = useState<Status>("idle")
+  const { executeRecaptcha } = useGoogleReCaptcha()
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (!executeRecaptcha) return
     setStatus("loading")
 
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
 
     try {
+      const recaptchaToken = await executeRecaptcha("contact")
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, recaptchaToken }),
       })
 
       if (!res.ok) throw new Error()
@@ -29,7 +35,7 @@ export function Contact() {
     } catch {
       setStatus("error")
     }
-  }
+  }, [executeRecaptcha])
 
   return (
     <section id="contact" className="py-24 bg-zinc-50 border-t border-zinc-200">
@@ -45,7 +51,6 @@ export function Contact() {
 
         <div className="max-w-2xl mx-auto">
 
-          {/* Success state */}
           {status === "success" ? (
             <div className="flex flex-col items-center gap-4 py-16 text-center border border-[#3ecf8e] bg-[#f0fdf4]">
               <CheckCircle className="h-10 w-10 text-[#3ecf8e]" />
@@ -128,7 +133,6 @@ export function Contact() {
                 />
               </div>
 
-              {/* Error banner */}
               {status === "error" && (
                 <div className="flex items-center gap-2 border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
                   <AlertCircle className="h-4 w-4 shrink-0" />
@@ -151,11 +155,31 @@ export function Contact() {
                   "Envoyer la demande"
                 )}
               </Button>
+
+              <p className="text-xs text-zinc-400 text-center">
+                Ce formulaire est protégé par reCAPTCHA.{" "}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-600">
+                  Politique de confidentialité
+                </a>{" "}
+                &{" "}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-600">
+                  Conditions d&apos;utilisation
+                </a>{" "}
+                Google.
+              </p>
             </form>
           )}
 
         </div>
       </div>
     </section>
+  )
+}
+
+export function Contact() {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
+      <ContactForm />
+    </GoogleReCaptchaProvider>
   )
 }

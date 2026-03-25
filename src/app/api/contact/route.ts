@@ -10,12 +10,27 @@ const SUBJECT_LABELS: Record<string, string> = {
   other: "Autre demande",
 }
 
+async function verifyRecaptcha(token: string): Promise<boolean> {
+  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+  })
+  const data = await res.json()
+  // v3 returns a score 0.0–1.0; require at least 0.5
+  return data.success === true && data.score >= 0.5
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, subject, message } = await req.json()
+    const { name, email, subject, message, recaptchaToken } = await req.json()
 
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: "Champs manquants." }, { status: 400 })
+    }
+
+    if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
+      return NextResponse.json({ error: "Vérification échouée." }, { status: 403 })
     }
 
     const subjectLabel = SUBJECT_LABELS[subject] ?? subject
