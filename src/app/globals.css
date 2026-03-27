@@ -36,6 +36,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .sectionWrapper {
   @apply container relative py-24 mx-auto overflow-hidden;
 }
