@@ -1,5 +1,6 @@
 import Image from "next/image"
-import { FileCheck, Leaf, Globe } from "lucide-react"
+import { FileCheck, Leaf, Globe, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 const SCOPES = [
   {
@@ -31,8 +32,8 @@ export function CarbonReport() {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
 
         {/* Left — content */}
-        <div>
-          <div className="mb-12">
+        <div className="space-y-6">
+          <div>
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
               Bilan Carbone Annuel
             </h2>
@@ -42,7 +43,7 @@ export function CarbonReport() {
           </div>
 
           {/* Scope badges */}
-          <div className="mb-10 space-y-3">
+          <div className="space-y-3">
             {SCOPES.map(({ label, description, color }) => (
               <div key={label} className="flex items-center gap-4 px-4 py-3 border border-zinc-100 bg-zinc-50">
                 <span
@@ -65,6 +66,12 @@ export function CarbonReport() {
               </li>
             ))}
           </ul>
+
+          <Link href="https://vaga.tn/blog/bilan-carbone-entreprise-tunisie-iso-14064
+" className="flex items-center px-4 py-2 border rounded-full cursor-pointer w-fit bg-brand text-zinc-900 hover:bg-brand-600 border-zinc-900 h-9">
+            En savoir plus
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Link>
         </div>
 
         {/* Right — graphic */}
