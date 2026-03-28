@@ -21,6 +21,9 @@ export function Header() {
           <Link href="/blog" className="transition-colors hover:text-brand">
             Blog
           </Link>
+          <Link href="/#bilan-carbone" className="transition-colors hover:text-brand">
+            Bilan Carbone
+          </Link>
         </nav>
 
       </div>

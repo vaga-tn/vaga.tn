@@ -6,6 +6,7 @@ import { Modules } from "@/components/sections/Modules"
 import { Infrastructure } from "@/components/sections/Infrastructure"
 import { Pricing } from "@/components/sections/Pricing"
 import { FAQ } from "@/components/sections/FAQ"
+import { CarbonReport } from "@/components/sections/CarbonReport"
 import { Contact } from "@/components/sections/Contact"
 import CallToAction from "@/components/sections/CallToAction"
 import { FAQ_ITEMS } from "@/data/faq"
@@ -46,6 +47,7 @@ export default function Home() {
       <Infrastructure />
       <Pricing />
       <FAQ />
+      <CarbonReport />
       <Contact />
       <Footer />
     </main>
