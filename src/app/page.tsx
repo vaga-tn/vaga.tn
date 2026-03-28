@@ -35,7 +35,7 @@ const faqSchema = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background font-sans text-zinc-900 scroll-smooth">
+    <main className="min-h-screen font-sans bg-background text-zinc-900 scroll-smooth">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -43,11 +43,10 @@ export default function Home() {
       <Header />
       <Hero />
       <Modules />
-      <CallToAction />
+      <CarbonReport />
       <Infrastructure />
       <Pricing />
       <FAQ />
-      <CarbonReport />
       <Contact />
       <Footer />
     </main>
