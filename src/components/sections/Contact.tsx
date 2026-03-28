@@ -4,6 +4,8 @@ import { useState, useCallback } from "react"
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react"
+import SectionTitle from "../layout/SectionTitle"
+import { SECTIONS } from "@/data/section"
 
 type Status = "idle" | "loading" | "success" | "error"
 
@@ -37,17 +39,13 @@ function ContactForm() {
     }
   }, [executeRecaptcha])
 
+  const SECTION = SECTIONS.contact;
+
   return (
-    <section id="contact" className="py-24 bg-zinc-50 border-t border-zinc-200">
-      <div className="container mx-auto px-4 lg:px-0">
-        <div className="text-left mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl mb-4">
-            Contactez-nous
-          </h2>
-          <p className="text-lg text-zinc-600">
-            Vous avez une question ou souhaitez une démonstration personnalisée ? Remplissez le formulaire ci-dessous et notre équipe vous recontactera rapidement.
-          </p>
-        </div>
+    <section id="contact" className="py-24 border-t bg-zinc-50 border-zinc-200">
+      <div className="container px-4 mx-auto lg:px-0">
+
+        <SectionTitle title={SECTION.title} subtitle={SECTION.subtitle} />
 
         <div className="max-w-2xl mx-auto">
 
@@ -62,7 +60,7 @@ function ContactForm() {
               </div>
               <button
                 onClick={() => setStatus("idle")}
-                className="text-xs text-zinc-400 underline underline-offset-4 hover:text-zinc-600 transition-colors"
+                className="text-xs underline transition-colors text-zinc-400 underline-offset-4 hover:text-zinc-600"
               >
                 Envoyer un autre message
               </button>
@@ -70,7 +68,7 @@ function ContactForm() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-semibold text-zinc-900">
                     Nom complet
@@ -134,8 +132,8 @@ function ContactForm() {
               </div>
 
               {status === "error" && (
-                <div className="flex items-center gap-2 border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
-                  <AlertCircle className="h-4 w-4 shrink-0" />
+                <div className="flex items-center gap-2 px-4 py-3 text-sm text-red-600 border border-red-200 bg-red-50">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
                   Une erreur s&apos;est produite. Veuillez réessayer ou nous contacter directement.
                 </div>
               )}
@@ -148,7 +146,7 @@ function ContactForm() {
               >
                 {status === "loading" ? (
                   <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <Loader2 className="w-4 h-4 animate-spin" />
                     Envoi en cours…
                   </>
                 ) : (
@@ -156,7 +154,7 @@ function ContactForm() {
                 )}
               </Button>
 
-              <p className="text-xs text-zinc-400 text-center">
+              <p className="text-xs text-center text-zinc-400">
                 Ce formulaire est protégé par reCAPTCHA.{" "}
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-600">
                   Politique de confidentialité

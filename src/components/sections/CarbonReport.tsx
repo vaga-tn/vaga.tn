@@ -1,6 +1,8 @@
 import Image from "next/image"
 import { FileCheck, Leaf, Globe, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import SectionTitle from "../layout/SectionTitle"
+import { SECTIONS } from "@/data/section"
 
 const SCOPES = [
   {
@@ -27,20 +29,16 @@ const FEATURES = [
 ]
 
 export function CarbonReport() {
+
+  const SECTION = SECTIONS.carbon;
+
   return (
     <section id="bilan-carbone" className="sectionWrapper">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
 
         {/* Left — content */}
         <div className="space-y-6">
-          <div>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-              Bilan Carbone Annuel
-            </h2>
-            <p className="max-w-2xl text-lg text-zinc-600">
-              VAGA collecte automatiquement vos données d&apos;activité et calcule vos émissions CO₂e sur les trois scopes — sans saisie manuelle. Obtenez un rapport certifié prêt pour vos partenaires et appels d&apos;offres européens.
-            </p>
-          </div>
+          <SectionTitle title={SECTION.title} subtitle={SECTION.subtitle} />
 
           {/* Scope badges */}
           <div className="space-y-3">
