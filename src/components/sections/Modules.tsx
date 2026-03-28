@@ -35,11 +35,11 @@ export function Modules() {
       <SectionTitle title={SECTION.title} subtitle={SECTION.subtitle} />
 
       {/* Seamless Grid Container */}
-      <div className="max-w-2xl mx-auto grid grid-cols-2 lg:grid-cols-4 bg-zinc-200 border border-zinc-200 gap-[1px] rounded-sm overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-4 lg:grid-cols-10 bg-zinc-200 border border-zinc-200 gap-[1px] rounded-sm overflow-hidden">
         {modules.map((module) => (
           <div
             key={module.name}
-            className="flex flex-col items-center justify-center gap-4 py-10 text-center transition-colors bg-white"
+            className="flex flex-col items-center justify-center gap-4 p-8 text-center transition-colors bg-white"
           >
             <Image src={module.icon} alt={`Module ${module.name} - VAGA ERP Tunisie`} width={64} height={64} className="object-contain w-16 h-16" />
             <span className="text-sm font-bold text-black capitalize">
