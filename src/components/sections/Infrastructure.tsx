@@ -29,8 +29,7 @@ export function Infrastructure() {
       {/* Header */}
       <SectionTitle title={SECTION.title} subtitle={SECTION.subtitle} />
 
-      {/* Two-column cards */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
 
         {/* --- Vaga Cloud --- */}
         <Card className="relative bg-white rounded-none shadow-none border-zinc-200">
@@ -56,17 +55,6 @@ export function Infrastructure() {
           </CardHeader>
 
           <CardContent className="space-y-6">
-            <div className="overflow-hidden">
-              <Image
-                src="/fennec-cloud.webp"
-                alt="Vaga Cloud"
-                width={250}
-                height={50}
-                className="object-contain mx-auto"
-                loading="lazy"
-              />
-            </div>
-
             <p className="text-sm leading-relaxed text-zinc-600">
               Votre ERP hébergé sur nos serveurs sécurisés. Accédez à VAGA depuis n&apos;importe quel navigateur,
               n&apos;importe où dans le monde — sans vous soucier des mises à jour, des sauvegardes ou de la maintenance serveur.
@@ -104,17 +92,6 @@ export function Infrastructure() {
           </CardHeader>
 
           <CardContent className="space-y-6">
-            <div className="overflow-hidden">
-              <Image
-                src="/fennec-on-premise.webp"
-                alt="Vaga Box"
-                width={200}
-                height={50}
-                className="object-contain mx-auto"
-                loading="lazy"
-              />
-            </div>
-
             <p className="text-sm leading-relaxed text-zinc-600">
               Un mini-PC discret installé dans vos locaux. Votre ERP tourne en local — coupure DSL, panne Ooredoo ou Topnet —
               rien n&apos;arrête votre production. Idéal pour les entrepôts et les zones à connectivité instable.
@@ -141,6 +118,17 @@ export function Infrastructure() {
             </div>
           </CardContent>
         </Card>
+
+        <div className="items-center justify-center hidden col-span-2 overflow-hidden lg:flex">
+          <Image
+            src="/fennec_deployment_options.webp"
+            alt="Vaga Box"
+            width={500}
+            height={50}
+            className="object-contain mx-auto"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       {/* Compare CTA + Modal — isolated client boundary */}
