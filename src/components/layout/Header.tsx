@@ -26,6 +26,15 @@ export function Header() {
           </Link>
         </nav>
 
+        <nav className="flex items-center gap-5 text-sm font-normal transition-colors md:hidden text-zinc-600">
+          <Link href="/#tarification" className="transition-colors hover:text-brand">
+            Tarification
+          </Link>
+          <Link href="/blog" className="transition-colors hover:text-brand">
+            Blog
+          </Link>
+        </nav>
+
       </div>
     </header>
   )

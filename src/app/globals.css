@@ -41,7 +41,7 @@ html {
 }
 
 .sectionWrapper {
-  @apply container relative py-24 mx-auto overflow-hidden;
+  @apply container relative px-4 py-24 mx-auto overflow-hidden lg:px-0;
 }
 
 .paint-highlight {
