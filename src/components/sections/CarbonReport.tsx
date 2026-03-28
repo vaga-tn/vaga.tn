@@ -65,8 +65,7 @@ export function CarbonReport() {
             ))}
           </ul>
 
-          <Link href="https://vaga.tn/blog/bilan-carbone-entreprise-tunisie-iso-14064
-" className="flex items-center px-4 py-2 border rounded-full cursor-pointer w-fit bg-brand text-zinc-900 hover:bg-brand-600 border-zinc-900 h-9">
+          <Link href="https://vaga.tn/blog/bilan-carbone-entreprise-en-tunisie-obligations-methode-iso-14064-et-calcul" className="flex items-center px-4 py-2 border rounded-full cursor-pointer w-fit bg-brand text-zinc-900 hover:bg-brand-600 border-zinc-900 h-9">
             En savoir plus
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
