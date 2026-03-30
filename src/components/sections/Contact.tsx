@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useCallback } from "react"
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import { useState, useRef } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import SectionTitle from "../layout/SectionTitle"
@@ -9,22 +9,22 @@ import { SECTIONS } from "@/data/section"
 
 type Status = "idle" | "loading" | "success" | "error"
 
-function ContactForm() {
+export function Contact() {
   const [status, setStatus] = useState<Status>("idle")
-  const { executeRecaptcha } = useGoogleReCaptcha()
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
 
-  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+  const SECTION = SECTIONS.contact
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (!recaptchaToken) return
 
-    if (!executeRecaptcha) return
     setStatus("loading")
-
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
 
     try {
-      const recaptchaToken = await executeRecaptcha("contact")
-
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -34,12 +34,14 @@ function ContactForm() {
       if (!res.ok) throw new Error()
       setStatus("success")
       form.reset()
+      setRecaptchaToken(null)
+      recaptchaRef.current?.reset()
     } catch {
       setStatus("error")
+      recaptchaRef.current?.reset()
+      setRecaptchaToken(null)
     }
-  }, [executeRecaptcha])
-
-  const SECTION = SECTIONS.contact;
+  }
 
   return (
     <section id="contact" className="py-24 border-t bg-zinc-50 border-zinc-200">
@@ -131,6 +133,14 @@ function ContactForm() {
                 />
               </div>
 
+              {/* reCAPTCHA v2 checkbox */}
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                onChange={(token) => setRecaptchaToken(token)}
+                onExpired={() => setRecaptchaToken(null)}
+              />
+
               {status === "error" && (
                 <div className="flex items-center gap-2 px-4 py-3 text-sm text-red-600 border border-red-200 bg-red-50">
                   <AlertCircle className="w-4 h-4 shrink-0" />
@@ -141,8 +151,8 @@ function ContactForm() {
               <Button
                 type="submit"
                 size="lg"
-                disabled={status === "loading"}
-                className="w-full gap-2 bg-[#3ecf8e] hover:bg-[#2db97a] text-zinc-900 font-bold border-none rounded-none"
+                disabled={status === "loading" || !recaptchaToken}
+                className="w-full gap-2 bg-[#3ecf8e] hover:bg-[#2db97a] text-zinc-900 font-bold border-none rounded-none disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === "loading" ? (
                   <>
@@ -154,30 +164,11 @@ function ContactForm() {
                 )}
               </Button>
 
-              <p className="text-xs text-center text-zinc-400">
-                Ce formulaire est protégé par reCAPTCHA.{" "}
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-600">
-                  Politique de confidentialité
-                </a>{" "}
-                &{" "}
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-600">
-                  Conditions d&apos;utilisation
-                </a>{" "}
-                Google.
-              </p>
             </form>
           )}
 
         </div>
       </div>
     </section>
-  )
-}
-
-export function Contact() {
-  return (
-    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
-      <ContactForm />
-    </GoogleReCaptchaProvider>
   )
 }

@@ -17,8 +17,8 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
     body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
   })
   const data = await res.json()
-  // v3 returns a score 0.0–1.0; require at least 0.5
-  return data.success === true && data.score >= 0.5
+  // v2: no score — just check success
+  return data.success === true
 }
 
 export async function POST(req: NextRequest) {
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
-      return NextResponse.json({ error: "Vérification échouée." }, { status: 403 })
+      return NextResponse.json({ error: "Vérification reCAPTCHA échouée." }, { status: 403 })
     }
 
     const subjectLabel = SUBJECT_LABELS[subject] ?? subject
