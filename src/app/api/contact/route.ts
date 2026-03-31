@@ -4,10 +4,10 @@ import { Resend } from "resend"
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 const SUBJECT_LABELS: Record<string, string> = {
-  demo: "Demande de Démonstration",
-  custom_dev: "Développement Sur Mesure",
-  support: "Support Client / Technique",
-  other: "Autre demande",
+  demo: "Démonstration personnalisée",
+  devis_box: "Devis VAGA Box",
+  support: "Support technique",
+  other: "Autre",
 }
 
 async function verifyRecaptcha(token: string): Promise<boolean> {
@@ -23,7 +23,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, subject, message, recaptchaToken } = await req.json()
+    const { name, company, company_size, email, subject, message, recaptchaToken } = await req.json()
 
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: "Champs manquants." }, { status: 400 })
@@ -76,6 +76,13 @@ export async function POST(req: NextRequest) {
                           <p style="margin:0;font-size:15px;font-weight:600;color:#18181b;">${name}</p>
                         </td>
                       </tr>
+                      ${company ? `
+                      <tr>
+                        <td style="padding-bottom:16px;">
+                          <p style="margin:0 0 4px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#71717a;">Entreprise</p>
+                          <p style="margin:0;font-size:15px;font-weight:600;color:#18181b;">${company}${company_size ? ` <span style="font-weight:400;color:#71717a;font-size:13px;">(${company_size} employés)</span>` : ""}</p>
+                        </td>
+                      </tr>` : ""}
                       <tr>
                         <td style="padding-bottom:16px;">
                           <p style="margin:0 0 4px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#71717a;">Email</p>
