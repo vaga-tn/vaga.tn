@@ -32,12 +32,10 @@ export async function generateMetadata({
     metadataBase: new URL("https://vaga.tn"),
     title: t("title"),
     description: t("description"),
-    keywords:
-      "ERP, logiciel gestion commercial, logiciel gestion entreprise, logiciel facturation, Sousse, Tunisie, abordable, pas cher, PME, moderne, alternative de confiance",
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: "https://vaga.tn",
+      url: `https://vaga.tn/${locale}`,
       siteName: "VAGA",
       locale: locale === "fr" ? "fr_TN" : "en_US",
       type: "website",

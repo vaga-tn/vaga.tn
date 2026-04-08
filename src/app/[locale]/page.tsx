@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { getTranslations } from "next-intl/server"
+import { getMessages } from "next-intl/server"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { Hero } from "@/components/sections/Hero"
@@ -9,7 +9,6 @@ import { Pricing } from "@/components/sections/Pricing"
 import { FAQ } from "@/components/sections/FAQ"
 import { CarbonReport } from "@/components/sections/CarbonReport"
 import { Contact } from "@/components/sections/Contact"
-import CallToAction from "@/components/sections/CallToAction"
 
 export async function generateMetadata({
   params,
@@ -37,21 +36,21 @@ export default async function Home({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: "faqItems" })
-  const faqItems = t.raw("") as Array<{ q: string; a: string }>
+  const messages = await getMessages({ locale })
+  const faqItems = messages.faqItems as Array<{ q: string; a: string }>
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: Array.isArray(faqItems)
       ? faqItems.map((item) => ({
-          "@type": "Question",
-          name: item.q,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.a,
-          },
-        }))
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      }))
       : [],
   }
 
