@@ -104,6 +104,26 @@ const richTextOptions: Options = {
         </div>
       )
     },
+    [BLOCKS.TABLE]: (_, children) => (
+      <div className="my-8 overflow-x-auto [&_td_p]:mb-0 [&_th_p]:mb-0 [&_td_p]:text-sm [&_th_p]:text-xs">
+        <table className="w-full border-collapse text-sm border border-zinc-200">
+          {children}
+        </table>
+      </div>
+    ),
+    [BLOCKS.TABLE_ROW]: (_, children) => (
+      <tr className="border-b border-zinc-100 last:border-0">{children}</tr>
+    ),
+    [BLOCKS.TABLE_HEADER_CELL]: (_, children) => (
+      <th className="bg-zinc-50 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-zinc-500 border-b border-zinc-200 first:rounded-tl-none last:rounded-tr-none whitespace-nowrap">
+        {children}
+      </th>
+    ),
+    [BLOCKS.TABLE_CELL]: (_, children) => (
+      <td className="px-4 py-3 text-zinc-600 align-top border-r border-zinc-100 last:border-r-0">
+        {children}
+      </td>
+    ),
     [INLINES.HYPERLINK]: (node, children) => (
       <a
         href={node.data.uri}
