@@ -2,53 +2,26 @@
 
 import { useState } from "react"
 import { CloudCog, Server, Check, X, ArrowLeftRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 
-const COMPARE_ROWS = [
-  {
-    feature: "Connexion Internet requise",
-    cloud: { value: "Oui", yes: true },
-    box: { value: "Non", yes: false, highlight: true },
-  },
-  {
-    feature: "Indépendance aux coupures DSL",
-    cloud: { value: "Non", yes: false },
-    box: { value: "Oui, fonctionne hors-ligne", yes: true, highlight: true },
-  },
-  {
-    feature: "Accès multi-sites / mobile",
-    cloud: { value: "Oui, partout dans le monde", yes: true },
-    box: { value: "Réseau local + VPN", yes: null },
-  },
-  {
-    feature: "Mises à jour automatiques",
-    cloud: { value: "Oui, sans intervention", yes: true },
-    box: { value: "Manuelles", yes: null },
-  },
-  {
-    feature: "Hébergement des données",
-    cloud: { value: "Serveurs sécurisés Vaga", yes: true },
-    box: { value: "Vos propres locaux", yes: true },
-  },
-  {
-    feature: "Sauvegardes",
-    cloud: { value: "Automatiques & redondantes", yes: true },
-    box: { value: "Configurées par vous", yes: null },
-  },
-  {
-    feature: "Investissement matériel",
-    cloud: { value: "Aucun", yes: true },
-    box: { value: "Mini-PC inclus en option", yes: null },
-  },
-  {
-    feature: "Idéal pour",
-    cloud: { value: "Bureaux multi-sites, équipes mobiles", yes: null },
-    box: { value: "Entrepôts, zones à DSL instable", yes: null, highlight: true },
-  },
-]
+type RowValue = { value: string; yes: boolean | null; highlight?: boolean }
+type CompareRow = { feature: string; cloud: RowValue; box: RowValue }
 
 export function InfrastructureCompare() {
   const [open, setOpen] = useState(false)
+  const t = useTranslations("compare")
+
+  const COMPARE_ROWS: CompareRow[] = [
+    { feature: t("row1Feature"), cloud: { value: t("row1Cloud"), yes: true }, box: { value: t("row1Box"), yes: false } },
+    { feature: t("row2Feature"), cloud: { value: t("row2Cloud"), yes: false }, box: { value: t("row2Box"), yes: true, highlight: true } },
+    { feature: t("row3Feature"), cloud: { value: t("row3Cloud"), yes: true }, box: { value: t("row3Box"), yes: null } },
+    { feature: t("row4Feature"), cloud: { value: t("row4Cloud"), yes: true }, box: { value: t("row4Box"), yes: null } },
+    { feature: t("row5Feature"), cloud: { value: t("row5Cloud"), yes: true }, box: { value: t("row5Box"), yes: true } },
+    { feature: t("row6Feature"), cloud: { value: t("row6Cloud"), yes: true }, box: { value: t("row6Box"), yes: null } },
+    { feature: t("row7Feature"), cloud: { value: t("row7Cloud"), yes: true }, box: { value: t("row7Box"), yes: null } },
+    { feature: t("row8Feature"), cloud: { value: t("row8Cloud"), yes: null }, box: { value: t("row8Box"), yes: null, highlight: true } },
+  ]
 
   return (
     <>
@@ -61,7 +34,7 @@ export function InfrastructureCompare() {
           onClick={() => setOpen(true)}
         >
           <ArrowLeftRight className="w-4 h-4" />
-          Comparer les deux options
+          {t("buttonLabel")}
         </Button>
       </div>
 
@@ -81,16 +54,16 @@ export function InfrastructureCompare() {
             <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-100 shrink-0">
               <div>
                 <h3 className="text-lg font-bold" style={{ color: "#1A2B3C" }}>
-                  Comparatif Cloud vs Box
+                  {t("title")}
                 </h3>
                 <p className="text-xs text-zinc-400 mt-0.5">
-                  Choisissez l&apos;option adaptée à votre infrastructure
+                  {t("subtitle")}
                 </p>
               </div>
               <button
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-center w-8 h-8 transition-colors border border-zinc-200 hover:bg-zinc-50"
-                aria-label="Fermer"
+                aria-label={t("closeLabel")}
               >
                 <X className="w-4 h-4 text-zinc-500" />
               </button>
@@ -102,7 +75,7 @@ export function InfrastructureCompare() {
                 <thead className="sticky top-0 border-b bg-zinc-50 border-zinc-200">
                   <tr>
                     <th className="w-1/2 px-6 py-4 text-xs font-semibold tracking-widest text-left uppercase text-zinc-400">
-                      Fonctionnalité
+                      {t("featureCol")}
                     </th>
                     <th className="w-1/4 px-4 py-4 text-center">
                       <span className="flex flex-col items-center gap-1">
@@ -174,14 +147,14 @@ export function InfrastructureCompare() {
             {/* Footer */}
             <div className="flex items-center justify-between gap-4 px-6 py-4 border-t border-zinc-100 bg-zinc-50 shrink-0">
               <p className="text-xs text-zinc-400">
-                Les deux options incluent le logiciel VAGA complet, sans frais par utilisateur.
+                {t("footerNote")}
               </p>
               <Button
                 size="sm"
                 className="rounded-none shrink-0 bg-[#3ecf8e] hover:bg-[#2db97a] text-zinc-900 font-bold border-none"
                 onClick={() => setOpen(false)}
               >
-                Compris
+                {t("gotIt")}
               </Button>
             </div>
           </div>

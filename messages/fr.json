@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "home": {
+      "title": "VAGA | ERP & Logiciel de Gestion Commerciale Moderne à Sousse",
+      "description": "VAGA est l'alternative fiable, moderne et moins chère pour les PME à Sousse, Tunisie. Logiciel ERP, gestion commerciale, de facturation et gestion d'entreprise.",
+      "ogTitle": "VAGA | ERP & Logiciel de Gestion Commerciale Moderne",
+      "ogDescription": "L'alternative de confiance, moderne et pas chère pour la gestion d'entreprise à Sousse. Facturation, stock et clients."
+    },
+    "blog": {
+      "title": "Blog | VAGA ERP — Conseils de gestion pour PME tunisiennes",
+      "description": "Articles, guides et conseils pratiques sur la gestion d'entreprise, la facturation et l'ERP pour les PME en Tunisie."
+    },
+    "changelog": {
+      "title": "Changelog | VAGA ERP",
+      "description": "Suivez les dernières améliorations, correctifs et nouvelles fonctionnalités de VAGA SUITE."
+    }
+  },
+  "header": {
+    "pricing": "Tarification",
+    "contact": "Contact",
+    "blog": "Blog",
+    "carbonReport": "Bilan Carbone"
+  },
+  "footer": {
+    "taglinePrefix": "L'alternative de confiance : votre ",
+    "taglineErp": "ERP",
+    "taglineMid": " et ",
+    "taglineSoftware": "logiciel de gestion commerciale",
+    "taglineSuffix": " moderne et abordable, basé à Sousse, Tunisie.",
+    "legalNote": "VAGA est un service fourni par MAAK CORP SUARL représenté par AYMEN KHEDHRIYA; société domiciliée à Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1, Sousse 4054, numéro de TVA: 1847208/C/A/M/000",
+    "resources": "Ressources",
+    "legal": "Légal",
+    "contactHeading": "Contact",
+    "changelog": "Changelog",
+    "support": "Support",
+    "documentation": "Documentation",
+    "legalNotice": "Mentions Légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "copyright": "VAGA SUITE. L'ARCHITECTE MODERNE."
+  },
+  "hero": {
+    "title": "L'ERP Tout-en-Un en Tunisie",
+    "titleLine2Prefix": "Moderne, Fiable et ",
+    "titleHighlight": "Pas Cher",
+    "subtitlePrefix": "L'alternative de confiance pour la ",
+    "subtitleBold1": "gestion commerciale",
+    "subtitleMid": " et ",
+    "subtitleBold2": "facturation",
+    "subtitleSuffix": " de votre entreprise. VAGA numérise votre activité avec des outils modernes, robustes et à un prix abordable pour les PME tunisiennes.",
+    "cta": "Demander une démo"
+  },
+  "sections": {
+    "apps": {
+      "title": "Un Logiciel de Gestion d'Entreprise Complet et Modulaire",
+      "subtitle": "De la facturation à la gestion de stock, activez uniquement les modules d'ERP dont vous avez besoin. Une flexibilité totale pour votre PME à Sousse et partout en Tunisie."
+    },
+    "carbon": {
+      "title": "Bilan Carbone Annuel",
+      "subtitle": "VAGA collecte automatiquement vos données d'activité et calcule vos émissions CO₂e sur les trois scopes, sans saisie manuelle. Obtenez un rapport certifié prêt pour vos partenaires et appels d'offres européens."
+    },
+    "infrastructure": {
+      "title": "Comment souhaitez-vous déployer VAGA ?",
+      "subtitle": "Deux architectures pensées pour la réalité tunisienne. Choisissez celle qui correspond à votre infrastructure, ou combinez les deux."
+    },
+    "pricing": {
+      "title": "Un ERP Moins Cher. Sans Abonnement Caché.",
+      "subtitle": "L'alternative moderne et abordable pour les entreprises tunisiennes (Sousse et au-delà). Pas de frais par utilisateur, une puissance totale pour votre équipe."
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "subtitle": "Trouvez les réponses aux questions les plus fréquemment posées sur VAGA"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "subtitle": "Vous avez une question ou souhaitez une démonstration personnalisée ? Remplissez le formulaire ci-dessous et notre équipe vous recontactera rapidement."
+    }
+  },
+  "modules": {
+    "stock": "Stock",
+    "clients": "Clients",
+    "suppliers": "Fournisseurs",
+    "purchases": "Achats",
+    "sales": "Ventes",
+    "calendar": "Calendrier",
+    "company": "Entreprise",
+    "pos": "POS",
+    "settings": "Paramètres",
+    "team": "Équipe",
+    "treasury": "Trésorerie",
+    "banking": "Banques",
+    "vehicles": "Véhicules",
+    "files": "Dossier",
+    "crm": "CRM"
+  },
+  "infrastructure": {
+    "recommended": "Recommandé",
+    "internetIndependence": "Indépendance Internet",
+    "option1": "Option 1",
+    "option2": "Option 2",
+    "cloudTitle": "Vaga Cloud",
+    "cloudTagline": "Zéro serveur. Zéro maintenance. 100 % en ligne.",
+    "cloudDescription": "Votre ERP hébergé sur nos serveurs sécurisés. Accédez à VAGA depuis n'importe quel navigateur, n'importe où dans le monde — sans vous soucier des mises à jour, des sauvegardes ou de la maintenance serveur.",
+    "cloudFeature1": "Accès instantané depuis n'importe quel appareil",
+    "cloudFeature2": "Mises à jour & sauvegardes automatiques",
+    "cloudFeature3": "Hébergement sécurisé, zéro maintenance serveur",
+    "cloudFeature4": "Idéal pour les équipes multi-sites et mobiles",
+    "boxTitle": "Vaga Box",
+    "boxTagline": "Votre ERP sur site. Tourne même si le DSL tombe.",
+    "boxDescription": "Un mini-PC discret installé dans vos locaux. Votre ERP tourne en local — coupure DSL, panne Ooredoo ou Topnet — rien n'arrête votre production. Idéal pour les entrepôts et les zones à connectivité instable.",
+    "boxFeature1": "100 % opérationnel même sans Internet",
+    "boxFeature2": "Données stockées dans vos propres locaux",
+    "boxFeature3": "Indépendance totale vis-à-vis du réseau",
+    "boxFeature4": "Mini-PC silencieux livré & configuré sur place",
+    "calloutTitle": "Pourquoi c'est important en Tunisie",
+    "calloutText": "Les coupures DSL restent fréquentes à Sousse, Sfax, et dans les zones industrielles. Avec Vaga Box, votre équipe continue de travailler — bons de livraison, stock, facturation — sans interruption."
+  },
+  "carbon": {
+    "scope1Label": "Scope 1",
+    "scope1Desc": "Flotte véhicules & machines",
+    "scope2Label": "Scope 2",
+    "scope2Desc": "Électricité & climatisation",
+    "scope3Label": "Scope 3",
+    "scope3Desc": "Fournisseurs, logistique & voyages",
+    "feature1": "Calcul CO₂e automatique selon les normes ISO 14064",
+    "feature2": "Rapport PDF certifié généré en un clic",
+    "feature3": "Export-Ready pour l'UE & les marchés internationaux",
+    "learnMore": "En savoir plus"
+  },
+  "callToAction": {
+    "titlePrefix": "Passez à la vitesse supérieure pour ",
+    "titleHighlight": "votre entreprise",
+    "cta": "Demander une démo",
+    "feature1": "Hébergement Local Sécurisé",
+    "feature2": "Support Client Réactif",
+    "feature3": "Mise en place rapide"
+  },
+  "faqItems": [
+    {
+      "q": "Comment se passe la migration depuis Excel ?",
+      "a": "Nous vous accompagnons de A à Z. Nos experts importent vos données actuelles directement dans VAGA SUITE. La transition se fait en douceur sans perte d'historique."
+    },
+    {
+      "q": "VAGA SUITE est-il conforme à la réglementation ?",
+      "a": "Absolument. VAGA SUITE est entièrement conforme aux normes comptables et fiscales tunisiennes en vigueur, et est régulièrement mis à jour pour refléter tout changement législatif."
+    },
+    {
+      "q": "Quel type de support proposez-vous ?",
+      "a": "Nous offrons un support local dédié et réactif, disponible par téléphone et par email. De plus, une formation initiale est incluse pour assurer la prise en main rapide par vos équipes."
+    },
+    {
+      "q": "Où sont stockées mes données ?",
+      "a": "Nous accordons une importance capitale à la souveraineté de vos données. Vos informations sont stockées sur des serveurs sécurisés avec des sauvegardes quotidiennes automatiques. Vous restez le seul propriétaire de vos données."
+    },
+    {
+      "q": "Que signifie \"Sans abonnement caché\" ?",
+      "a": "Contrairement aux solutions SaaS classiques qui vous facturent chaque mois indéfiniment, notre modèle est transparent. Vous payez pour ce que vous utilisez, sans frais de licence mensuels obligatoires qui augmentent avec le temps."
+    },
+    {
+      "q": "L'installation et la formation sont-elles incluses ?",
+      "a": "Oui, nous proposons des packs d'accompagnement pour configurer le logiciel selon vos besoins spécifiques et former votre équipe pour une prise en main immédiate."
+    },
+    {
+      "q": "Puis-je importer mes données existantes (Excel, etc.) ?",
+      "a": "Absolument. Vaga Suite permet l'importation facile de vos listes de produits, clients et fournisseurs via des fichiers Excel ou CSV pour que vous puissiez commencer à travailler en quelques minutes."
+    },
+    {
+      "q": "Le logiciel est-il modulable selon la taille de mon entreprise ?",
+      "a": "Tout à fait. Vous pouvez commencer avec le module Inventaire et Ventes, puis ajouter la Comptabilité ou les RH au fur et à mesure que votre entreprise grandit. Vous ne payez que pour les fonctionnalités dont vous avez réellement besoin."
+    }
+  ],
+  "contact": {
+    "nameFull": "Nom complet",
+    "namePlaceholder": "Votre nom",
+    "companyName": "Nom de l'entreprise",
+    "companyPlaceholder": "Votre société",
+    "email": "Email",
+    "emailPlaceholder": "nom@entreprise.com",
+    "companySize": "Taille de l'entreprise",
+    "companySizePlaceholder": "Nombre d'employés",
+    "subject": "Sujet de votre demande",
+    "subjectPlaceholder": "Sélectionnez un sujet",
+    "subjectDemo": "Démonstration personnalisée",
+    "subjectDevisBox": "Devis VAGA Box",
+    "subjectSupport": "Support technique",
+    "subjectOther": "Autre",
+    "size1": "1 – 5",
+    "size2": "6 – 20",
+    "size3": "21 – 50",
+    "size4": "50+",
+    "message": "Message",
+    "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+    "submit": "Envoyer la demande",
+    "submitting": "Envoi en cours…",
+    "successTitle": "Merci !",
+    "successMessage": "Votre demande a été transmise à l'équipe MAAK CORP. Nous vous contacterons sous 24h.",
+    "sendAnother": "Envoyer un autre message",
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.",
+    "infoDirectContact": "Contact direct",
+    "infoEmail": "Email",
+    "infoPhone": "Téléphone",
+    "infoAddress": "Adresse",
+    "infoAddressValue": "Sousse, Tunisie",
+    "infoResponseTime": "Réponse garantie sous 24h ouvrées.",
+    "infoDemoNote": "Démonstrations disponibles en présentiel ou en visio."
+  },
+  "blog": {
+    "resources": "Ressources",
+    "title": "Blog VAGA",
+    "subtitle": "Conseils pratiques sur la gestion d'entreprise, l'ERP et la digitalisation pour les PME tunisiennes.",
+    "noArticles": "Aucun article pour l'instant.",
+    "comingSoon": "Revenez bientôt — du contenu arrive.",
+    "backToAll": "Tous les articles"
+  },
+  "changelog": {
+    "title": "Changelog",
+    "subtitle": "Restez à jour avec les dernières améliorations, correctifs et fonctionnalités de VAGA SUITE."
+  },
+  "localeSwitcher": {
+    "switchTo": "EN"
+  },
+  "compare": {
+    "buttonLabel": "Comparer les deux options",
+    "title": "Comparatif Cloud vs Box",
+    "subtitle": "Choisissez l'option adaptée à votre infrastructure",
+    "featureCol": "Fonctionnalité",
+    "footerNote": "Les deux options incluent le logiciel VAGA complet, sans frais par utilisateur.",
+    "gotIt": "Compris",
+    "closeLabel": "Fermer",
+    "row1Feature": "Connexion Internet requise",
+    "row1Cloud": "Oui",
+    "row1Box": "Non",
+    "row2Feature": "Indépendance aux coupures DSL",
+    "row2Cloud": "Non",
+    "row2Box": "Oui, fonctionne hors-ligne",
+    "row3Feature": "Accès multi-sites / mobile",
+    "row3Cloud": "Oui, partout dans le monde",
+    "row3Box": "Réseau local + VPN",
+    "row4Feature": "Mises à jour automatiques",
+    "row4Cloud": "Oui, sans intervention",
+    "row4Box": "Manuelles",
+    "row5Feature": "Hébergement des données",
+    "row5Cloud": "Serveurs sécurisés Vaga",
+    "row5Box": "Vos propres locaux",
+    "row6Feature": "Sauvegardes",
+    "row6Cloud": "Automatiques & redondantes",
+    "row6Box": "Configurées par vous",
+    "row7Feature": "Investissement matériel",
+    "row7Cloud": "Aucun",
+    "row7Box": "Mini-PC inclus en option",
+    "row8Feature": "Idéal pour",
+    "row8Cloud": "Bureaux multi-sites, équipes mobiles",
+    "row8Box": "Entrepôts, zones à DSL instable"
+  },
+  "pricingCalculator": {
+    "configureBadge": "CONFIGUREZ VOTRE OFFRE",
+    "engineSection": "VAGA Engine",
+    "cloudSub": "Hébergement Géré",
+    "cloudStorage": "Stockage inclus : 10 GB (Docs & BDD)",
+    "boxSub": "Serveur dédié on-premise",
+    "optionsSection": "Options",
+    "setupFeeLabel": "Frais de Mise en Service",
+    "setupFeeHint": "Installation physique (Sousse), Config réseau, VPN & Sécurisation",
+    "supportLabel": "Pack Support Opérationnel",
+    "supportHint": "Réponse < 4h, Max 3 interventions/mois (Ticket/WhatsApp). Assistance sur modules existants.",
+    "retainerLabel": "Maintenance & Cloud Sérénité",
+    "retainerHint": "Backups quotidiens, mises à jour de sécurité et 2h d'assistance technique/mois.",
+    "requiredCloud": "Requis Cloud",
+    "totalLabel": "Total — Paiement unique",
+    "noSubscription": "Pas d'abonnement. Pas de frais cachés.",
+    "paymentFacilities": "Facilités de paiement disponibles (3x sans frais)",
+    "licenceNote": "Note : La licence est acquise à vie, les frais annuels couvrent uniquement les services et l'infrastructure.",
+    "lineBaseLicence": "Licence VAGA Suite (toutes les applications incluses)",
+    "lineCloud": "Hébergement VAGA Cloud — Inclus",
+    "lineBox": "VAGA Box (Serveur dédié on-premise)",
+    "lineSetup": "Installation & Config (Mise en Service)",
+    "lineSupport": "Pack Support Opérationnel (1 an)",
+    "lineRetainer": "Maintenance & Cloud Sérénité (1 an)",
+    "included": "Inclus",
+    "downloadPdf": "Télécharger le devis PDF",
+    "disclaimer": "VAGA est une solution évolutive. Les développements spécifiques hors-standard font l'objet d'un devis complémentaire."
+  }
+}

@@ -1,7 +1,10 @@
-import Link from "next/link"
 import Image from "next/image"
+import { getTranslations } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("footer")
+
   return (
     <footer className="pt-16 pb-8 bg-white border-t border-border">
       <div className="container px-4 mx-auto lg:px-0">
@@ -14,48 +17,48 @@ export function Footer() {
               <span className="text-xl font-bold tracking-tight text-zinc-900">VAGA</span>
             </div>
             <p className="max-w-sm text-sm text-zinc-500">
-              L'alternative de confiance : votre <strong>ERP</strong> et <strong>logiciel de gestion commerciale</strong> moderne et abordable, basé à Sousse, Tunisie.
+              {t("taglinePrefix")}<strong>{t("taglineErp")}</strong>{t("taglineMid")}<strong>{t("taglineSoftware")}</strong>{t("taglineSuffix")}
             </p>
             <div>
-              <p className="text-xs font-thin text-zinc-400">VAGA est un service fourni par MAAK CORP SUARL représenté par AYMEN KHEDHRIYA; société domiciliée à Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1, Sousse 4054, numéro de TVA: 1847208/C/A/M/000</p>
+              <p className="text-xs font-thin text-zinc-400">{t("legalNote")}</p>
             </div>
           </div>
 
-          {/* Ressources */}
+          {/* Resources */}
           <div>
             <h4 className="mb-4 text-sm font-semibold tracking-widest uppercase text-zinc-900">
-              Ressources
+              {t("resources")}
             </h4>
             <ul className="space-y-3 text-sm text-zinc-500">
               <li>
-                <Link href="/changelog" className="transition-colors hover:text-zinc-900">Changelog</Link>
+                <Link href="/changelog" className="transition-colors hover:text-zinc-900">{t("changelog")}</Link>
               </li>
               <li>
-                <Link href="#" className="transition-colors hover:text-zinc-900">Support</Link>
+                <Link href="#" className="transition-colors hover:text-zinc-900">{t("support")}</Link>
               </li>
               <li>
-                <Link href="#" className="transition-colors hover:text-zinc-900">Contact</Link>
+                <Link href="#" className="transition-colors hover:text-zinc-900">{t("contactHeading")}</Link>
               </li>
               <li>
-                <Link href="#" className="transition-colors hover:text-zinc-900">Documentation</Link>
+                <Link href="#" className="transition-colors hover:text-zinc-900">{t("documentation")}</Link>
               </li>
             </ul>
           </div>
 
-          {/* Légal */}
+          {/* Legal */}
           <div>
             <h4 className="mb-4 text-sm font-semibold tracking-widest uppercase text-zinc-900">
-              Légal
+              {t("legal")}
             </h4>
             <ul className="space-y-3 text-sm text-zinc-500">
               <li>
-                <Link href="#" className="transition-colors hover:text-zinc-900">Mentions Légales</Link>
+                <Link href="#" className="transition-colors hover:text-zinc-900">{t("legalNotice")}</Link>
               </li>
               <li>
-                <Link href="#" className="transition-colors hover:text-zinc-900">Confidentialité</Link>
+                <Link href="#" className="transition-colors hover:text-zinc-900">{t("privacy")}</Link>
               </li>
               <li>
-                <Link href="#" className="transition-colors hover:text-zinc-900">Conditions</Link>
+                <Link href="#" className="transition-colors hover:text-zinc-900">{t("terms")}</Link>
               </li>
             </ul>
           </div>
@@ -63,7 +66,7 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="mb-4 text-sm font-semibold tracking-widest uppercase text-zinc-900">
-              Contact
+              {t("contactHeading")}
             </h4>
             <ul className="text-sm text-zinc-500">
               <li>
@@ -78,11 +81,11 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 pt-8 border-t border-zinc-100 md:flex-row">
           <p className="text-xs font-medium text-zinc-400">
-            © {new Date().getFullYear()} VAGA SUITE. L'ARCHITECTE MODERNE.
+            © {new Date().getFullYear()} {t("copyright")}
           </p>
           <div></div>
         </div>
       </div>
-    </footer >
+    </footer>
   )
 }

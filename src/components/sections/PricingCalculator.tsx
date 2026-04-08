@@ -2,35 +2,18 @@
 
 import { useState, useEffect } from "react"
 import { Check, Download, Server, HeadphonesIcon, Wrench } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 
 const BASE_PRICE = 2500
 const SETUP_FEE = 450
 
-const ENGINE_OPTIONS = [
-  { label: "VAGA Cloud", value: "none", price: 0, sub: "Hébergement Géré", storage: "Stockage inclus : 10 GB (Docs & BDD)" },
-  { label: "VAGA Box", value: "box", price: 1500, sub: "Serveur dédié on-premise", storage: null },
-]
-
-const OPTIONS_CONFIG = [
-  {
-    id: "support",
-    label: "Pack Support Opérationnel",
-    hint: "Réponse < 4h, Max 3 interventions/mois (Ticket/WhatsApp). Assistance sur modules existants.",
-    price: 500,
-  },
-  {
-    id: "retainer",
-    label: "Maintenance & Cloud Sérénité",
-    hint: "Backups quotidiens, mises à jour de sécurité et 2h d'assistance technique/mois.",
-    price: 1200,
-  },
-]
-
 export function PricingCalculator() {
   const [engine, setEngine] = useState<"none" | "box">("none")
   const [support, setSupport] = useState(false)
   const [retainer, setRetainer] = useState(false)
+
+  const t = useTranslations("pricingCalculator")
 
   const isCloud = engine === "none"
 
@@ -39,18 +22,38 @@ export function PricingCalculator() {
     if (isCloud) setRetainer(true)
   }, [isCloud])
 
+  const ENGINE_OPTIONS = [
+    { label: "VAGA Cloud", value: "none", price: 0, sub: t("cloudSub"), storage: t("cloudStorage") },
+    { label: "VAGA Box", value: "box", price: 1500, sub: t("boxSub"), storage: null },
+  ]
+
+  const OPTIONS_CONFIG = [
+    {
+      id: "support",
+      label: t("supportLabel"),
+      hint: t("supportHint"),
+      price: 500,
+    },
+    {
+      id: "retainer",
+      label: t("retainerLabel"),
+      hint: t("retainerHint"),
+      price: 1200,
+    },
+  ]
+
   const enginePrice = ENGINE_OPTIONS.find((o) => o.value === engine)!.price
   const setupFee = isCloud ? 0 : SETUP_FEE
   const effectiveRetainer = isCloud ? true : retainer
   const total = BASE_PRICE + enginePrice + setupFee + (support ? 500 : 0) + (effectiveRetainer ? 1200 : 0)
 
   const lineItems = [
-    { label: "Licence VAGA Suite (toutes les applications incluses)", price: BASE_PRICE, always: true },
-    { label: "Hébergement VAGA Cloud — Inclus", price: 0, always: false, active: isCloud },
-    { label: "VAGA Box (Serveur dédié on-premise)", price: enginePrice, always: false, active: !isCloud },
-    { label: "Installation & Config (Mise en Service)", price: SETUP_FEE, always: false, active: !isCloud },
-    { label: "Pack Support Opérationnel (1 an)", price: 500, always: false, active: support },
-    { label: "Maintenance & Cloud Sérénité (1 an)", price: 1200, always: false, active: effectiveRetainer },
+    { label: t("lineBaseLicence"), price: BASE_PRICE, always: true },
+    { label: t("lineCloud"), price: 0, always: false, active: isCloud },
+    { label: t("lineBox"), price: enginePrice, always: false, active: !isCloud },
+    { label: t("lineSetup"), price: SETUP_FEE, always: false, active: !isCloud },
+    { label: t("lineSupport"), price: 500, always: false, active: support },
+    { label: t("lineRetainer"), price: 1200, always: false, active: effectiveRetainer },
   ]
 
   function handleDownloadPDF() {
@@ -174,7 +177,7 @@ export function PricingCalculator() {
       <div className="relative border border-zinc-200 bg-white/80 backdrop-blur-sm">
         {/* Badge */}
         <div className="absolute top-0 px-3 py-1 text-xs font-semibold tracking-wide -translate-y-1/2 bg-white border rounded-full shadow-sm right-8 border-zinc-200 text-zinc-600">
-          CONFIGUREZ VOTRE OFFRE
+          {t("configureBadge")}
         </div>
 
         <div className="p-8 pt-10 space-y-6">
@@ -183,7 +186,7 @@ export function PricingCalculator() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Server className="w-4 h-4 text-zinc-400" />
-              <span className="text-xs font-semibold tracking-widest uppercase text-zinc-500">VAGA Engine</span>
+              <span className="text-xs font-semibold tracking-widest uppercase text-zinc-500">{t("engineSection")}</span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               {ENGINE_OPTIONS.map((opt) => {
@@ -225,15 +228,13 @@ export function PricingCalculator() {
             </div>
           </div>
 
-          {/* Setup fee — shown only when a box is selected */}
+          {/* Setup fee — shown only when box is selected */}
           {!isCloud && (
             <div className="flex items-start gap-3 p-4 border border-slate-200 bg-slate-50">
               <Wrench className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-zinc-700">Frais de Mise en Service</p>
-                <p className="text-xs text-slate-500 leading-snug mt-0.5">
-                  Installation physique (Sousse), Config réseau, VPN &amp; Sécurisation
-                </p>
+                <p className="text-sm font-medium text-zinc-700">{t("setupFeeLabel")}</p>
+                <p className="text-xs text-slate-500 leading-snug mt-0.5">{t("setupFeeHint")}</p>
               </div>
               <span className="text-sm font-bold text-zinc-700 shrink-0">+{SETUP_FEE.toLocaleString("fr-TN")} TND</span>
             </div>
@@ -243,7 +244,7 @@ export function PricingCalculator() {
           <div className="space-y-3">
             <div className="flex items-center gap-2 mb-1">
               <HeadphonesIcon className="w-4 h-4 text-zinc-400" />
-              <span className="text-xs font-semibold tracking-widest uppercase text-zinc-500">Options</span>
+              <span className="text-xs font-semibold tracking-widest uppercase text-zinc-500">{t("optionsSection")}</span>
             </div>
 
             {OPTIONS_CONFIG.map(({ id, label, hint, price }) => {
@@ -291,7 +292,7 @@ export function PricingCalculator() {
                         </span>
                         {isLocked && (
                           <span className="text-[10px] font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 leading-none">
-                            Requis Cloud
+                            {t("requiredCloud")}
                           </span>
                         )}
                       </div>
@@ -312,10 +313,10 @@ export function PricingCalculator() {
           {/* Total */}
           <div className="flex items-baseline justify-between">
             <div>
-              <p className="mb-1 text-xs font-semibold tracking-widest uppercase text-zinc-500">Total — Paiement unique</p>
-              <p className="text-xs text-zinc-400">Pas d&apos;abonnement. Pas de frais cachés.</p>
+              <p className="mb-1 text-xs font-semibold tracking-widest uppercase text-zinc-500">{t("totalLabel")}</p>
+              <p className="text-xs text-zinc-400">{t("noSubscription")}</p>
               <p className="mt-1 text-xs font-medium underline cursor-pointer text-slate-600">
-                Facilités de paiement disponibles (3x sans frais)
+                {t("paymentFacilities")}
               </p>
             </div>
             <div className="text-right">
@@ -331,7 +332,7 @@ export function PricingCalculator() {
 
           {/* Licence note */}
           <p className="pl-3 text-xs leading-relaxed border-l-2 text-slate-500 border-slate-200">
-            Note : La licence est acquise à vie, les frais annuels couvrent uniquement les services et l&apos;infrastructure.
+            {t("licenceNote")}
           </p>
 
           {/* Line items breakdown */}
@@ -345,7 +346,7 @@ export function PricingCalculator() {
                     {item.label}
                   </span>
                   <span className="ml-2 font-semibold text-zinc-700 shrink-0">
-                    {item.price === 0 ? "Inclus" : `${item.price.toLocaleString("fr-TN")} TND`}
+                    {item.price === 0 ? t("included") : `${item.price.toLocaleString("fr-TN")} TND`}
                   </span>
                 </div>
               ))}
@@ -358,12 +359,12 @@ export function PricingCalculator() {
             size="lg"
           >
             <Download className="w-4 h-4" />
-            Télécharger le devis PDF
+            {t("downloadPdf")}
           </Button>
 
           {/* Disclaimer */}
           <p className="text-xs italic leading-relaxed text-center text-slate-500">
-            VAGA est une solution évolutive. Les développements spécifiques hors-standard font l&apos;objet d&apos;un devis complémentaire.
+            {t("disclaimer")}
           </p>
         </div>
       </div>

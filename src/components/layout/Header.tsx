@@ -1,7 +1,11 @@
-import Link from "next/link"
 import Image from "next/image"
+import { getTranslations } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
+import LocaleSwitcher from "./LocaleSwitcher"
 
-export function Header() {
+export async function Header() {
+  const t = await getTranslations("header")
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur">
       <div className="container flex items-center gap-12 p-4 mx-auto">
@@ -13,27 +17,31 @@ export function Header() {
 
         <nav className="items-center hidden gap-5 text-sm font-normal transition-colors md:flex text-zinc-600">
           <Link href="/#tarification" className="transition-colors hover:text-brand">
-            Tarification
+            {t("pricing")}
           </Link>
           <Link href="/#contact" className="transition-colors hover:text-brand">
-            Contact
+            {t("contact")}
           </Link>
           <Link href="/blog" className="transition-colors hover:text-brand">
-            Blog
+            {t("blog")}
           </Link>
           <Link href="/#bilan-carbone" className="transition-colors hover:text-brand">
-            Bilan Carbone
+            {t("carbonReport")}
           </Link>
         </nav>
 
         <nav className="flex items-center gap-5 text-sm font-normal transition-colors md:hidden text-zinc-600">
           <Link href="/#tarification" className="transition-colors hover:text-brand">
-            Tarification
+            {t("pricing")}
           </Link>
           <Link href="/blog" className="transition-colors hover:text-brand">
-            Blog
+            {t("blog")}
           </Link>
         </nav>
+
+        <div className="ml-auto">
+          <LocaleSwitcher />
+        </div>
 
       </div>
     </header>
