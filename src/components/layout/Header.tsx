@@ -8,7 +8,7 @@ export async function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur">
-      <div className="container flex items-center gap-12 p-4 mx-auto">
+      <div className="container flex items-center justify-between p-4 mx-auto">
 
         <Link href="/" className="flex items-center gap-2 cursor-pointer">
           <Image src="/vaga.svg" alt="VAGA" width={35} height={35} />
@@ -39,7 +39,7 @@ export async function Header() {
           </Link>
         </nav>
 
-        <div className="ml-auto">
+        <div>
           <LocaleSwitcher />
         </div>
 
