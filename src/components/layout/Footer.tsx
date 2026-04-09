@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
+import CarbonBadge from "../sections/CarbonBadge"
 
 export async function Footer() {
   const t = await getTranslations("footer")
@@ -19,6 +20,7 @@ export async function Footer() {
             <p className="max-w-sm text-sm text-zinc-500">
               {t("taglinePrefix")}<strong>{t("taglineErp")}</strong>{t("taglineMid")}<strong>{t("taglineSoftware")}</strong>{t("taglineSuffix")}
             </p>
+            <CarbonBadge />
             <div>
               <p className="text-xs font-thin text-zinc-400">{t("legalNote")}</p>
             </div>
