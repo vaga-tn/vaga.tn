@@ -5,55 +5,45 @@ import { Check, Download, Server, HeadphonesIcon, Wrench } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 
-const BASE_PRICE = 2500
+const BOX_PRICE = 3500
+const CLOUD_PRICE = 2700
 const SETUP_FEE = 450
+const RETAINER_FEE = 300
 
 export function PricingCalculator() {
-  const [engine, setEngine] = useState<"none" | "box">("none")
-  const [support, setSupport] = useState(false)
-  const [retainer, setRetainer] = useState(false)
+  const [engine, setEngine] = useState<"cloud" | "box">("cloud")
+  const [retainer, setRetainer] = useState(true)
 
   const t = useTranslations("pricingCalculator")
 
-  const isCloud = engine === "none"
+  const isCloud = engine === "cloud"
 
-  // Auto-check and lock retainer when Cloud is selected
+  // Enforce mandatory support flag based on selections
   useEffect(() => {
-    if (isCloud) setRetainer(true)
+    if (isCloud) {
+      setRetainer(true)
+    } else {
+      setRetainer(false)
+    }
   }, [isCloud])
 
   const ENGINE_OPTIONS = [
-    { label: "VAGA Cloud", value: "none", price: 0, sub: t("cloudSub"), storage: t("cloudStorage") },
-    { label: "VAGA Box", value: "box", price: 1500, sub: t("boxSub"), storage: null },
+    { label: "VAGA Cloud", value: "cloud", price: CLOUD_PRICE, sub: t("cloudSub") },
+    { label: "VAGA Box", value: "box", price: BOX_PRICE, sub: t("boxSub") },
   ]
 
-  const OPTIONS_CONFIG = [
-    {
-      id: "support",
-      label: t("supportLabel"),
-      hint: t("supportHint"),
-      price: 500,
-    },
-    {
-      id: "retainer",
-      label: t("retainerLabel"),
-      hint: t("retainerHint"),
-      price: 1200,
-    },
-  ]
-
-  const enginePrice = ENGINE_OPTIONS.find((o) => o.value === engine)!.price
+  const enginePrice = isCloud ? CLOUD_PRICE : BOX_PRICE
   const setupFee = isCloud ? 0 : SETUP_FEE
   const effectiveRetainer = isCloud ? true : retainer
-  const total = BASE_PRICE + enginePrice + setupFee + (support ? 500 : 0) + (effectiveRetainer ? 1200 : 0)
+
+  // Totals mapping
+  const totalOneTime = enginePrice + setupFee
+  const totalMonthly = effectiveRetainer ? RETAINER_FEE : 0
 
   const lineItems = [
-    { label: t("lineBaseLicence"), price: BASE_PRICE, always: true },
-    { label: t("lineCloud"), price: 0, always: false, active: isCloud },
-    { label: t("lineBox"), price: enginePrice, always: false, active: !isCloud },
-    { label: t("lineSetup"), price: SETUP_FEE, always: false, active: !isCloud },
-    { label: t("lineSupport"), price: 500, always: false, active: support },
-    { label: t("lineRetainer"), price: 1200, always: false, active: effectiveRetainer },
+    { label: isCloud ? "Licence VAGA Cloud" : "Licence VAGA Box", price: enginePrice, always: true },
+    { label: "Installation & Config VAGA Box", price: SETUP_FEE, always: false, active: !isCloud },
+    { label: "Support (Retainer) - Mensuel", price: RETAINER_FEE, always: false, active: effectiveRetainer, isMonthly: true },
   ]
 
   function handleDownloadPDF() {
@@ -106,70 +96,66 @@ export function PricingCalculator() {
             </tr>
           </thead>
           <tbody>
+            ${isCloud ? `
             <tr>
-              <td>Licence VAGA Suite (toutes les applications incluses)</td>
-              <td>${BASE_PRICE.toLocaleString("fr-TN")}</td>
-            </tr>
-            ${!isCloud ? `
+              <td>
+                Hébergement VAGA Cloud
+                <div class="sub">Infrastructure hébergée clé en main</div>
+              </td>
+              <td>${CLOUD_PRICE.toLocaleString("fr-TN")}</td>
+            </tr>` : `
             <tr>
               <td>
                 VAGA Box (Serveur dédié on-premise)
-                <div class="sub">Installation physique on-premise</div>
+                <div class="sub">Licence locale</div>
               </td>
-              <td>${enginePrice.toLocaleString("fr-TN")}</td>
+              <td>${BOX_PRICE.toLocaleString("fr-TN")}</td>
             </tr>
             <tr>
               <td>
                 Installation &amp; Config (Mise en Service)
-                <div class="sub">Installation physique (Sousse), Config réseau, VPN &amp; Sécurisation</div>
+                <div class="sub">Installation physique, Config réseau, VPN &amp; Sécurisation</div>
               </td>
               <td>${SETUP_FEE.toLocaleString("fr-TN")}</td>
-            </tr>` : `
-            <tr>
-              <td>
-                Hébergement VAGA Cloud (Géré)
-                <div class="sub">Infrastructure hébergée, aucune installation requise · Stockage inclus : 10 GB (Docs &amp; BDD)</div>
-              </td>
-              <td>Inclus</td>
             </tr>`}
-            ${support ? `
-            <tr>
-              <td>
-                Pack Support Opérationnel (1 an)
-                <div class="sub">Réponse &lt; 4h, Max 3 interventions/mois (Ticket/WhatsApp). Assistance sur modules existants.</div>
-              </td>
-              <td>500</td>
-            </tr>` : ""}
+            
             ${effectiveRetainer ? `
             <tr>
               <td>
-                Maintenance &amp; Cloud Sérénité (1 an)
-                <div class="sub">Backups quotidiens, mises à jour de sécurité et 2h d'assistance technique incluses/mois${isCloud ? " — Requis pour l'hébergement Cloud" : ""}</div>
+                Support (Retainer)
+                <div class="sub">Correction de bugs et résolution de bloqueurs techniques${isCloud ? " — Obligatoire pour l'hébergement Cloud" : ""}</div>
               </td>
-              <td>1 200</td>
+              <td>${RETAINER_FEE} / mois</td>
             </tr>` : ""}
+            
             <tr class="total-row">
-              <td class="total-label">TOTAL — Paiement unique</td>
-              <td class="total-price">${total.toLocaleString("fr-TN")} TND</td>
+              <td class="total-label">TOTAL</td>
+              <td class="total-price">
+                ${totalOneTime.toLocaleString("fr-TN")} TND ${totalMonthly > 0 ? `+ ${totalMonthly} TND/mois` : ""}
+              </td>
             </tr>
           </tbody>
         </table>
 
         <div class="conditions">
           <p style="font-weight:700;margin-bottom:6px;">Conditions de règlement</p>
-          <p>50% à la commande, 50% à la mise en service. Validité du devis : 30 jours.</p>
-          <p style="margin-top:6px;color:#71717a;font-size:12px;">Facilités de paiement disponibles sur demande. La licence est acquise à vie — les frais annuels couvrent uniquement les services et l'infrastructure.</p>
+          <p>Frais uniques : 50% à la commande, 50% à la mise en service. Validité du devis : 30 jours.</p>
+          ${totalMonthly > 0 ? `<p style="margin-top:4px;">Frais récurrents : Paiement mensuel pour le support retainer.</p>` : ""}
         </div>
         <div class="footer">
           <p>Ce devis est valable 30 jours. Prix HT. VAGA Suite — vaga@maak-corp.tn — vaga.tn</p>
-          <p style="margin-top:8px;">Pas de frais par utilisateur. Pas d'abonnement caché.</p>
-          <p style="margin-top:8px;font-style:italic;">VAGA est une solution évolutive. Les développements spécifiques hors-standard font l'objet d'un devis complémentaire.</p>
         </div>
         <script>window.onload = () => { window.print(); }</script>
       </body>
       </html>
     `)
     printWindow.document.close()
+  }
+
+  const isLocked = isCloud
+  const checked = effectiveRetainer
+  const handleRetainerChange = () => {
+    if (!isCloud) setRetainer((v) => !v)
   }
 
   return (
@@ -203,24 +189,11 @@ export function PricingCalculator() {
                     ].join(" ")}
                   >
                     <span className="text-xs font-bold">{opt.label}</span>
-                    {opt.price > 0 ? (
-                      <>
-                        <span className={active ? "text-[#3ecf8e] font-semibold text-xs" : "text-zinc-400 text-xs"}>
-                          +{opt.price.toLocaleString("fr-TN")} TND
-                        </span>
-                        {opt.sub && (
-                          <span className="text-[10px] text-slate-500 text-center leading-tight mt-0.5">{opt.sub}</span>
-                        )}
-                      </>
-                    ) : (
-                      <>
-                        <span className={`text-[10px] font-semibold mt-0.5 ${active ? "text-[#3ecf8e]" : "text-slate-400"}`}>
-                          {opt.sub}
-                        </span>
-                        <span className={`text-[10px] text-center leading-tight mt-0.5 ${active ? "text-zinc-600" : "text-slate-400"}`}>
-                          {opt.storage}
-                        </span>
-                      </>
+                    <span className={active ? "text-[#3ecf8e] font-semibold text-xs" : "text-zinc-400 text-xs"}>
+                      {opt.price.toLocaleString("fr-TN")} TND
+                    </span>
+                    {opt.sub && (
+                      <span className="text-[10px] text-slate-500 text-center leading-tight mt-0.5">{opt.sub}</span>
                     )}
                   </button>
                 )
@@ -233,8 +206,8 @@ export function PricingCalculator() {
             <div className="flex items-start gap-3 p-4 border border-slate-200 bg-slate-50">
               <Wrench className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-zinc-700">{t("setupFeeLabel")}</p>
-                <p className="text-xs text-slate-500 leading-snug mt-0.5">{t("setupFeeHint")}</p>
+                <p className="text-sm font-medium text-zinc-700">Installation Obligatoire</p>
+                <p className="text-xs text-slate-500 leading-snug mt-0.5">Configuration physique, réseau & sécurisation</p>
               </div>
               <span className="text-sm font-bold text-zinc-700 shrink-0">+{SETUP_FEE.toLocaleString("fr-TN")} TND</span>
             </div>
@@ -247,64 +220,52 @@ export function PricingCalculator() {
               <span className="text-xs font-semibold tracking-widest uppercase text-zinc-500">{t("optionsSection")}</span>
             </div>
 
-            {OPTIONS_CONFIG.map(({ id, label, hint, price }) => {
-              const isRetainer = id === "retainer"
-              const checked = isRetainer ? effectiveRetainer : support
-              const isLocked = isRetainer && isCloud
-              const onChange = isRetainer
-                ? () => { if (!isCloud) setRetainer((v) => !v) }
-                : () => setSupport((v) => !v)
-
-              return (
-                <label
-                  key={id}
-                  htmlFor={id}
+            <label
+              htmlFor="retainer"
+              className={[
+                "flex items-center justify-between gap-4 border p-4 transition-all",
+                isLocked ? "cursor-not-allowed" : "cursor-pointer",
+                checked
+                  ? "border-[#3ecf8e] bg-[#3ecf8e]/10"
+                  : "border-slate-200 bg-white hover:border-slate-300",
+              ].join(" ")}
+            >
+              <div className="flex items-start gap-3">
+                <div
                   className={[
-                    "flex items-center justify-between gap-4 border p-4 transition-all",
-                    isLocked ? "cursor-not-allowed" : "cursor-pointer",
-                    checked
-                      ? "border-[#3ecf8e] bg-[#3ecf8e]/10"
-                      : "border-slate-200 bg-white hover:border-slate-300",
+                    "h-5 w-5 mt-0.5 shrink-0 border flex items-center justify-center transition-colors",
+                    checked ? "bg-[#3ecf8e] border-[#3ecf8e]" : "bg-white border-slate-300",
+                    isLocked ? "opacity-70" : "",
                   ].join(" ")}
                 >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className={[
-                        "h-5 w-5 mt-0.5 shrink-0 border flex items-center justify-center transition-colors",
-                        checked ? "bg-[#3ecf8e] border-[#3ecf8e]" : "bg-white border-slate-300",
-                        isLocked ? "opacity-70" : "",
-                      ].join(" ")}
-                    >
-                      {checked && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
-                    </div>
-                    <input
-                      id={id}
-                      type="checkbox"
-                      className="sr-only"
-                      checked={checked}
-                      onChange={onChange}
-                      disabled={isLocked}
-                    />
-                    <div className="flex flex-col gap-0.5">
-                      <div className="flex items-center gap-2">
-                        <span className={`text-sm font-medium ${checked ? "text-zinc-900" : "text-zinc-600"}`}>
-                          {label}
-                        </span>
-                        {isLocked && (
-                          <span className="text-[10px] font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 leading-none">
-                            {t("requiredCloud")}
-                          </span>
-                        )}
-                      </div>
-                      <span className="text-xs leading-snug text-slate-500">{hint}</span>
-                    </div>
+                  {checked && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+                </div>
+                <input
+                  id="retainer"
+                  type="checkbox"
+                  className="sr-only"
+                  checked={checked}
+                  onChange={handleRetainerChange}
+                  disabled={isLocked}
+                />
+                <div className="flex flex-col gap-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className={`text-sm font-medium ${checked ? "text-zinc-900" : "text-zinc-600"}`}>
+                      Support (Retainer)
+                    </span>
+                    {isLocked && (
+                      <span className="text-[10px] font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 leading-none">
+                        {t("requiredCloud")}
+                      </span>
+                    )}
                   </div>
-                  <span className={`text-sm font-bold shrink-0 ${checked ? "text-[#3ecf8e]" : "text-zinc-400"}`}>
-                    +{price.toLocaleString("fr-TN")} TND/an
-                  </span>
-                </label>
-              )
-            })}
+                  <span className="text-xs leading-snug text-slate-500">Correction de bugs et résolution de bloqueurs</span>
+                </div>
+              </div>
+              <span className={`text-sm font-bold shrink-0 ${checked ? "text-[#3ecf8e]" : "text-zinc-400"}`}>
+                +{RETAINER_FEE.toLocaleString("fr-TN")} TND/mois
+              </span>
+            </label>
           </div>
 
           {/* Divider */}
@@ -314,26 +275,22 @@ export function PricingCalculator() {
           <div className="flex items-baseline justify-between">
             <div>
               <p className="mb-1 text-xs font-semibold tracking-widest uppercase text-zinc-500">{t("totalLabel")}</p>
-              <p className="text-xs text-zinc-400">{t("noSubscription")}</p>
-              <p className="mt-1 text-xs font-medium underline cursor-pointer text-slate-600">
-                {t("paymentFacilities")}
-              </p>
+              {totalMonthly > 0 && (
+                <p className="text-xs font-medium text-zinc-500">
+                  + {totalMonthly.toLocaleString("fr-TN")} TND / mois de support
+                </p>
+              )}
             </div>
             <div className="text-right">
               <span
                 className="text-5xl font-black leading-none tracking-tighter"
                 style={{ color: "#3ecf8e" }}
               >
-                {total.toLocaleString("fr-TN")}
+                {totalOneTime.toLocaleString("fr-TN")}
               </span>
               <span className="ml-1 text-lg font-bold text-zinc-400">TND</span>
             </div>
           </div>
-
-          {/* Licence note */}
-          <p className="pl-3 text-xs leading-relaxed border-l-2 text-slate-500 border-slate-200">
-            {t("licenceNote")}
-          </p>
 
           {/* Line items breakdown */}
           <div className="p-4 space-y-2 border bg-zinc-50 border-zinc-100">
@@ -346,7 +303,7 @@ export function PricingCalculator() {
                     {item.label}
                   </span>
                   <span className="ml-2 font-semibold text-zinc-700 shrink-0">
-                    {item.price === 0 ? t("included") : `${item.price.toLocaleString("fr-TN")} TND`}
+                    {item.price.toLocaleString("fr-TN")} TND{item.isMonthly ? "/mois" : ""}
                   </span>
                 </div>
               ))}
