@@ -10,6 +10,8 @@ import { FAQ } from "@/components/sections/FAQ"
 import { CarbonReport } from "@/components/sections/CarbonReport"
 import { Contact } from "@/components/sections/Contact"
 
+export const revalidate = 3600
+
 export async function generateMetadata({
   params,
 }: {

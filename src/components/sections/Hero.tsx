@@ -28,7 +28,7 @@ export async function Hero() {
         </div>
       </div>
 
-      <Image src="/fennec_hero.webp" alt="VAGA" width={154} height={154} className="absolute bottom-0 right-0 z-10 object-contain opacity-50 lg:opacity-100" />
+      <Image src="/fennec_hero.webp" alt="VAGA" width={154} height={154} priority className="absolute bottom-0 right-0 z-10 object-contain opacity-50 lg:opacity-100" />
     </section>
   )
 }

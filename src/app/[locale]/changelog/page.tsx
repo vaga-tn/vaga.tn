@@ -6,6 +6,8 @@ import { Footer } from "@/components/layout/Footer"
 import { changelogData } from "@/data/changelog"
 import CallToAction from "@/components/sections/CallToAction"
 
+export const revalidate = 3600
+
 export async function generateMetadata({
   params,
 }: {

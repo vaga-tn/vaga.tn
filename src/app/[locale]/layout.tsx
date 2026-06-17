@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist } from "next/font/google"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, getTranslations } from "next-intl/server"
@@ -8,11 +8,6 @@ import "../globals.css"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 })
 
@@ -66,11 +61,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html
-      lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang={locale} className={geistSans.variable} suppressHydrationWarning>
       <head>
         <GoogleTagManager gtmId="GTM-KNPPVR4L" />
       </head>
