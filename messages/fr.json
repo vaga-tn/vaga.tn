@@ -19,7 +19,8 @@
     "pricing": "Tarification",
     "contact": "Contact",
     "blog": "Blog",
-    "carbonReport": "Bilan Carbone"
+    "carbonReport": "Bilan Carbone",
+    "changelog": "Changelog"
   },
   "footer": {
     "taglinePrefix": "L'alternative de confiance : votre ",

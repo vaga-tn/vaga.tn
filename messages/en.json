@@ -19,7 +19,8 @@
     "pricing": "Pricing",
     "contact": "Contact",
     "blog": "Blog",
-    "carbonReport": "Carbon Report"
+    "carbonReport": "Carbon Report",
+    "changelog": "Changelog"
   },
   "footer": {
     "taglinePrefix": "The trusted alternative: your modern and affordable ",

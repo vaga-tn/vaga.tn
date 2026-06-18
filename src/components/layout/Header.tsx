@@ -28,6 +28,9 @@ export async function Header() {
           <Link href="/#bilan-carbone" className="transition-colors hover:text-brand">
             {t("carbonReport")}
           </Link>
+          <Link href="/changelog" className="transition-colors hover:text-brand">
+            {t("changelog")}
+          </Link>
         </nav>
 
         <nav className="flex items-center gap-5 text-sm font-normal transition-colors md:hidden text-zinc-600">
