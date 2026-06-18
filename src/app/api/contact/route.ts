@@ -23,9 +23,9 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, company, company_size, email, subject, message, recaptchaToken } = await req.json()
+    const { name, phone, company, company_size, email, subject, message, recaptchaToken } = await req.json()
 
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !phone || !subject || !message) {
       return NextResponse.json({ error: "Champs manquants." }, { status: 400 })
     }
 
@@ -76,6 +76,15 @@ export async function POST(req: NextRequest) {
                           <p style="margin:0;font-size:15px;font-weight:600;color:#18181b;">${name}</p>
                         </td>
                       </tr>
+                      ${phone ? `
+                      <tr>
+                        <td style="padding-bottom:16px;">
+                          <p style="margin:0 0 4px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#71717a;">Téléphone</p>
+                          <p style="margin:0;font-size:15px;font-weight:600;color:#18181b;">
+                            <a href="tel:${phone}" style="color:#3ecf8e;text-decoration:none;">${phone}</a>
+                          </p>
+                        </td>
+                      </tr>` : ""}
                       ${company ? `
                       <tr>
                         <td style="padding-bottom:16px;">

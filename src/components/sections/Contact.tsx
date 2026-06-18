@@ -28,7 +28,8 @@ export function Contact() {
 
     setStatus("loading")
     const form = e.currentTarget
-    const data = Object.fromEntries(new FormData(form).entries())
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
+    if (data.phone) data.phone = data.phone.replace(/[\s\-]/g, "")
 
     try {
       const res = await fetch("/api/contact", {
@@ -107,7 +108,7 @@ export function Contact() {
                   </div>
                 </div>
 
-                {/* Row 2 — Email + Taille */}
+                {/* Row 2 — Email + Téléphone */}
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label htmlFor="email" className="block text-sm font-semibold text-zinc-900">
@@ -123,21 +124,21 @@ export function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="company_size" className="block text-sm font-semibold text-zinc-900">
-                      {t("companySize")}
+                    <label htmlFor="phone" className="block text-sm font-semibold text-zinc-900">
+                      {t("phone")}
                     </label>
-                    <select
-                      id="company_size"
-                      name="company_size"
-                      defaultValue=""
-                      className={SELECT_CLASS}
-                    >
-                      <option value="" disabled>{t("companySizePlaceholder")}</option>
-                      <option value="1-5">{t("size1")}</option>
-                      <option value="6-20">{t("size2")}</option>
-                      <option value="21-50">{t("size3")}</option>
-                      <option value="50+">{t("size4")}</option>
-                    </select>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      placeholder={t("phonePlaceholder")}
+                      inputMode="numeric"
+                      className={INPUT_CLASS}
+                      onChange={(e) => {
+                        e.target.value = e.target.value.replace(/[^\d\s\-+]/g, "")
+                      }}
+                    />
                   </div>
                 </div>
 
