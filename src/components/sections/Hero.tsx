@@ -7,16 +7,16 @@ export async function Hero() {
   const t = await getTranslations("hero")
 
   return (
-    <section className="relative border-b border-zinc-400 sectionWrapper">
-      <div className="flex flex-col items-center justify-center h-full gap-8">
+    <section id="hero-section" className="relative w-full bg-gradient-to-r from-[#F1F1F4] to-[#EAE8EF]">
+      <div className="flex flex-col items-start justify-center h-full gap-8 sectionWrapper">
 
-        <h1 className="z-20 text-5xl font-normal text-center tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl leading-[1.1]">
+        <h1 className="z-20 text-5xl font-normal text-left tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl leading-[1.1]">
           {t("title")}
           <br />
           {t("titleLine2Prefix")}<span className="paint-highlight">{t("titleHighlight")}</span>
         </h1>
 
-        <p className="z-20 max-w-3xl text-lg font-thin text-center text-black">
+        <p className="z-20 max-w-3xl text-lg font-thin text-left text-black">
           {t("subtitlePrefix")}<strong>{t("subtitleBold1")}</strong>{t("subtitleMid")}<strong>{t("subtitleBold2")}</strong>{t("subtitleSuffix")}
         </p>
 
@@ -28,7 +28,7 @@ export async function Hero() {
         </div>
       </div>
 
-      <Image src="/fennec_hero.webp" alt="VAGA" width={154} height={154} priority className="absolute bottom-0 right-0 z-10 object-contain opacity-50 lg:opacity-100" />
+      <Image src="/fennec_hero.webp" alt="VAGA" width={354} height={354} priority className="absolute bottom-0 right-0 z-10 object-contain opacity-50 lg:opacity-100" />
     </section>
   )
 }

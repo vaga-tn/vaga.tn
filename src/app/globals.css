@@ -68,3 +68,10 @@ html {
   transform: rotate(-1deg);
   /* Adds a slight hand-drawn tilt */
 }
+
+
+#hero-section {
+  position: relative;
+  clip-path: ellipse(150% 100% at 50% 0%);
+  padding-bottom: 100px;
+}
