@@ -66,7 +66,19 @@
     },
     "pricing": {
       "title": "A Cheaper ERP. No Hidden Subscription.",
-      "subtitle": "The modern and affordable alternative for Tunisian businesses (Sousse and beyond). No per-user fees, full power for your team."
+      "subtitle": "The modern and affordable alternative for Tunisian businesses (Sousse and beyond). No per-user fees, full power for your team.",
+      "boxBadge": "On-premise",
+      "cloudBadge": "Recommended",
+      "oneTime": "One-time payment",
+      "licenseLabel": "License",
+      "installLabel": "Installation",
+      "monthlyLabel": "Server & maintenance",
+      "boxFeat1": "Hosted on your premises",
+      "boxFeat2": "Works without Internet",
+      "boxFeat3": "100% data under your control",
+      "cloudFeat1": "Accessible from anywhere",
+      "cloudFeat2": "Automatic updates & backups",
+      "cloudFeat3": "Zero server maintenance"
     },
     "faq": {
       "title": "Frequently Asked Questions",

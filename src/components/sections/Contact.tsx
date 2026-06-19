@@ -1,11 +1,10 @@
 "use client"
 
 import { useState, useRef } from "react"
-import Image from "next/image"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, AlertCircle, Loader2, Mail, MapPin, Phone } from "lucide-react"
+import { CheckCircle, AlertCircle, Loader2, Mail, MapPin, Phone, FacebookIcon } from "lucide-react"
 import SectionTitle from "../layout/SectionTitle"
 
 type Status = "idle" | "loading" | "success" | "error"
@@ -51,7 +50,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 border-t bg-zinc-50 border-zinc-200">
+    <section id="contact" className="py-24 bg-gradient-to-r from-[#F1F1F4] to-[#EAE8EF]">
       <div className="container px-4 mx-auto lg:px-0">
 
         <SectionTitle title={sectionT("title")} subtitle={sectionT("subtitle")} />
@@ -213,7 +212,7 @@ export function Contact() {
           </div>
 
           {/* ── Right: Quick Info card ── */}
-          <div className="p-6 space-y-5 bg-white border border-zinc-200">
+          <div className="p-6 space-y-5 bg-white border rounded-lg shadow-sm border-zinc-200 h-fit">
             <div>
               <p className="mb-1 text-xs font-semibold tracking-widest uppercase text-zinc-400">
                 {t("infoDirectContact")}
@@ -221,7 +220,7 @@ export function Contact() {
               <p className="text-lg font-bold text-zinc-900">MAAK CORP</p>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-5">
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-[#3ecf8e] mt-0.5 shrink-0" />
                 <div>
@@ -253,6 +252,14 @@ export function Contact() {
                 <div>
                   <p className="text-xs font-medium tracking-wide uppercase text-zinc-400">{t("infoAddress")}</p>
                   <p className="text-sm text-zinc-700">{t("infoAddressValue")}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <FacebookIcon className="w-4 h-4 text-[#3ecf8e] mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-xs font-medium tracking-wide uppercase text-zinc-400">facebook</p>
+                  <a href="https://www.facebook.com/profile.php?id=61591143806065" target="_blank">VAGA Suite</a>
                 </div>
               </div>
             </div>

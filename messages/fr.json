@@ -66,7 +66,19 @@
     },
     "pricing": {
       "title": "Un ERP Moins Cher. Sans Abonnement Caché.",
-      "subtitle": "L'alternative moderne et abordable pour les entreprises tunisiennes (Sousse et au-delà). Pas de frais par utilisateur, une puissance totale pour votre équipe."
+      "subtitle": "L'alternative moderne et abordable pour les entreprises tunisiennes (Sousse et au-delà). Pas de frais par utilisateur, une puissance totale pour votre équipe.",
+      "boxBadge": "Sur site",
+      "cloudBadge": "Recommandé",
+      "oneTime": "Paiement unique",
+      "licenseLabel": "Licence",
+      "installLabel": "Installation",
+      "monthlyLabel": "Serveur & maintenance",
+      "boxFeat1": "Hébergement dans vos locaux",
+      "boxFeat2": "Fonctionne sans Internet",
+      "boxFeat3": "Données 100 % sous votre contrôle",
+      "cloudFeat1": "Accessible partout dans le monde",
+      "cloudFeat2": "Mises à jour & sauvegardes automatiques",
+      "cloudFeat3": "Zéro maintenance serveur"
     },
     "faq": {
       "title": "Questions Fréquentes",
