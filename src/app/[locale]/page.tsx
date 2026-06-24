@@ -57,7 +57,7 @@ export default async function Home({
   }
 
   return (
-    <main className="min-h-screen font-sans bg-background text-zinc-900 scroll-smooth">
+    <main className="min-h-screen font-sans bg-[#E6EAEE] text-zinc-900 scroll-smooth">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

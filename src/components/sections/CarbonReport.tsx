@@ -23,8 +23,8 @@ export async function CarbonReport() {
   ]
 
   return (
-    <section id="bilan-carbone" className="sectionWrapper">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
+    <section id="bilan-carbone" className="bg-white">
+      <div className="grid grid-cols-1 gap-12 sectionWrapper lg:grid-cols-2 lg:items-start">
 
         {/* Left — content */}
         <div className="space-y-6">
