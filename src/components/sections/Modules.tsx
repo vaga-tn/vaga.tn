@@ -4,20 +4,25 @@ import SectionTitle from "../layout/SectionTitle"
 
 const MODULE_ICONS: Record<string, string> = {
   stock: "/apps/inventory.webp",
+  warehouse: "/apps/warehouses.webp",
   clients: "/apps/clients.webp",
   suppliers: "/apps/suppliers.webp",
   purchases: "/apps/sales.webp",
   sales: "/apps/purchase.webp",
+  treasury: "/apps/treasury.webp",
   calendar: "/apps/calendar.webp",
-  company: "/apps/company.webp",
   pos: "/apps/pos.webp",
   settings: "/apps/settings.webp",
+  company: "/apps/company.webp",
   team: "/apps/staff.webp",
-  treasury: "/apps/treasury.webp",
-  banking: "/apps/bank.webp",
   vehicles: "/apps/vehicles.webp",
+  addresses: "/apps/addresses.webp",
+  banking: "/apps/bank.webp",
   files: "/apps/dossier.webp",
   crm: "/apps/crm.webp",
+  drive: "/apps/drive.webp",
+  tej: "/apps/tej.webp",
+  statistics: "/apps/statistics.webp",
 }
 
 const MODULE_KEYS = Object.keys(MODULE_ICONS)
@@ -31,7 +36,7 @@ export async function Modules() {
 
       <SectionTitle title={sectionT("title")} subtitle={sectionT("subtitle")} />
 
-      <div className="grid grid-cols-4 gap-4 mx-auto overflow-hidden w-fit lg:grid-cols-6">
+      <div className="grid grid-cols-4 gap-12 mx-auto overflow-hidden w-fit lg:grid-cols-6">
         {MODULE_KEYS.map((key) => (
           <div
             key={key}

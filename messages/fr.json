@@ -106,7 +106,12 @@
     "banking": "Banques",
     "vehicles": "Véhicules",
     "files": "Dossier",
-    "crm": "CRM"
+    "crm": "CRM",
+    "warehouse": "Entrepôts",
+    "addresses": "Adresses",
+    "drive": "Stockage",
+    "tej": "TEJ",
+    "statistics": "statistiques"
   },
   "infrastructure": {
     "recommended": "Recommandé",
