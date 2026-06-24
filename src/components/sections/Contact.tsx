@@ -50,7 +50,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-r from-[#F1F1F4] to-[#EAE8EF]">
+    <section id="contact" className="py-24 bg-white">
       <div className="container px-4 mx-auto lg:px-0">
 
         <SectionTitle title={sectionT("title")} subtitle={sectionT("subtitle")} />
