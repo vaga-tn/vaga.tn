@@ -10,7 +10,7 @@ export async function Hero() {
     <section id="hero-section" className="relative w-full bg-gradient-to-r from-[#F1F1F4] to-[#EAE8EF]">
       <div className="flex flex-col items-start justify-center h-full gap-8 sectionWrapper">
 
-        <h1 className="z-20 text-5xl font-normal text-left tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl leading-[1.1]">
+        <h1 className="z-20 mt-12 text-5xl font-normal text-left tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl leading-[1.1]">
           {t("title")}
           <br />
           {t("titleLine2Prefix")}<span className="paint-highlight">{t("titleHighlight")}</span>
