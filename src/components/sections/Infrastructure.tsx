@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { CloudCog, Server, Wifi, WifiOff, Shield, RefreshCw, HardDrive, Zap } from "lucide-react"
+import { Server, Wifi, WifiOff, Shield, RefreshCw, HardDrive, Zap } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { getTranslations } from "next-intl/server"
 import SectionTitle from "../layout/SectionTitle"
