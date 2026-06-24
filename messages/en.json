@@ -90,6 +90,8 @@
     }
   },
   "modules": {
+    "idle": "Default view",
+    "localized": "English version",
     "stock": "Inventory",
     "clients": "Clients",
     "suppliers": "Suppliers",
@@ -138,7 +140,7 @@
     "feature1": "Automatic CO₂e calculation per ISO 14064 standards",
     "feature2": "Certified PDF report generated in one click",
     "feature3": "Export-Ready for the EU & international markets",
-    "learnMore": "Learn more"
+    "learnMore": "Calculate Your Footprint"
   },
   "callToAction": {
     "titlePrefix": "Take your business to the ",

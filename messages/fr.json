@@ -90,6 +90,8 @@
     }
   },
   "modules": {
+    "idle": "Vue standard",
+    "localized": "Version française",
     "stock": "Stock",
     "clients": "Clients",
     "suppliers": "Fournisseurs",
@@ -138,7 +140,7 @@
     "feature1": "Calcul CO₂e automatique selon les normes ISO 14064",
     "feature2": "Rapport PDF certifié généré en un clic",
     "feature3": "Export-Ready pour l'UE & les marchés internationaux",
-    "learnMore": "En savoir plus"
+    "learnMore": "Calculez votre empreinte carbone"
   },
   "callToAction": {
     "titlePrefix": "Passez à la vitesse supérieure pour ",
