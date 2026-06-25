@@ -1,6 +1,5 @@
 import Image from "next/image"
 import { getTranslations } from "next-intl/server"
-import SectionTitle from "../layout/SectionTitle"
 
 const MODULE_ICONS: Record<string, string> = {
   stock: "/apps/inventory.webp",

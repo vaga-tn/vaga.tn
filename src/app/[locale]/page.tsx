@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { getMessages } from "next-intl/server"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
@@ -8,7 +9,8 @@ import { Infrastructure } from "@/components/sections/Infrastructure"
 import { Pricing } from "@/components/sections/Pricing"
 import { FAQ } from "@/components/sections/FAQ"
 import { CarbonReport } from "@/components/sections/CarbonReport"
-import { Contact } from "@/components/sections/Contact"
+
+const Contact = dynamic(() => import("@/components/sections/Contact").then((mod) => mod.Contact))
 
 export const revalidate = 3600
 

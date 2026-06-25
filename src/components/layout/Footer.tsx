@@ -1,7 +1,9 @@
 import Image from "next/image"
+import dynamic from "next/dynamic"
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
-import CarbonBadge from "../sections/CarbonBadge"
+
+const CarbonBadge = dynamic(() => import("@/components/sections/CarbonBadge"))
 
 export async function Footer() {
   const t = await getTranslations("footer")
@@ -71,7 +73,7 @@ export async function Footer() {
 
       </div>
 
-      <Image src="/fennec_sitting.webp" alt="VAGA" width={200} height={354} priority className="absolute bottom-0 right-0 z-10 object-contain opacity-50 lg:opacity-100" />
+      <Image src="/fennec_sitting.webp" alt="VAGA" width={200} height={354} loading="lazy" className="absolute bottom-0 right-0 z-10 object-contain opacity-50 lg:opacity-100" />
 
     </footer>
   )
