@@ -63,10 +63,8 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={geistSans.variable} suppressHydrationWarning>
-      <head>
-        <GoogleTagManager gtmId="GTM-KNPPVR4L" />
-      </head>
       <body>
+        <GoogleTagManager gtmId="GTM-KNPPVR4L" />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
