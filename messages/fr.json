@@ -80,6 +80,10 @@
       "cloudFeat2": "Mises à jour & sauvegardes automatiques",
       "cloudFeat3": "Zéro maintenance serveur"
     },
+    "previews": {
+      "title": "Voir VAGA en Action",
+      "subtitle": "Explorez les fonctionnalités clés à travers des aperçus interactifs"
+    },
     "faq": {
       "title": "Questions Fréquentes",
       "subtitle": "Trouvez les réponses aux questions les plus fréquemment posées sur VAGA"
@@ -88,6 +92,18 @@
       "title": "Contactez-nous",
       "subtitle": "Vous avez une question ou souhaitez une démonstration personnalisée ? Remplissez le formulaire ci-dessous et notre équipe vous recontactera rapidement."
     }
+  },
+  "previews": {
+    "clients": "Gérez vos clients",
+    "clientsDesc": "Accédez à votre base clients complète, suivez les interactions et gérez les opportunités depuis un seul tableau de bord.",
+    "multiCompany": "Gérez plusieurs sociétés",
+    "multiCompanyDesc": "Basculez facilement entre plusieurs sociétés sur une même instance VAGA. Consolidez les rapports inter-entités.",
+    "inventory": "Gérez votre stock",
+    "inventoryDesc": "Suivez les niveaux de stock en temps réel, gérez les entrepôts et définissez des alertes de réapprovisionnement.",
+    "customization": "Personnalisez votre VAGA",
+    "customizationDesc": "Adaptez VAGA à votre flux de travail — champs personnalisés, modèles de documents et configuration des modules.",
+    "documents": "Cycle de vie des documents",
+    "documentsDesc": "Créez, validez et archivez factures, bons de livraison et bons de commande avec une piste d'audit complète."
   },
   "modules": {
     "idle": "Vue standard",
