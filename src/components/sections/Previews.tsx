@@ -28,7 +28,7 @@ export function Previews() {
         ([entry]) => {
           if (entry.isIntersecting) setActiveIndex(i)
         },
-        { threshold: 0.5 },
+        { threshold: 0.3 },
       )
       observer.observe(el)
       return observer
@@ -121,6 +121,7 @@ export function Previews() {
         {/* RIGHT */}
         <div className="flex flex-col w-full gap-12 overflow-x-hidden lg:gap-24">
           {PREVIEW_ITEMS.map(({ key, gif }, index) => {
+            const isActive = index === activeIndex
             return (
               <div
                 key={key}
@@ -128,10 +129,14 @@ export function Previews() {
                   panelRefs.current[index] = el
                 }}
                 data-feature-id={key}
-                className="h-full scroll-mt-24"
               >
 
-                <div className="relative aspect-[16/9] left-64 border-4 border-solid border-border rounded-lg shadow-lg">
+                <div
+                  className={`transition-all duration-500 ease-in-out relative aspect-[16/9] scroll-mt-12 border-border border-solid border-4 rounded-3xl overflow-hidden shadow-md ${isActive
+                    ? "blur-none left-64"
+                    : "blur-sm left-72"
+                    }`}
+                >
                   <Image
                     src={gif}
                     alt={t(key)}
