@@ -37,12 +37,12 @@ export function Previews() {
   }, [])
 
   return (
-    <section className="relative py-24 bg-white bg-[radial-gradient(#3ecf8e_1px,transparent_1px)] [background-size:16px_16px]">
+    <section className=" py-24 bg-white bg-[radial-gradient(#3ecf8e_1px,transparent_1px)] [background-size:16px_16px]">
 
-      <section className="container relative px-4 py-24 mx-auto lg:px-0 lg:flex lg:gap-16">
+      <section className="px-4 py-24 mx-auto lg:px-0 lg:flex lg:gap-16">
 
         {/* LEFT */}
-        <div className="lg:w-[30%] lg:shrink-0 lg:sticky lg:top-64 space-y-4 h-fit max-w-fit">
+        <div className="relative space-y-4 lg:sticky lg:top-64 h-fit max-w-fit left-40 lg:max-w-[300px]">
 
           <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand/30 px-2 py-1 text-xs font-normal text-brand backdrop-blur-lg bg-white/30">
             <Sparkles className="size-3.5" />
@@ -119,54 +119,31 @@ export function Previews() {
         </div>
 
         {/* RIGHT */}
-        <div className="mt-16 lg:mt-0 lg:w-[62%] lg:self-center">
-          <div className="flex flex-col gap-12 lg:gap-24">
-            {PREVIEW_ITEMS.map(({ key, gif, Icon }, index) => {
-              const isActive = index === activeIndex
-              return (
-                <div
-                  key={key}
-                  ref={(el) => {
-                    panelRefs.current[index] = el
-                  }}
-                  data-feature-id={key}
-                  className="scroll-mt-24"
-                >
-                  {/* Mobile label */}
-                  <div className="mb-4 lg:hidden">
-                    <h3 className="flex items-center gap-2 text-lg font-semibold text-white">
-                      <Icon className="size-4 text-brand" />
-                      {t(key)}
-                    </h3>
-                  </div>
+        <div className="flex flex-col w-full gap-12 overflow-x-hidden lg:gap-24">
+          {PREVIEW_ITEMS.map(({ key, gif }, index) => {
+            return (
+              <div
+                key={key}
+                ref={(el) => {
+                  panelRefs.current[index] = el
+                }}
+                data-feature-id={key}
+                className="h-full scroll-mt-24"
+              >
 
-                  {/* GIF card */}
-                  <div className="relative overflow-hidden border border-white/10 rounded-3xl bg-white/[0.03] backdrop-blur-xl shadow-2xl">
-                    <div className="relative aspect-[4/3] w-full">
-                      <Image
-                        src={gif}
-                        alt={t(key)}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                        priority
-                      />
-                    </div>
-                  </div>
-
-                  {/* Description below card */}
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out mt-4 ${isActive ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                      }`}
-                  >
-                    <p className="text-sm leading-relaxed text-white/60">
-                      {t(`${key}Desc`)}
-                    </p>
-                  </div>
+                <div className="relative aspect-[16/9] left-64 border-4 border-solid border-border rounded-lg shadow-lg">
+                  <Image
+                    src={gif}
+                    alt={t(key)}
+                    fill
+                    className="object-contain"
+                    unoptimized
+                    priority
+                  />
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
 
       </section>
