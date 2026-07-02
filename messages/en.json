@@ -82,7 +82,7 @@
     },
     "previews": {
       "title": "See VAGA in Action",
-      "subtitle": "Explore key features"
+      "subtitle": "All-in-one ERP features designed for modern business"
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -94,16 +94,16 @@
     }
   },
   "previews": {
-    "clients": "Manage your clients",
-    "clientsDesc": "Access your complete customer database, track interactions, and manage sales opportunities from a single dashboard.",
-    "multiCompany": "Manage multiple companies",
+    "customization": "Customizable ERP Workflow",
+    "customizationDesc": "Tailor VAGA to your exact workflow—custom fields, document templates, and module configuration.",
+    "multiCompany": "Multi-Company Management",
     "multiCompanyDesc": "Switch seamlessly between multiple companies under one VAGA instance. Consolidate reporting across entities.",
-    "inventory": "Manage your inventory",
-    "inventoryDesc": "Track stock levels in real-time, manage warehouses, and set automatic reorder alerts.",
-    "customization": "Customize your VAGA",
-    "customizationDesc": "Tailor VAGA to your workflow — custom fields, document templates, and module configuration.",
-    "documents": "Documents lifecycle",
-    "documentsDesc": "Create, validate, and archive invoices, delivery notes, and purchase orders with a full audit trail."
+    "clients": "Integrated CRM & Client Tracking",
+    "clientsDesc": "Access your complete customer database, track interactions, and manage sales opportunities from a single dashboard.",
+    "documents": "Automated Invoicing & Document Lifecycle",
+    "documentsDesc": "Create, validate, and archive invoices, delivery notes, and purchase orders with a full, audit trail.",
+    "inventory": "Real-Time Inventory & Stock Control",
+    "inventoryDesc": "Track stock levels in real-time, manage warehouses, and set automatic reorder alerts."
   },
   "modules": {
     "idle": "Default view",

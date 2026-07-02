@@ -82,7 +82,7 @@
     },
     "previews": {
       "title": "Voir VAGA en Action",
-      "subtitle": "Explorez les fonctionnalités clés"
+      "subtitle": "Des fonctionnalités ERP tout-en-un conçues pour la gestion moderne"
     },
     "faq": {
       "title": "Questions Fréquentes",
@@ -94,16 +94,16 @@
     }
   },
   "previews": {
-    "clients": "Gérez vos clients",
-    "clientsDesc": "Accédez à votre base clients complète, suivez les interactions et gérez les opportunités depuis un seul tableau de bord.",
-    "multiCompany": "Gérez plusieurs sociétés",
-    "multiCompanyDesc": "Basculez facilement entre plusieurs sociétés sur une même instance VAGA. Consolidez les rapports inter-entités.",
-    "inventory": "Gérez votre stock",
-    "inventoryDesc": "Suivez les niveaux de stock en temps réel, gérez les entrepôts et définissez des alertes de réapprovisionnement.",
-    "customization": "Personnalisez votre VAGA",
-    "customizationDesc": "Adaptez VAGA à votre flux de travail — champs personnalisés, modèles de documents et configuration des modules.",
-    "documents": "Cycle de vie des documents",
-    "documentsDesc": "Créez, validez et archivez factures, bons de livraison et bons de commande avec une piste d'audit complète."
+    "customization": "Flux de travail ERP personnalisable",
+    "customizationDesc": "Adaptez VAGA à votre flux de travail exact — champs personnalisés, modèles de documents et configuration de modules.",
+    "multiCompany": "Gestion multi-entreprises",
+    "multiCompanyDesc": "Basculez de manière transparente entre plusieurs entreprises sous une seule instance VAGA. Consolidez les rapports entre les entités.",
+    "clients": "CRM intégré et suivi des clients",
+    "clientsDesc": "Accédez à votre base de données clients complète, suivez les interactions et gérez les opportunités de vente à partir d'un tableau de bord unique.",
+    "documents": "Facturation automatisée et cycle de vie des documents",
+    "documentsDesc": "Créez, validez et archivez les factures, les bons de livraison et les bons de commande avec une piste d'audit complète.",
+    "inventory": "Inventaire en temps réel et contrôle des stocks",
+    "inventoryDesc": "Suivez les niveaux de stock en temps réel, gérez les entrepôts et configurez des alertes de réapprovisionnement automatiques."
   },
   "modules": {
     "idle": "Vue standard",
