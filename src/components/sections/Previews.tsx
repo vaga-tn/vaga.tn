@@ -41,8 +41,7 @@ export function Previews() {
       <section className="px-4 py-24 mx-auto lg:px-0 lg:flex lg:gap-16">
 
         {/* LEFT */}
-        <div className="relative space-y-4 lg:sticky lg:top-64 h-fit max-w-fit left-40 lg:max-w-[300px]">
-
+        <div className="relative space-y-4 lg:sticky lg:top-64 h-fit max-w-fit left-0 lg:left-40 lg:max-w-[300px]">
           <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand/30 px-2 py-1 text-xs font-normal text-brand backdrop-blur-lg bg-white/30">
             <Sparkles className="size-3.5" />
             {sectionT("title")}
@@ -60,18 +59,21 @@ export function Previews() {
                   key={key}
                   tabIndex={0}
                   role="button"
-                  onClick={() =>
+                  onClick={() => {
+                    setActiveIndex(index)
                     panelRefs.current[index]?.scrollIntoView({
                       behavior: "smooth",
                       block: "center",
                     })
-                  }
+                  }}
                   onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ")
+                    if (e.key === "Enter" || e.key === " ") {
+                      setActiveIndex(index)
                       panelRefs.current[index]?.scrollIntoView({
                         behavior: "smooth",
                         block: "center",
                       })
+                    }
                   }}
                   className={`relative w-full cursor-pointer rounded-2xl border outline-none transition-all duration-500 ease-in-out focus-visible:ring-1 focus-visible:ring-white/30 ${isActive
                     ? "border-brand/50 bg-brand/10 text-black opacity-100"
@@ -118,7 +120,7 @@ export function Previews() {
         </div>
 
         {/* RIGHT */}
-        <div className="flex flex-col w-full gap-12 overflow-x-hidden lg:gap-24">
+        <div className="hidden w-full gap-12 overflow-x-hidden lg:flex lg:flex-col lg:gap-24">
           {PREVIEW_ITEMS.map(({ key, vid }, index) => {
             const isActive = index === activeIndex
             return (
