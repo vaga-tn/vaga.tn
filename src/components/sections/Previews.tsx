@@ -1,16 +1,15 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { Users, Building2, Package, Sliders, FileText, Sparkles } from "lucide-react"
 
 const PREVIEW_ITEMS = [
-  { key: "customization", Icon: Sliders, gif: "/previews/customization.gif" },
-  { key: "multiCompany", Icon: Building2, gif: "/previews/multi-company.gif" },
-  { key: "clients", Icon: Users, gif: "/previews/client.gif" },
-  { key: "documents", Icon: FileText, gif: "/previews/document-lifecycle.gif" },
-  { key: "inventory", Icon: Package, gif: "/previews/inventory.gif" },
+  { key: "customization", Icon: Sliders, vid: "/previews/customization.webm" },
+  { key: "multiCompany", Icon: Building2, vid: "/previews/multi-company.webm" },
+  { key: "clients", Icon: Users, vid: "/previews/client.webm" },
+  { key: "documents", Icon: FileText, vid: "/previews/document-lifecycle.webm" },
+  { key: "inventory", Icon: Package, vid: "/previews/inventory.webm" },
 ]
 
 export function Previews() {
@@ -120,7 +119,7 @@ export function Previews() {
 
         {/* RIGHT */}
         <div className="flex flex-col w-full gap-12 overflow-x-hidden lg:gap-24">
-          {PREVIEW_ITEMS.map(({ key, gif }, index) => {
+          {PREVIEW_ITEMS.map(({ key, vid }, index) => {
             const isActive = index === activeIndex
             return (
               <div
@@ -137,14 +136,16 @@ export function Previews() {
                     : "blur-sm left-72"
                     }`}
                 >
-                  <Image
-                    src={gif}
-                    alt={t(key)}
-                    fill
-                    className="object-contain"
-                    unoptimized
-                    priority
-                  />
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-label={t(key)}
+                    className="absolute inset-0 object-contain w-full h-full"
+                  >
+                    <source src={vid} type="video/webm" />
+                  </video>
                 </div>
               </div>
             )
