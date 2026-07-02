@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { Hero } from "@/components/sections/Hero"
 import { Modules } from "@/components/sections/Modules"
+import { Previews } from "@/components/sections/Previews"
 import { Infrastructure } from "@/components/sections/Infrastructure"
 import { Pricing } from "@/components/sections/Pricing"
 import { FAQ } from "@/components/sections/FAQ"
@@ -67,6 +68,7 @@ export default async function Home({
       <Header />
       <Hero />
       <Modules />
+      <Previews />
       <CarbonReport />
       <Infrastructure />
       <Pricing />
