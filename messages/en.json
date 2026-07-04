@@ -1,10 +1,10 @@
 {
   "metadata": {
     "home": {
-      "title": "VAGA | Modern ERP & Business Management Software in Sousse",
-      "description": "VAGA is the reliable, modern and affordable alternative for SMEs in Sousse, Tunisia. ERP software, commercial management, invoicing and business management.",
-      "ogTitle": "VAGA | Modern ERP & Business Management Software",
-      "ogDescription": "The trusted, modern and affordable alternative for business management in Sousse. Invoicing, inventory and clients."
+      "title": "VAGA | Modern Cloud ERP & Business Management Software",
+      "description": "VAGA is a minimalist, fast SaaS ERP designed for SMEs. Streamline your commercial management, client relationships, invoicing, and inventory tracking.",
+      "ogTitle": "VAGA | Streamlined SaaS ERP & Business Management Software",
+      "ogDescription": "Discover a modern, all-in-one cloud ERP system with no hidden monthly fees. Effortlessly optimize your invoicing, real-time inventory, and workflows."
     },
     "blog": {
       "title": "Blog | VAGA ERP — Business Tips for Tunisian SMEs",
@@ -41,20 +41,20 @@
     "copyright": "VAGA SUITE. THE MODERN ARCHITECT."
   },
   "hero": {
-    "title": "The All-in-One ERP in Tunisia",
-    "titleLine2Prefix": "Modern, Reliable and ",
-    "titleHighlight": "Affordable",
-    "subtitlePrefix": "The trusted alternative for ",
-    "subtitleBold1": "commercial management",
+    "title": "The All-in-One Cloud ERP Solution",
+    "titleLine2Prefix": "Modern, Scalable and ",
+    "titleHighlight": "Cost-Effective",
+    "subtitlePrefix": "A high-performance alternative for ",
+    "subtitleBold1": "commercial inventory tracking",
     "subtitleMid": " and ",
-    "subtitleBold2": "invoicing",
-    "subtitleSuffix": " for your business. VAGA digitizes your operations with modern, robust tools at an affordable price for Tunisian SMEs.",
+    "subtitleBold2": "automated invoicing",
+    "subtitleSuffix": " built to optimize business operations. VAGA provides modern, robust web tools to fully digitize workflows for scaling SMEs.",
     "cta": "Request a demo"
   },
   "sections": {
     "apps": {
-      "title": "A Complete and Modular Business Management Software",
-      "subtitle": "From invoicing to inventory management, activate only the ERP modules you need. Total flexibility for your SME in Sousse and across Tunisia."
+      "title": "Modular ERP Software for End-to-End Business Management",
+      "subtitle": "From billing pipelines to real-time warehouse control, activate only the exact modular software applications your company needs."
     },
     "carbon": {
       "title": "Annual Carbon Report",
@@ -81,8 +81,8 @@
       "cloudFeat3": "Zero server maintenance"
     },
     "previews": {
-      "title": "See VAGA in Action",
-      "subtitle": "All-in-one ERP features designed for modern business"
+      "title": "See the VAGA Cloud ERP Ecosystem in Action",
+      "subtitle": "Explore core business application features built on clean, modern, and rapid software architectures."
     },
     "faq": {
       "title": "Frequently Asked Questions",

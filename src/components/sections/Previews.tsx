@@ -47,7 +47,7 @@ export function Previews() {
             {sectionT("title")}
           </div>
 
-          <h2 className="text-3xl font-bold leading-tight text-blmack md:text-4xl">
+          <h2 className="text-xl font-bold leading-tight text-blmack">
             {sectionT("subtitle")}
           </h2>
 

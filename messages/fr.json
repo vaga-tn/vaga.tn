@@ -1,10 +1,10 @@
 {
   "metadata": {
     "home": {
-      "title": "VAGA | ERP & Logiciel de Gestion Commerciale Moderne à Sousse",
-      "description": "VAGA est l'alternative fiable, moderne et moins chère pour les PME à Sousse, Tunisie. Logiciel ERP, gestion commerciale, de facturation et gestion d'entreprise.",
-      "ogTitle": "VAGA | ERP & Logiciel de Gestion Commerciale Moderne",
-      "ogDescription": "L'alternative de confiance, moderne et pas chère pour la gestion d'entreprise à Sousse. Facturation, stock et clients."
+      "title": "VAGA | ERP Cloud Moderne & Logiciel de Gestion Commerciale",
+      "description": "VAGA est un ERP SaaS minimaliste et rapide conçu pour les PME. Rationalisez votre gestion commerciale, vos relations clients, votre facturation et votre suivi des stocks.",
+      "ogTitle": "VAGA | ERP SaaS Simplifié & Logiciel de Gestion Commerciale",
+      "ogDescription": "Découvrez un système ERP cloud moderne et tout-en-un sans frais mensuels cachés. Optimisez sans effort votre facturation, vos stocks en temps réel et vos flux de travail."
     },
     "blog": {
       "title": "Blog | VAGA ERP — Conseils de gestion pour PME tunisiennes",
@@ -41,20 +41,20 @@
     "copyright": "VAGA SUITE. L'ARCHITECTE MODERNE."
   },
   "hero": {
-    "title": "L'ERP Tout-en-Un en Tunisie",
-    "titleLine2Prefix": "Moderne, Fiable et ",
-    "titleHighlight": "Pas Cher",
-    "subtitlePrefix": "L'alternative de confiance pour la ",
-    "subtitleBold1": "gestion commerciale",
-    "subtitleMid": " et ",
-    "subtitleBold2": "facturation",
-    "subtitleSuffix": " de votre entreprise. VAGA numérise votre activité avec des outils modernes, robustes et à un prix abordable pour les PME tunisiennes.",
+    "title": "La Solution ERP Cloud Tout-en-Un",
+    "titleLine2Prefix": "Moderne, Évolutive et ",
+    "titleHighlight": "Économique",
+    "subtitlePrefix": "Une alternative haute performance pour la ",
+    "subtitleBold1": "gestion des stocks commerciaux",
+    "subtitleMid": " et la ",
+    "subtitleBold2": "facturation automatisée",
+    "subtitleSuffix": " conçue pour optimiser les opérations. VAGA fournit des outils web modernes et robustes pour numériser entièrement les flux de travail des PME en pleine croissance.",
     "cta": "Demander une démo"
   },
   "sections": {
     "apps": {
-      "title": "Un Logiciel de Gestion d'Entreprise Complet et Modulaire",
-      "subtitle": "De la facturation à la gestion de stock, activez uniquement les modules d'ERP dont vous avez besoin. Une flexibilité totale pour votre PME à Sousse et partout en Tunisie."
+      "title": "Logiciel ERP Modulaire pour une Gestion d'Entreprise de Bout en Bout",
+      "subtitle": "Des pipelines de facturation au contrôle des entrepôts en temps réel, activez uniquement les applications logicielles modulaires dont votre entreprise a besoin."
     },
     "carbon": {
       "title": "Bilan Carbone Annuel",
@@ -81,8 +81,8 @@
       "cloudFeat3": "Zéro maintenance serveur"
     },
     "previews": {
-      "title": "Voir VAGA en Action",
-      "subtitle": "Des fonctionnalités ERP tout-en-un conçues pour la gestion moderne"
+      "title": "Découvrez l'Écosystème Cloud ERP VAGA en Action",
+      "subtitle": "Explorez les fonctionnalités applicatives métier conçues sur des architectures logicielles propres, modernes et rapides."
     },
     "faq": {
       "title": "Questions Fréquentes",
