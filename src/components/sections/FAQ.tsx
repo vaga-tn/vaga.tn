@@ -42,15 +42,9 @@ export async function FAQ() {
           <Accordion type="single" collapsible className="w-full">
             {faqItems.map((faq, index) => (
               <AccordionItem value={"item-" + index} key={index}>
-                {/* 
-                  Optimization: Added asChild and wrapped with an H3 tag.
-                  This structures the question semantically for both SEO crawlers and screen readers.
-                */}
-                <h3>
-                  <AccordionTrigger className="text-left text-base font-semibold text-zinc-800 hover:text-zinc-900 data-[state=open]:text-zinc-900">
-                    {faq.q}
-                  </AccordionTrigger>
-                </h3>
+                <AccordionTrigger className="text-left text-base font-semibold text-zinc-800 hover:text-zinc-900 data-[state=open]:text-zinc-900">
+                  {faq.q}
+                </AccordionTrigger>
                 <AccordionContent className="prose text-zinc-600 prose-zinc max-w-none">
                   {faq.a}
                 </AccordionContent>
