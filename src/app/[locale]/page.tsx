@@ -10,6 +10,7 @@ import { Infrastructure } from "@/components/sections/Infrastructure"
 import { Pricing } from "@/components/sections/Pricing"
 import { FAQ } from "@/components/sections/FAQ"
 import { CarbonReport } from "@/components/sections/CarbonReport"
+import { StructuredData } from "@/components/StructuredData"
 
 const Contact = dynamic(() => import("@/components/sections/Contact").then((mod) => mod.Contact))
 
@@ -61,6 +62,7 @@ export default async function Home({
 
   return (
     <main className="min-h-screen font-sans bg-[#F3F5F6] text-zinc-900 scroll-smooth">
+      <StructuredData />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
