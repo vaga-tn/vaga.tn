@@ -1,7 +1,6 @@
-import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { getTranslations } from "next-intl/server"
-import { Link } from "@/i18n/navigation"
+import { CTA } from "../ui/cta"
 
 export async function Hero() {
   const t = await getTranslations("hero")
@@ -21,10 +20,7 @@ export async function Hero() {
         </p>
 
         <div className="z-20 flex flex-wrap items-center">
-          <Link href="/#contact" className="flex items-center px-4 py-2 border rounded-full cursor-pointer bg-brand text-zinc-900 hover:bg-brand-600 border-zinc-900 h-9">
-            {t("cta")}
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
+          <CTA />
         </div>
       </div>
 
