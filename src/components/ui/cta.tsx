@@ -24,8 +24,8 @@ export function CTA() {
         data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
         className="flex items-center px-4 py-2 border rounded-full cursor-pointer bg-brand text-zinc-900 hover:bg-brand-600 border-zinc-900 h-9"
       >
-        {t("cta")}
-        <ArrowRight className="w-4 h-4 ml-2" />
+        <span className='text-xs lg:text-base'>{t("cta")}</span>
+        <ArrowRight className="hidden w-4 h-4 ml-2 lg:inline-block" />
       </button>
     </div>
   )
