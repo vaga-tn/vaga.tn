@@ -173,36 +173,28 @@
   },
   "faqItems": [
     {
-      "q": "Comment se passe la migration depuis Excel ?",
-      "a": "Nous vous accompagnons de A à Z. Nos experts importent vos données actuelles directement dans VAGA SUITE. La transition se fait en douceur sans perte d'historique."
+      "q": "Puis-je migrer facilement mes données professionnelles depuis Excel ?",
+      "a": "Absolument. VAGA vous permet d'importer facilement vos catalogues de produits, bases clients et listes de fournisseurs via des fichiers Excel ou CSV. Notre équipe vous accompagne dans la migration pour garantir une transition fluide et sans perte d'historique."
     },
     {
-      "q": "VAGA SUITE est-il conforme à la réglementation ?",
-      "a": "Absolument. VAGA SUITE est entièrement conforme aux normes comptables et fiscales tunisiennes en vigueur, et est régulièrement mis à jour pour refléter tout changement législatif."
+      "q": "VAGA est-il conforme à la réglementation fiscale et comptable tunisienne ?",
+      "a": "Oui, entièrement. VAGA est parfaitement aligné avec les normes comptables et fiscales tunisiennes en vigueur. La plateforme est régulièrement mise à jour pour intégrer les évolutions législatives locales, garantissant la conformité de votre facturation."
     },
     {
-      "q": "Quel type de support proposez-vous ?",
-      "a": "Nous offrons un support local dédié et réactif, disponible par téléphone et par email. De plus, une formation initiale est incluse pour assurer la prise en main rapide par vos équipes."
+      "q": "Quel type de support technique et d'accompagnement proposez-vous ?",
+      "a": "Nous offrons un support local dédié et réactif par téléphone et par email. De plus, chaque déploiement inclut une formation initiale complète de vos équipes pour assurer une prise en main immédiate et une adoption rapide de l'outil."
     },
     {
-      "q": "Où sont stockées mes données ?",
-      "a": "Nous accordons une importance capitale à la souveraineté de vos données. Vos informations sont stockées sur des serveurs sécurisés avec des sauvegardes quotidiennes automatiques. Vous restez le seul propriétaire de vos données."
+      "q": "Où sont stockées mes données et comment sont-elles sécurisées ?",
+      "a": "Nous accordons une importance capitale à la souveraineté et à la sécurité de vos données. Vos informations sont isolées sur des serveurs cloud sécurisés, bénéficiant de sauvegardes quotidiennes automatiques et d'un contrôle d'accès strict (RLS). Vous restez le propriétaire exclusif de vos données."
     },
     {
-      "q": "Que signifie \"Sans abonnement caché\" ?",
-      "a": "Contrairement aux solutions SaaS classiques qui vous facturent chaque mois indéfiniment, notre modèle est transparent. Vous payez pour ce que vous utilisez, sans frais de licence mensuels obligatoires qui augmentent avec le temps."
+      "q": "Que signifie votre modèle « sans frais d'abonnement cachés » ?",
+      "a": "Notre modèle commercial est transparent. Contrairement aux solutions complexes ou aux logiciels d'entreprise rigides qui imposent des licences mensuelles obligatoires et évolutives par utilisateur, vous payez uniquement pour les modules d'infrastructure que vous utilisez."
     },
     {
-      "q": "L'installation et la formation sont-elles incluses ?",
-      "a": "Oui, nous proposons des packs d'accompagnement pour configurer le logiciel selon vos besoins spécifiques et former votre équipe pour une prise en main immédiate."
-    },
-    {
-      "q": "Puis-je importer mes données existantes (Excel, etc.) ?",
-      "a": "Absolument. Vaga Suite permet l'importation facile de vos listes de produits, clients et fournisseurs via des fichiers Excel ou CSV pour que vous puissiez commencer à travailler en quelques minutes."
-    },
-    {
-      "q": "Le logiciel est-il modulable selon la taille de mon entreprise ?",
-      "a": "Tout à fait. Vous pouvez commencer avec le module Inventaire et Ventes, puis ajouter la Comptabilité ou les RH au fur et à mesure que votre entreprise grandit. Vous ne payez que pour les fonctionnalités dont vous avez réellement besoin."
+      "q": "Le logiciel ERP est-il évolutif selon la croissance de mon entreprise ?",
+      "a": "Tout à fait. VAGA repose sur une architecture modulaire. Vous pouvez débuter avec les outils essentiels de gestion des stocks et des ventes, puis activer les modules de comptabilité ou de RH au fur et à mesure de votre développement. Vous ne payez que ce dont vous avez besoin."
     }
   ],
   "contact": {

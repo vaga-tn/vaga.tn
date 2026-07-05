@@ -173,36 +173,28 @@
   },
   "faqItems": [
     {
-      "q": "How does migration from Excel work?",
-      "a": "We guide you every step of the way. Our experts import your current data directly into VAGA SUITE. The transition is smooth with no loss of history."
+      "q": "Can I easily migrate my existing business data from Excel?",
+      "a": "Absolutely. VAGA allows you to easily import your product catalogs, client databases, and supplier lists directly via Excel or CSV files. Our team handles data mapping and migration so you can transition smoothly with zero downtime or loss of history."
     },
     {
-      "q": "Is VAGA SUITE compliant with regulations?",
-      "a": "Absolutely. VAGA SUITE is fully compliant with current Tunisian accounting and tax standards, and is regularly updated to reflect any legislative changes."
+      "q": "Is VAGA compliant with Tunisian accounting and tax regulations?",
+      "a": "Yes, completely. VAGA is fully aligned with current Tunisian accounting and tax standards. The platform is continuously updated to reflect changes in local fiscal legislation, ensuring your billing, invoicing, and declarations remain perfectly compliant."
     },
     {
-      "q": "What type of support do you offer?",
-      "a": "We offer dedicated and responsive local support, available by phone and email. An initial training session is also included to ensure your teams can get up to speed quickly."
+      "q": "What kind of local technical support do you provide?",
+      "a": "We provide dedicated, high-availability local support via phone and email. Every onboarding package includes an initial training session tailored to your workflows to ensure your team achieves immediate adoption and operational proficiency."
     },
     {
-      "q": "Where is my data stored?",
-      "a": "We place great importance on data sovereignty. Your information is stored on secure servers with automatic daily backups. You remain the sole owner of your data."
+      "q": "Where is my data hosted, and how secure is it?",
+      "a": "We prioritize strict data sovereignty and security. Your business data is isolated and stored on highly secure cloud servers featuring automatic daily backups and strict Row Level Security (RLS). You retain absolute, exclusive ownership of your data."
     },
     {
-      "q": "What does 'No hidden subscription' mean?",
-      "a": "Unlike classic SaaS solutions that charge you every month indefinitely, our model is transparent. You pay for what you use, without mandatory monthly license fees that increase over time."
+      "q": "What does your 'no hidden subscription fees' model mean?",
+      "a": "Our business model is entirely transparent. Unlike complex legacy systems or rigid enterprise software platforms that trap you with mandatory, ever-increasing monthly seat licenses, you only pay for the exact infrastructure modules you deploy."
     },
     {
-      "q": "Are installation and training included?",
-      "a": "Yes, we offer support packages to configure the software to your specific needs and train your team for immediate adoption."
-    },
-    {
-      "q": "Can I import my existing data (Excel, etc.)?",
-      "a": "Absolutely. Vaga Suite allows easy import of your product, client and supplier lists via Excel or CSV files so you can start working in minutes."
-    },
-    {
-      "q": "Is the software scalable to the size of my business?",
-      "a": "Absolutely. You can start with the Inventory and Sales module, then add Accounting or HR as your business grows. You only pay for the features you actually need."
+      "q": "Is the ERP software scalable as my business grows?",
+      "a": "Yes. VAGA is built on a highly modular architecture. You can easily launch with essential inventory management and sales tools, then seamlessly unlock integrated accounting or HR workflows as your operations scale. You only ever pay for what you actually use."
     }
   ],
   "contact": {
