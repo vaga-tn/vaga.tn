@@ -3,6 +3,7 @@ import { FileCheck, Leaf, Globe, ArrowRight, Car, AirVent, Plane, BadgeCheck } f
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import SectionTitle from "../layout/SectionTitle"
+import { CTA } from "../ui/cta"
 
 export async function CarbonReport() {
   const sectionT = await getTranslations("sections.carbon")
@@ -58,13 +59,7 @@ export async function CarbonReport() {
             ))}
           </ul>
 
-          <Link
-            href="https://calculator.vaga.tn"
-            className="flex items-center px-4 py-2 border cursor-pointer rounded-xl w-fit bg-brand text-zinc-900 hover:bg-brand-600 border-zinc-900 h-9"
-          >
-            {t("learnMore")}
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
+          <CTA />
         </div>
 
         {/* Right — graphic */}

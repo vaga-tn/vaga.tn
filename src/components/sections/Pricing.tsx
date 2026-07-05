@@ -1,6 +1,7 @@
 import { BadgeCheck } from "lucide-react"
 import { getTranslations } from "next-intl/server"
 import SectionTitle from "../layout/SectionTitle"
+import { CTA } from "../ui/cta"
 
 export async function Pricing() {
   const t = await getTranslations("sections.pricing")
@@ -37,7 +38,7 @@ export async function Pricing() {
   return (
     <section className="bg-white">
       <section id="tarification" className="relative py-24 bg-[#EEEEEA]">
-        <div className="container relative z-10 px-4 mx-auto text-left lg:px-0">
+        <div className="container relative z-10 px-4 mx-auto space-y-8 text-left lg:px-0">
 
           <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
@@ -82,6 +83,9 @@ export async function Pricing() {
             ))}
           </div>
 
+          <div className="flex items-center justify-center w-full">
+            <CTA />
+          </div>
         </div>
       </section>
     </section>

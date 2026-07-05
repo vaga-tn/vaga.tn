@@ -2,6 +2,7 @@ import Image from "next/image"
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import LocaleSwitcher from "./LocaleSwitcher"
+import { CTA } from "../ui/cta"
 
 export async function Header() {
   const t = await getTranslations("header")
@@ -42,10 +43,10 @@ export async function Header() {
           </Link>
         </nav>
 
-        <div>
+        <div className="flex items-center gap-2">
           <LocaleSwitcher />
+          <CTA variant="navbar" />
         </div>
-
       </div>
     </header>
   )

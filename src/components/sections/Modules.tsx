@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { getTranslations } from "next-intl/server"
+import { CTA } from "../ui/cta"
 
 const MODULE_ICONS: Record<string, string> = {
   stock: "/apps/inventory.webp",
@@ -55,6 +56,10 @@ export async function Modules() {
               </span>
             </div>
           ))}
+        </div>
+
+        <div className="flex items-center justify-center w-full">
+          <CTA />
         </div>
       </section>
 
