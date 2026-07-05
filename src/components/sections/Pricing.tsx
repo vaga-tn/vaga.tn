@@ -15,7 +15,6 @@ export async function Pricing() {
       period: t("oneTime"),
       items: [
         { label: t("licenseLabel"), value: "3 000 TND" },
-        { label: t("installLabel"), value: "500 TND" },
       ],
       features: [t("boxFeat1"), t("boxFeat2"), t("boxFeat3")],
       highlight: false,
