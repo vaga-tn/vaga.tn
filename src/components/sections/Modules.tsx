@@ -40,9 +40,9 @@ export async function Modules() {
           {MODULE_KEYS.map((key) => (
             <div
               key={key}
-              className="flex flex-col items-center justify-center gap-4 text-center"
+              className="flex flex-col items-center justify-center gap-2 text-center lg:gap-4"
             >
-              <div className="p-4 bg-white border border-solid rounded-md border-zinc-400">
+              <div className="overflow-hidden bg-white border border-solid rounded-md lg:p-4 border-zinc-400">
                 <Image
                   src={MODULE_ICONS[key]}
                   alt={`Module ${t(key)} - VAGA ERP Tunisie`}
@@ -51,7 +51,7 @@ export async function Modules() {
                   className="object-contain w-16 h-16"
                 />
               </div>
-              <span className="text-sm font-normal text-black capitalize">
+              <span className="text-xs font-normal text-black capitalize lg:text-sm">
                 {t(key)}
               </span>
             </div>

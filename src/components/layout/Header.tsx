@@ -34,15 +34,6 @@ export async function Header() {
           </Link>
         </nav>
 
-        <nav className="flex items-center gap-5 text-sm font-normal transition-colors md:hidden text-zinc-600">
-          <Link href="/#tarification" className="transition-colors hover:text-brand">
-            {t("pricing")}
-          </Link>
-          <Link href="/blog" className="transition-colors hover:text-brand">
-            {t("blog")}
-          </Link>
-        </nav>
-
         <div className="flex items-center gap-2">
           <LocaleSwitcher />
           <CTA variant="navbar" />
