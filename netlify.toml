@@ -7,3 +7,15 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  
+[[headers]]
+  # Match Next.js hashed assets (JS, CSS, etc.)
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, s-maxage=31536000, immutable"
+
+[[headers]]
+  # Match images handled by Netlify Image CDN or public images
+  for = "/_next/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, s-maxage=31536000"
