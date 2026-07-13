@@ -2,16 +2,16 @@
 
 Research date: 2026-07-12. Source material for a marketing/lead-gen website — informs positioning, comparison-page targets, and keyword clusters. See [feature-map.md](./feature-map.md) for what VAGA itself does.
 
-## Market Context — the dominant driver right now
+## Market Context — e-invoicing is now table stakes, not an urgency hook
 
-**Finance Law 2026 (Article 53)** made e-invoicing via **TTN El Fatoora** (TEIF XML format) mandatory for all VAT-registered businesses in Tunisia, effective **January 1, 2026, with no grace period**.
+**Finance Law 2026 (Article 53)** made e-invoicing via **TTN El Fatoora** (TEIF XML format) mandatory for all VAT-registered businesses in Tunisia, effective **January 1, 2026, with no grace period**. As of this research (2026-07-12), the mandate has been in force for ~7 months — it's no longer a looming deadline, it's the baseline expectation. Every serious competitor already supports it, so it should be positioned as **one standard feature among many**, not the anchor of the SEO/positioning strategy.
 
 - **Applies to**: all legal entities/individuals subject to VAT in Tunisia, regardless of size/sector. Exempt: businesses under franchise or total VAT exemption.
 - **Covered documents**: sales invoices and credit notes. Quotes, proformas, and delivery notes are NOT mandatory submissions (yet).
 - **Compliance steps**: obtain an ANCE electronic certificate → create an El Fatoora account → select compliant invoicing software → configure fiscal data → test in TTN sandbox → go to production.
 - **Penalties**: 100–500 TND per non-compliant paper invoice, capped at 50,000 TND/year, plus TVA adjustment risk and invoice invalidity with assujetti clients.
 
-**Implication**: this is currently the highest-intent, most time-sensitive search driver in the entire market. Compliance/urgency messaging ("conformité TTN El Fatoora", "TEIF", "éviter les pénalités facture électronique") should anchor the SEO strategy, not sit as a secondary feature bullet.
+**Implication**: TEIF/TTN compliance still needs a clear feature page and should appear in on-page copy (some businesses are still catching up, and it remains a real search term), but it should not carry the homepage narrative or dominate the keyword strategy. Lead with VAGA's broader ERP breadth and differentiators (data sovereignty, encryption, DB-enforced business rules) instead.
 
 ## Competitor Tiers
 
@@ -73,13 +73,15 @@ These Tier 3 tools are not real competitors for mid-size PMEs needing multi-ware
 3. **Full breadth in one modern SaaS** — multi-warehouse stock + treasury + fleet + RBAC + RS/TEJ in a single product. Only eFactureTN matches this breadth among competitors found; others are either lighter (pure invoicing) or heavier/legacy (Megasoft).
 4. **Transparent pricing** — Clever-ERP hides pricing behind "request a quote"; Megasoft uses legacy per-module licensing. VAGA can build trust with clear tiers (eFactureTN-style).
 5. **Modern SaaS UX vs. legacy competitors** — positioning against Megasoft's licensing-era feel and Odoo's generic/global nature.
+6. **Offline/on-premise resilience + no-subscription pricing** — VAGA ships two deployment options: VAGA Cloud (hosted, 1 700 TND one-time + 250 TND/mois) and VAGA Box (on-premise mini-PC appliance, 3 000 TND one-time, zero recurring fee, runs with no internet connection at all). None of the researched competitors offer a hardware/offline option — this directly answers frequent DSL/Ooredoo/Topnet outages in Sousse, Sfax, and industrial zones, a concrete, everyday pain point distinct from the more abstract data-sovereignty pitch. It also reframes the pricing angle: VAGA is one-time-per-suite (not per-user/per-invoice like eFactureTN/Hesabi/Clever-ERP, and not per-module like Megasoft), giving a genuine "no hidden subscription" claim.
 
 ## Suggested SEO Keyword Clusters
 
-1. **Compliance/urgency intent** (highest priority, time-sensitive): "conformité TTN El Fatoora", "TEIF facture électronique Tunisie", "pénalités facture papier Tunisie 2026", "logiciel facturation électronique conforme Tunisie", "déclaration TEJ automatique".
+1. **Compliance/feature intent** (standard feature, not a special campaign): "conformité TTN El Fatoora", "TEIF facture électronique Tunisie", "pénalités facture papier Tunisie 2026", "logiciel facturation électronique conforme Tunisie", "déclaration TEJ automatique".
 2. **Competitor-comparison intent**: "alternative à Odoo Tunisie", "eFactureTN vs [VAGA]", "Hesabi vs [VAGA]", "meilleur logiciel ERP Tunisie PME", "Clever-ERP alternative".
 3. **Feature intent**: "gestion de stock multi-entrepôt Tunisie", "gestion de flotte véhicules PME", "logiciel devis facture bon de livraison", "gestion trésorerie caisse Tunisie", "retenue à la source XML".
 4. **Trust/differentiation intent**: "hébergement de données Tunisie", "logiciel facturation données chiffrées", "ERP tunisien souveraineté des données".
+5. **Offline/pricing-model intent**: "ERP fonctionne sans internet", "logiciel de gestion hors ligne Tunisie", "logiciel ERP sans abonnement", "prix logiciel ERP Tunisie sans engagement".
 
 ## Next Steps (not yet done)
 

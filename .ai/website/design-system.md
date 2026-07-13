@@ -1,0 +1,86 @@
+# VAGA — Design System (v2 — validated via mockup)
+
+Status: **v2 — supersedes the v1 draft (Resend/Supabase audit, navy/mint/tan tokens).** That direction was dropped after the homepage mockup round: the validated aesthetic is **black on white, Tally-inspired** ([tally.so](https://tally.so)).
+
+**Source of truth: [`/vaga-home-mockup.html`](../../vaga-home-mockup.html)** (repo root) — the user-validated homepage mockup. Every token below is extracted from it. When mockup and this doc disagree, the mockup wins.
+
+---
+
+## 1. Aesthetic principles
+
+1. **Strictly monochrome.** No accent color. Black does all the work: CTAs are solid ink, links are ink, emphasis is weight — not hue. (v1's navy/mint/tan and the two-accent Cloud/Box color coding are dropped for the marketing site.)
+2. **1px borders, not shadows.** Cards and sections separate with thin `--border` lines. The only shadows allowed: the soft drop under the hero product frame, and the *hard offset* shadow on doodle chips (see §6).
+3. **Whitespace-generous, centered hero, tight bold headlines.** Tally's rhythm: big centered statements, ~88px section padding, content max-width 1040px.
+4. **Playful but restrained.** Personality comes from a few hand-drawn touches (squiggle underline, rotated doodle chips) — used once or twice per page, not everywhere.
+5. **The product visual is drawn in HTML**, not a screenshot: the real VAGA launcher UI ("Bonjour, Aymen" screen) recreated inside a browser-chrome frame. Crisp at any DPI, theme-consistent by construction.
+
+## 2. Color tokens
+
+Light theme only — the site commits to white (`color-scheme: light only`). No dark mode planned for the marketing site.
+
+| Token | Value | Use |
+|---|---|---|
+| `--page` | `#FFFFFF` | page background |
+| `--ink` | `#0B0B0C` | headlines, primary text, solid CTA background, icon strokes |
+| `--body` | `#52525B` | body copy |
+| `--muted` | `#8E8E96` | microcopy, captions, kickers |
+| `--border` | `#E6E6E3` | 1px card/section borders |
+| `--border-strong` | `#0B0B0C` | emphasized borders (recommended plan card, doodle chips, chain steps) |
+| `--fill` | `#FAFAF8` | subtle fills (app tiles, sidebar-type surfaces) |
+
+## 3. Typography
+
+- **Stack**: `-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif`. (If a webfont is added at build time, Inter is the drop-in choice; the mockup validates fine on the system stack.)
+- **Monospace** (`ui-monospace, SFMono-Regular, Menlo, Consolas`) is reserved for the in-app launcher recreation (greeting, date, meta line) — it mirrors the real product UI. Not used in marketing copy.
+- **Scale** (from mockup):
+  - H1: `clamp(38px, 6vw, 58px)` / 800 / letter-spacing `-0.03em` / line-height 1.12
+  - H2: `clamp(28px, 4vw, 38px)` / 800 / same tracking
+  - H3 (card titles): 18px / 700 / `-0.01em`
+  - Body: 16px / 400 / line-height 1.6 (hero subhead 18px, card body 14.5px)
+  - Microcopy/captions: 13–13.5px, `--muted`
+  - Overline labels (footer column heads, table heads): 11–12px, uppercase, letter-spacing `.06–.07em`, `--muted`
+- Headlines get `text-wrap: balance`. Prices and any digit columns get `font-variant-numeric: tabular-nums`.
+
+## 4. Spacing & radius
+
+- Container: **max-width 1040px**, 24px side padding. Narrow text blocks: 680px.
+- Section padding: **88px** vertical (64px under 560px viewport). Hero: 96px top.
+- Radii: buttons **8px** (large CTAs 10px), cards **14–16px**, app tiles 16px, pills/badges/trust items **999px**. The v1 pill-button rule is dropped — buttons are rounded rectangles like Tally's, not pills.
+
+## 5. Core components (all present in the mockup)
+
+- **Header**: sticky, `rgba(255,255,255,.92)` + `backdrop-filter: blur(8px)`, 1px bottom border, 64px tall. Logo = lowercase wordmark `vaga` (800) + `.tn` in `--muted`. Right-aligned links (14.5px, `--body`) + solid ink CTA button.
+- **Buttons**: solid ink with white text (primary), white with `--border` border darkening to ink on hover (secondary/ghost). Arrow `→` inside the primary CTA nudges 2px right on hover.
+- **Trust bar**: centered row of pill badges (1px border, checkmark SVG + 14px/600 label) under a muted one-line kicker.
+- **Feature cards**: 3-column grid (2 at ≤860px, 1 at ≤560px), 1px border, 14px radius, border turns ink on hover. Content: 38px outlined icon tile (1px ink border, 9px radius) + H3 + one-line benefit + "En savoir plus →" link.
+- **Document chain**: pills with 1.5px ink borders joined by `→` separators (Devis → Commande → BL → Facture) + muted caption.
+- **Security cards**: 2-up bordered panels. Signature effect: the **cipher block** — monospace gibberish with bold plaintext fragments, fading out via CSS `mask-image` gradient (visualizes client-side encryption). Second card carries the rotated "🇹🇳 Sousse, Tunisie" flagbox chip.
+- **Pricing cards**: 2-up, 16px radius. Recommended plan = **2px ink border** + floating uppercase "Recommandé" tag (ink pill, top-left overlap) + solid CTA; other plan = 1px border + ghost CTA. Amount 36px/800 tabular.
+- **FAQ**: native `<details>/<summary>`, top+bottom 1px rules, `+` marker rotating 45° when open. One column, 680px.
+- **Footer**: 4 columns (brand+tagline / Produit / Entreprise / Légal), uppercase overline column heads, "🇹🇳 Hébergé en Tunisie" pill badge, bottom bar with © line.
+
+## 6. Playful signature elements (use sparingly)
+
+- **Doodle chips** (hero only): small white chips with 1.5px ink border, **3px 3px 0 hard offset shadow**, rotated ±2–4°, one of them dashed-border with no shadow. Content = product claims ("Devis → Facture ✓", "Stock à jour ✓", "TEIF ✓").
+- **Squiggle underline**: hand-drawn SVG path under one key phrase in the H1 (3px stroke, round caps). One per page maximum.
+- These replace Tally's marker doodles; do not add mascots/illustrations to the marketing site. (Fennec mascot + circuit-board motif from v1 are **out of scope for the site**; they remain product/brand assets.)
+
+## 7. Product-preview frame
+
+- Browser chrome: 1px border, 14px radius, three 10px gray dots + URL pill (`app.vaga.tn`), soft shadow `0 24px 60px -30px rgba(11,11,12,.25)`, max-width 960px.
+- Inside: faithful HTML recreation of the **real launcher screen** — top bar (4 centered outline icons + ink user button), monospace greeting block ("Lundi …", "Bonjour, …", "Tout est en ordre.", meta line with underlined links), 11-app tile grid (86px `--fill` tiles, 16px radius, 34px outline icons, 12.5px labels), "Developed & Maintained by MAAK CORP" footer line.
+- App order: Drive, Inventaire, Trésorerie, Fournisseurs, Clients, Achats, Ventes, Retenue à la source, Mon Entreprise, Statistiques, Parametres.
+
+## 8. Iconography
+
+All icons are inline SVG, stroke-based (`stroke-width` 1.4–1.6, round caps/joins, `currentColor`), no fills, no icon library dependency. Checkmarks in lists/badges: 14–15px, 2px stroke.
+
+## 9. Accessibility & motion
+
+- Interactive-looking = interactive; keyboard focus must stay visible when built for real.
+- Transitions are minimal (border-color, arrow nudge, `+` rotation, 0.15–0.2s ease) and wrapped in `@media (prefers-reduced-motion: reduce)` kill-switch.
+- Body copy `--body` on white and `--muted` for small text both pass WCAG AA at their used sizes; don't use `--muted` below 12px.
+
+---
+
+Next: carry these tokens into the real build (Tailwind theme or CSS custom properties, per framework choice) and reuse the mockup's markup as the structural reference for the homepage.
