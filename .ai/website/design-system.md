@@ -2,13 +2,13 @@
 
 Status: **v2 — supersedes the v1 draft (Resend/Supabase audit, navy/mint/tan tokens).** That direction was dropped after the homepage mockup round: the validated aesthetic is **black on white, Tally-inspired** ([tally.so](https://tally.so)).
 
-**Source of truth: [`/vaga-home-mockup.html`](../../vaga-home-mockup.html)** (repo root) — the user-validated homepage mockup. Every token below is extracted from it. When mockup and this doc disagree, the mockup wins.
+**Source of truth: [`/vaga-home-mockup.html`](../../vaga-home-mockup.html)** (repo root) — the user-validated homepage mockup. Every token below is extracted from it. When mockup and this doc disagree, the mockup wins — **except for dark mode**: the mockup is light-only (it predates the toggle decision); §2b and §10 of this doc are the reference for the dark theme.
 
 ---
 
 ## 1. Aesthetic principles
 
-1. **Strictly monochrome.** No accent color. Black does all the work: CTAs are solid ink, links are ink, emphasis is weight — not hue. (v1's navy/mint/tan and the two-accent Cloud/Box color coding are dropped for the marketing site.)
+1. **Strictly monochrome.** No accent color, in either theme. Ink does all the work: CTAs are solid ink, links are ink, emphasis is weight — not hue. (v1's navy/mint/tan and the two-accent Cloud/Box color coding are dropped for the marketing site.)
 2. **1px borders, not shadows.** Cards and sections separate with thin `--border` lines. The only shadows allowed: the soft drop under the hero product frame, and the *hard offset* shadow on doodle chips (see §6).
 3. **Whitespace-generous, centered hero, tight bold headlines.** Tally's rhythm: big centered statements, ~88px section padding, content max-width 1040px.
 4. **Playful but restrained.** Personality comes from a few hand-drawn touches (squiggle underline, rotated doodle chips) — used once or twice per page, not everywhere.
@@ -16,17 +16,46 @@ Status: **v2 — supersedes the v1 draft (Resend/Supabase audit, navy/mint/tan t
 
 ## 2. Color tokens
 
-Light theme only — the site commits to white (`color-scheme: light only`). No dark mode planned for the marketing site.
+The site ships **both themes** with a header toggle (see §10). Light is the default and the design's home base; dark is a true inversion of the same monochrome system — still no accent color in either theme. Set `color-scheme: light dark` on `:root` so native UI (scrollbars, form controls) follows.
+
+### 2a. Light (default)
 
 | Token | Value | Use |
 |---|---|---|
 | `--page` | `#FFFFFF` | page background |
 | `--ink` | `#0B0B0C` | headlines, primary text, solid CTA background, icon strokes |
+| `--ink-contrast` | `#FFFFFF` | text/icons on top of `--ink` surfaces (CTA labels) |
 | `--body` | `#52525B` | body copy |
 | `--muted` | `#8E8E96` | microcopy, captions, kickers |
 | `--border` | `#E6E6E3` | 1px card/section borders |
 | `--border-strong` | `#0B0B0C` | emphasized borders (recommended plan card, doodle chips, chain steps) |
 | `--fill` | `#FAFAF8` | subtle fills (app tiles, sidebar-type surfaces) |
+| `--header-bg` | `rgba(255,255,255,.92)` | sticky header (with `backdrop-filter: blur(8px)`) |
+| `--frame-shadow` | `0 24px 60px -30px rgba(11,11,12,.25)` | product-frame drop shadow |
+
+### 2b. Dark
+
+Not a palette change — the same system inverted. `--ink` flips to off-white, the solid CTA becomes a **white button with black text**, borders become white-alpha.
+
+| Token | Value | Use |
+|---|---|---|
+| `--page` | `#0B0B0C` | page background (same hex as light ink — deliberate symmetry) |
+| `--ink` | `#F4F4F2` | headlines, primary text, solid CTA background, icon strokes |
+| `--ink-contrast` | `#0B0B0C` | text/icons on top of `--ink` surfaces (CTA labels) |
+| `--body` | `#A7A7AE` | body copy |
+| `--muted` | `#77777F` | microcopy, captions, kickers |
+| `--border` | `rgba(255,255,255,.13)` | 1px card/section borders |
+| `--border-strong` | `#F4F4F2` | emphasized borders |
+| `--fill` | `#141416` | subtle fills (app tiles, launcher surfaces) |
+| `--header-bg` | `rgba(11,11,12,.88)` | sticky header (same blur) |
+| `--frame-shadow` | `0 24px 60px -30px rgba(0,0,0,.6)` | product-frame drop shadow |
+
+Dark-theme notes:
+- Card/tile backgrounds stay `--page` or `--fill`; separation comes from borders, same as light. No elevated-gray card stack à la Material.
+- Doodle chips & flagbox: border and hard offset shadow use `--ink` (off-white) on `--page` chips — the sketchy look inverts cleanly.
+- The cipher block, squiggle underline, chain pills, and check icons all reference `--ink`/`--muted`, so they invert for free — build every component against tokens, never hardcoded hex.
+- The product-preview launcher recreation follows the site theme (it's token-built HTML, not a screenshot) — acceptable even though the real app may be light-only.
+- Emoji (🇹🇳) and the recommended-plan tag (`--ink` pill with `--ink-contrast` text) need no special-casing.
 
 ## 3. Typography
 
@@ -49,7 +78,7 @@ Light theme only — the site commits to white (`color-scheme: light only`). No 
 
 ## 5. Core components (all present in the mockup)
 
-- **Header**: sticky, `rgba(255,255,255,.92)` + `backdrop-filter: blur(8px)`, 1px bottom border, 64px tall. Logo = lowercase wordmark `vaga` (800) + `.tn` in `--muted`. Right-aligned links (14.5px, `--body`) + solid ink CTA button.
+- **Header**: sticky, `--header-bg` + `backdrop-filter: blur(8px)`, 1px bottom border, 64px tall. Logo = lowercase wordmark `vaga` (800) + `.tn` in `--muted`. Right-aligned links (14.5px, `--body`), theme toggle icon button (§10), solid ink CTA button.
 - **Buttons**: solid ink with white text (primary), white with `--border` border darkening to ink on hover (secondary/ghost). Arrow `→` inside the primary CTA nudges 2px right on hover.
 - **Trust bar**: centered row of pill badges (1px border, checkmark SVG + 14px/600 label) under a muted one-line kicker.
 - **Feature cards**: 3-column grid (2 at ≤860px, 1 at ≤560px), 1px border, 14px radius, border turns ink on hover. Content: 38px outlined icon tile (1px ink border, 9px radius) + H3 + one-line benefit + "En savoir plus →" link.
@@ -79,7 +108,40 @@ All icons are inline SVG, stroke-based (`stroke-width` 1.4–1.6, round caps/joi
 
 - Interactive-looking = interactive; keyboard focus must stay visible when built for real.
 - Transitions are minimal (border-color, arrow nudge, `+` rotation, 0.15–0.2s ease) and wrapped in `@media (prefers-reduced-motion: reduce)` kill-switch.
-- Body copy `--body` on white and `--muted` for small text both pass WCAG AA at their used sizes; don't use `--muted` below 12px.
+- Body copy `--body` passes WCAG AA in both themes. `--muted` does **not** (≈3.3:1 on white) — reserve it for decorative microcopy (kickers, captions, © line) and never for content someone must read; anything informational at small sizes uses `--body`. Don't use `--muted` below 12px.
+
+## 10. Theme toggle pattern
+
+Decision: light/dark toggle in the header (sun/moon icon button, right of the nav links, before the CTA). Framework-agnostic — works identically in Astro or Next.js.
+
+**Resolution order**: user override (`localStorage.theme = "light" | "dark"`) → OS preference (`prefers-color-scheme`) → light.
+
+**CSS structure** — token-level only; components never branch on theme:
+
+```css
+:root { color-scheme: light dark; /* §2a light tokens */ }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { /* §2b dark tokens */ }
+}
+:root[data-theme="dark"] { /* §2b dark tokens (explicit override) */ }
+```
+
+(The duplicated dark block can be a preprocessor mixin/`@apply` group so it's written once.)
+
+**FOUC guard** — inline `<script>` in `<head>`, before any paint:
+
+```html
+<script>
+  try {
+    const t = localStorage.theme;
+    if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
+  } catch {}
+</script>
+```
+
+**Toggle behavior**: clicking sets `documentElement.dataset.theme` and persists to `localStorage`. If the chosen theme matches the OS preference, *remove* the override (delete the localStorage key and the attribute) so the site follows the OS again. Button gets `aria-label="Activer le thème sombre/clair"` reflecting the action, not the state.
+
+**Assets**: none to swap — logo is text, icons are `currentColor` SVG, product preview is token-built HTML. Nothing on the site is a raster image that bakes in a background.
 
 ---
 
