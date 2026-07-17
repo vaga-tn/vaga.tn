@@ -1,0 +1,98 @@
+---
+import Base from "../../layouts/Base.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import {
+  getAllPosts,
+  formatPostDate,
+  coverImageUrl,
+  type BlogPost,
+} from "../../lib/contentful";
+import { renderPostBody } from "../../lib/rich-text";
+import type { Document } from "@contentful/rich-text-types";
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    params: { slug: post.fields.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: BlogPost;
+}
+const { post } = Astro.props;
+const { title, excerpt, body, publishedDate, tags, slug } = post.fields;
+const imageUrl = coverImageUrl(post);
+const bodyHtml = body ? renderPostBody(body as Document) : "";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: excerpt,
+  datePublished: publishedDate,
+  url: `https://vaga.tn/ressources/${slug}`,
+  publisher: {
+    "@type": "Organization",
+    name: "VAGA",
+    url: "https://vaga.tn",
+  },
+  ...(imageUrl && { image: imageUrl }),
+};
+---
+
+<Base title={`${title} | Blog VAGA`} description={excerpt}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="container-site max-w-192 py-16">
+    <a
+      href="/ressources"
+      class="mb-10 inline-flex items-center gap-1.5 text-sm text-muted no-underline transition-colors hover:text-ink"
+    >
+      ← Tous les articles
+    </a>
+
+    {
+      Array.isArray(tags) && tags.length > 0 && (
+        <div class="mb-4 flex flex-wrap gap-1.5">
+          {tags.map((tag) => (
+            <span class="rounded-full border border-line px-2.5 py-0.5 text-xs font-medium text-muted">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    <h1 class="mb-4 text-3xl font-extrabold leading-tight tracking-[-0.03em] text-ink sm:text-4xl">
+      {title}
+    </h1>
+
+    {
+      publishedDate && (
+        <time class="mb-10 block text-sm text-muted">
+          {formatPostDate(publishedDate)}
+        </time>
+      )
+    }
+
+    {
+      imageUrl && (
+        <div class="mb-10 aspect-video overflow-hidden rounded-[14px] border border-line">
+          <img
+            src={imageUrl}
+            alt={title}
+            width="800"
+            height="450"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      )
+    }
+
+    <div set:html={bodyHtml} />
+  </article>
+
+  <CtaBand />
+</Base>
