@@ -1,0 +1,44 @@
+---
+const steps = ["Devis", "Commande", "Bon de livraison", "Facture"];
+---
+
+<section class="py-8">
+  <div class="container-site space-y-4">
+    <div class="mx-auto max-w-170 text-center space-y-4">
+      <h2 class="h2">
+        Excel, papier et trois logiciels qui ne se parlent pas&nbsp;? Il y a
+        plus simple.
+      </h2>
+
+      <p class="text-base text-body">
+        La plupart des PME jonglent entre un cahier de stock, un tableau Excel
+        pour la trésorerie, et un logiciel de facturation à part, sans compter
+        la mise en conformité TEIF ajoutée à la dernière minute. VAGA réunit
+        tout ça: un devis se transforme en commande, puis en bon de livraison,
+        puis en facture, sans ressaisie. Le stock se met à jour tout seul. La
+        trésorerie suit chaque encaissement en temps réel.
+      </p>
+    </div>
+
+    <div
+      class="flex flex-wrap items-center justify-center gap-2"
+      aria-label="Chaîne documentaire"
+    >
+      {
+        steps.map((step, i) => (
+          <>
+            {i > 0 && <span class="text-lg text-muted">→</span>}
+            <span class="rounded-[10px] border-[1.5px] border-line-strong bg-page px-4 py-2 text-[14.5px] font-bold">
+              {step}
+            </span>
+          </>
+        ))
+      }
+    </div>
+
+    <p class="text-center text-sm text-muted">
+      Chaque document se transforme en le suivant, en un clic. Sans ressaisie,
+      chaque étape horodatée.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+---
+import PricingCards from "../PricingCards.astro";
+
+const plans = [
+  {
+    name: "VAGA Cloud",
+    kind: "Hébergé - accessible de partout",
+    amount: "1 700 TND",
+    per: "paiement unique + 250 TND/mois hébergement & maintenance",
+    recommended: true,
+    features: [
+      "Accessible depuis n'importe quel navigateur",
+      "Mises à jour et sauvegardes automatiques",
+      "Zéro maintenance serveur de votre côté",
+    ],
+  },
+  {
+    name: "VAGA Box",
+    kind: "Sur site - un mini-PC installé chez vous",
+    amount: "3 000 TND",
+    per: "paiement unique, aucun frais récurrent",
+    features: [
+      "Fonctionne même sans internet",
+      "100 % de vos données restent chez vous",
+      "Livré et configuré sur place",
+    ],
+  },
+];
+---
+
+<section id="tarifs" class="py-8">
+  <div class="container-site space-y-4">
+    <h2 class="h2 text-center">Un prix. Pas d'abonnement caché.</h2>
+    <p class="text-center text-body">
+      Pas de frais par utilisateur, pas de palier surprise. Un paiement, toute
+      l'équipe a accès à tout le logiciel.
+    </p>
+    <PricingCards plans={plans} />
+    <p class="text-center text-sm text-muted">
+      Les deux formules incluent tous les modules, facturation, stock,
+      trésorerie, crédit client, TEIF, retenue à la source.
+      <a href="/tarifs" class="font-semibold text-ink">Voir tous les tarifs →</a
+      >
+    </p>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+
+---
+
+<section id="securite" class="py-8">
+  <div class="container-site space-y-4">
+    <h2 class="h2 max-w-160">
+      Vos données ne quittent pas la Tunisie, et même nous ne les lisons pas.
+    </h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div
+        class="overflow-hidden rounded-[14px] border border-line bg-page px-7 py-7"
+      >
+        <h3 class="text-lg font-bold tracking-[-0.01em]">
+          Chiffrement côté client
+        </h3>
+        <p class="mt-2 text-[15px] text-body">
+          Les données sensibles de vos clients, noms, coordonnées, adresses,
+          identifiants fiscaux, sont chiffrées <strong class="text-ink"
+            >avant même d'atteindre nos serveurs</strong
+          >. En cas d'incident, elles restent illisibles. Nos équipes
+          elles-mêmes n'y ont pas accès.
+        </p>
+        <div class="cipher" aria-hidden="true">
+          client_nom: <b>aX9#kQz…</b>PmT2LwCUvB4nRfYhJd8sGeAoI6tM client_mf:
+          <b>Vr3$Nc…</b>xW7pZqK0uEyHbD5jSgF1iOaTlXmC adresse:
+          <b>Qd8&amp;Jw…</b>sL2vNpR9cYtB6kMhU4eZaG0fXoIrEnP tel: <b>Kf5!Tz…</b
+          >mA1qWx
+        </div>
+      </div>
+      <div class="rounded-[14px] border border-line bg-page px-7 py-7">
+        <h3 class="text-lg font-bold tracking-[-0.01em]">
+          Hébergement 100 % tunisien
+        </h3>
+        <p class="mt-2 text-[15px] text-body">
+          Vos données ne transitent jamais à l'étranger. Hébergement sur des
+          serveurs tunisiens, chiffrement au repos et en transit, isolation
+          stricte entre entreprises, appliquée au niveau de la base de données.
+        </p>
+        <div class="mt-4.5 flex items-center gap-3.5">
+          <span class="flagbox">🇹🇳 Sousse, Tunisie</span>
+          <span class="text-[13px] text-muted">Serveurs · support · équipe</span
+          >
+        </div>
+        <a
+          href="/securite-donnees"
+          class="mt-6 block text-[14.5px] font-semibold text-ink"
+        >
+          En savoir plus sur la sécurité →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cipher {
+    margin-top: 22px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    line-height: 1.8;
+    color: var(--muted);
+    word-break: break-all;
+    -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 20%, transparent 100%);
+    user-select: none;
+  }
+  .cipher b {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .flagbox {
+    border: 1.5px solid var(--ink);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 3px 3px 0 var(--ink);
+    transform: rotate(-2deg);
+    background: var(--page);
+  }
+</style>

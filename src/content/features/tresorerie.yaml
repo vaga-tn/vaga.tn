@@ -1,0 +1,26 @@
+order: 3
+metaTitle: "Gestion de trésorerie et caisses — VAGA"
+metaDescription: "Suivez vos caisses, vos encaissements et votre trésorerie en temps réel — espèces, chèque, virement, carte."
+title: "Votre trésorerie, à jour à chaque encaissement."
+subhead: "Caisses, paiements et soldes suivis en temps réel, tous moyens de paiement confondus."
+card:
+  title: "Trésorerie & caisses"
+  benefit: "Encaissements, décaissements, soldes en temps réel."
+fonctionnement:
+  - label: "Caisses"
+    text: "Plusieurs caisses possibles, avec suivi automatique du solde à chaque mouvement."
+  - label: "Paiements"
+    text: "Espèces, chèque, virement, carte — chaque paiement enregistré avec son motif."
+  - label: "Grand livre"
+    text: "Historique complet des mouvements, par caisse ou consolidé."
+pourquoi: "Le solde de chaque caisse se met à jour automatiquement à chaque paiement enregistré — plus besoin de recalculer un solde en fin de journée sur un cahier ou un tableur."
+related:
+  - label: "Clients & crédit"
+    href: "/fonctionnalites/clients-credit"
+  - label: "Facturation & documents"
+    href: "/fonctionnalites/facturation-devis"
+faq:
+  - q: "Puis-je gérer plusieurs caisses (plusieurs points de vente) ?"
+    a: "Oui, chaque caisse a son propre solde et son propre historique."
+  - q: "Les chèques et virements sont-ils suivis différemment des espèces ?"
+    a: "Oui, chaque moyen de paiement est enregistré avec son propre motif et suivi."

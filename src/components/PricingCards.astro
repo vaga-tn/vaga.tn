@@ -1,0 +1,54 @@
+---
+import Button from './Button.astro';
+import Check from './Check.astro';
+
+interface Plan {
+  name: string;
+  kind: string;
+  amount: string;
+  per: string;
+  features: string[];
+  recommended?: boolean;
+}
+
+interface Props {
+  plans: Plan[];
+}
+const { plans } = Astro.props;
+---
+
+<div class="mx-auto mt-11 grid max-w-[820px] grid-cols-1 gap-4 md:grid-cols-2">
+  {
+    plans.map((plan) => (
+      <div
+        class:list={[
+          'relative flex flex-col rounded-2xl bg-page px-7 py-8',
+          plan.recommended ? 'border-2 border-line-strong' : 'border border-line',
+        ]}
+      >
+        {plan.recommended && (
+          <span class="absolute -top-3.5 left-6 rounded-full bg-ink px-3 py-1 text-[11.5px] font-bold uppercase tracking-[.05em] text-ink-contrast">
+            Recommandé
+          </span>
+        )}
+        <span class="text-[17px] font-extrabold tracking-[-0.01em]">{plan.name}</span>
+        <span class="mt-0.5 text-[13px] text-muted">{plan.kind}</span>
+        <div class="mt-4.5 tabular-nums">
+          <span class="text-4xl font-extrabold tracking-[-0.03em]">{plan.amount}</span>
+          <div class="text-sm text-muted">{plan.per}</div>
+        </div>
+        <ul class="mt-5 flex list-none flex-col gap-2.5">
+          {plan.features.map((feat) => (
+            <li class="flex items-start gap-2.5 text-[14.5px] text-body">
+              <Check size={14} class="mt-1 flex-none text-ink" />
+              {feat}
+            </li>
+          ))}
+        </ul>
+        <Button href="/demo" variant={plan.recommended ? 'solid' : 'ghost'} arrow class="mt-6.5">
+          Demander une démo
+        </Button>
+      </div>
+    ))
+  }
+</div>

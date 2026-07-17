@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import FeaturePage from '../../layouts/FeaturePage.astro';
+
+export async function getStaticPaths() {
+  const features = await getCollection('features');
+  return features.map((feature) => ({
+    params: { slug: feature.id },
+    props: { feature },
+  }));
+}
+
+const { feature } = Astro.props;
+---
+
+<FeaturePage feature={feature} />

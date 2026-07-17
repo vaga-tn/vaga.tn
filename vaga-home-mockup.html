@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="fr">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>VAGA — Mockup homepage (noir sur blanc)</title>
+<style>
+  :root{
+    --ink:#0b0b0c;
+    --body:#52525b;
+    --muted:#8e8e96;
+    --border:#e6e6e3;
+    --border-strong:#0b0b0c;
+    --fill:#fafaf8;
+    --page:#ffffff;
+  }
+  html{color-scheme: light only;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--page);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:1040px;margin:0 auto;padding:0 24px;}
+  .narrow{max-width:680px;margin-left:auto;margin-right:auto;}
+  section{padding:88px 0;}
+  h1,h2,h3{letter-spacing:-0.03em;text-wrap:balance;line-height:1.12;}
+  h1{font-size:clamp(38px,6vw,58px);font-weight:800;}
+  h2{font-size:clamp(28px,4vw,38px);font-weight:800;}
+  h3{font-size:18px;font-weight:700;letter-spacing:-0.01em;}
+  p{color:var(--body);}
+  a{color:inherit;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex;align-items:center;gap:28px;height:64px;}
+  .logo{font-weight:800;font-size:22px;letter-spacing:-0.04em;text-decoration:none;}
+  .logo span{color:var(--muted);font-weight:600;}
+  .nav-links{display:flex;gap:24px;margin-left:auto;align-items:center;}
+  .nav-links a{font-size:14.5px;color:var(--body);text-decoration:none;}
+  .nav-links a:hover{color:var(--ink);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ink);color:#fff;border:1px solid var(--ink);
+    border-radius:8px;padding:9px 16px;
+    font-size:14.5px;font-weight:600;text-decoration:none;
+    transition:opacity .15s ease;
+  }
+  .btn:hover{opacity:.85;}
+  .btn .arrow{transition:transform .15s ease;}
+  .btn:hover .arrow{transform:translateX(2px);}
+  .btn-lg{padding:13px 22px;font-size:16px;border-radius:10px;}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--border);}
+  .btn-ghost:hover{border-color:var(--ink);opacity:1;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:96px 0 72px;text-align:center;}
+  .doodles{display:flex;justify-content:center;gap:18px;margin-bottom:44px;flex-wrap:wrap;}
+  .doodle{
+    border:1.5px solid var(--ink);border-radius:12px;background:#fff;
+    padding:8px 14px;font-size:14px;font-weight:600;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .doodle:nth-child(1){transform:rotate(-4deg);}
+  .doodle:nth-child(2){transform:rotate(2.5deg);border-style:dashed;box-shadow:none;}
+  .doodle:nth-child(3){transform:rotate(-1.5deg);}
+  .hero p.sub{
+    max-width:640px;margin:20px auto 0;font-size:18px;
+  }
+  .hero .cta-row{display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap;}
+  .hero .micro{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .squiggle{position:relative;white-space:nowrap;}
+  .squiggle svg{position:absolute;left:0;bottom:-10px;width:100%;height:12px;}
+
+  /* ---------- product frame ---------- */
+  .frame{
+    margin:64px auto 0;max-width:960px;
+    border:1px solid var(--border);border-radius:14px;background:#fff;
+    box-shadow:0 24px 60px -30px rgba(11,11,12,.25);
+    overflow:hidden;text-align:left;
+  }
+  .frame-bar{
+    display:flex;align-items:center;gap:6px;
+    padding:12px 16px;border-bottom:1px solid var(--border);
+  }
+  .frame-bar i{width:10px;height:10px;border-radius:50%;background:#e4e4e0;display:block;}
+  .frame-url{
+    margin-left:14px;font-size:12px;color:var(--muted);
+    border:1px solid var(--border);border-radius:6px;padding:2px 10px;
+  }
+  .app{min-height:440px;}
+  .app-top{
+    display:flex;align-items:center;padding:10px 18px;border-bottom:1px solid var(--border);
+  }
+  .app-top .top-icons{
+    display:flex;gap:26px;margin:0 auto;color:var(--ink);align-items:center;
+  }
+  .app-top .top-icons svg{display:block;}
+  .app-user{
+    background:var(--ink);color:#fff;font-size:12.5px;font-weight:600;
+    border-radius:7px;padding:7px 13px;white-space:nowrap;
+  }
+  .launcher{padding:36px 44px 28px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .launcher .date{font-size:12.5px;color:var(--ink);letter-spacing:.01em;}
+  .launcher .hello{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-0.02em;margin-top:10px;line-height:1.1;}
+  .launcher .status{font-size:clamp(17px,2.4vw,24px);color:var(--muted);margin-top:2px;}
+  .launcher .meta{font-size:13px;color:var(--body);margin-top:16px;max-width:520px;line-height:1.7;}
+  .launcher .meta a{color:var(--ink);font-weight:700;}
+  .apps-grid{
+    display:flex;flex-wrap:wrap;gap:22px 26px;margin-top:34px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  }
+  .app-tile{width:86px;text-align:center;}
+  .app-tile .tile{
+    width:86px;height:86px;border:1px solid var(--border);border-radius:16px;background:var(--fill);
+    display:flex;align-items:center;justify-content:center;color:var(--ink);
+  }
+  .app-tile .lbl{font-size:12.5px;margin-top:8px;line-height:1.25;color:var(--ink);}
+  .app-foot{
+    text-align:center;padding:10px 0 22px;font-size:12px;color:var(--muted);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  }
+  .app-foot a{color:var(--ink);font-weight:600;}
+
+  /* ---------- trust bar ---------- */
+  .trust{padding:56px 0;border-bottom:1px solid var(--border);}
+  .trust p.lede{text-align:center;font-size:13.5px;color:var(--muted);margin-bottom:22px;}
+  .trust-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .trust-item{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:14px;font-weight:600;color:var(--ink);
+    border:1px solid var(--border);border-radius:999px;padding:8px 16px;
+  }
+  .trust-item svg{flex:none;}
+
+  /* ---------- problem / chain ---------- */
+  .chain{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:36px;}
+  .chain .step{
+    border:1.5px solid var(--ink);border-radius:10px;padding:9px 16px;
+    font-weight:700;font-size:14.5px;background:#fff;
+  }
+  .chain .sep{color:var(--muted);font-size:18px;}
+  .chain-caption{text-align:center;margin-top:14px;font-size:13.5px;color:var(--muted);}
+
+  /* ---------- features ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
+  .card{
+    border:1px solid var(--border);border-radius:14px;padding:26px 24px;background:#fff;
+    display:flex;flex-direction:column;gap:10px;
+    transition:border-color .15s ease;
+  }
+  .card:hover{border-color:var(--ink);}
+  .card p{font-size:14.5px;}
+  .card .link{font-size:13.5px;font-weight:600;text-decoration:none;margin-top:auto;padding-top:6px;}
+  .card .link:hover{text-decoration:underline;}
+  .icon{
+    width:38px;height:38px;border:1px solid var(--ink);border-radius:9px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:4px;
+  }
+
+  /* ---------- security ---------- */
+  .sec-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px;}
+  .sec-card{border:1px solid var(--border);border-radius:14px;padding:30px 28px;background:#fff;position:relative;overflow:hidden;}
+  .sec-card p{font-size:15px;}
+  .cipher{
+    margin-top:22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:11.5px;line-height:1.8;color:var(--muted);word-break:break-all;
+    -webkit-mask-image:linear-gradient(180deg,#000 20%,transparent 100%);
+            mask-image:linear-gradient(180deg,#000 20%,transparent 100%);
+    user-select:none;
+  }
+  .cipher b{color:var(--ink);font-weight:700;}
+  .map-tn{margin-top:18px;display:flex;align-items:center;gap:14px;}
+  .map-tn .flagbox{
+    border:1.5px solid var(--ink);border-radius:10px;padding:10px 16px;
+    font-weight:700;font-size:14px;box-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg);background:#fff;
+  }
+  .sec-more{display:block;margin-top:26px;font-weight:600;font-size:14.5px;}
+
+  /* ---------- pricing ---------- */
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px;max-width:820px;margin-left:auto;margin-right:auto;}
+  .plan{
+    border:1px solid var(--border);border-radius:16px;padding:32px 30px;background:#fff;
+    display:flex;flex-direction:column;gap:0;position:relative;
+  }
+  .plan.reco{border:2px solid var(--ink);}
+  .plan .tag{
+    position:absolute;top:-13px;left:26px;background:var(--ink);color:#fff;
+    font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    border-radius:999px;padding:4px 12px;
+  }
+  .plan .name{font-size:17px;font-weight:800;letter-spacing:-0.01em;}
+  .plan .kind{font-size:13px;color:var(--muted);margin-top:2px;}
+  .price{margin-top:18px;font-variant-numeric:tabular-nums;}
+  .price .amount{font-size:36px;font-weight:800;letter-spacing:-0.03em;}
+  .price .per{font-size:14px;color:var(--muted);}
+  .plan ul{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:9px;}
+  .plan li{font-size:14.5px;color:var(--body);display:flex;gap:9px;align-items:flex-start;}
+  .plan li svg{flex:none;margin-top:4px;}
+  .plan .btn{margin-top:26px;justify-content:center;}
+  .plans-note{text-align:center;margin-top:22px;font-size:14px;color:var(--muted);}
+  .plans-note a{font-weight:600;color:var(--ink);}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:680px;margin:44px auto 0;}
+  details{border-bottom:1px solid var(--border);}
+  details:first-child{border-top:1px solid var(--border);}
+  summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:20px 4px;font-weight:600;font-size:16px;letter-spacing:-0.01em;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .plus{font-size:20px;font-weight:400;color:var(--muted);transition:transform .2s ease;flex:none;}
+  details[open] .plus{transform:rotate(45deg);}
+  details p{padding:0 4px 20px;font-size:15px;max-width:60ch;}
+
+  /* ---------- final CTA ---------- */
+  .final{text-align:center;padding:110px 0;}
+  .final .cta-row{display:flex;justify-content:center;gap:14px;margin-top:30px;flex-wrap:wrap;}
+  .final .micro{margin-top:14px;font-size:13.5px;color:var(--muted);}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--border);padding:56px 0 40px;}
+  .foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;}
+  .foot h4{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:14px;font-weight:600;}
+  .foot a{display:block;font-size:14px;color:var(--body);text-decoration:none;padding:3.5px 0;}
+  .foot a:hover{color:var(--ink);}
+  .foot .brand p{font-size:13.5px;color:var(--muted);max-width:240px;margin-top:10px;}
+  .badge-tn{
+    display:inline-flex;align-items:center;gap:7px;margin-top:16px;
+    border:1px solid var(--border);border-radius:999px;padding:6px 13px;
+    font-size:12.5px;font-weight:600;
+  }
+  .foot-bottom{margin-top:44px;padding-top:20px;border-top:1px solid var(--border);
+    display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);flex-wrap:wrap;gap:8px;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .sec-wrap,.plans{grid-template-columns:1fr;}
+    .foot{grid-template-columns:1fr 1fr;}
+    .launcher{padding:28px 24px 20px;}
+    .apps-grid{gap:16px 18px;}
+    .app-tile,.app-tile .tile{width:74px;}
+    .app-tile .tile{height:74px;}
+    .nav-links a:not(.btn){display:none;}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .hero{padding:64px 0 48px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;}
+  }
+</style>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">vaga<span>.tn</span></a>
+    <nav class="nav-links">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#">Ressources</a>
+      <a class="btn" href="#">Demander une démo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="doodles" aria-hidden="true">
+        <span class="doodle">Devis → Facture ✓</span>
+        <span class="doodle">Stock à jour ✓</span>
+        <span class="doodle">TEIF ✓</span>
+      </div>
+      <h1>L'ERP qui gère votre entreprise,<br>
+        <span class="squiggle">du devis à l'encaissement.
+          <svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M4 8 Q 40 2 75 7 T 150 7 T 225 7 T 296 6" fill="none" stroke="#0b0b0c" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h1>
+      <p class="sub">Devis, commandes, bons de livraison, factures, stock multi-entrepôt et trésorerie — dans un seul logiciel pensé pour les PME tunisiennes. Conforme à la facturation électronique TEIF dès le départ.</p>
+      <div class="cta-row">
+        <a class="btn btn-lg" href="#">Demander une démo <span class="arrow">→</span></a>
+        <a class="btn btn-lg btn-ghost" href="#tarifs">Voir les tarifs</a>
+      </div>
+      <p class="micro">15 minutes · sans engagement</p>
+
+      <!-- product mockup : écran d'accueil VAGA -->
+      <div class="frame" role="img" aria-label="Aperçu de l'interface VAGA : écran d'accueil avec la grille des applications">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">app.vaga.tn</span></div>
+        <div class="app">
+          <div class="app-top">
+            <span class="top-icons" aria-hidden="true">
+              <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 9.5 10 3l7 6.5 M5 8.5V17h10V8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M2.5 5.5a1.5 1.5 0 0 1 1.5-1.5h4l2 2.5h6a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5H4a1.5 1.5 0 0 1-1.5-1.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M10 2.5 11.8 8.2 17.5 10 11.8 11.8 10 17.5 8.2 11.8 2.5 10 8.2 8.2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M10 3v6 M14.8 5.6a7 7 0 1 1-9.6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <span class="app-user">Aymen Khedhriya</span>
+          </div>
+          <div class="launcher">
+            <p class="date">Lundi 13 juillet 2026</p>
+            <div class="hello">Bonjour, Aymen.</div>
+            <div class="status">Tout est en ordre.</div>
+            <p class="meta"><a href="#">11 applications</a> actifs exercice <a href="#">Exercice 2026</a> en cours. Commencez par créer un document ou consultez l'état de vos opérations.</p>
+            <div class="apps-grid">
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 5a1 1 0 0 1 1-1h11l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 4v4h6V4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="14.5" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg></span><span class="lbl">Drive</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 3.5 21 8l-9 4.5L3 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 12.5l9 4.5 9-4.5 M3 17l9 4.5L21 17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="lbl">Inventaire</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect x="6" y="3.5" width="12" height="17" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="8.5" y="6" width="7" height="3.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 13h.01M12 13h.01M15 13h.01M9 16.5h.01M12 16.5h.01M15 16.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="lbl">Trésorerie</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="9.5" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19c.7-3.2 3-4.8 6-4.8s5.3 1.6 6 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M15 6.2a3.2 3.2 0 0 1 0 5.6 M17.2 14.6c1.7.8 2.9 2.2 3.3 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="lbl">Fournisseurs</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 20c.8-4 3.4-6 6.5-6s5.7 2 6.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="lbl">Clients</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 5h2.2l2 10.5h9.4L20 8H7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19" r="1.4" stroke="currentColor" stroke-width="1.4"/><circle cx="16.5" cy="19" r="1.4" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="lbl">Achats</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12.9 3.5H19a1.5 1.5 0 0 1 1.5 1.5v6.1a1.5 1.5 0 0 1-.44 1.06l-7.4 7.4a1.5 1.5 0 0 1-2.12 0l-6.1-6.1a1.5 1.5 0 0 1 0-2.12l7.4-7.4a1.5 1.5 0 0 1 1.06-.44z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="16" cy="8" r="1.3" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="lbl">Ventes</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><ellipse cx="10" cy="8" rx="6" ry="2.6" stroke="currentColor" stroke-width="1.5"/><path d="M4 8v4c0 1.4 2.7 2.6 6 2.6s6-1.2 6-2.6V8" stroke="currentColor" stroke-width="1.5"/><path d="M8 13.4v4c0 1.4 2.7 2.6 6 2.6s6-1.2 6-2.6v-4c0-1.2-2-2.2-4.6-2.5" stroke="currentColor" stroke-width="1.5"/></svg></span><span class="lbl">Retenue à la source</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 20V8l6-3v15 M10 20h10V11l-6-2.5V20" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M6.5 10.5h.01M6.5 13.5h.01M6.5 16.5h.01M15.5 13h.01M15.5 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="lbl">Mon Entreprise</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v8l5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="lbl">Statistiques</span></div>
+              <div class="app-tile"><span class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5v2.2 M12 18.3v2.2 M3.5 12h2.2 M18.3 12h2.2 M6 6l1.6 1.6 M16.4 16.4 18 18 M18 6l-1.6 1.6 M7.6 16.4 6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="lbl">Parametres</span></div>
+            </div>
+          </div>
+          <p class="app-foot">Developed &amp; Maintained by <a href="#">MAAK CORP</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust">
+    <div class="container">
+      <p class="lede">Conçu à Sousse, pour la réalité des entreprises tunisiennes</p>
+      <div class="trust-row">
+        <span class="trust-item"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Hébergé en Tunisie</span>
+        <span class="trust-item"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Données chiffrées</span>
+        <span class="trust-item"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Conforme TTN El Fatoora</span>
+        <span class="trust-item"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fonctionne sans internet (VAGA Box)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEM / SOLUTION -->
+  <section>
+    <div class="container narrow" style="text-align:center">
+      <h2>Excel, papier et trois logiciels qui ne se parlent pas&nbsp;? Il y a plus simple.</h2>
+      <p style="margin-top:20px;font-size:17px;">La plupart des PME jonglent entre un cahier de stock, un tableau Excel pour la trésorerie, et un logiciel de facturation à part — sans compter la mise en conformité TEIF ajoutée à la dernière minute. VAGA réunit tout ça : un devis se transforme en commande, puis en bon de livraison, puis en facture, sans ressaisie. Le stock se met à jour tout seul. La trésorerie suit chaque encaissement en temps réel.</p>
+    </div>
+    <div class="container">
+      <div class="chain" aria-label="Chaîne documentaire">
+        <span class="step">Devis</span><span class="sep">→</span>
+        <span class="step">Commande</span><span class="sep">→</span>
+        <span class="step">Bon de livraison</span><span class="sep">→</span>
+        <span class="step">Facture</span>
+      </div>
+      <p class="chain-caption">Chaque document se transforme en le suivant, en un clic. Sans ressaisie, chaque étape horodatée.</p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="fonctionnalites" style="padding-top:0">
+    <div class="container">
+      <h2>Un module pour chaque partie<br>de votre activité</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 2.5h7l3.5 3.5v11.5h-10.5z M12 2.5v3.5h3.5 M7.5 10h5 M7.5 13h5" stroke="#0b0b0c" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+          <h3>Facturation &amp; documents</h3>
+          <p>Devis, commandes, BL, factures, avoirs — achat et vente.</p>
+          <a class="link" href="#">En savoir plus →</a>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2.5 17 6v8l-7 3.5L3 14V6z M3 6l7 3.5L17 6 M10 9.5v8" stroke="#0b0b0c" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+          <h3>Gestion de stock</h3>
+          <p>Multi-entrepôt, mouvements automatiques, seuils d'alerte.</p>
+          <a class="link" href="#">En savoir plus →</a>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#0b0b0c" stroke-width="1.5"/><path d="M12.5 7.5c-.5-.8-1.4-1.2-2.5-1.2-1.5 0-2.6.8-2.6 1.9 0 2.6 5.4 1.2 5.4 3.7 0 1.1-1.2 1.9-2.8 1.9-1.2 0-2.2-.5-2.7-1.3 M10 4.8v10.4" stroke="#0b0b0c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <h3>Trésorerie &amp; caisses</h3>
+          <p>Encaissements, décaissements, soldes en temps réel.</p>
+          <a class="link" href="#">En savoir plus →</a>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="3" stroke="#0b0b0c" stroke-width="1.5"/><path d="M2.5 16.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4 M13.5 8.5h4 M15.5 6.5v4" stroke="#0b0b0c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          <h3>Clients &amp; crédit</h3>
+          <p>Relevés de compte, limites de crédit appliquées automatiquement.</p>
+          <a class="link" href="#">En savoir plus →</a>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 2.5h8l3.5 3.5v11.5H4z M12 2.5V6h3.5 M6.5 10.5l2 2 3.5-4" stroke="#0b0b0c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+          <h3>Facturation électronique TEIF</h3>
+          <p>Conforme TTN El Fatoora, export XML natif.</p>
+          <a class="link" href="#">En savoir plus →</a>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5.5 5.5 14.5 14.5 M6.5 4.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z M17.5 15.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" stroke="#0b0b0c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          <h3>Retenue à la source &amp; TEJ</h3>
+          <p>Certificats et déclarations générés automatiquement.</p>
+          <a class="link" href="#">En savoir plus →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section id="securite" style="padding-top:0">
+    <div class="container">
+      <h2 style="max-width:640px">Vos données ne quittent pas la Tunisie — et même nous ne les lisons pas.</h2>
+      <div class="sec-wrap">
+        <div class="sec-card">
+          <h3>Chiffrement côté client</h3>
+          <p style="margin-top:8px">Les données sensibles de vos clients — noms, coordonnées, adresses, identifiants fiscaux — sont chiffrées <strong>avant même d'atteindre nos serveurs</strong>. En cas d'incident, elles restent illisibles. Nos équipes elles-mêmes n'y ont pas accès.</p>
+          <div class="cipher" aria-hidden="true">
+            client_nom: <b>aX9#kQz…</b>PmT2LwCUvB4nRfYhJd8sGeAoI6tM client_mf: <b>Vr3$Nc…</b>xW7pZqK0uEyHbD5jSgF1iOaTlXmC adresse: <b>Qd8&amp;Jw…</b>sL2vNpR9cYtB6kMhU4eZaG0fXoIrEnP tel: <b>Kf5!Tz…</b>mA1qWx
+          </div>
+        </div>
+        <div class="sec-card">
+          <h3>Hébergement 100 % tunisien</h3>
+          <p style="margin-top:8px">Vos données ne transitent jamais à l'étranger. Hébergement sur des serveurs tunisiens, chiffrement au repos et en transit, isolation stricte entre entreprises — appliquée au niveau de la base de données.</p>
+          <div class="map-tn">
+            <span class="flagbox">🇹🇳 Sousse, Tunisie</span>
+            <span style="font-size:13px;color:var(--muted)">Serveurs · support · équipe</span>
+          </div>
+          <a class="sec-more" href="#">En savoir plus sur la sécurité →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="tarifs" style="padding-top:0">
+    <div class="container">
+      <h2 style="text-align:center">Un prix. Pas d'abonnement caché.</h2>
+      <p style="text-align:center;margin-top:14px">Pas de frais par utilisateur, pas de palier surprise. Un paiement, toute l'équipe a accès à tout le logiciel.</p>
+      <div class="plans">
+        <div class="plan reco">
+          <span class="tag">Recommandé</span>
+          <span class="name">VAGA Cloud</span>
+          <span class="kind">Hébergé — accessible de partout</span>
+          <div class="price">
+            <span class="amount">1 700 TND</span>
+            <div class="per">paiement unique + 250 TND/mois hébergement &amp; maintenance</div>
+          </div>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Accessible depuis n'importe quel navigateur</li>
+            <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Mises à jour et sauvegardes automatiques</li>
+            <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Zéro maintenance serveur de votre côté</li>
+          </ul>
+          <a class="btn" href="#">Demander une démo <span class="arrow">→</span></a>
+        </div>
+        <div class="plan">
+          <span class="name">VAGA Box</span>
+          <span class="kind">Sur site — un mini-PC installé chez vous</span>
+          <div class="price">
+            <span class="amount">3 000 TND</span>
+            <div class="per">paiement unique, aucun frais récurrent</div>
+          </div>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fonctionne même sans internet</li>
+            <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>100 % de vos données restent chez vous</li>
+            <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="#0b0b0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Livré et configuré sur place</li>
+          </ul>
+          <a class="btn btn-ghost" href="#">Demander une démo <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <p class="plans-note">Les deux formules incluent tous les modules — facturation, stock, trésorerie, crédit client, TEIF, retenue à la source. <a href="#">Voir tous les tarifs →</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding-top:0">
+    <div class="container">
+      <h2 style="text-align:center">Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>VAGA est-il conforme à la facturation électronique TEIF&nbsp;? <span class="plus">+</span></summary>
+          <p>Oui, la génération de vos factures au format TEIF est incluse dans tous les plans, sans module payant à part.</p>
+        </details>
+        <details>
+          <summary>Où sont hébergées mes données&nbsp;? <span class="plus">+</span></summary>
+          <p>En Tunisie, sur des serveurs dédiés — vos données ne transitent jamais à l'étranger.</p>
+        </details>
+        <details>
+          <summary>Combien coûte VAGA&nbsp;? <span class="plus">+</span></summary>
+          <p>À partir de 1 700 TND en Cloud ou 3 000 TND en version sur site (Box), sans abonnement par utilisateur. Détails sur la page tarifs.</p>
+        </details>
+        <details>
+          <summary>VAGA fonctionne-t-il sans connexion internet&nbsp;? <span class="plus">+</span></summary>
+          <p>Oui, avec VAGA Box : le logiciel tourne sur un boîtier installé chez vous, indépendant des coupures ADSL.</p>
+        </details>
+        <details>
+          <summary>VAGA convient-il à mon secteur d'activité&nbsp;? <span class="plus">+</span></summary>
+          <p>VAGA est pensé pour les PME avec des opérations physiques : distribution, négoce, industrie légère, services avec flotte de véhicules.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" style="padding-top:20px">
+    <div class="container">
+      <h2>Prêt à voir VAGA en action&nbsp;?</h2>
+      <div class="cta-row">
+        <a class="btn btn-lg" href="#">Demander une démo <span class="arrow">→</span></a>
+      </div>
+      <p class="micro">15 minutes · sans engagement · réponse sous 24h</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="brand">
+        <a class="logo" href="#">vaga<span>.tn</span></a>
+        <p>Le logiciel de gestion commerciale des PME tunisiennes. Du devis à l'encaissement.</p>
+        <span class="badge-tn">🇹🇳 Hébergé en Tunisie</span>
+      </div>
+      <div>
+        <h4>Produit</h4>
+        <a href="#">Fonctionnalités</a>
+        <a href="#">Sécurité &amp; données</a>
+        <a href="#">Tarifs</a>
+        <a href="#">Demander une démo</a>
+      </div>
+      <div>
+        <h4>Entreprise</h4>
+        <a href="#">À propos</a>
+        <a href="#">Ressources</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>Légal</h4>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 VAGA — Sousse, Tunisie</span>
+      <span>Mockup v1 — pour validation</span>
+    </div>
+  </div>
+</footer>

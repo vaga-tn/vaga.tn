@@ -1,0 +1,61 @@
+---
+import Base from "../layouts/Base.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const sections = [
+  {
+    title: "Hébergement 100 % tunisien",
+    text: "Vos données ne transitent jamais à l'étranger. VAGA est hébergé sur des serveurs tunisiens, un point important pour toute entreprise soumise à des exigences réglementaires ou simplement soucieuse de garder le contrôle de ses données sensibles (clients, finances, personnel).",
+  },
+  {
+    title: "Même nos administrateurs ne voient pas vos données en clair",
+    text: "Les informations sensibles de vos clients: noms, e-mails, adresses, identifiants fiscaux, sont chiffrées directement sur votre appareil, avant d'être envoyées à nos serveurs. Résultat : en cas d'incident technique ou d'accès non autorisé côté hébergeur, ces données restent illisibles. Nos équipes elles-mêmes n'ont accès qu'à des données chiffrées et à des métadonnées non sensibles.",
+  },
+  {
+    title: "Vos limites de crédit ne peuvent pas être contournées par un bug",
+    text: "Chez VAGA, les règles critiques, comme le blocage d'une facture qui dépasserait la limite de crédit d'un client, sont appliquées directement au niveau de la base de données, pas seulement dans l'interface. Concrètement : même une erreur de développement ou une mise à jour ratée ne peut pas laisser passer une facture qui viole vos règles de crédit.",
+  },
+  {
+    title: "Vos données sont cloisonnées, même sur une plateforme partagée",
+    text: "Chaque entreprise sur VAGA est isolée au niveau base de données (Row Level Security) : aucune requête, même mal écrite, ne peut faire fuiter les données d'une entreprise vers une autre.",
+  },
+  {
+    title: "Un niveau de détail que peu d'éditeurs communiquent",
+    text: "La plupart des logiciels de gestion commerciale en Tunisie ne détaillent pas leur politique de chiffrement ni l'endroit où vos données sont réellement hébergées. Chez VAGA, c'est documenté ici, en clair.",
+  },
+];
+---
+
+<Base
+  title="Sécurité et souveraineté des données — VAGA"
+  description="Hébergement 100 % tunisien, chiffrement des données côté client, règles métier appliquées au niveau de la base de données. La sécurité de VAGA expliquée simplement."
+>
+  <section class="pb-16 pt-24 text-center">
+    <div class="container-site">
+      <h1 class="h1 mx-auto max-w-215">
+        Vos données restent en Tunisie. Et personne ne les lit sans y être
+        autorisé.
+      </h1>
+      <p class="mx-auto mt-5 max-w-160 text-lg text-body">
+        La souveraineté des données n'est pas une case à cocher chez VAGA -
+        c'est une contrainte de conception, du chiffrement jusqu'à
+        l'hébergement.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-8">
+    <div class="container-site max-w-205">
+      {
+        sections.map((s) => (
+          <div class="border-t border-line py-9 last:border-b">
+            <h2 class="h2 text-[24px] md:text-[28px]">{s.title}</h2>
+            <p class="mt-3.5 text-body">{s.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

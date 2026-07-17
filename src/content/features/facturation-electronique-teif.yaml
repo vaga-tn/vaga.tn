@@ -1,0 +1,30 @@
+order: 5
+metaTitle: "Facturation électronique TEIF / TTN El Fatoora — VAGA"
+metaDescription: "Générez vos factures au format TEIF conforme à la loi de finances 2026, prêtes à transmettre sur le portail TTN El Fatoora — inclus dans tous les plans VAGA."
+title: "La facturation électronique TEIF, sans module à part."
+subhead: "Vos factures générées au format TEIF, conforme à l'obligation TTN El Fatoora — inclus nativement dans VAGA, pas une option payante en plus."
+card:
+  title: "Facturation électronique TEIF"
+  benefit: "Conforme TTN El Fatoora, export XML natif."
+fonctionnement:
+  - label: "Génération XML au format TEIF"
+    text: "Conforme aux exigences de la loi de finances 2026."
+  - label: "Couvre les documents concernés"
+    text: "Factures de vente et avoirs."
+  - label: "Export PDF"
+    text: "En parallèle, pour vos archives et vos clients qui préfèrent le papier."
+  - label: "Transmission au portail TTN El Fatoora"
+    text: "Aujourd'hui, vous (ou votre comptable) importez le fichier XML généré par VAGA sur le portail TTN. La transmission automatique directe est à l'étude pour une prochaine évolution."
+pourquoi: "Chez la plupart des concurrents, la conformité TEIF est vendue comme un module ou un pack séparé. Chez VAGA, c'est une fonctionnalité standard du logiciel, incluse dans les deux formules (Cloud et Box) sans surcoût."
+related:
+  - label: "Retenue à la source & TEJ"
+    href: "/fonctionnalites/retenue-source-tej"
+  - label: "Facturation & documents"
+    href: "/fonctionnalites/facturation-devis"
+faq:
+  - q: "VAGA transmet-il directement à TTN El Fatoora ?"
+    a: "Pas encore de manière automatique : VAGA génère le fichier XML conforme au format TEIF, que vous importez vous-même sur le portail TTN El Fatoora."
+  - q: "Ai-je encore besoin d'un certificat électronique ANCE ?"
+    a: "Oui, c'est une exigence réglementaire indépendante du logiciel utilisé."
+  - q: "Les devis et bons de livraison sont-ils concernés par l'obligation TEIF ?"
+    a: "Non, seules les factures de vente et les avoirs sont soumis à l'obligation actuellement."

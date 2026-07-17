@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import { featureIcons } from "../../lib/feature-icons";
+
+const features = (await getCollection("features")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base
+  title="Fonctionnalités VAGA — Facturation, stock, trésorerie, conformité TEIF"
+  description="Découvrez tous les modules de VAGA : devis et facturation, gestion de stock multi-entrepôt, trésorerie, crédit client, facturation électronique TEIF et retenue à la source."
+>
+  <section class="pb-16 pt-24 text-center">
+    <div class="container-site">
+      <h1 class="h1 mx-auto max-w-205">
+        Tout ce dont votre entreprise a besoin, dans un seul logiciel.
+      </h1>
+      <p class="mx-auto mt-5 max-w-160 text-lg text-body">
+        Chaque module de VAGA est pensé pour les PME tunisiennes - de la
+        première ligne d'un devis jusqu'à la déclaration fiscale.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-10">
+    <div class="container-site">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          features.map((f) => (
+            <a
+              href={`/fonctionnalites/${f.id}`}
+              class="flex flex-col gap-2.5 rounded-[14px] border border-line bg-page p-6 no-underline transition-[border-color] duration-150 hover:border-line-strong"
+            >
+              <span
+                class="mb-1 flex h-10 w-10 items-center justify-center rounded-[9px] border border-line-strong text-ink"
+                set:html={featureIcons[f.id]}
+              />
+              <h2 class="text-lg font-bold tracking-[-0.01em] text-ink">
+                {f.data.card.title}
+              </h2>
+              <p class="text-[14.5px] text-body">{f.data.card.benefit}</p>
+              <span class="mt-auto pt-1.5 text-[13.5px] font-semibold text-ink">
+                En savoir plus →
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

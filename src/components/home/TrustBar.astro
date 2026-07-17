@@ -1,0 +1,28 @@
+---
+import Check from '../Check.astro';
+
+const items = [
+  'Hébergé en Tunisie',
+  'Données chiffrées',
+  'Conforme TTN El Fatoora',
+  'Fonctionne sans internet (VAGA Box)',
+];
+---
+
+<div class="border-b border-line py-14">
+  <div class="container-site">
+    <p class="mb-5 text-center text-[13.5px] text-muted">
+      Conçu à Sousse, pour la réalité des entreprises tunisiennes
+    </p>
+    <div class="flex flex-wrap justify-center gap-3.5">
+      {
+        items.map((label) => (
+          <span class="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-ink">
+            <Check class="flex-none" />
+            {label}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</div>

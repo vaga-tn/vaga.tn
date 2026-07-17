@@ -1,0 +1,26 @@
+order: 6
+metaTitle: "Retenue à la source et déclaration TEJ — VAGA"
+metaDescription: "Générez vos certificats de retenue à la source et vos déclarations TEJ au format XML, pour vos ventes comme vos achats."
+title: "Vos certificats de retenue à la source, générés automatiquement."
+subhead: "Consultez, générez et exportez vos certificats de RS et vos déclarations TEJ — vente et achat — sans ressaisie manuelle."
+card:
+  title: "Retenue à la source & TEJ"
+  benefit: "Certificats et déclarations générés automatiquement."
+fonctionnement:
+  - label: "Certificats de retenue à la source"
+    text: "Consultation et génération, vente et achat."
+  - label: "Export PDF"
+    text: "Du certificat, prêt à remettre."
+  - label: "Export XML compatible TEJ"
+    text: "Pour la déclaration auprès de l'administration fiscale."
+pourquoi: "La retenue à la source est calculée à partir des mêmes documents que votre facturation — pas besoin de ressaisir vos opérations dans un outil séparé pour préparer votre déclaration TEJ."
+related:
+  - label: "Facturation électronique TEIF"
+    href: "/fonctionnalites/facturation-electronique-teif"
+  - label: "Facturation & documents"
+    href: "/fonctionnalites/facturation-devis"
+faq:
+  - q: "La déclaration TEJ est-elle générée automatiquement ?"
+    a: "Export XML compatible TEJ disponible directement depuis VAGA."
+  - q: "Puis-je générer un certificat pour un fournisseur ?"
+    a: "Oui, côté vente comme côté achat."

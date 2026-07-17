@@ -1,0 +1,30 @@
+order: 4
+metaTitle: "Gestion clients et crédit client — VAGA"
+metaDescription: "Relevé de compte client en temps réel et limite de crédit appliquée automatiquement — impossible de dépasser le plafond fixé, même par erreur."
+title: "Une limite de crédit qu'on ne peut pas dépasser par erreur."
+subhead: "Relevé de compte client en temps réel, et une limite de crédit appliquée au niveau du logiciel — pas seulement une alerte qu'on peut ignorer."
+card:
+  title: "Clients & crédit"
+  benefit: "Relevés de compte, limites de crédit appliquées automatiquement."
+fonctionnement:
+  - label: "Fiches clients & fournisseurs"
+    text: "Contacts, adresses, coordonnées bancaires (RIB), identifiants fiscaux, CIN."
+  - label: "Tarification par client"
+    text: "Jusqu'à 3 tarifs de vente configurables selon le client."
+  - label: "Relevé de compte en temps réel"
+    text: "Débit / Crédit / Solde à jour à chaque facture ou paiement."
+  - label: "Limite de crédit maximum"
+    text: "Configurable par client, et appliquée directement au niveau de la base de données — une facture qui dépasserait le plafond est bloquée, pas seulement signalée."
+pourquoi: "La plupart des outils affichent juste une alerte visuelle si un client dépasse sa limite de crédit — que n'importe qui peut ignorer en cliquant « continuer ». Chez VAGA, la règle est appliquée par la base de données elle-même : impossible de la contourner, même par une erreur d'interface."
+related:
+  - label: "Facturation & documents"
+    href: "/fonctionnalites/facturation-devis"
+  - label: "Trésorerie"
+    href: "/fonctionnalites/tresorerie"
+  - label: "Sécurité & souveraineté des données"
+    href: "/securite-donnees"
+faq:
+  - q: "La limite de crédit bloque-t-elle vraiment la facturation ?"
+    a: "Oui, au niveau base de données — pas seulement un avertissement dans l'interface."
+  - q: "Puis-je avoir des tarifs différents selon le client ?"
+    a: "Oui, jusqu'à 3 niveaux de prix par produit."

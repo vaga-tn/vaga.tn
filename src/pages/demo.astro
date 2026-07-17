@@ -1,0 +1,108 @@
+---
+import Base from "../layouts/Base.astro";
+import Check from "../components/Check.astro";
+
+const reassurance = [
+  "15 minutes, pas plus",
+  "Sans engagement",
+  "Réponse sous 24h",
+];
+---
+
+<Base
+  title="Demander une démo — VAGA"
+  description="Réservez 15 minutes pour découvrir VAGA avec vos propres cas d'usage. Sans engagement."
+>
+  <section class="pb-12 pt-24 text-center">
+    <div class="container-site">
+      <h1 class="h1">Réservez votre démo.</h1>
+      <p class="mx-auto mt-5 max-w-160 text-lg text-body">
+        15 minutes pour voir VAGA avec vos propres documents, votre stock et
+        votre trésorerie - sans engagement.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-10">
+    <div class="container-site">
+      <div id="cal-inline" class="mx-auto min-h-160 w-full max-w-250 overflow-auto"></div>
+      <script is:inline>
+        /* Cal.com inline embed — official loader snippet */
+        (function (C, A, L) {
+          let p = function (a, ar) {
+            a.q.push(ar);
+          };
+          let d = C.document;
+          C.Cal =
+            C.Cal ||
+            function () {
+              let cal = C.Cal;
+              let ar = arguments;
+              if (!cal.loaded) {
+                cal.ns = {};
+                cal.q = cal.q || [];
+                d.head.appendChild(d.createElement("script")).src = A;
+                cal.loaded = true;
+              }
+              if (ar[0] === L) {
+                const api = function () {
+                  p(api, arguments);
+                };
+                const namespace = ar[1];
+                api.q = api.q || [];
+                if (typeof namespace === "string") {
+                  cal.ns[namespace] = cal.ns[namespace] || api;
+                  p(cal.ns[namespace], ar);
+                  p(cal, ["initNamespace", namespace]);
+                } else p(cal, ar);
+                return;
+              }
+              p(cal, ar);
+            };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+
+        Cal("init", "30min", { origin: "https://app.cal.com" });
+
+        Cal.ns["30min"]("inline", {
+          elementOrSelector: "#cal-inline",
+          config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+          calLink: "aymkh/30min",
+        });
+
+        /* Follow the site theme (data-theme override, else OS preference) */
+        (function () {
+          const mq = window.matchMedia("(prefers-color-scheme: dark)");
+          const applyTheme = () => {
+            const theme =
+              document.documentElement.dataset.theme ?? (mq.matches ? "dark" : "light");
+            Cal.ns["30min"]("ui", {
+              theme,
+              hideEventTypeDetails: false,
+              layout: "month_view",
+            });
+          };
+          applyTheme();
+          new MutationObserver(applyTheme).observe(document.documentElement, {
+            attributeFilter: ["data-theme"],
+          });
+          mq.addEventListener("change", applyTheme);
+        })();
+      </script>
+    </div>
+  </section>
+
+  <section class="pb-24">
+    <div class="container-site">
+      <div class="flex flex-wrap justify-center gap-3.5">
+        {
+          reassurance.map((r) => (
+            <span class="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-ink">
+              <Check class="flex-none" />
+              {r}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>
