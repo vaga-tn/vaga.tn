@@ -1,47 +1,58 @@
-import { createClient, type EntryFieldTypes, type Entry } from "contentful"
+import { createClient, type Entry, type EntryFieldTypes } from "contentful";
 
-export const contentfulClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID!,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-})
-
+// Content model recovered from the previous Next.js site (content type "blogPost").
 export type BlogPostSkeleton = {
-  contentTypeId: "blogPost"
+  contentTypeId: "blogPost";
   fields: {
-    title: EntryFieldTypes.Text
-    slug: EntryFieldTypes.Text
-    excerpt: EntryFieldTypes.Text
-    body: EntryFieldTypes.RichText
-    coverImage: EntryFieldTypes.AssetLink
-    publishedDate: EntryFieldTypes.Date
-    tags: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
-  }
-}
+    title: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+    excerpt: EntryFieldTypes.Text;
+    body: EntryFieldTypes.RichText;
+    coverImage: EntryFieldTypes.AssetLink;
+    publishedDate: EntryFieldTypes.Date;
+    tags: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+  };
+};
 
-export type BlogPost = Entry<BlogPostSkeleton>
+export type BlogPost = Entry<BlogPostSkeleton, undefined>;
 
+const space = import.meta.env.CONTENTFUL_SPACE_ID;
+const accessToken = import.meta.env.CONTENTFUL_ACCESS_TOKEN;
 
+const client =
+  space && accessToken ? createClient({ space, accessToken }) : null;
+
+/**
+ * All posts, newest first. Fetched at build time; returns [] (with a warning)
+ * when the Contentful credentials are absent so local builds never hard-fail.
+ */
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const entries = await contentfulClient.getEntries<BlogPostSkeleton>({
+  if (!client) {
+    console.warn(
+      "[contentful] CONTENTFUL_SPACE_ID / CONTENTFUL_ACCESS_TOKEN missing — /ressources will build empty.",
+    );
+    return [];
+  }
+  const entries = await client.getEntries<BlogPostSkeleton>({
     content_type: "blogPost",
     order: ["-fields.publishedDate"],
-  })
-  return entries.items
+  });
+  return entries.items;
 }
 
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  const entries = await contentfulClient.getEntries<BlogPostSkeleton>({
-    content_type: "blogPost",
-    "fields.slug": slug,
-    limit: 1,
-  })
-  return entries.items[0] ?? null
+export function formatPostDate(date: string | undefined): string | null {
+  if (!date) return null;
+  return new Date(date).toLocaleDateString("fr-TN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
-export async function getAllSlugs(): Promise<string[]> {
-  const entries = await contentfulClient.getEntries<BlogPostSkeleton>({
-    content_type: "blogPost",
-    select: ["fields.slug"],
-  })
-  return entries.items.map((item) => item.fields.slug as string)
+export function coverImageUrl(post: BlogPost): string | null {
+  const file =
+    post.fields.coverImage && "fields" in post.fields.coverImage
+      ? post.fields.coverImage.fields?.file
+      : undefined;
+  return file?.url ? `https:${file.url}` : null;
 }

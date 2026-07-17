@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Structure-only placeholder (.ai/website/copy.md §13) — real company/registration
+// details + legal review required before publishing. Do not invent content here.
+const items = [
+  'Raison sociale et forme juridique',
+  'Matricule fiscal',
+  'Siège social',
+  'Capital (si applicable)',
+  'Directeur de publication',
+  'Hébergeur (nom + adresse)',
+  'Contact',
+];
+---
+
+<Base
+  title="Mentions légales — VAGA"
+  description="Mentions légales du site vaga.tn."
+>
+  <section class="pb-24 pt-24">
+    <div class="container-site max-w-[680px]">
+      <h1 class="h1">Mentions légales</h1>
+      <p class="mt-6 rounded-[10px] border border-dashed border-line p-5 text-sm text-muted">
+        Page en cours de rédaction — les informations suivantes seront publiées ici :
+      </p>
+      <ul class="mt-6 flex list-none flex-col gap-2 text-body">
+        {items.map((item) => <li class="border-b border-line py-3 first:border-t">{item}</li>)}
+      </ul>
+    </div>
+  </section>
+</Base>

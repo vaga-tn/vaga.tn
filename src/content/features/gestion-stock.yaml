@@ -1,0 +1,32 @@
+order: 2
+metaTitle: "Gestion de stock multi-entrepôt — VAGA"
+metaDescription: "Suivez votre stock en temps réel sur plusieurs entrepôts, avec mouvements automatiques générés à chaque bon de livraison ou de réception."
+title: "Un stock à jour, sans inventaire manuel permanent."
+subhead: "Multi-entrepôt, seuils d'alerte, mouvements automatiques — votre stock se met à jour tout seul à chaque vente ou réception."
+card:
+  title: "Gestion de stock"
+  benefit: "Multi-entrepôt, mouvements automatiques, seuils d'alerte."
+fonctionnement:
+  - label: "Produits"
+    text: "Catégories, familles/marques, code SKU ou code-barres, distinction service/produit."
+  - label: "Entrepôts & emplacements"
+    text: "Plusieurs entrepôts, chacun avec ses propres emplacements/casiers."
+  - label: "Mouvements de stock automatiques"
+    text: "Valider un bon de livraison ou un bon de réception génère automatiquement les mouvements de stock correspondants — entrée ou sortie."
+  - label: "Seuils & alertes"
+    text: "Quantité minimale par produit, règles de stock négatif configurables."
+  - label: "Tarification multi-niveaux"
+    text: "Jusqu'à 3 tarifs de vente par produit selon le segment client."
+pourquoi: "Le stock n'est pas un module à part qu'il faut synchroniser manuellement : il se met à jour automatiquement dès qu'un document est validé. Pas de double saisie, pas de décalage entre le stock réel et le stock affiché."
+related:
+  - label: "Facturation & documents"
+    href: "/fonctionnalites/facturation-devis"
+  - label: "Trésorerie"
+    href: "/fonctionnalites/tresorerie"
+faq:
+  - q: "VAGA gère-t-il plusieurs entrepôts ?"
+    a: "Oui, nativement, avec emplacements internes par entrepôt."
+  - q: "Que se passe-t-il si le stock devient négatif ?"
+    a: "Les règles de stock négatif sont configurables par produit."
+  - q: "Puis-je suivre des produits ET des services dans le même catalogue ?"
+    a: "Oui, chaque article est typé produit ou service."

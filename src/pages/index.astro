@@ -1,0 +1,53 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/home/Hero.astro";
+import TrustBar from "../components/home/TrustBar.astro";
+import ProblemSolution from "../components/home/ProblemSolution.astro";
+import FeatureGrid from "../components/home/FeatureGrid.astro";
+import SecurityCards from "../components/home/SecurityCards.astro";
+import PricingTeaser from "../components/home/PricingTeaser.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const faq = [
+  {
+    q: "VAGA est-il conforme à la facturation électronique TEIF ?",
+    a: "Oui, la génération de vos factures au format TEIF est incluse dans tous les plans, sans module payant à part.",
+  },
+  {
+    q: "Où sont hébergées mes données ?",
+    a: "En Tunisie, sur des serveurs dédiés - vos données ne transitent jamais à l'étranger.",
+  },
+  {
+    q: "Combien coûte VAGA ?",
+    a: "À partir de 1 700 TND en Cloud ou 3 000 TND en version sur site (Box), sans abonnement par utilisateur. Détails sur la page tarifs.",
+  },
+  {
+    q: "VAGA fonctionne-t-il sans connexion internet ?",
+    a: "Oui, avec VAGA Box : le logiciel tourne sur un boîtier installé chez vous, indépendant des coupures ADSL.",
+  },
+  {
+    q: "VAGA convient-il à mon secteur d'activité ?",
+    a: "VAGA est pensé pour les PME avec des opérations physiques: distribution, négoce, industrie légère, services avec flotte de véhicules.",
+  },
+];
+---
+
+<Base
+  title="VAGA — Logiciel de gestion commerciale et ERP pour PME tunisiennes"
+  description="Devis, facturation, stock, trésorerie et conformité TEIF dans un seul logiciel. Hébergé en Tunisie, sans abonnement caché. Cloud ou sur site."
+>
+  <Hero />
+  <TrustBar />
+  <ProblemSolution />
+  <FeatureGrid />
+  <SecurityCards />
+  <PricingTeaser />
+  <section class="pb-6">
+    <div class="container-site">
+      <h2 class="h2 text-center">Questions fréquentes</h2>
+      <FaqAccordion items={faq} class="mt-11" />
+    </div>
+  </section>
+  <CtaBand micro="15 minutes · sans engagement · réponse sous 24h" />
+</Base>

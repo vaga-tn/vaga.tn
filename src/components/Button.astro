@@ -1,0 +1,27 @@
+---
+interface Props {
+  href: string;
+  variant?: 'solid' | 'ghost';
+  size?: 'md' | 'lg';
+  arrow?: boolean;
+  class?: string;
+}
+
+const { href, variant = 'solid', size = 'md', arrow = false, class: extra = '' } = Astro.props;
+
+const base =
+  'group inline-flex items-center justify-center gap-2 font-semibold no-underline transition-[opacity,border-color] duration-150';
+const variants = {
+  solid: 'bg-ink text-ink-contrast border border-ink hover:opacity-85',
+  ghost: 'bg-transparent text-ink border border-line hover:border-line-strong',
+};
+const sizes = {
+  md: 'rounded-lg px-4 py-[9px] text-[14.5px]',
+  lg: 'rounded-[10px] px-[22px] py-[13px] text-base',
+};
+---
+
+<a href={href} class:list={[base, variants[variant], sizes[size], extra]}>
+  <slot />
+  {arrow && <span class="transition-transform duration-150 group-hover:translate-x-0.5">→</span>}
+</a>

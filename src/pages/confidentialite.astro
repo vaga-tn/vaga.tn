@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Structure-only placeholder (.ai/website/copy.md §13) — needs real retention
+// periods + legal review before publishing. Do not invent content here.
+const items = [
+  'Données collectées (formulaire de démo : nom, e-mail, téléphone, entreprise)',
+  'Finalité de la collecte',
+  'Durée de conservation',
+  "Droits d'accès, de rectification et de suppression",
+  'Contact pour exercer ces droits',
+  'Chiffrement côté client des données clients de VAGA',
+];
+---
+
+<Base
+  title="Politique de confidentialité — VAGA"
+  description="Politique de confidentialité du site vaga.tn."
+>
+  <section class="pb-24 pt-24">
+    <div class="container-site max-w-[680px]">
+      <h1 class="h1">Politique de confidentialité</h1>
+      <p class="mt-6 rounded-[10px] border border-dashed border-line p-5 text-sm text-muted">
+        Page en cours de rédaction — les sections suivantes seront publiées ici :
+      </p>
+      <ul class="mt-6 flex list-none flex-col gap-2 text-body">
+        {items.map((item) => <li class="border-b border-line py-3 first:border-t">{item}</li>)}
+      </ul>
+    </div>
+  </section>
+</Base>

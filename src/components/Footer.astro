@@ -1,0 +1,79 @@
+---
+const year = new Date().getFullYear();
+
+const columns = [
+  {
+    title: "Produit",
+    links: [
+      { label: "Fonctionnalités", href: "/fonctionnalites" },
+      { label: "Sécurité & données", href: "/securite-donnees" },
+      { label: "Tarifs", href: "/tarifs" },
+      { label: "Demander une démo", href: "/demo" },
+    ],
+  },
+  {
+    title: "Entreprise",
+    links: [
+      { label: "À propos", href: "/a-propos" },
+      { label: "Ressources", href: "/ressources" },
+    ],
+  },
+  {
+    title: "Légal",
+    links: [
+      { label: "Mentions légales", href: "/mentions-legales" },
+      { label: "Confidentialité", href: "/confidentialite" },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-line py-8">
+  <div class="container-site">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
+      <div class="col-span-2 md:col-span-1 space-y-4">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/favicon_light.png" alt="vaga logo" width="30" />
+          <span class="text-xl font-bold uppercase">vaga</span>
+        </a>
+        <p class="text-base text-muted">
+          Le logiciel de gestion commerciale des PME tunisiennes. Du devis à
+          l'encaissement.
+        </p>
+        <small class="text-xs text-muted leading-none">
+          VAGA est un service fourni par MAAK CORP SUARL représenté par AYMEN
+          KHEDHRIYA; société domiciliée à Av. Yasser Arafet, imm 16, 6ème étage,
+          bureau 2, Sahloul 1, Sousse 4054, numéro de TVA: 1847208/C/A/M/000
+        </small>
+        <span
+          class="mt-4 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-[12.5px] font-semibold"
+        >
+          🇹🇳 Hébergé en Tunisie
+        </span>
+      </div>
+      {
+        columns.map((col) => (
+          <div>
+            <h4 class="mb-3.5 text-xs font-semibold uppercase tracking-[.07em] text-muted">
+              {col.title}
+            </h4>
+            {col.links.map((l) => (
+              <a
+                href={l.href}
+                class="block py-1 text-sm text-body no-underline transition-colors duration-150 hover:text-ink"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+    <div
+      class="mt-11 flex flex-wrap justify-between gap-2 border-t border-line pt-5 text-[12.5px] text-muted"
+    >
+      <span>© {year} VAGA - Sousse, Tunisie</span>
+      <span>Conçu et hébergé en Tunisie</span>
+    </div>
+  </div>
+</footer>

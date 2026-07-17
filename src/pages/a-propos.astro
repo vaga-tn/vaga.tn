@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+
+<Base
+  title="À propos de VAGA"
+  description="VAGA est conçu à Sousse, pour les PME tunisiennes qui veulent garder le contrôle de leurs données et de leur gestion."
+>
+  <section class="pb-16 pt-24 text-center">
+    <div class="container-site">
+      <h1 class="h1 mx-auto max-w-[820px]">Conçu en Tunisie, pour les entreprises tunisiennes.</h1>
+      <p class="mx-auto mt-5 max-w-[680px] text-lg text-body">
+        VAGA est né à Sousse, avec une idée simple : les PME tunisiennes méritent un logiciel de
+        gestion aussi sérieux que ceux des grands groupes, sans dépendre d'un intégrateur étranger
+        ni d'un hébergement à l'étranger.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-8">
+    <div class="container-site max-w-[820px]">
+      <div class="border-t border-line py-9">
+        <h2 class="h2 !text-[24px] md:!text-[28px]">Pourquoi VAGA existe</h2>
+        <p class="mt-3.5 text-body">
+          Les grands ERP généralistes comme Odoo demandent un intégrateur et des mois de
+          paramétrage pour s'adapter aux spécificités tunisiennes (TVA, Timbre Fiscal, Retenue à la
+          Source, TEIF). Les outils locaux, à l'inverse, se limitent souvent à la facturation, sans
+          couvrir le stock, la trésorerie ou la gestion de flotte. VAGA comble cet écart : un
+          logiciel complet, pensé dès le départ pour la réalité fiscale et opérationnelle
+          tunisienne.
+        </p>
+      </div>
+      <div class="border-b border-t border-line py-9">
+        <h2 class="h2 !text-[24px] md:!text-[28px]">Implantation</h2>
+        <p class="mt-3.5 text-body">
+          Basés à Sousse, VAGA construit son produit au plus près des PME qu'il sert — c'est aussi
+          pour ça que l'hébergement et le support restent en Tunisie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

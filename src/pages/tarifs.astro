@@ -1,0 +1,183 @@
+---
+import Base from "../layouts/Base.astro";
+import PricingCards from "../components/PricingCards.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import CtaBand from "../components/CtaBand.astro";
+import Check from "../components/Check.astro";
+
+const plans = [
+  {
+    name: "VAGA Cloud",
+    kind: "Hébergé - accessible de partout",
+    amount: "1 700 TND",
+    per: "paiement unique · + 250 TND/mois serveur & maintenance",
+    recommended: true,
+    features: [
+      "Licence : 1 700 TND",
+      "Serveur & maintenance : 250 TND/mois",
+      "Accessible de partout",
+      "Mises à jour et sauvegardes automatiques",
+      "Zéro maintenance serveur de votre côté",
+    ],
+  },
+  {
+    name: "VAGA Box",
+    kind: "Sur site",
+    amount: "3 000 TND",
+    per: "paiement unique, aucun frais récurrent",
+    features: [
+      "Licence : 3 000 TND",
+      "Hébergé chez vous",
+      "Fonctionne sans internet",
+      "100 % de vos données restent chez vous",
+    ],
+  },
+];
+
+const cloudPoints = [
+  "Accès instantané depuis n'importe quel appareil",
+  "Mises à jour et sauvegardes automatiques",
+  "Hébergement sécurisé, zéro maintenance serveur",
+  "Idéal pour les équipes multi-sites et mobiles",
+];
+const boxPoints = [
+  "100 % opérationnel même sans internet",
+  "Données stockées sur vos propres locaux",
+  "Indépendance totale du réseau",
+  "Mini-PC silencieux livré et configuré sur place",
+];
+
+const faq = [
+  {
+    q: "Puis-je passer de VAGA Box à VAGA Cloud plus tard ?",
+    a: "Oui, la migration entre les deux formules est possible et gratuite.",
+  },
+  {
+    q: "Que couvre la maintenance à 250 TND/mois ?",
+    a: "L'hébergement, les sauvegardes et les mises à jour. Le support par e-mail est inclus sans surcoût ; un forfait support étendu (téléphone, chat, VPN, visio) est disponible en option.",
+  },
+  {
+    q: "Puis-je essayer VAGA avant de payer ?",
+    a: "Oui, réservez une démo pour voir le logiciel avec vos propres cas d'usage.",
+  },
+];
+---
+
+<Base
+  title="Tarifs VAGA — ERP sans abonnement caché, à partir de 1 700 TND"
+  description="VAGA Cloud ou VAGA Box : un paiement unique, pas de frais par utilisateur. Comparez les deux formules et choisissez celle qui correspond à votre activité."
+>
+  <section class="pb-4 pt-24 text-center">
+    <div class="container-site">
+      <h1 class="h1 mx-auto max-w-205">
+        Un ERP plus abordable. Sans abonnement caché.
+      </h1>
+      <p class="mx-auto mt-5 max-w-160 text-lg text-body">
+        Pas de frais par utilisateur, pas de palier surprise. Un paiement, toute
+        l'équipe a accès à tout le logiciel.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container-site">
+      <PricingCards plans={plans} />
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container-site">
+      <h2 class="h2 text-center">
+        Deux architectures pensées pour la réalité tunisienne
+      </h2>
+      <p class="mt-3.5 text-center text-body">
+        Choisissez celle qui correspond à votre infrastructure - ou combinez les
+        deux.
+      </p>
+      <div
+        class="mx-auto mt-11 grid max-w-225 grid-cols-1 gap-4 md:grid-cols-2"
+      >
+        <div class="rounded-[14px] border border-line p-7">
+          <h3 class="text-lg font-bold tracking-[-0.01em]">
+            VAGA Cloud - Zéro serveur. Zéro maintenance. 100 % en ligne.
+          </h3>
+          <p class="mt-2.5 text-[15px] text-body">
+            Votre ERP hébergé sur nos serveurs sécurisés. Accédez à VAGA depuis
+            n'importe quel navigateur, où que vous soyez - sans vous soucier des
+            mises à jour, des sauvegardes ou de la maintenance serveur.
+          </p>
+          <ul class="mt-4 flex list-none flex-col gap-2.5">
+            {
+              cloudPoints.map((p) => (
+                <li class="flex items-start gap-2.5 text-[14.5px] text-body">
+                  <Check size={14} class="mt-1 flex-none text-ink" />
+                  {p}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="rounded-[14px] border border-line p-7">
+          <h3 class="text-lg font-bold tracking-[-0.01em]">
+            VAGA Box - Votre ERP sur site. Fonctionne même si l'ADSL tombe.
+          </h3>
+          <p class="mt-2.5 text-[15px] text-body">
+            Un mini-PC discret installé dans vos locaux. Votre ERP tourne en
+            local - coupure ADSL, panne Ooredoo ou Topnet, rien n'arrête votre
+            activité. Idéal pour les entrepôts et les zones à connexion
+            instable.
+          </p>
+          <ul class="mt-4 flex list-none flex-col gap-2.5">
+            {
+              boxPoints.map((p) => (
+                <li class="flex items-start gap-2.5 text-[14.5px] text-body">
+                  <Check size={14} class="mt-1 flex-none text-ink" />
+                  {p}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <div
+        class="mx-auto mt-4 max-w-225 rounded-[14px] border-[1.5px] border-line-strong p-7"
+      >
+        <h3 class="text-base font-bold tracking-[-0.01em]">
+          Pourquoi ça compte en Tunisie
+        </h3>
+        <p class="mt-2 text-[15px] text-body">
+          Les coupures ADSL restent fréquentes à Sousse, Sfax et dans les zones
+          industrielles. Avec VAGA Box, votre équipe continue à travailler, bons
+          de livraison, stock, facturation - sans interruption.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container-site max-w-205">
+      <h2 class="h2">Ce qui est inclus</h2>
+      <p class="mt-4 text-body">
+        Les deux formules donnent accès à l'intégralité des modules -
+        facturation, stock, trésorerie, crédit client, TEIF, retenue à la
+        source. Pas de module verrouillé derrière un palier supérieur, pas de
+        licence par module.
+      </p>
+      <p class="mt-3 text-body">
+        La formule Cloud inclut le support par e-mail sans frais supplémentaire.
+        Un forfait support plus large (téléphone, chat, accès distant VPN pour
+        VAGA Box, visioconférence) est disponible en option pour les entreprises
+        qui en ont besoin.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-4">
+    <div class="container-site">
+      <h2 class="h2 text-center">Questions fréquentes</h2>
+      <FaqAccordion items={faq} class="mt-11" />
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

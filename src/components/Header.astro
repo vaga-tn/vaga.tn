@@ -1,0 +1,37 @@
+---
+import Button from "./Button.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const links = [
+  { label: "Fonctionnalités", href: "/fonctionnalites" },
+  { label: "Sécurité", href: "/securite-donnees" },
+  { label: "Tarifs", href: "/tarifs" },
+  { label: "Ressources", href: "/ressources" },
+];
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-line backdrop-blur-xs"
+  style="background: var(--header-bg);"
+>
+  <div class="container-site flex h-16 items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/favicon_light.png" alt="vaga logo" width="30" />
+      <span class="text-xl font-bold uppercase">vaga</span>
+    </a>
+    <nav class="flex items-center gap-4">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="hidden text-sm text-body no-underline transition-colors duration-150 hover:text-ink md:inline"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+      <ThemeToggle />
+      <Button href="/demo">Demander une démo</Button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  items: { q: string; a: string }[];
+  class?: string;
+}
+const { items, class: extra = "" } = Astro.props;
+---
+
+<div class:list={["faq mx-auto max-w-170", extra]}>
+  {
+    items.map((item) => (
+      <details class="border-b border-line first:border-t">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 px-1 py-5 text-base font-semibold tracking-[-0.01em]">
+          {item.q}
+          <span class="plus flex-none text-xl font-normal text-muted transition-transform duration-200">
+            +
+          </span>
+        </summary>
+        <p class="max-w-[60ch] px-1 pb-5 text-[15px] text-body">{item.a}</p>
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+  details[open] .plus {
+    transform: rotate(45deg);
+  }
+</style>
