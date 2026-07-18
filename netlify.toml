@@ -10,3 +10,41 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, s-maxage=31536000, immutable"
+
+# ---- Redirects from the previous Next.js site (locale-prefixed URLs) ----
+# Order matters: most specific first. All 301 (permanent) for SEO transfer.
+
+[[redirects]]
+  from = "/fr/blog/*"
+  to = "/ressources/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/en/blog/*"
+  to = "/ressources/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/ressources/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/fr/changelog"
+  to = "/ressources"
+  status = 301
+
+[[redirects]]
+  from = "/en/changelog"
+  to = "/ressources"
+  status = 301
+
+[[redirects]]
+  from = "/fr/*"
+  to = "/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/en/*"
+  to = "/:splat"
+  status = 301

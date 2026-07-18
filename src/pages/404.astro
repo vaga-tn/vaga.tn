@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import Button from "../components/Button.astro";
+---
+
+<Base
+  title="Page introuvable — VAGA"
+  description="Cette page n'existe pas ou a été déplacée."
+>
+  <section class="py-32 text-center">
+    <div class="container-site">
+      <p
+        class="mx-auto mb-8 inline-block rotate-2 rounded-xl border-[1.5px] border-line-strong bg-page px-4 py-2 text-sm font-semibold"
+        style="box-shadow: 3px 3px 0 var(--ink);"
+      >
+        Erreur 404 ✗
+      </p>
+      <h1 class="h1">Cette page n'existe pas.</h1>
+      <p class="mx-auto mt-5 max-w-160 text-lg text-body">
+        Elle a peut-être été déplacée lors de la refonte du site. Retrouvez ce
+        que vous cherchez depuis l'accueil, ou jetez un œil au blog.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3.5">
+        <Button href="/" size="lg" arrow>Retour à l'accueil</Button>
+        <Button href="/ressources" size="lg" variant="ghost">Voir le blog</Button>
+      </div>
+    </div>
+  </section>
+</Base>
