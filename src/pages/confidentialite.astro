@@ -1,31 +1,100 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from "../layouts/Base.astro";
 
-// Structure-only placeholder (.ai/website/copy.md §13) — needs real retention
-// periods + legal review before publishing. Do not invent content here.
-const items = [
-  'Données collectées (formulaire de démo : nom, e-mail, téléphone, entreprise)',
-  'Finalité de la collecte',
-  'Durée de conservation',
-  "Droits d'accès, de rectification et de suppression",
-  'Contact pour exercer ces droits',
-  'Chiffrement côté client des données clients de VAGA',
+// Rédigé à partir des informations fournies par MAAK CORP — à faire relire
+// par un conseil juridique avant toute modification substantielle.
+const sections = [
+  {
+    title: "Responsable du traitement",
+    html: `<strong>MAAK CORP SUARL</strong>, Av. Yasser Arafet, imm 16, 6ème étage,
+      bureau 2, Sahloul 1, Sousse 4054, Tunisie —
+      <a href="mailto:vaga@maak-corp.tn">vaga@maak-corp.tn</a> · +216 95 593 387.
+      Le traitement des données personnelles est encadré par la loi organique
+      n° 2004-63 du 27 juillet 2004 relative à la protection des données à
+      caractère personnel.`,
+  },
+  {
+    title: "Données collectées",
+    html: `<strong>Demande de démo</strong> : lorsque vous réservez une démo via le
+      module de réservation (Cal.com), nous collectons votre nom, votre adresse
+      e-mail ainsi que les informations que vous choisissez de renseigner
+      (téléphone, entreprise, notes) et le créneau retenu.<br /><br />
+      <strong>Mesure d'audience</strong> : le site utilise Google Tag Manager pour
+      mesurer la fréquentation (pages visitées, source de trafic, données de
+      navigation). Ces données sont pseudonymisées et ne servent pas à vous
+      identifier nominativement.<br /><br />
+      <strong>Contact direct</strong> : si vous nous écrivez par e-mail ou par
+      téléphone, nous conservons les coordonnées et le contenu de l'échange.`,
+  },
+  {
+    title: "Finalités",
+    html: `Ces données servent exclusivement à : organiser et assurer le suivi des
+      démonstrations demandées ; répondre à vos sollicitations ; mesurer et
+      améliorer l'audience et le contenu du site. Elles ne sont ni vendues ni
+      louées à des tiers.`,
+  },
+  {
+    title: "Durée de conservation",
+    html: `Les données liées aux demandes de démo et aux échanges commerciaux sont
+      conservées <strong>24 mois après le dernier contact</strong>, puis supprimées.
+      Les données de mesure d'audience sont conservées selon les durées standard
+      des outils Google utilisés.`,
+  },
+  {
+    title: "Sous-traitants et transferts",
+    html: `Certains prestataires techniques traitent des données pour notre compte :
+      <strong>Cal.com</strong> (réservation de démos), <strong>Google</strong>
+      (mesure d'audience via Google Tag Manager) et <strong>Netlify</strong>
+      (hébergement du site vitrine). Ces prestataires peuvent traiter des données
+      en dehors de la Tunisie, dans le cadre de leurs propres engagements de
+      protection des données.<br /><br />
+      À noter : les données de gestion saisies par les clients dans
+      l'application VAGA (le logiciel ERP) ne sont pas concernées — elles sont
+      hébergées en Tunisie et chiffrées côté client, comme détaillé sur la page
+      <a href="/securite-donnees">Sécurité &amp; souveraineté des données</a>.`,
+  },
+  {
+    title: "Cookies",
+    html: `Le site dépose des cookies de mesure d'audience via Google Tag Manager.
+      Vous pouvez les refuser ou les supprimer à tout moment dans les réglages de
+      votre navigateur ; la navigation sur le site reste pleinement
+      fonctionnelle sans ces cookies.`,
+  },
+  {
+    title: "Vos droits",
+    html: `Conformément à la loi organique n° 2004-63, vous disposez d'un droit
+      d'accès, de rectification, de suppression et d'opposition sur vos données
+      personnelles. Pour l'exercer, écrivez-nous à
+      <a href="mailto:vaga@maak-corp.tn">vaga@maak-corp.tn</a> ou appelez le
+      +216 95 593 387 — nous répondons sous 30 jours.`,
+  },
 ];
 ---
 
 <Base
   title="Politique de confidentialité — VAGA"
-  description="Politique de confidentialité du site vaga.tn."
+  description="Quelles données le site vaga.tn collecte, pourquoi, combien de temps elles sont conservées et comment exercer vos droits."
 >
-  <section class="pb-24 pt-24">
-    <div class="container-site max-w-[680px]">
+  <section class="pb-8 pt-24">
+    <div class="container-site max-w-205">
       <h1 class="h1">Politique de confidentialité</h1>
-      <p class="mt-6 rounded-[10px] border border-dashed border-line p-5 text-sm text-muted">
-        Page en cours de rédaction — les sections suivantes seront publiées ici :
-      </p>
-      <ul class="mt-6 flex list-none flex-col gap-2 text-body">
-        {items.map((item) => <li class="border-b border-line py-3 first:border-t">{item}</li>)}
-      </ul>
+      <p class="mt-4 text-sm text-muted">Dernière mise à jour : 18 juillet 2026</p>
+    </div>
+  </section>
+
+  <section class="pb-24">
+    <div class="container-site max-w-205">
+      {
+        sections.map((s) => (
+          <div class="border-t border-line py-8 last:border-b">
+            <h2 class="h2 text-[22px] md:text-[26px]">{s.title}</h2>
+            <p
+              class="mt-3 text-body [&_a]:font-semibold [&_a]:text-ink [&_strong]:text-ink"
+              set:html={s.html}
+            />
+          </div>
+        ))
+      }
     </div>
   </section>
 </Base>

@@ -1,32 +1,74 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from "../layouts/Base.astro";
 
-// Structure-only placeholder (.ai/website/copy.md §13) — real company/registration
-// details + legal review required before publishing. Do not invent content here.
-const items = [
-  'Raison sociale et forme juridique',
-  'Matricule fiscal',
-  'Siège social',
-  'Capital (si applicable)',
-  'Directeur de publication',
-  'Hébergeur (nom + adresse)',
-  'Contact',
+// Rédigé à partir des informations fournies par MAAK CORP — à faire relire
+// par un conseil juridique avant toute modification substantielle.
+const sections = [
+  {
+    title: "Éditeur du site",
+    html: `Le site <strong>vaga.tn</strong> est édité par <strong>MAAK CORP SUARL</strong>,
+      société unipersonnelle à responsabilité limitée de droit tunisien,
+      domiciliée à Av. Yasser Arafet, imm 16, 6ème étage, bureau 2, Sahloul 1,
+      Sousse 4054, Tunisie.<br />
+      Matricule fiscal : 1847208/C/A/M/000.<br />
+      Contact : <a href="mailto:vaga@maak-corp.tn">vaga@maak-corp.tn</a> · +216 95 593 387.`,
+  },
+  {
+    title: "Directeur de la publication",
+    html: `Aymen KHEDHRIYA, représentant légal de MAAK CORP SUARL.`,
+  },
+  {
+    title: "Hébergement du site",
+    html: `Le site vitrine vaga.tn est hébergé par <strong>Netlify, Inc.</strong>,
+      512 2nd Street, Fl 2, San Francisco, CA 94107, États-Unis —
+      <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">netlify.com</a>.<br />
+      Les données des clients de l'application VAGA (le logiciel ERP) sont, quant à elles,
+      hébergées sur des serveurs situés en Tunisie — voir la page
+      <a href="/securite-donnees">Sécurité &amp; souveraineté des données</a>.`,
+  },
+  {
+    title: "Propriété intellectuelle",
+    html: `L'ensemble des contenus du site (textes, visuels, logos, marque VAGA)
+      est la propriété de MAAK CORP SUARL, sauf mention contraire. Toute
+      reproduction ou représentation, totale ou partielle, sans autorisation
+      écrite préalable est interdite.`,
+  },
+  {
+    title: "Responsabilité",
+    html: `MAAK CORP s'efforce d'assurer l'exactitude des informations publiées
+      sur ce site, sans garantir l'absence d'erreurs ou d'omissions. Les
+      informations tarifaires et fonctionnelles sont indicatives et peuvent
+      évoluer ; elles sont confirmées lors de l'établissement d'un devis.`,
+  },
 ];
 ---
 
 <Base
   title="Mentions légales — VAGA"
-  description="Mentions légales du site vaga.tn."
+  description="Mentions légales du site vaga.tn, édité par MAAK CORP SUARL, Sousse, Tunisie."
 >
-  <section class="pb-24 pt-24">
-    <div class="container-site max-w-[680px]">
+  <section class="pb-8 pt-24">
+    <div class="container-site max-w-205">
       <h1 class="h1">Mentions légales</h1>
-      <p class="mt-6 rounded-[10px] border border-dashed border-line p-5 text-sm text-muted">
-        Page en cours de rédaction — les informations suivantes seront publiées ici :
+      <p class="mt-4 text-sm text-muted">
+        Dernière mise à jour : 18 juillet 2026
       </p>
-      <ul class="mt-6 flex list-none flex-col gap-2 text-body">
-        {items.map((item) => <li class="border-b border-line py-3 first:border-t">{item}</li>)}
-      </ul>
+    </div>
+  </section>
+
+  <section class="pb-24">
+    <div class="container-site max-w-205">
+      {
+        sections.map((s) => (
+          <div class="border-t border-line py-8 last:border-b">
+            <h2 class="h2 text-[22px] md:text-[26px]">{s.title}</h2>
+            <p
+              class="mt-3 text-body [&_a]:font-semibold [&_a]:text-ink [&_strong]:text-ink"
+              set:html={s.html}
+            />
+          </div>
+        ))
+      }
     </div>
   </section>
 </Base>
